@@ -11,7 +11,7 @@
 
 			<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $thumbnail_attributes[0] ); ?>)">
 				<?php get_template_part( 'components/header/site', 'branding' ); ?>
-			</div>
+			</div><!-- .custom-header-image -->
 
 		<?php
 		// Else if the Custom Header image has been set
@@ -19,14 +19,14 @@
 
 			<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $header_image ); ?>)">
 				<?php get_template_part( 'components/header/site', 'branding' ); ?>
-			</div>
+			</div><!-- .custom-header-image -->
 
 		<?php
 		// Otherwise, show an empty header background.
 		else : ?>
 			<div class="custom-header-image">
 				<?php get_template_part( 'components/header/site', 'branding' ); ?>
-			</div>
+			</div><!-- .custom-header-image -->
 	<?php endif; ?>
 
 </div><!-- .custom-header -->
