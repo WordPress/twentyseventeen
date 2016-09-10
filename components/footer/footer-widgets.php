@@ -9,9 +9,8 @@
 <?php
 if ( is_active_sidebar( 'sidebar-2' ) ||
 	 is_active_sidebar( 'sidebar-3' ) ||
-	 is_active_sidebar( 'sidebar-4' ) ) {
-	?>
-
+	 is_active_sidebar( 'sidebar-4' ) ) :
+?>
 
 	<aside class="widget-area" role="complementary">
 		<div class="wrap">
@@ -33,4 +32,4 @@ if ( is_active_sidebar( 'sidebar-2' ) ||
 		</div>
 	</aside><!-- .widget-area -->
 
-<?php } ?>
+<?php endif; ?>

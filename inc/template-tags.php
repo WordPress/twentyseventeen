@@ -109,11 +109,11 @@ endif;
  * layout with multiple posts/pages shown gets confusing.
  */
 function twentyseventeen_edit_link( $id ) {
-	if ( is_page() ) :
+	if ( is_page() ) {
 		$type = __( 'Page', 'twentyseventeen' );
-	elseif ( get_post( $id ) ) :
+	} elseif ( get_post( $id ) ) {
 		$type = __( 'Post', 'twentyseventeen' );
-	endif;
+	}
 	$link = edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */

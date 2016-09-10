@@ -232,9 +232,9 @@ function twentyseventeen_scripts() {
 	}
 
 	// Scroll effects (only loaded on front page)
-	if ( twentyseventeen_is_frontpage() ) :
+	if ( twentyseventeen_is_frontpage() ) {
 		wp_enqueue_script( 'scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '20151030', true );
-	endif;
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
