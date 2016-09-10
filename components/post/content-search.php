@@ -25,4 +25,4 @@
 		<?php twentyseventeen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-</article>
+</article><!-- #post-## -->
