@@ -30,7 +30,7 @@ $panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
 
 		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
 			<div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
-		</div>
+		</div><!-- .panel-image -->
 
 	<?php endif; ?>
 
