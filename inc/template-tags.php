@@ -41,17 +41,15 @@ function twentyseventeen_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
 	);
 
+	// Let's write 'Posted on' and Author name to the page
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
 	// Check to make sure we have more than one category before writing to page.
 	$categories_list = get_the_category_list( $separate_meta );
 	if ( $categories_list && twentyseventeen_categorized_blog() ) {
 		$categories = sprintf( _x( 'in %1$s', 'prefaces list of categories assigned to the post', 'twentyseventeen' ), $categories_list ); // WPCS: XSS OK.
+		echo '<span class="cat-links"> ' . $categories . '</span>'; // WPCS: XSS OK.
 	}
-
-	// Finally, let's write all of this to the page
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
-    if ( $categories_list && twentyseventeen_categorized_blog() ) {
-        echo '<span class="cat-links"> ' . $categories . '</span>';
-    } // WPCS: XSS OK.
 }
 endif;
 
