@@ -16,6 +16,6 @@
 			<span class="panel twentyseventeen-footer-settings">
 				<span class="twentyseventeen-panel-title"><?php _e( 'Footer Image', 'twentyseventeen' ); ?></span>
 			</span>
-		</div>
+		</div><!-- .footer-image -->
 	<?php }
 ?>
