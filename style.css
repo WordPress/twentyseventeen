@@ -38,9 +38,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Media
 	## Galleries
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -265,7 +267,9 @@ th {
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers. */
+
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -295,6 +299,7 @@ th {
 }
 
 /* Do not show the outline on the skip link target. */
+
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
@@ -302,6 +307,7 @@ th {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -324,6 +330,7 @@ th {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -368,6 +375,7 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -517,6 +525,7 @@ q:after {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -588,6 +597,7 @@ textarea {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -626,6 +636,7 @@ input[type="submit"]:focus,
 /*--------------------------------------------------------------
 # Formattings
 --------------------------------------------------------------*/
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -636,6 +647,7 @@ hr {
 /*--------------------------------------------------------------
 # Lists
 --------------------------------------------------------------*/
+
 ul,
 ol {
 	margin: 0 0 1.5em 3em;
@@ -667,6 +679,7 @@ dd {
 /*--------------------------------------------------------------
 # Tables
 --------------------------------------------------------------*/
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -686,6 +699,7 @@ table {
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
+
 a,
 a:visited {
 	color: #999;
@@ -797,6 +811,7 @@ a:active {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+
 html {
 	box-sizing: border-box;
 }
@@ -847,6 +862,7 @@ body {
 }
 
 /* Header top */
+
 .header-top {
 	background-color: #29292a;
 	color: #fff;
@@ -886,6 +902,7 @@ body {
 }
 
 /* Site branding */
+
 .site-branding {
 	color: #fff;
 	text-align: center;
@@ -998,6 +1015,7 @@ body:not(.no-header-image) .custom-header-image:before,
 }
 
 /* Small menu. */
+
 .menu-toggle {
 	background-color: transparent;
 	border: 1px solid rgba(255,255,255,0.2);
@@ -1215,6 +1233,7 @@ body:not(.no-header-image) .custom-header-image:before,
 }
 
 /* Entry footer */
+
 .entry-footer .cat-links,
 .entry-footer .tags-links,
 .entry-footer .comments-link,
@@ -1320,6 +1339,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /*--------------------------------------------------------------
 ## Pages
 --------------------------------------------------------------*/
+
 .page-header {
 	padding-bottom: 2em;
 }
@@ -1442,6 +1462,7 @@ h2.widget-title {
 }
 
 /* widget forms */
+
 .widget input:not([type="button"], [type="submit"], [type="reset"]),
 .widget select,
 .widget textarea {
@@ -1450,6 +1471,7 @@ h2.widget-title {
 
 
 /* widget lists */
+
 .widget ul {
 	list-style: none;
 	margin: 0;
@@ -1866,6 +1888,7 @@ h2.widget-title {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
+
 img {
 	height: auto;
 	/* Make sure images are scaled correctly. */
@@ -1883,6 +1906,7 @@ img {
 }
 
 /* Make sure embeds and iframes fit their containers. */
+
 embed,
 iframe,
 object {
@@ -1912,6 +1936,7 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -1963,7 +1988,9 @@ object {
 /*--------------------------------------------------------------
 # Customizer
 --------------------------------------------------------------*/
+ 
 /* Hide this until we're in the Customizer */
+
 .twentyseventeen-panel-title {
 	display: none;
 }
@@ -2045,6 +2072,7 @@ object {
 }
 
 /* Add a highlight class to improve Customizer behaviour */
+
 @-webkit-keyframes flash {
 	0%,
 	20%,
@@ -2125,6 +2153,7 @@ article.panel-placeholder {
 @media screen and (min-width: 60em) {
 
 	/* Typography */
+	
 	h1 {
 		font-size: 34px;
 		font-size: 2.125rem;
@@ -2182,6 +2211,7 @@ article.panel-placeholder {
 	}
 
 	/* Site branding */
+	
 	.header-top .wrap {
 		padding: 1em;
 	}
@@ -2226,6 +2256,7 @@ article.panel-placeholder {
 	}
 
 	/* Header */
+	
 	.header-top {
 		left: 0;
 		position: absolute;
@@ -2334,6 +2365,7 @@ article.panel-placeholder {
 	}
 
 	/* One Column */
+	
 	.one-column .wrap {
 		padding-left: 1em;
 		padding-right: 1em;
@@ -2367,6 +2399,7 @@ article.panel-placeholder {
 	}
 
 	/* Two Column */
+	
 	.two-column .panel-content .entry-content {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
@@ -2377,6 +2410,7 @@ article.panel-placeholder {
 	}
 
 	/* Main Navigation */
+	
 	.menu-toggle {
 		display: none;
 	}
@@ -2576,6 +2610,7 @@ article.panel-placeholder {
 	}
 
 	/* Posts */
+	
 	.site-content {
 		padding: 4.5em 0 0;
 	}
@@ -2635,6 +2670,7 @@ article.panel-placeholder {
 	}
 
 	/* Footer */
+	
 	.footer-image {
 		background-attachment: fixed;
 		height: 100vh;
