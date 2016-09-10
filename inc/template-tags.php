@@ -48,7 +48,10 @@ function twentyseventeen_posted_on() {
 	}
 
 	// Finally, let's write all of this to the page
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span><span class="cat-links"> ' . $categories . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+    if ( $categories_list && twentyseventeen_categorized_blog() ) {
+        echo '<span class="cat-links"> ' . $categories . '</span>';
+    } // WPCS: XSS OK.
 }
 endif;
 
