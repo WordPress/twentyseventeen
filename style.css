@@ -1691,6 +1691,7 @@ h2.widget-title {
 .social-navigation ul {
 	list-style: none;
 	margin-bottom: 0;
+	margin-left: 0;
 }
 
 .social-navigation li {
