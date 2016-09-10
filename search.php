@@ -39,8 +39,8 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main>
-	</section>
+		</main><!-- #main -->
+	</section><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 <?php

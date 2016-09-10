@@ -43,8 +43,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'twentyseventeen' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'twentyseventeen' ) ); ?></div>
 
-			</div>
-		</nav>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-above -->
 		<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list">
@@ -64,8 +64,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'twentyseventeen' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'twentyseventeen' ) ); ?></div>
 
-			</div>
-		</nav>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-below -->
 		<?php
 		endif; // Check for comment navigation.
 
