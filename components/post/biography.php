@@ -4,7 +4,7 @@
 			$author_bio_avatar_size = apply_filters( 'twentyseventeen_author_bio_avatar_size', 100 );
 			echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 		?>
-	</div>
+	</div><!-- .author-avatar -->
 
 	<div class="author-heading">
 		<h2 class="author-title"><?php _e( 'Published by', 'twentyseventeen' ); ?> <?php echo get_the_author(); ?></h2>
