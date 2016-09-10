@@ -46,7 +46,7 @@ function twentyseventeen_setup() {
 
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'top'     => __( 'Top', 'twentyseventeen' ),
 		'social'  => __( 'Social Links Menu', 'twentyseventeen' ),
