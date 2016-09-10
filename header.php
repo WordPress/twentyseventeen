@@ -30,11 +30,11 @@
 			<div class="wrap">
 				<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 				<?php get_template_part( 'components/header/content', 'top' ); ?>
-			</div>
+			</div><!-- .wrap -->
 		</div><!-- .header-top -->
 
 		<?php get_template_part( 'components/header/header', 'image' ); ?>
 
-	</header>
+	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
