@@ -158,6 +158,7 @@ function twentyseventeen_categorized_blog() {
 	}
 }
 
+
 /**
  * Flush out the transients used in twentyseventeen_categorized_blog.
  */
