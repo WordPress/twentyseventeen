@@ -89,3 +89,13 @@ function twentyseventeen_is_frontpage() {
 		return false;
 	endif;
 }
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function twentyseventeen_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">' . "\n";
+	}
+}
+add_action( 'wp_head', 'twentyseventeen_pingback_header' );
