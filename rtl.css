@@ -28,21 +28,17 @@ th {
 }
 
 /* Typography */
-blockquote {
-	border-left: 0;
-	border-right: 4px solid #ddd;
-	padding-left: 0;
-	padding-right: 1.5em;
-}
-
 textarea {
 	padding-right: 3px;
 }
 
-ul,
 ol {
-	margin-left: 0;
-	margin-right: 3em;
+	counter-reset: item;
+}
+
+ol li:before {
+	left: auto;
+	right: -1.5em;
 }
 
 li > ul,
