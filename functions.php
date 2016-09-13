@@ -101,27 +101,15 @@ function twentyseventeen_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Work Sans, translate this to 'off'. Do not translate
+	* supported by Libre Frankin, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$work_sans = _x( 'on', 'work_sans font: on or off', 'twentyseventeen' );
+	$libre_franklin = _x( 'on', 'libre_franklin font: on or off', 'twentyseventeen' );
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Karla, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$karla = _x( 'on', 'Karla font: on or off', 'twentyseventeen' );
-
-	if ( 'off' !== $work_sans || 'off' !== $karla ) {
+	if ( 'off' !== $libre_franklin ) {
 		$font_families = array();
 
-		if ( 'off' !== $work_sans ) {
-			$font_families[] = 'Work Sans:800';
-		}
-
-		if ( 'off' !== $karla ) {
-			$font_families[] = 'Karla:400,400italic,700,700italic';
-		}
+		$font_families[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
