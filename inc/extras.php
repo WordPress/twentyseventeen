@@ -70,11 +70,11 @@ function twentyseventeen_panel_count() {
 	$panels = array( '1', '2', '3', '4' );
 	$panel_count = 0;
 
-	foreach ( $panels as $panel ) :
-		if ( get_theme_mod( 'twentyseventeen_panel' . $panel ) ) :
+	foreach ( $panels as $panel ) {
+		if ( get_theme_mod( 'twentyseventeen_panel' . $panel ) ) {
 			$panel_count++;
-		endif;
-	endforeach;
+		}
+	}
 
 	return $panel_count;
 }
