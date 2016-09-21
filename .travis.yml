@@ -26,7 +26,7 @@ sudo: false
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
-    # Trunk (current version in development is 4.4)
+    # Trunk (current version in development is 4.7)
     # @link https://github.com/WordPress/WordPress
     - WP_VERSION=master WP_MULTISITE=0
 
