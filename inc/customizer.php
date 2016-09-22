@@ -216,9 +216,9 @@ add_action( 'customize_register', 'twentyseventeen_customize_register' );
 function twentyseventeen_sanitize_numeric_value( $input ) {
 	if ( is_numeric( $input ) ) {
 		return intval( $input );
-	} else {
-		return 0;
 	}
+
+	return 0;
 }
 
 /**
@@ -232,9 +232,9 @@ function twentyseventeen_sanitize_layout( $input ) {
 
 	if ( array_key_exists( $input, $valid ) ) {
 		return $input;
-	} else {
-		return '';
 	}
+
+	return '';
 }
 
 /**

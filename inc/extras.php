@@ -83,9 +83,9 @@ function twentyseventeen_panel_count() {
  * Checks to see if we're on the homepage or not.
  */
 function twentyseventeen_is_frontpage() {
-	if ( is_front_page() && ! is_home() ) :
+	if ( is_front_page() && ! is_home() ) {
 		return true;
-	else :
-		return false;
-	endif;
+	}
+
+	return false;
 }
