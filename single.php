@@ -5,6 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package Twenty Seventeen
+ * @version 1.0.0
  */
 
 get_header(); ?>

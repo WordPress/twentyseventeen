@@ -7,6 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Twenty Seventeen
+ * @version 1.0.0
  */
 
 ?><!DOCTYPE html>

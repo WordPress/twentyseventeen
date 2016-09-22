@@ -5,6 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Twenty Seventeen
+ * @version 1.0.0
  */
 
 get_header(); ?>
