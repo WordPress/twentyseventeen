@@ -1,3 +1,11 @@
+<?php
+/**
+ * Displays content for front page
+ *
+ * @package Twenty Seventeen
+ */
+
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-intro' ); ?> >
 
 	<div class="entry-content">

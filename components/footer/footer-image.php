@@ -4,6 +4,7 @@
  *
  * @package Twenty Seventeen
  */
+
 ?>
 <?php
 	$footer_image = get_theme_mod( 'twentyseventeen_footer_image' );

@@ -1,3 +1,11 @@
+<?php
+/**
+ * Displays header site branding
+ *
+ * @package Twenty Seventeen
+ */
+
+?>
 <div class="site-branding">
 	<div class="wrap">
 

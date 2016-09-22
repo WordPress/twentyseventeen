@@ -1,3 +1,11 @@
+<?php
+/**
+ * Displays Author Bio
+ *
+ * @package Twenty Seventeen
+ */
+
+?>
 <div class="entry-author">
 	<div class="author-avatar">
 		<?php

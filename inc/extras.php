@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates.
+ * Custom functions that act independently of the theme templates
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
@@ -24,12 +24,12 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Add class if we're viewing the Customizer for easier styling of theme options
+	// Add class if we're viewing the Customizer for easier styling of theme options.
 	if ( is_customize_preview() ) {
 		$classes[] = 'twentyseventeen-customizer';
 	}
 
-	// Add class on front page
+	// Add class on front page.
 	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
 		$classes[] = 'twentyseventeen-front-page';
 	}
@@ -39,18 +39,18 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'no-header-image';
 	}
 
-	// Add class if footer image has been added
+	// Add class if footer image has been added.
 	$footer_image = get_theme_mod( 'twentyseventeen_footer_image' );
 	if ( isset( $footer_image ) ) {
 		$classes[] = 'twentyseventeen-footer-image';
 	}
 
-	// Add class if sidebar is used
+	// Add class if sidebar is used.
 	if ( is_active_sidebar( 'sidebar-1' ) && ! twentyseventeen_is_frontpage() ) {
 		$classes[] = 'has-sidebar';
 	}
 
-	// Add class if top header content is added
+	// Add class if top header content is added.
 	$twentyseventeen_header_top_text_1 = get_theme_mod( 'twentyseventeen_header_top_text_1' );
 	$twentyseventeen_header_top_text_2 = get_theme_mod( 'twentyseventeen_header_top_text_2' );
 	if ( '' !== $twentyseventeen_header_top_text_1 || '' !== $twentyseventeen_header_top_text_2 ) {
@@ -61,8 +61,9 @@ function twentyseventeen_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentyseventeen_body_classes' );
 
-/*
- * Count our number of active panels
+/**
+ * Count our number of active panels.
+ *
  * Primarily used to see if we have any panels active, duh.
  */
 function twentyseventeen_panel_count() {
