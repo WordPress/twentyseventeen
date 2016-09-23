@@ -20,7 +20,7 @@ get_header(); ?>
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
-			</header>
+			</header><!-- .page-header -->
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -42,7 +42,7 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main>
+		</main><!-- #main -->
 	</div><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
