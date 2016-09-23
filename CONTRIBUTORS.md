@@ -7,3 +7,4 @@ Version 1.0:
 @davidakennedy
 @grapplerulrich
 @manishsongirkar36
+@joefusco
