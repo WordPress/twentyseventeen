@@ -9,6 +9,6 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div>
+	</div><!-- .entry-content -->
 	<?php twentyseventeen_edit_link( get_the_ID() ); ?>
 </article><!-- #post-## -->
