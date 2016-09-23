@@ -48,8 +48,8 @@ function twentyseventeen_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'top'     => __( 'Top', 'twentyseventeen' ),
-		'social'  => __( 'Social Links Menu', 'twentyseventeen' ),
+		'top'    => __( 'Top', 'twentyseventeen' ),
+		'social' => __( 'Social Links Menu', 'twentyseventeen' ),
 	) );
 
 	/*
@@ -72,8 +72,8 @@ function twentyseventeen_setup() {
 
 	// Add theme support for Custom Logo
 	add_theme_support( 'custom-logo', array(
-		'height'      => 400,
-		'width'       => 2400,
+		'height'     => 400,
+		'width'      => 2400,
 		'flex-width' => true,
 	) );
 }
