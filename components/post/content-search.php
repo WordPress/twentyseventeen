@@ -17,12 +17,12 @@
 				<?php twentyseventeen_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header>
+	</header><!-- .entry-header -->
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-	</div>
+	</div><!-- .entry-summary -->
 	<footer class="entry-footer">
 		<?php twentyseventeen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-</article>
+</article><!-- #post-## -->
