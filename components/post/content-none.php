@@ -31,5 +31,5 @@
 				get_search_form();
 
 		endif; ?>
-	</div>
+	</div><!-- .page-content -->
 </section><!-- .no-results -->
