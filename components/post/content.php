@@ -14,7 +14,7 @@
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
 			</a>
-		</div>
+		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
 	<header class="entry-header">
@@ -32,7 +32,7 @@
 
 			<?php endif;
 		?>
-	</header>
+	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -46,7 +46,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div>
+	</div><!-- .entry-content -->
 	<footer class="entry-footer">
 		<?php twentyseventeen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
