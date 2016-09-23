@@ -31,7 +31,7 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
-		</main>
+		</main><!-- #main -->
 	</div><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->

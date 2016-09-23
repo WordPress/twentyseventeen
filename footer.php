@@ -11,7 +11,7 @@
 
 ?>
 
-	</div>
+	</div><!-- #content -->
 
 	<?php get_template_part( 'components/footer/footer', 'image' ); ?>
 
@@ -34,7 +34,7 @@
 			get_template_part( 'components/footer/footer', 'widgets' );
 			get_template_part( 'components/footer/site', 'info' );
 		?>
-	</footer>
+	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
