@@ -35,8 +35,7 @@ function twentyseventeen_body_classes( $classes ) {
 	}
 
 	// Add class if no custom header or featured images
-	$header_image = get_header_image();
-	if ( '' == $header_image && ( ! has_post_thumbnail( $post->ID ) || is_home() ) ) {
+	if ( ! has_header_image() && ( ! has_post_thumbnail() || is_home() ) ) {
 		$classes[] = 'no-header-image';
 	}
 
