@@ -28,14 +28,13 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<div class="header-top">
+		<?php get_template_part( 'components/header/header', 'image' ); ?>
+
+		<div class="navigation-top">
 			<div class="wrap">
 				<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-				<?php get_template_part( 'components/header/content', 'top' ); ?>
-			</div><!-- .wrap -->
-		</div><!-- .header-top -->
-
-		<?php get_template_part( 'components/header/header', 'image' ); ?>
+			</div>
+		</div><!-- .navigation-top -->
 
 	</header><!-- #masthead -->
 
