@@ -23,35 +23,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'description' => __( 'Configure your theme settings', 'twentyseventeen' ),
 	) );
 
-	// Top of site content
-	$wp_customize->add_section( 'twentyseventeen_top_of_site', array(
-		'title'       => __( 'Header Top Text', 'twentyseventeen' ),
-		'panel'       => 'twentyseventeen_options_panel',
-		'description' => __( 'Add a short bit of content to the top of your website.', 'twentyseventeen' ),
-	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_header_top_text_1', array(
-		'sanitize_callback'	=> 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_header_top_text_1', array(
-		'section'  => 'twentyseventeen_top_of_site',
-		'type'     => 'textarea',
-		'priority' => 1,
-		'label'    => __( 'Header Top Text 1', 'twentyseventeen' ),
-	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_header_top_text_2', array(
-		'sanitize_callback'	=> 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_header_top_text_2', array(
-		'section'  => 'twentyseventeen_top_of_site',
-		'type'     => 'textarea',
-		'priority' => 1,
-		'label'    => __( 'Header Top Text 2', 'twentyseventeen' ),
-	) );
-
 	// Panel 1
 	$wp_customize->add_section( 'twentyseventeen_panel1', array(
 		'title'           => __( 'Panel 1', 'twentyseventeen' ),

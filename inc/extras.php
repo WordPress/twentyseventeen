@@ -50,13 +50,6 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	}
 
-	// Add class if top header content is added
-	$twentyseventeen_header_top_text_1 = get_theme_mod( 'twentyseventeen_header_top_text_1' );
-	$twentyseventeen_header_top_text_2 = get_theme_mod( 'twentyseventeen_header_top_text_2' );
-	if ( '' !== $twentyseventeen_header_top_text_1 || '' !== $twentyseventeen_header_top_text_2 ) {
-		$classes[] = 'has-top-content';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'twentyseventeen_body_classes' );
