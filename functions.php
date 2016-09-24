@@ -74,9 +74,11 @@ function twentyseventeen_setup() {
 
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
-		'height'     => 400,
-		'width'      => 2400,
-		'flex-width' => true,
+		'width'       => 1200,
+		'height'      => 9999,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'flex-width'  => true,
 	) );
 }
 endif;

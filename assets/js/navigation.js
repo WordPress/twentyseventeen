@@ -61,7 +61,6 @@
 		menuToggle.add( siteNavigation ).attr( 'aria-expanded', 'false' );
 
 		menuToggle.on( 'click.twentyseventeen', function() {
-			console.log('wow!');
 			$( siteHeaderMenu, this ).toggleClass( 'toggled-on' );
 
 			// jscs:disable
