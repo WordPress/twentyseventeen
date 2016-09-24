@@ -4,7 +4,9 @@ jQuery( document ).ready( function( $ ) {
 	 * Making navigation 'stick'
 	 */
 	var $navigation = $( '.navigation-top' ),
-		$headerOffset = $( '.custom-header' ).outerHeight(),
+		$branding = $( '.site-branding' ),
+		$headerOffset = $( '.custom-header' ).innerHeight(),
+		$navigationHeight = $navigation.innerHeight(),
 		$navigationHiddenClass = 'site-navigation-hidden',
 		$navigationFixedClass = 'site-navigation-fixed';
 
@@ -31,17 +33,28 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
+	function adjustHeaderHeight() {
+		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+			$branding.css( 'margin-bottom', $navigationHeight );
+		} else {
+			$branding.css( 'margin-bottom', '0' );
+		}
+	}
+
 	// Let's fire some JavaScript!
 	adjustScrollClass();
+	adjustHeaderHeight();
 
 	// On scroll, we want to stick/unstick the navigation
 	$( window ).on( 'scroll', function() {
 		adjustScrollClass();
+		adjustHeaderHeight();
 	} );
 
 	// Also want to make sure the navigation is where it should be on resize
 	$( window ).resize( function() {
 		setTimeout( adjustScrollClass, 500 );
+		setTimeout( adjustHeaderHeight, 1000 );
 	} );
 
 	/**
