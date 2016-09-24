@@ -2,7 +2,9 @@
 /**
  * Displays header site branding
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0.0
  */
 
 ?>

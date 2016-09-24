@@ -4,7 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twentyseventeen_setup' ) ) :

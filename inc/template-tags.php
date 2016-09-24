@@ -4,7 +4,9 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :

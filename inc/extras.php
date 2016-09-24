@@ -4,7 +4,9 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0.0
  */
 
 /**
@@ -34,7 +36,7 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'twentyseventeen-front-page';
 	}
 
-	// Add class if no custom header or featured images
+	// Add class if no custom header or featured images.
 	if ( ! has_header_image() && ( ! has_post_thumbnail() || is_home() ) ) {
 		$classes[] = 'no-header-image';
 	}

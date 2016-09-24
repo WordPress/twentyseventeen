@@ -2,7 +2,9 @@
 /**
  * Displays footer image from Customizer on front-page.php
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0.0
  */
 
 ?>
