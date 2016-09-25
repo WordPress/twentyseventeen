@@ -945,7 +945,7 @@ body {
 }
 
 .custom-logo-link img {
-	max-height: 100px;
+	max-height: 200px;
 	width: auto;
 }
 
@@ -2214,7 +2214,7 @@ article.panel-placeholder {
 	}
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 48em) {
 
 	body {
 		font-size: 16px;
@@ -2306,13 +2306,13 @@ article.panel-placeholder {
 	}
 
 	.custom-logo-link img {
-		max-height: 150px;
+		max-height: 400px;
 		max-width: 400px;
 	}
 
 	.twentyseventeen-front-page:not(.no-header-image) .custom-logo-link img {
 		max-height: 500px;
-		max-width: 650px;
+		max-width: 500px;
 	}
 
 	/* Navigation */
@@ -2760,7 +2760,7 @@ article.panel-placeholder {
 	}
 }
 
-@media screen and ( min-width: 65em ) {
+@media screen and ( min-width: 55em ) {
 	.wrap {
 		padding-left: 0;
 		padding-right: 0;
