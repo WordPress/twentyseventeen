@@ -5,15 +5,17 @@ jQuery( document ).ready( function( $ ) {
 	 */
 	var $navigation = $( '.navigation-top' ),
 		$branding = $( '.site-branding' ),
-		$headerOffset = $( '.custom-header' ).innerHeight(),
-		$navigationHeight = $navigation.innerHeight(),
 		$navigationHiddenClass = 'site-navigation-hidden',
-		$navigationFixedClass = 'site-navigation-fixed';
+		$navigationFixedClass = 'site-navigation-fixed',
+		$headerOffset,
+		$navigationHeight;
 
 	//we add the scroll class to the navs
 	function adjustScrollClass() {
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+
+			$headerOffset = $( '.custom-header' ).innerHeight();
 
 			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
 				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
@@ -34,6 +36,9 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	function adjustHeaderHeight() {
+
+		$navigationHeight = $navigation.innerHeight();
+
 		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
 			$branding.css( 'margin-bottom', $navigationHeight );
 		} else {
