@@ -323,7 +323,7 @@ li > ol {
 		float: right;
 	}
 
-	.site-footer .widget-column:first-child {
+	.site-footer .widget-column:last-child {
 		float: left;
 	}
 
