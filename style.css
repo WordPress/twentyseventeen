@@ -368,6 +368,8 @@ template {
 .nav-links:after,
 .comment-author:before,
 .comment-author:after,
+.widget-area:before,
+.widget-area:after,
 .widget:before,
 .widget:after,
 .entry-author:before,
@@ -387,6 +389,7 @@ template {
 .site-footer:after,
 .nav-links:after,
 .comment-author:after,
+.widget-area:after,
 .widget:after,
 .entry-author:after,
 .comment-meta:after {
@@ -1555,14 +1558,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding-bottom: 3em;
 }
 
-#secondary .widget,
-#colophon .widget {
-	font-size: 90%;
-}
-
 h2.widget-title {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: 800;
+	letter-spacing: 0.1818em;
+	margin-bottom: 1.5em;
+	text-transform: uppercase;
 }
 
 .widget-title a {
@@ -1731,7 +1733,8 @@ h2.widget-title {
 	border: 1px solid #ddd;
 	display: inline-block;
 	float: left;
-	font-size: 1rem !important; /* !important to overwrite inline styles */
+	font-size: 14px !important; /* !important to overwrite inline styles */
+	font-size: 0.875rem !important;
 	margin: 4px 4px 0 0 !important;
 	padding: 4px 10px 5px !important;
 	position: relative;
@@ -1768,13 +1771,24 @@ h2.widget-title {
 # Footer
 --------------------------------------------------------------*/
 
+.site-footer {
+	border-top: 1px solid #eee;
+	padding: 0 0 1.5em;
+}
+
+/* Footer widgets */
+
+.site-footer .widget-area {
+	padding-bottom: 2em;
+	padding-top: 4em;
+}
+
 /* Social nav */
 
 .social-navigation {
-	background: #fff;
-	border-top: 1px solid #eee;
-	padding: 20px 0;
-	text-align: center;
+	font-size: 16px;
+	font-size: 1.0rem;
+	margin-bottom: 1em;
 }
 
 .social-navigation ul {
@@ -1788,22 +1802,22 @@ h2.widget-title {
 }
 
 .social-navigation a:before {
-	background: #ccc;
+	background: #bbb;
 	border-radius: 40px;
 	color: #fff;
 	display: inline-block;
-	height: 35px;
-	line-height: 35px;
-	margin: 0 5px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 1em 0 0;
 	text-align: center;
 	-webkit-transition: background 0.2s;
 	transition: background 0.2s;
-	width: 35px;
+	width: 40px;
 }
 
 .social-navigation a:hover:before,
 .social-navigation a:focus:before {
-	background: #bbb;
+	background: #aaa;
 }
 
 .social-navigation a[href*="codepen.io"]:before {
@@ -1915,37 +1929,14 @@ h2.widget-title {
 	content: "\f413";
 }
 
-
-/* Footer widgets */
-
-.site-footer .widget-area {
-	background-color: #eee;
-	padding-bottom: 2em;
-	padding-top: 4em;
-}
-
 /* Site info */
 
 .site-info {
-	background-color: #222;
-	color: #fff;
-	letter-spacing: 0.05em;
-	text-align: center;
-	text-transform: uppercase;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
-.site-info .wrap {
-	padding-bottom: 1.5em;
-	padding-top: 1.5em;
-}
-
-.site-info a,
-.site-info:visited {
-	color: #fff;
-	text-decoration: none;
-}
-
-.site-info .wrap .sep {
+.site-info .sep {
 	margin: 0;
 	display: block;
 	visibility: hidden;
@@ -2716,24 +2707,45 @@ article.panel-placeholder {
 		padding-bottom: 5em;
 	}
 
+	/* Widgets */
+	h2.widget-title {
+		font-size: 11px;
+		font-size: 0.6875rem;
+		margin-bottom: 2em;
+	}
+
 	/* Footer */
+
+	.site-footer {
+		font-size: 14px;
+		font-size: 0.875rem;
+		line-height: 1.6;
+	}
 
 	.site-footer .widget-column {
 		float: left;
-		margin-right: 5%;
-		width: 30%;
+		width: 58%;
 	}
 
-	.site-footer .widget-column:last-child {
-		margin-right: 0;
+	.site-footer .widget-column:first-child {
+		margin-right: 6%;
+		width: 36%;
 	}
 
-	.site-info .wrap {
-		padding-bottom: 2.5em;
-		padding-top: 2.5em;
+	.social-navigation {
+		clear: left;
+		float: left;
+		width: 36%;
 	}
 
-	.site-info .wrap .sep {
+	.site-info {
+		float: left;
+		margin-left: 6%;
+		padding: 0.5em 0 0;
+		width: 58%;
+	}
+
+	.site-info .sep {
 		margin: 0 0.5em;
 		display: inline;
 		visibility: visible;
