@@ -158,25 +158,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 			'two-column' => __( 'Two Column', 'twentyseventeen' ),
 		),
 	) );
-
-	// Footer Image
-	$wp_customize->add_section( 'twentyseventeen_footer_settings', array(
-		'title'	  => __( 'Footer Image', 'twentyseventeen' ),
-		'panel'	  => 'twentyseventeen_options_panel',
-		'default' => '',
-	) );
-
-	$wp_customize->add_setting('twentyseventeen_footer_image', array(
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,
-		'twentyseventeen_footer_image', array(
-		'label'       => __( 'Footer Image', 'twentyseventeen' ),
-		'section'     => 'twentyseventeen_footer_settings',
-		'description' => __( 'Add an image to be displayed at the bottom of the Front Page template, above the footer.', 'twentyseventeen' ),
-	) ) );
 }
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
 

@@ -1744,31 +1744,6 @@ h2.widget-title {
 # Footer
 --------------------------------------------------------------*/
 
-.footer-image {
-	background-position: center center;
-	background-size: cover;
-	padding-top: 50%;
-	position: relative;
-}
-
-.twentyseventeen-customizer .footer-image:not(.has-footer-image) {
-	padding-top: 0;
-}
-
-.footer-image:before {
-	position: absolute;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.25+100 */
-	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 ); /* IE6-9 */
-	content: "";
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
 /* Social nav */
 
 .social-navigation {
@@ -2129,15 +2104,6 @@ object {
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(4)::after {
 	border-color: #575ebd;
 	color: #575ebd;
-}
-
-.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel.footer-image .twentyseventeen-panel-title {
-	background: #55a1bd;
-}
-
-.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel.footer-image::after {
-	border-color: #55a1bd;
-	color: #55a1bd;
 }
 
 /* Add a highlight class to improve Customizer behaviour */
@@ -2725,16 +2691,6 @@ article.panel-placeholder {
 	}
 
 	/* Footer */
-
-	.footer-image {
-		background-attachment: fixed;
-		height: 100vh;
-		padding: 0;
-	}
-
-	.twentyseventeen-customizer .footer-image:not(.has-footer-image) {
-		height: 0;
-	}
 
 	.site-footer .widget-column {
 		float: left;
