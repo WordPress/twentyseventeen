@@ -1238,6 +1238,36 @@ body {
 	font-size: 85%;
 }
 
+/* Front Page - Recent Posts */
+
+.twentyseventeen-front-page .recent-posts article {
+	border: 0;
+	color: #333;
+	margin-bottom: 3em;
+}
+
+.recent-posts .entry-header {
+	margin-bottom: 1.2em;
+}
+
+.recent-posts .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+	font-weight: 300;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+.recent-posts .entry-meta {
+	color: #767676;
+	font-size: 11px;
+	font-size: 0.6875rem;
+	font-weight: 800;
+	letter-spacing: 0.1818em;
+	padding-bottom: 0.25em;
+	text-transform: uppercase;
+}
+
 /*--------------------------------------------------------------
 ## Regular Content
 --------------------------------------------------------------*/
@@ -1256,6 +1286,10 @@ body {
 	display: block;
 }
 
+.entry-header {
+	margin-bottom: 2.5em;
+}
+
 .entry-header h1,
 .entry-header h2 {
 	color: #222;
@@ -1264,6 +1298,10 @@ body {
 	font-weight: 800;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
+}
+
+.entry-header .entry-title {
+	margin-bottom: 0.25em;
 }
 
 .entry-title a {
@@ -1281,6 +1319,9 @@ body {
 .entry-meta {
 	color: #aaa;
 }
+.entry-title:not(:first-child) {
+	padding-top: 0;
+}
 
 .byline,
 .updated:not(.published) {
@@ -1292,15 +1333,6 @@ body {
 	display: inline;
 }
 
-/* Entry Header */
-
-.entry-header {
-	margin-bottom: 2.5em;
-}
-
-.entry-header .entry-title {
-	margin-bottom: 0.25em;
-}
 
 /* Entry content */
 
@@ -2165,6 +2197,10 @@ article.panel-placeholder {
 	.panel-content .entry-header {
 		margin-bottom: 4.5em;
 	}
+
+	.panel-content .recent-posts .entry-header {
+		margin-bottom: 0;
+	}
 }
 
 @media screen and (min-width: 48em) {
@@ -2388,9 +2424,28 @@ article.panel-placeholder {
 	}
 
 	.panel-content .entry-content {
-		float: left;
-		margin-left: 6%;
+		float: right;
 		width: 58%;
+	}
+
+	/* Front Page - Recent Posts */
+
+	.panel-content .recent-posts {
+		clear: right;
+		float: right;
+		width: 58%;
+	}
+
+	.panel-content .recent-posts .entry-header,
+	.panel-content .recent-posts .entry-content {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	.recent-posts .entry-title {
+		font-size: 26px;
+		font-size: 1.625rem;
 	}
 
 	/* Main Navigation */
@@ -2656,7 +2711,7 @@ article.panel-placeholder {
 	}
 
 	.site-footer .widget-column:first-child {
-		margin-right: 6%;
+		float: right;
 		width: 36%;
 	}
 

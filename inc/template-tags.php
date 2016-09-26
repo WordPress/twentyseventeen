@@ -18,23 +18,10 @@ function twentyseventeen_posted_on() {
 	/* translators: used between list items, there is a space after the comma */
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
-	// Let's get a nicely formatted string for the published date.
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		get_the_date( 'c' ),
-		get_the_date(),
-		get_the_modified_date( 'c' ),
-		get_the_modified_date()
-	);
-
 	// Wrap that in a link, and preface it with 'Posted on'.
 	$posted_on = sprintf(
 		_x( 'Posted on %s', 'post date', 'twentyseventeen' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . twentyseventeen_time_string() . '</a>'
 	);
 
 	// Get the author name; wrap it in a link.
@@ -52,6 +39,28 @@ function twentyseventeen_posted_on() {
 		$categories = sprintf( _x( 'in %1$s', 'prefaces list of categories assigned to the post', 'twentyseventeen' ), $categories_list ); // WPCS: XSS OK.
 		echo '<span class="cat-links"> ' . $categories . '</span>'; // WPCS: XSS OK.
 	}
+}
+endif;
+
+
+if ( ! function_exists( 'twentyseventeen_time_string' ) ) :
+/**
+ * Gets a nicely formatted string for the published date
+ */
+function twentyseventeen_time_string() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		get_the_date( 'c' ),
+		get_the_date(),
+		get_the_modified_date( 'c' ),
+		get_the_modified_date()
+	);
+
+	return $time_string;
 }
 endif;
 

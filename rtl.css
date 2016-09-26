@@ -198,7 +198,7 @@ li > ol {
 
 /* Media queries */
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 48em) {
 
 	body.page-template-full-width-page #primary {
 		float: none;
@@ -282,9 +282,13 @@ li > ol {
 	}
 
 	.panel-content .entry-content {
-		float: right;
-		margin-left: 0;
-		margin-right: 6%;
+		float: left;
+	}
+
+	/* Front Page - Recent Posts */
+	.panel-content .recent-posts {
+		clear: left;
+		float: left;
 	}
 
 	.comment-navigation .nav-previous,
@@ -320,8 +324,7 @@ li > ol {
 	}
 
 	.site-footer .widget-column:first-child {
-		margin-left: 6%;
-		margin-right: 0;
+		float: left;
 	}
 
 	.social-navigation {
