@@ -42,21 +42,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'type'    => 'dropdown-pages',
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel1_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel1_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel1',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
-	) );
-
 	// Panel 2
 	$wp_customize->add_section( 'twentyseventeen_panel2', array(
 		'title'           => __( 'Panel 2', 'twentyseventeen' ),
@@ -74,21 +59,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
 		'section' => 'twentyseventeen_panel2',
 		'type'    => 'dropdown-pages',
-	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_panel2_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel2_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel2',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
 	) );
 
 	// Panel 3
@@ -110,21 +80,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'type'    => 'dropdown-pages',
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel3_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel3_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel3',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
-	) );
-
 	// Panel 4
 	$wp_customize->add_section( 'twentyseventeen_panel4', array(
 		'title'           => __( 'Panel 4', 'twentyseventeen' ),
@@ -143,21 +98,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'section' => 'twentyseventeen_panel4',
 		'type'    => 'dropdown-pages',
 	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_panel4_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel4_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel4',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
-	) );
 }
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
 
@@ -170,22 +110,6 @@ function twentyseventeen_sanitize_numeric_value( $input ) {
 		return intval( $input );
 	} else {
 		return 0;
-	}
-}
-
-/**
- * Sanitize a radio button
- */
-function twentyseventeen_sanitize_layout( $input ) {
-	$valid = array(
-		'one-column' => __( 'One Column', 'twentyseventeen' ),
-		'two-column' => __( 'Two Column', 'twentyseventeen' ),
-	);
-
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
 	}
 }
 
