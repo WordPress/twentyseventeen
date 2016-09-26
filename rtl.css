@@ -180,6 +180,12 @@ li > ol {
 	padding: 6px 1.5rem 6px 0;
 }
 
+/* Footer */
+
+.social-navigation a:before {
+	margin: 0 0 0 1em;
+}
+
 /* Customizer styles */
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
 	left: 3.2em;
@@ -295,11 +301,21 @@ li > ol {
 	/* Footer */
 	.site-footer .widget-column {
 		float: right;
-		margin-left: 5%;
+	}
+
+	.site-footer .widget-column:first-child {
+		margin-left: 6%;
 		margin-right: 0;
 	}
 
-	.site-footer .widget-column:last-child {
+	.social-navigation {
+		clear: right;
+		float: right;
+	}
+
+	.site-info {
+		float: right;
 		margin-left: 0;
+		margin-right: 6%;
 	}
 }
