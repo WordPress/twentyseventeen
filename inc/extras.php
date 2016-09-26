@@ -41,12 +41,6 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'no-header-image';
 	}
 
-	// Add class if footer image has been added.
-	$footer_image = get_theme_mod( 'twentyseventeen_footer_image' );
-	if ( isset( $footer_image ) ) {
-		$classes[] = 'twentyseventeen-footer-image';
-	}
-
 	// Add class if sidebar is used.
 	if ( is_active_sidebar( 'sidebar-1' ) && ! twentyseventeen_is_frontpage() ) {
 		$classes[] = 'has-sidebar';

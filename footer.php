@@ -16,8 +16,6 @@
 
 	</div><!-- #content -->
 
-	<?php get_template_part( 'components/footer/footer', 'image' ); ?>
-
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if ( has_nav_menu( 'social' ) ) : ?>
 			<nav class="social-navigation" role="navigation" aria-label="<?php _e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
