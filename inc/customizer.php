@@ -78,21 +78,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'type'    => 'dropdown-pages',
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel_2_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel_2_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_2',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
-	) );
-
 	// Panel 3.
 	$wp_customize->add_section( 'twentyseventeen_panel_3', array(
 		'title'           => __( 'Panel 3', 'twentyseventeen' ),
@@ -110,21 +95,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
 		'section' => 'twentyseventeen_panel_3',
 		'type'    => 'dropdown-pages',
-	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_panel_3_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel_3_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_3',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
 	) );
 
 	// Panel 4.
@@ -145,41 +115,8 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'section' => 'twentyseventeen_panel_4',
 		'type'    => 'dropdown-pages',
 	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_panel_4_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel_4_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_4',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
-	) );
 }
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
-
-/**
- * Sanitize a radio button.
- *
- * @param array $input Input array of layout choices.
- */
-function twentyseventeen_sanitize_layout( $input ) {
-	$valid = array(
-		'one-column' => __( 'One Column', 'twentyseventeen' ),
-		'two-column' => __( 'Two Column', 'twentyseventeen' ),
-	);
-
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	}
-
-	return '';
-}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

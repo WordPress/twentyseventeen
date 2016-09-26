@@ -10,12 +10,9 @@
 
 global $twentyseventeencounter;
 
-$current_panel_layout = 'twentyseventeen_panel_' . $twentyseventeencounter . '_layout';
-$panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' . $panel_layout ); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
 	<span class="panel twentyseventeen-panel<?php echo esc_attr( $twentyseventeencounter ); ?>" id="panel<?php echo esc_attr( $twentyseventeencounter ); ?>">
 		<span class="twentyseventeen-panel-title"><?php printf( __( 'Panel %1$s', 'twentyseventeen' ), esc_attr( $twentyseventeencounter ) ); ?></span>
