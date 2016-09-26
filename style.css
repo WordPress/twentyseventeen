@@ -2681,12 +2681,12 @@ article.panel-placeholder {
 
 	.site-footer .widget-column {
 		float: left;
-		width: 58%;
+		width: 36%;
 	}
 
-	.site-footer .widget-column:first-child {
+	.site-footer .widget-column:last-child {
 		float: right;
-		width: 36%;
+		width: 58%;
 	}
 
 	.social-navigation {
