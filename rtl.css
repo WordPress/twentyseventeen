@@ -272,6 +272,17 @@ li > ol {
 		right: auto;
 	}
 
+	/* Front Page */
+	.panel-content .entry-header {
+		float: right;
+	}
+
+	.panel-content .entry-content {
+		float: right;
+		margin-left: 0;
+		margin-right: 6%;
+	}
+
 	.comment-navigation .nav-previous,
 	.posts-navigation .nav-previous,
 	.post-navigation .nav-previous {

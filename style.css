@@ -414,18 +414,21 @@ h1 {
 }
 
 h2 {
+	color: #666;
 	font-size: 20px;
 	font-size: 1.25rem;
 	font-weight: 300;
 }
 
 h3 {
+	color: #333;
 	font-size: 18px;
 	font-size: 1.125rem;
 	font-weight: 300;
 }
 
 h4 {
+	color: #333;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: 800;
@@ -441,6 +444,7 @@ h5 {
 }
 
 h6 {
+	color: #333;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	font-weight: 800;
@@ -1179,13 +1183,8 @@ body {
 }
 
 .panel-content .wrap {
-	padding-bottom: 1.5em;
-	padding-top: 2em;
-}
-
-.panel-content .entry-title {
-	color: #ccc;
-	text-align: center;
+	padding-bottom: 0.5em;
+	padding-top: 1.75em;
 }
 
 /* Panel edit link */
@@ -1193,40 +1192,10 @@ body {
 .twentyseventeen-panel .edit-link {
 	display: block;
 	margin: 0.3em 0 0;
-	text-align: center;
 }
 
 .twentyseventeen-panel .entry-header .edit-link {
 	font-size: 85%;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-}
-
-/* First panel */
-
-.twentyseventeen-intro {
-	margin-bottom: 0;
-	padding: 1.5em 0;
-}
-
-.twentyseventeen-intro .entry-content {
-	color: #555;
-	font-size: 20px;
-	font-size: 1.25rem;
-	text-align: center;
-}
-
-.twentyseventeen-intro .entry-content *:last-child {
-	margin-bottom: 0;
-}
-
-.twentyseventeen-intro .edit-link {
-	display: block;
-	font-size: 85%;
-	letter-spacing: 0.08em;
-	margin-top: 2em;
-	text-align: center;
-	text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
@@ -1245,6 +1214,16 @@ body {
 
 .sticky {
 	display: block;
+}
+
+.entry-header h1,
+.entry-header h2 {
+	color: #222;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
 }
 
 .entry-title a {
@@ -1501,6 +1480,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 h2.widget-title {
+	color: #222;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: 800;
@@ -2151,6 +2131,15 @@ article.panel-placeholder {
 	.site-branding {
 		padding: 3em 0;
 	}
+
+	.panel-content .wrap {
+		padding-bottom: 2em;
+		padding-top: 3.5em;
+	}
+
+	.panel-content .entry-header {
+		margin-bottom: 4.5em;
+	}
 }
 
 @media screen and (min-width: 48em) {
@@ -2358,23 +2347,25 @@ article.panel-placeholder {
 		height: calc( 100vh - 32px );
 	}
 
-	.twentyseventeen-intro {
-		padding: 4em 0;
-	}
-
-	.twentyseventeen-intro .entry-content {
-		font-size: 30px;
-		font-size: 1.875rem;
-	}
-
 	.panel-content .wrap {
-		padding-bottom: 6.5em;
-		padding-top: 6.5em;
+		padding-bottom: 4.5em;
+		padding-top: 6em;
 	}
 
 	.panel-image {
 		height: 100vh;
 		max-height: 1200px;
+	}
+
+	.panel-content .entry-header {
+		float: left;
+		width: 36%;
+	}
+
+	.panel-content .entry-content {
+		float: left;
+		margin-left: 6%;
+		width: 58%;
 	}
 
 	/* Main Navigation */

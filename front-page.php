@@ -29,14 +29,10 @@ get_header(); ?>
 		<?php // Show the selected frontpage content
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
-				echo '<div class="wrap">';
 				get_template_part( 'components/page/content', 'front-page' );
-				echo '</div>';
 			endwhile;
 		else : // I'm not sure it's possible to have no posts when this page is shown, but WTH
-			echo '<div class="wrap">';
 			get_template_part( 'components/post/content', 'none' );
-			echo '</div>';
 		endif; ?>
 
 		<?php

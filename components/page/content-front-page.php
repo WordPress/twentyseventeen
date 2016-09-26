@@ -1,14 +1,25 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-intro' ); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
-	<div class="entry-content">
-		<?php
-			the_content();
+	<div class="panel-content">
+		<div class="wrap">
+			<header class="entry-header">
+				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php twentyseventeen_edit_link( get_the_ID() ); ?>
+				<?php twentyseventeen_edit_link( get_the_ID() ); ?>
+
+			</header><!-- .entry-header -->
+
+			<div class="entry-content">
+				<?php
+					/* translators: %s: Name of current post */
+					the_content( sprintf(
+						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentyseventeen' ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
+				?>
+			</div><!-- .entry-content -->
+
+		</div><!-- .wrap -->
+	</div><!-- .panel-content -->
+
 </article><!-- #post-## -->
