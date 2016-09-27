@@ -734,14 +734,10 @@ table {
 
 a,
 a:visited {
-	color: #999;
+	color: #222;
 	text-decoration: none;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: #333;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 a:focus {
@@ -759,18 +755,10 @@ a:active {
 .entry-content a:visited,
 .entry-summary a,
 .entry-summary a:visited,
-.edit-link a,
-.edit-link a:visited,
 .widget a,
 .widget a:visited,
-.entry-meta a,
-.entry-meta a:visited,
-.entry-footer a,
-.entry-footer a:visited,
-.site-footer a,
-.site-footer a:visited,
-.entry-title a,
-.entry-title a:visited,
+.site-footer .widget-area a,
+.site-footer .widget-area a:visited,
 .post-navigation a,
 .post-navigation a:visited,
 .posts-navigation a,
@@ -781,27 +769,33 @@ a:active {
 .widget_authors a:visited strong,
 .author-bio a,
 .author-bio a:visited {
-	border-bottom: 2px solid transparent;
-	-webkit-transition: border-bottom-color 0.2s;
-	transition: border-bottom-color 0.2s;
+	border-bottom: 2px solid #767676;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.entry-title a,
+.entry-title a:visited,
+.entry-meta a,
+.entry-meta a:visited,
+.entry-footer a,
+.entry-footer a:visited,
+.edit-link a,
+.edit-link a:visited,
+.site-info a,
+.site-info a:visited {
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 .entry-content a:focus,
 .entry-content a:hover,
 .entry-summary a:focus,
 .entry-summary a:hover,
-.edit-link a:focus,
-.edit-link a:hover,
 .widget a:focus,
 .widget a:hover,
-.entry-meta a:focus,
-.entry-meta a:hover,
-.entry-footer a:focus,
-.entry-footer a:hover,
-.site-footer a:focus,
-.site-footer a:hover,
-.entry-title a:focus,
-.entry-title a:hover,
+.site-footer .widget-area a:focus,
+.site-footer .widget-area a:hover,
 .post-navigation a:focus,
 .post-navigation a:hover,
 .posts-navigation a:focus,
@@ -814,14 +808,23 @@ a:active {
 .project-terms a:hover,
 .author-bio a:focus,
 .author-bio a:hover {
-	border-bottom-color: currentColor;
+	border-bottom-color: transparent;
+	background-color: #767676;
+	color: #fff;
 }
 
-.widget ul li a:focus,
-.widget ul li a:hover,
-.social-navigation a:focus,
-.social-navigation a:hover {
-	border-bottom-color: transparent;
+.entry-title a:focus,
+.entry-title a:hover,
+.entry-meta a:focus,
+.entry-meta a:hover,
+.entry-footer a:focus,
+.entry-footer a:hover,
+.edit-link a:focus,
+.edit-link a:hover,
+.site-info a:focus,
+.site-info a:hover {
+	background-color: #767676;
+	color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1269,11 +1272,6 @@ body {
 	text-decoration: none;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
-}
-
-.entry-title a:hover,
-.entry-title a:focus {
-	 color: #666;
 }
 
 .entry-meta {
@@ -1779,14 +1777,14 @@ h2.widget-title {
 	line-height: 40px;
 	margin: 0 1em 0 0;
 	text-align: center;
-	-webkit-transition: background 0.2s;
-	transition: background 0.2s;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 	width: 40px;
 }
 
 .social-navigation a:hover:before,
 .social-navigation a:focus:before {
-	background: #aaa;
+	background: #767676;
 }
 
 .social-navigation a[href*="codepen.io"]:before {
@@ -2371,58 +2369,6 @@ article.panel-placeholder {
 		}
 	}
 
-	/* Front Page */
-
-	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
-		height: 1200px;
-		height: 100vh;
-		max-height: 100%;
-	}
-
-	.admin-bar.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
-		height: calc( 100vh - 32px );
-	}
-
-	.panel-content .wrap {
-		padding-bottom: 4.5em;
-		padding-top: 6em;
-	}
-
-	.panel-image {
-		height: 100vh;
-		max-height: 1200px;
-	}
-
-	.panel-content .entry-header {
-		float: left;
-		width: 36%;
-	}
-
-	.panel-content .entry-content {
-		float: right;
-		width: 58%;
-	}
-
-	/* Front Page - Recent Posts */
-
-	.panel-content .recent-posts {
-		clear: right;
-		float: right;
-		width: 58%;
-	}
-
-	.panel-content .recent-posts .entry-header,
-	.panel-content .recent-posts .entry-content {
-		float: none;
-		margin: 0;
-		width: 100%;
-	}
-
-	.recent-posts .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem;
-	}
-
 	/* Main Navigation */
 	.menu-toggle,
 	.dropdown-toggle {
@@ -2511,6 +2457,33 @@ article.panel-placeholder {
 		width: 15em;
 	}
 
+	.main-navigation li li {
+		-webkit-transition: background-color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.main-navigation li li:hover,
+	.main-navigation li li.focus {
+		background: #767676;
+	}
+
+	.main-navigation li li a {
+		-webkit-transition: color 0.3s ease-in-out;
+		transition: color 0.3s ease-in-out;
+	}
+
+	.main-navigation li li.focus > a,
+	.main-navigation li li:focus > a,
+	.main-navigation li li:hover > a,
+	.main-navigation li li a:hover,
+	.main-navigation li li a:focus,
+	.main-navigation li li.current_page_item a:hover,
+	.main-navigation li li.current-menu-item a:hover,
+	.main-navigation li li.current_page_item a:focus,
+	.main-navigation li li.current-menu-item a:focus {
+		color: #fff;
+	}
+
 	.main-navigation ul li:hover > ul,
 	.main-navigation ul li.focus > ul {
 		left: auto;
@@ -2551,23 +2524,6 @@ article.panel-placeholder {
 		display: none;
 	}
 
-	.main-navigation li li:hover,
-	.main-navigation li li.focus {
-		background: #767676;
-	}
-
-	.main-navigation li li.focus > a,
-	.main-navigation li li:focus > a,
-	.main-navigation li li:hover > a,
-	.main-navigation li li a:hover,
-	.main-navigation li li a:focus,
-	.main-navigation li li.current_page_item a:hover,
-	.main-navigation li li.current-menu-item a:hover,
-	.main-navigation li li.current_page_item a:focus,
-	.main-navigation li li.current-menu-item a:focus {
-		color: #fff;
-	}
-
 	.site-navigation-fixed .menu-scroll-down,
 	.site-navigation-hidden .menu-scroll-down {
 		display: none;
@@ -2602,6 +2558,58 @@ article.panel-placeholder {
 		content: "\f429";
 		font-size: 32px;
 		font-size: 2.0rem;
+	}
+
+	/* Front Page */
+
+	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
+		height: 1200px;
+		height: 100vh;
+		max-height: 100%;
+	}
+
+	.admin-bar.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
+		height: calc( 100vh - 32px );
+	}
+
+	.panel-content .wrap {
+		padding-bottom: 4.5em;
+		padding-top: 6em;
+	}
+
+	.panel-image {
+		height: 100vh;
+		max-height: 1200px;
+	}
+
+	.panel-content .entry-header {
+		float: left;
+		width: 36%;
+	}
+
+	.panel-content .entry-content {
+		float: right;
+		width: 58%;
+	}
+
+	/* Front Page - Recent Posts */
+
+	.panel-content .recent-posts {
+		clear: right;
+		float: right;
+		width: 58%;
+	}
+
+	.panel-content .recent-posts .entry-header,
+	.panel-content .recent-posts .entry-content {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	.recent-posts .entry-title {
+		font-size: 26px;
+		font-size: 1.625rem;
 	}
 
 	/* Posts */
