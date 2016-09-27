@@ -53,9 +53,7 @@
 			} else {
 				$( '.site-title a, .site-description' ).css( {
 					'clip': 'auto',
-					'position': 'relative'
-				} );
-				$( '.site-title a, .site-description' ).css( {
+					'position': 'relative',
 					'color': to
 				} );
 			}
