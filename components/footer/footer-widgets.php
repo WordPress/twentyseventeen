@@ -28,6 +28,7 @@ if ( is_active_sidebar( 'sidebar-2' ) ||
 			if ( is_active_sidebar( 'sidebar-4' ) ) { ?>
 				<div class="widget-column">
 					<?php dynamic_sidebar( 'sidebar-4' ); ?>
+				</div>
 			<?php } ?>
 		</div><!-- .wrap -->
 	</aside><!-- .widget-area -->
