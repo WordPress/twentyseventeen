@@ -165,20 +165,6 @@ add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
 
 /**
- * Wrap avatars in div for easier styling.
- *
- * @param mix $avatar The avatar.
- */
-function twentyseventeen_get_avatar( $avatar ) {
-	if ( ! is_admin() ) {
-		$avatar = '<span class="avatar-container">' . $avatar . '</span>';
-	}
-	return $avatar;
-}
-add_filter( 'get_avatar', 'twentyseventeen_get_avatar', 10, 5 );
-
-
-/**
  * Output Custom Logo.
  */
 function twentyseventeen_the_custom_logo() {

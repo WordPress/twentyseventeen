@@ -13,28 +13,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif; ?>
-
 	<header class="entry-header">
 		<?php
+			if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php twentyseventeen_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php endif;
+
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
-
-			if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php twentyseventeen_posted_on(); ?>
-				</div><!-- .entry-meta -->
-
-			<?php endif;
 		?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
@@ -55,9 +46,4 @@
 		<?php twentyseventeen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php
-	if ( '' !== get_the_author_meta( 'description' ) ) {
-		get_template_part( 'components/post/biography' );
-	}
-	?>
 </article><!-- #post-## -->
