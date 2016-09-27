@@ -19,9 +19,8 @@
 			$header_image = get_header_image();
 			if ( ! empty( $header_image ) ) : ?>
 
-				<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $header_image ); ?>)">
-					<?php get_template_part( 'components/header/site', 'branding' ); ?>
-				</div><!-- .custom-header-image -->
+				<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $header_image ); ?>)"></div>
+				<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
 			<?php elseif ( has_post_thumbnail() ) :
 				// If not, fall back to front page's featured image
@@ -29,9 +28,8 @@
 				$thumbnail_attributes = wp_get_attachment_image_src( $post_thumbnail_id, 'twentyseventeen-featured-image' );
 				?>
 
-				<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $thumbnail_attributes[0] ); ?>)">
-					<?php get_template_part( 'components/header/site', 'branding' ); ?>
-				</div><!-- .custom-header-image -->
+				<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $thumbnail_attributes[0] ); ?>)"></div>
+				<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
 			<?php else : ?>
 				<?php // Otherwise, show a blank header ?>
