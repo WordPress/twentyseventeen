@@ -17,10 +17,7 @@ function twentyseventeen_posted_on() {
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
 	// Wrap that in a link, and preface it with 'Posted on'
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'twentyseventeen' ),
-		twentyseventeen_time_string()
-	);
+	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_string();
 
 	// Get the author name; wrap it in a link
 	$byline = sprintf(
@@ -28,14 +25,8 @@ function twentyseventeen_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
 	);
 
-	// Check to make sure we have more than one category before writing to page.
-	$categories_list = get_the_category_list( $separate_meta );
-	if ( $categories_list && twentyseventeen_categorized_blog() ) {
-		$categories = sprintf( _x( 'in %1$s', 'prefaces list of categories assigned to the post', 'twentyseventeen' ), $categories_list ); // WPCS: XSS OK.
-	}
-
 	// Finally, let's write all of this to the page
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span><span class="cat-links"> ' . $categories . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 endif;
 
@@ -90,18 +81,22 @@ function twentyseventeen_entry_footer() {
 	/* translators: used between list items, there is a space after the comma */
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
-	// Display Tags for posts
 	if ( 'post' === get_post_type() ) {
+		echo '<span class="cat-tags-links">';
+
+		// Display Categories for posts
+		$categories_list = get_the_category_list( $separate_meta );
+		// Make sure there's more than one category before displaying
+		if ( $categories_list && twentyseventeen_categorized_blog() ) {
+			echo '<span class="cat-links"><span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+		}
+
+		// Display Tags for posts
 		$tags_list = get_the_tag_list( '', $separate_meta );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'twentyseventeen' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo '<span class="tags-links"><span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
 		}
-	}
 
-	// Display link to comments
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'twentyseventeen' ), __( '1 Comment', 'twentyseventeen' ), __( '% Comments', 'twentyseventeen' ) );
 		echo '</span>';
 	}
 
@@ -118,16 +113,11 @@ endif;
  * layout with multiple posts/pages shown gets confusing.
  */
 function twentyseventeen_edit_link( $id ) {
-	if ( is_page() ) {
-		$type = __( 'Page', 'twentyseventeen' );
-	} elseif ( get_post( $id ) ) {
-		$type = __( 'Post', 'twentyseventeen' );
-	}
+
 	$link = edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit %1$s %2$s', 'twentyseventeen' ),
-			$type,
+			__( 'Edit %s', 'twentyseventeen' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',

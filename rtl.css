@@ -119,34 +119,17 @@ li > ol {
 /* Blog Entries */
 
 .entry-footer .cat-links,
-.entry-footer .tags-links,
-.entry-footer .comments-link,
-.entry-footer .edit-link {
-	margin-left: 2em;
+.entry-footer .tags-links {
+	padding-left: 0;
+	padding-right: 2.5em;
+}
+
+.entry-footer .cat-links:before,
+.entry-footer .tags-links:before {
+	left: auto;
+	margin-left: 0.5em;
 	margin-right: 0;
-}
-
-.entry-footer span:last-child {
-	margin-left: 0;
-}
-
-.entry-author .author-avatar {
-	float: right;
-	margin-left: 1em;
-	margin-right: 0;
-}
-
-.entry-author .author-heading,
-.entry-author .author-bio {
-	float: left;
-}
-
-#infinite-handle span {
-	border: 0;
-}
-
-#infinite-handle span:before {
-	display: none;
+	right: 0;
 }
 
 /* Comments */
@@ -174,6 +157,24 @@ li > ol {
 .bypostauthor:before {
 	left: auto;
 	right: 0;
+}
+
+.form-submit {
+    text-align: left;
+}
+
+/* Post Navigation */
+.nav-links .nav-previous .nav-title:before,
+.nav-links .nav-next .nav-title:after {
+	display: none;
+}
+
+.nav-links .nav-previous .nav-title:after {
+	content: "\f429";
+}
+
+.nav-links .nav-next .nav-title:before {
+	content: "\f430";
 }
 
 /* Widgets */
@@ -321,6 +322,11 @@ li > ol {
 		float: left;
 	}
 
+	.entry-footer .edit-link a.post-edit-link {
+		margin-left: 0;
+		margin-right: 1em;
+	}
+
 	.navigation.pagination {
 		float: left;
 	}
@@ -353,6 +359,23 @@ li > ol {
 
 	.comment-metadata {
 		float: left;
+	}
+
+	/* Post Navigation */
+	.nav-links .nav-previous .nav-title:after,
+	.nav-links .nav-next .nav-title:before {
+		color: #222;
+		position: absolute;
+		text-align: center;
+		width: 1.5em;
+	}
+
+	.nav-links .nav-previous .nav-title:after {
+		right: -1.5em;
+	}
+
+	.nav-links .nav-next .nav-title:before {
+		left: -1.5em;
 	}
 
 	/* Footer */
