@@ -225,6 +225,12 @@ li > ol {
 		float: left;
 	}
 
+	.has-sidebar.blog .page-header,
+	.has-sidebar.archive .page-header,
+	.has-sidebar.search .page-header {
+		position: absolute;
+	}
+
 	.error404 #primary {
 		float: none;
 	}
@@ -317,6 +323,10 @@ li > ol {
 
 	.navigation.pagination {
 		float: left;
+	}
+
+	.has-sidebar .navigation.pagination {
+		float: none;
 	}
 
 	.comment-navigation .nav-previous,
