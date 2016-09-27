@@ -100,6 +100,23 @@ li > ol {
 	right: auto;
 }
 
+/* Blog, Archive, Search */
+.prev.page-numbers {
+	float: right;
+}
+
+.prev.page-numbers:before {
+	content: "\f429";
+}
+
+.next.page-numbers {
+	float: left;
+}
+
+.next.page-numbers:before {
+	content: "\f430";
+}
+
 /* Blog Entries */
 
 .entry-footer .cat-links,
@@ -288,6 +305,21 @@ li > ol {
 	/* Front Page - Recent Posts */
 	.panel-content .recent-posts {
 		clear: left;
+		float: left;
+	}
+
+	/* Blog, Archive, Search */
+	body:not(.has-sidebar) .page-title {
+		float: right;
+	}
+
+	.blog:not(.has-sidebar) #primary article,
+	.archive:not(.has-sidebar) #primary article,
+	.search:not(.has-sidebar) #primary article {
+		float: left;
+	}
+
+	.navigation.pagination {
 		float: left;
 	}
 
