@@ -2311,6 +2311,20 @@ article.panel-placeholder {
 		float: none;
 	}
 
+	.has-sidebar.blog .page-header,
+	.has-sidebar.archive .page-header,
+	.has-sidebar.search .page-header {
+		position: absolute;
+		top: 0;
+	}
+
+	.has-sidebar.blog #content .wrap,
+	.has-sidebar.archive #content .wrap,
+	.has-sidebar.search  #content .wrap {
+		padding-top: 5em;
+		position: relative;
+	}
+
 	/* Site Branding */
 	.site-branding {
 		margin-bottom: 70px;
@@ -2692,7 +2706,7 @@ article.panel-placeholder {
 	/* Posts */
 
 	.site-content {
-		padding: 4.5em 0 0;
+		padding: 6.5em 0 0;
 	}
 
 	.comment-navigation,
@@ -2748,7 +2762,7 @@ article.panel-placeholder {
 
 	/* Blog, archive, search */
 
-	body:not(.has-sidebar) .page-title {
+	body:not(.has-sidebar) .page-header {
 		float: left;
 		width: 36%;
 	}
@@ -2771,6 +2785,11 @@ article.panel-placeholder {
 		clear: both;
 		float: right;
 		width: 58%;
+	}
+
+	.has-sidebar .navigation.pagination {
+		float: none;
+		width: 100%;
 	}
 
 	/* Widgets */
