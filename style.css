@@ -1336,7 +1336,6 @@ body {
 	content: "\f429";
 }
 
-
 /* Entry content */
 
 /* Blog landing, search, archives */
@@ -1360,6 +1359,13 @@ body:not(.twentyseventeen-front-page) #comments {
 
 body:not(.twentyseventeen-front-page) .entry-header {
 	padding-top: 0;
+}
+
+/* Single Post */
+
+.single-featured-image-header img {
+	display: block;
+	margin: auto;
 }
 
 /* Entry footer */
