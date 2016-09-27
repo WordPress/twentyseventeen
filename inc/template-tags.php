@@ -19,7 +19,7 @@ function twentyseventeen_posted_on() {
 	// Wrap that in a link, and preface it with 'Posted on'
 	$posted_on = sprintf(
 		_x( 'Posted on %s', 'post date', 'twentyseventeen' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . twentyseventeen_time_string() . '</a>'
+		twentyseventeen_time_string()
 	);
 
 	// Get the author name; wrap it in a link
@@ -57,7 +57,7 @@ function twentyseventeen_time_string() {
 		get_the_modified_date()
 	);
 
-	return $time_string;
+	return '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 }
 endif;
 

@@ -345,6 +345,8 @@ th {
 .site-footer:after,
 .nav-links:before,
 .nav-links:after,
+.pagination:before,
+.pagination:after,
 .comment-author:before,
 .comment-author:after,
 .widget-area:before,
@@ -367,6 +369,7 @@ th {
 .site-content:after,
 .site-footer:after,
 .nav-links:after,
+.pagination:after,
 .comment-author:after,
 .widget-area:after,
 .widget:after,
@@ -527,6 +530,8 @@ q:after {
 .menu-scroll-down:before,
 .menu-item-has-children > a:after,
 .page_item_has_children > a:after,
+.prev.page-numbers:before,
+.next.page-numbers:before,
 .bypostauthor:before {
 	font-family: Genericons;
 	font-size: 1em;
@@ -782,6 +787,8 @@ a:active {
 .entry-footer a:visited,
 .edit-link a,
 .edit-link a:visited,
+.pagination a,
+.pagination a:visited,
 .site-info a,
 .site-info a:visited {
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -821,6 +828,8 @@ a:active {
 .entry-footer a:hover,
 .edit-link a:focus,
 .edit-link a:hover,
+.pagination a:focus,
+.pagination a:hover,
 .site-info a:focus,
 .site-info a:hover {
 	background-color: #767676;
@@ -1203,7 +1212,7 @@ body {
 
 /* Front Page - Recent Posts */
 
-.twentyseventeen-front-page .recent-posts article {
+.panel-content .recent-posts article {
 	border: 0;
 	color: #333;
 	margin-bottom: 3em;
@@ -1213,22 +1222,12 @@ body {
 	margin-bottom: 1.2em;
 }
 
-.recent-posts .entry-title {
+.panel-content .recent-posts .entry-title {
 	font-size: 20px;
 	font-size: 1.25rem;
 	font-weight: 300;
 	letter-spacing: 0;
 	text-transform: none;
-}
-
-.recent-posts .entry-meta {
-	color: #767676;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	padding-bottom: 0.25em;
-	text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
@@ -1253,8 +1252,8 @@ body {
 	margin-bottom: 2.5em;
 }
 
-.entry-header h1,
-.entry-header h2 {
+.panel-content .entry-title,
+.page-title {
 	color: #222;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1274,11 +1273,22 @@ body {
 	transition: color 0.2s;
 }
 
-.entry-meta {
-	color: #aaa;
-}
 .entry-title:not(:first-child) {
 	padding-top: 0;
+}
+
+.entry-meta {
+	color: #767676;
+	font-size: 11px;
+	font-size: 0.6875rem;
+	font-weight: 800;
+	letter-spacing: 0.1818em;
+	padding-bottom: 0.25em;
+	text-transform: uppercase;
+}
+
+.entry-meta a {
+	color: #767676;
 }
 
 .byline,
@@ -1289,6 +1299,50 @@ body {
 .single .byline,
 .group-blog .byline {
 	display: inline;
+}
+
+.pagination {
+	border-top: 1px solid #eee;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	padding: 2em 0 3em;
+	text-align: center;
+}
+
+.page-numbers {
+	padding: 0.5em 1em;
+}
+
+.page-numbers.current {
+	color: #707070;
+}
+
+.prev.page-numbers,
+.next.page-numbers {
+	background-color: #ddd;
+	border-radius: 2px;
+	font-size: 24px;
+	font-size: 1.5rem;
+	line-height: 1;
+	margin-top: -0.3em;
+	padding: 0.25em 0.5em 0.4em;
+}
+
+.prev.page-numbers {
+	float: left;
+}
+
+.prev.page-numbers:before {
+	content: "\f430";
+}
+
+.next.page-numbers {
+	float: right;
+}
+
+.next.page-numbers:before {
+	content: "\f429";
 }
 
 
@@ -2218,24 +2272,14 @@ article.panel-placeholder {
 
 	/* Layout */
 
-	body:not(.twentyseventeen-front-page) #primary {
-		margin: auto;
-		max-width: 700px;
-		width: 64%;
-	}
-
-	body.page-template-full-width-page #primary {
-		float: none;
-		width: 100%;
-	}
-
 	.has-sidebar #primary {
 		float: left;
+		width: 58%;
 	}
 
 	.has-sidebar #secondary {
 		float: right;
-		width: 30%;
+		width: 36%;
 	}
 
 	.error404 #primary {
@@ -2600,14 +2644,21 @@ article.panel-placeholder {
 		width: 58%;
 	}
 
+	.panel-content .recent-posts article {
+		margin-bottom: 4em;
+	}
+
 	.panel-content .recent-posts .entry-header,
 	.panel-content .recent-posts .entry-content {
 		float: none;
-		margin: 0;
 		width: 100%;
 	}
 
-	.recent-posts .entry-title {
+	.panel-content .recent-posts .entry-header {
+		margin-bottom: 1.5em;
+	}
+
+	.panel-content .recent-posts .entry-title {
 		font-size: 26px;
 		font-size: 1.625rem;
 	}
@@ -2616,6 +2667,12 @@ article.panel-placeholder {
 
 	.site-content {
 		padding: 4.5em 0 0;
+	}
+
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
+		clear: both;
 	}
 
 	.comment-navigation .nav-previous,
@@ -2665,11 +2722,29 @@ article.panel-placeholder {
 
 	/* Blog, archive, search */
 
+	body:not(.has-sidebar) .page-title {
+		float: left;
+		width: 36%;
+	}
+
+	.blog:not(.has-sidebar) #primary article,
+	.archive:not(.has-sidebar) #primary article,
+	.search:not(.has-sidebar) #primary article {
+		float: right;
+		width: 58%;
+	}
+
 	.blog .post,
 	.archive .post,
 	.search .post,
 	.search .page {
-		padding-bottom: 5em;
+		padding-bottom: 4em;
+	}
+
+	.navigation.pagination {
+		clear: both;
+		float: right;
+		width: 58%;
 	}
 
 	/* Widgets */
