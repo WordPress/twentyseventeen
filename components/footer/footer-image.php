@@ -2,8 +2,11 @@
 /**
  * Displays footer image from Customizer on front-page.php
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 <?php
 	$footer_image = get_theme_mod( 'twentyseventeen_footer_image' );

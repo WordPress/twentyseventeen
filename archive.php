@@ -1,10 +1,12 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying archive pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 get_header(); ?>

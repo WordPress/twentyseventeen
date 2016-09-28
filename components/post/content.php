@@ -1,11 +1,14 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -1,9 +1,12 @@
 <?php
 /**
- * Displays footer widgets if assigned.
+ * Displays footer widgets if assigned
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 
 <?php

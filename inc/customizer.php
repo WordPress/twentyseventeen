@@ -1,8 +1,10 @@
 <?php
 /**
- * Twenty Seventeen Theme Customizer.
+ * Twenty Seventeen Theme Customizer
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 /**
@@ -23,7 +25,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'description' => __( 'Configure your theme settings', 'twentyseventeen' ),
 	) );
 
-	// Top of site content
+	// Top of site content.
 	$wp_customize->add_section( 'twentyseventeen_top_of_site', array(
 		'title'       => __( 'Header Top Text', 'twentyseventeen' ),
 		'panel'       => 'twentyseventeen_options_panel',
@@ -52,7 +54,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'label'    => __( 'Header Top Text 2', 'twentyseventeen' ),
 	) );
 
-	// Panel 1
+	// Panel 1.
 	$wp_customize->add_section( 'twentyseventeen_panel1', array(
 		'title'           => __( 'Panel 1', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -86,7 +88,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Panel 2
+	// Panel 2.
 	$wp_customize->add_section( 'twentyseventeen_panel2', array(
 		'title'           => __( 'Panel 2', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -120,7 +122,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Panel 3
+	// Panel 3.
 	$wp_customize->add_section( 'twentyseventeen_panel3', array(
 		'title'           => __( 'Panel 3', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -154,7 +156,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Panel 4
+	// Panel 4.
 	$wp_customize->add_section( 'twentyseventeen_panel4', array(
 		'title'           => __( 'Panel 4', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -188,7 +190,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Footer Image
+	// Footer Image.
 	$wp_customize->add_section( 'twentyseventeen_footer_settings', array(
 		'title'	  => __( 'Footer Image', 'twentyseventeen' ),
 		'panel'	  => 'twentyseventeen_options_panel',
@@ -211,7 +213,9 @@ add_action( 'customize_register', 'twentyseventeen_customize_register' );
 
 
 /**
- * Sanitize a numeric value
+ * Sanitize a numeric value.
+ *
+ * @param int $input Numeric input.
  */
 function twentyseventeen_sanitize_numeric_value( $input ) {
 	if ( is_numeric( $input ) ) {
@@ -222,7 +226,9 @@ function twentyseventeen_sanitize_numeric_value( $input ) {
 }
 
 /**
- * Sanitize a radio button
+ * Sanitize a radio button.
+ *
+ * @param array $input Input array of layout choices.
  */
 function twentyseventeen_sanitize_layout( $input ) {
 	$valid = array(

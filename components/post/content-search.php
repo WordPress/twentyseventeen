@@ -1,11 +1,14 @@
 <?php
 /**
- * Template part for displaying results in search pages.
+ * Template part for displaying results in search pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

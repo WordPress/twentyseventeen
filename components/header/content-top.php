@@ -1,4 +1,12 @@
 <?php
+/**
+ * Displays header content top
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ */
+
 $twentyseventeen_header_top_text_1 = get_theme_mod( 'twentyseventeen_header_top_text_1' );
 $twentyseventeen_header_top_text_2 = get_theme_mod( 'twentyseventeen_header_top_text_2' );
 

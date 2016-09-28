@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -9,7 +9,9 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 get_header(); ?>

@@ -1,3 +1,13 @@
+<?php
+/**
+ * Displays Author Bio
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ */
+
+?>
 <div class="entry-author">
 	<div class="author-avatar">
 		<?php
