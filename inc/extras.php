@@ -95,7 +95,7 @@ function twentyseventeen_is_frontpage() {
  */
 function twentyseventeen_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">' . "\n";
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
 	}
 }
 add_action( 'wp_head', 'twentyseventeen_pingback_header' );
