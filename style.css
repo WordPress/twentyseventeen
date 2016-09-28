@@ -760,6 +760,10 @@ a:active {
 .entry-title a:visited,
 .entry-meta a,
 .entry-meta a:visited,
+.page-links a,
+.page-links a:visited,
+.page-links a .page-number,
+.page-links a:visited .page-number,
 .entry-footer a,
 .entry-footer a:visited,
 .entry-footer .cat-links a,
@@ -826,6 +830,8 @@ a:visited .nav-title,
 .entry-title a:hover,
 .entry-meta a:focus,
 .entry-meta a:hover,
+.page-links a:focus .page-number,
+.page-links a:hover .page-number,
 .entry-footer a:focus,
 .entry-footer a:hover,
 .entry-footer .cat-links a:focus,
@@ -1424,6 +1430,27 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .single-featured-image-header img {
 	display: block;
 	margin: auto;
+}
+
+.page-links {
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	padding: 2em 0 3em;
+}
+
+.page-links .page-number {
+	color: #707070;
+	display: inline-block;
+	padding: 0.5em 1em;
+}
+
+.page-links a {
+	display: inline-block;
+}
+
+.page-links a .page-number {
+	color: #222;
 }
 
 /* Entry footer */
