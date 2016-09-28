@@ -48,7 +48,7 @@ global $twentyseventeencounter;
 				<?php
 					/* translators: %s: Name of current post */
 					the_content( sprintf(
-						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentyseventeen' ),
+						__( 'Continue reading %s', 'twentyseventeen' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					) );
 				?>
@@ -60,8 +60,9 @@ global $twentyseventeencounter;
 
 				<?php // Show four most recent posts
 				$recent_posts = new WP_Query( array(
-					'posts_per_page' => 3,
-					'post_status'    => 'publish',
+					'posts_per_page'      => 3,
+					'post_status'         => 'publish',
+					'ignore_sticky_posts' => true
 				) );
 				?>
 
