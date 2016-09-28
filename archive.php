@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
- * @since 1.0.0
+ * @since 1.0
  */
 
 get_header(); ?>
