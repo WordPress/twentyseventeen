@@ -17,7 +17,7 @@ function twentyseventeen_posted_on() {
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
 	// Wrap that in a link, and preface it with 'Posted on'
-	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_string();
+	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_link();
 
 	// Get the author name; wrap it in a link
 	$byline = sprintf(
@@ -31,11 +31,11 @@ function twentyseventeen_posted_on() {
 endif;
 
 
-if ( ! function_exists( 'twentyseventeen_time_string' ) ) :
+if ( ! function_exists( 'twentyseventeen_time_link' ) ) :
 /**
  * Gets a nicely formatted string for the published date
  */
-function twentyseventeen_time_string() {
+function twentyseventeen_time_link() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';

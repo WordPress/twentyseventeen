@@ -14,7 +14,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php echo twentyseventeen_time_string(); ?>
+				<?php echo twentyseventeen_time_link(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
