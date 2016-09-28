@@ -391,6 +391,7 @@ textarea {
 	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
+	font-weight: normal;
 	line-height: 1.66;
 }
 
@@ -538,7 +539,8 @@ q:after {
 .nav-links .nav-next .nav-title:before,
 .nav-links .nav-next .nav-title:after,
 .prev.page-numbers:before,
-.next.page-numbers:before {
+.next.page-numbers:before,
+.search-form .search-submit:before {
 	font-family: Genericons;
 	font-size: 1em;
 	font-style: normal;
@@ -608,6 +610,7 @@ textarea:focus {
 
 select {
 	border: 1px solid #bbb;
+	max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -773,7 +776,12 @@ a:visited .nav-title,
 .pagination a,
 .pagination a:visited,
 .site-info a,
-.site-info a:visited {
+.site-info a:visited,
+.widget .widget-title a,
+.widget .widget-title a:visited,
+.widget ul li a,
+.widget ul li a:visited {
+	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
@@ -822,7 +830,11 @@ a:hover .nav-title,
 .pagination a:focus,
 .pagination a:hover,
 .site-info a:focus,
-.site-info a:hover {
+.site-info a:hover,
+.widget .widget-title a:focus,
+.widget .widget-title a:hover,
+.widget ul li a:focus,
+.widget ul li a:hover {
 	background-color: #767676;
 	color: #fff;
 }
@@ -1180,7 +1192,7 @@ body {
 	top: 100px;
 }
 
-.twentyseventeen-front-page article:not(.has-post-thumbnail) {
+.twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child) {
 	border-top: 1px solid #ddd;
 }
 
@@ -1675,12 +1687,15 @@ h2.widget-title {
 	padding: 0.5em 0;
 }
 
+.widget ul li:last-child {
+	padding-bottom: 0;
+}
+
 .widget ul li + li {
 	margin-top: -1px;
 }
 
 .widget ul li ul {
-	bottom: -.38em;
 	margin: 0 0 -1px;
 	padding: 0;
 	position: relative;
@@ -1688,7 +1703,7 @@ h2.widget-title {
 
 .widget ul li li {
 	border: 0;
-	padding: 6px 0 6px 1.5rem;
+	padding-left: 1.5rem;
 }
 
 /* Widget lists of links */
@@ -1708,8 +1723,13 @@ h2.widget-title {
 .widget_rss_links ul li li,
 .widget-grofile ul.grofile-links li,
 .widget-grofile ul.grofile-links li li {
-	padding-bottom: 0;
-	padding-top: 0;
+	padding-bottom: 0.25em;
+	padding-top: 0.25em;
+}
+
+.widget_rss ul li {
+	padding-bottom: 1.0em;
+	padding-top: 1.0em;
 }
 
 /* widget markup */
@@ -1803,16 +1823,18 @@ h2.widget-title {
 	position: relative;
 }
 
-.search-form input[type="search"] {
-	display: block;
-	padding: 8px;
-	width: 100%;
+.search-form .search-submit {
+	bottom: 3px;
+	padding: 0.5em 1.0em;
+	position: absolute;
+	right: 3px;
+	top: 3px;
 }
 
-.search-form .search-submit {
-	position: absolute;
-	right: 0;
-	top: 0;
+.search-form .search-submit:before {
+	content: "\f400";
+	font-size: 24px;
+	font-size: 1.5rem;
 }
 
 /**
@@ -1836,8 +1858,8 @@ h2.widget-title {
 	margin: 4px 4px 0 0 !important;
 	padding: 4px 10px 5px !important;
 	position: relative;
-	-webkit-transition: border-color 0.2s;
-	transition: border-color 0.2s;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	width: auto;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -2892,6 +2914,13 @@ article.panel-placeholder {
 
 	.nav-links .nav-next .nav-title:after {
 		right: -1.5em;
+	}
+
+	/* Secondary */
+	#secondary {
+		font-size: 14px;
+		font-size: 0.875rem;
+		line-height: 1.6;
 	}
 
 	/* Widgets */
