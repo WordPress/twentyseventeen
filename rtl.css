@@ -1,11 +1,11 @@
 /*
 Theme Name: Twenty Seventeen
 
-Adding support for language written in a Right To Left (RTL) direction is easy -
+Adding support for languages written in a Right To Left (RTL) direction is easy -
 it's just a matter of overwriting all the horizontal positioning attributes
 of your CSS stylesheet in a separate stylesheet file named rtl.css.
 
-https://codex.wordpress.org/Right_to_Left_Languagecomponentsupport
+https://codex.wordpress.org/Right-to-Left_Language_Support
 
 */
 
@@ -28,6 +28,7 @@ th {
 }
 
 /* Typography */
+
 blockquote {
 	border-left: 0;
 	border-right: 4px solid #ddd;
@@ -67,6 +68,7 @@ li > ol {
 }
 
 /* Media */
+
 .mejs-offscreen {
 	right: -10000px;
 }
@@ -127,6 +129,7 @@ li > ol {
 }
 
 /* Comments */
+
 .comment-body {
 	padding-left: 0;
 	padding-right: 100px;
@@ -154,6 +157,7 @@ li > ol {
 }
 
 /* Widgets */
+
 .widget ul {
 	margin: 0;
 }
@@ -175,6 +179,7 @@ li > ol {
 }
 
 /* Customizer styles */
+
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
 	left: 3.2em;
 	right: auto;
@@ -293,6 +298,7 @@ li > ol {
 	}
 
 	/* Footer */
+	
 	.site-footer .widget-column {
 		float: right;
 		margin-left: 5%;
