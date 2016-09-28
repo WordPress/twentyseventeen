@@ -38,18 +38,6 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'twentyseventeen' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'twentyseventeen' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'twentyseventeen' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
@@ -63,10 +51,10 @@ if ( post_password_required() ) {
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'twentyseventeen' ); ?></h2>
 			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'twentyseventeen' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'twentyseventeen' ) ); ?></div>
-
+				<?php paginate_comments_links( array(
+					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
+				) ); ?>
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
 		<?php
