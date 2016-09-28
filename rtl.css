@@ -367,6 +367,40 @@ li > ol {
 		margin-right: 1em;
 	}
 
+	/* Entry content */
+
+	/* with sidebar */
+
+	.has-sidebar .entry-content blockquote.alignleft {
+		margin-left: 0;
+		width: 34%;
+	}
+
+	.has-sidebar .entry-content blockquote.alignright,
+	.has-sidebar .entry-content blockquote.alignright.below-entry-meta {
+		margin-right: 0;
+		width: 34%;
+	}
+
+	.has-sidebar .entry-content blockquote.alignleft.below-entry-meta {
+		margin-left: -72.5%;
+		width: 62%;
+	}
+
+	/* blog index and archive */
+
+	body.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft {
+		margin-left: 0;
+		width: 34%;
+	}
+
+	body.blog:not(.has-sidebar) .entry-content blockquote.alignright,
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignright {
+		margin-right: -72.5%;
+		width: 62%;
+	}
+
 	/* Post formats */
 	.format-quote blockquote:before {
 		left: auto;
@@ -434,5 +468,16 @@ li > ol {
 		float: right;
 		margin-left: 0;
 		margin-right: 6%;
+	}
+}
+
+@media screen and ( min-width: 79em ) {
+	.has-sidebar .entry-content blockquote.alignright {
+		margin-right: -20%;
+	}
+
+	body.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft {
+		margin-left: -20%;
 	}
 }

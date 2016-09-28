@@ -3,12 +3,14 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * Making navigation 'stick'
 	 */
-	var $navigation = $( '.navigation-top' ),
+	var $body = $( 'body' ),
+		$navigation = $( '.navigation-top' ),
 		$branding = $( '.site-branding' ),
 		$navigationHiddenClass = 'site-navigation-hidden',
 		$navigationFixedClass = 'site-navigation-fixed',
 		$headerOffset,
-		$navigationHeight;
+		$navigationHeight,
+		$resizeTimer;
 
 	//we add the scroll class to the navs
 	function adjustScrollClass() {
@@ -46,22 +48,6 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
-	// Let's fire some JavaScript!
-	adjustScrollClass();
-	adjustHeaderHeight();
-
-	// On scroll, we want to stick/unstick the navigation
-	$( window ).on( 'scroll', function() {
-		adjustScrollClass();
-		adjustHeaderHeight();
-	} );
-
-	// Also want to make sure the navigation is where it should be on resize
-	$( window ).resize( function() {
-		setTimeout( adjustScrollClass, 500 );
-		setTimeout( adjustHeaderHeight, 1000 );
-	} );
-
 	/**
 	 * 'Scroll Down' arrow in menu area
 	 */
@@ -75,6 +61,62 @@ jQuery( document ).ready( function( $ ) {
 			duration: 600,
 			offset: { 'top': $menuTop }
 		} );
+	} );
+
+	/**
+	 * Add 'below-entry-meta' class to elements.
+	 */
+	function belowEntryMetaClass( param ) {
+		if ( ! $body.hasClass( 'has-sidebar' ) || (
+				$body.hasClass( 'search' ) ||
+				$body.hasClass( 'single-attachment' ) ||
+				$body.hasClass( 'error404' ) ||
+				$body.hasClass( 'twentyseventeen-front-page'
+			) ) ) {
+			return;
+		}
+
+		var sidebar          	 = $( '#secondary' ),
+			sidebarPos      	 = sidebar.offset(),
+			sidebarPosBottom 	 = sidebarPos.top + ( sidebar.height() + 28 );
+
+		$( '.entry-content' ).find( param ).each( function() {
+			var element              = $( this ),
+				elementPos           = element.offset(),
+				elementPosTop        = elementPos.top;
+
+			// Add 'below-entry-meta' to elements below the entry meta.
+			if ( elementPosTop > sidebarPosBottom ) {
+				element.addClass( 'below-entry-meta' );
+			} else {
+				element.removeClass( 'below-entry-meta' );
+			}
+		} );
+	}
+
+	// Let's fire some JavaScript!
+	adjustScrollClass();
+	adjustHeaderHeight();
+
+	$( document ).ready( function() {
+		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+	} );
+
+	// On scroll, we want to stick/unstick the navigation
+	$( window ).on( 'scroll', function() {
+		adjustScrollClass();
+		adjustHeaderHeight();
+	} );
+
+	// Also want to make sure the navigation is where it should be on resize
+	$( window ).resize( function() {
+		setTimeout( adjustScrollClass, 500 );
+		setTimeout( adjustHeaderHeight, 1000 );
+
+		clearTimeout( $resizeTimer );
+		$resizeTimer = setTimeout( function() {
+			belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+		}, 300 );
 	} );
 
 } );
