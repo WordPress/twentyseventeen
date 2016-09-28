@@ -186,7 +186,7 @@ li > ol {
 }
 
 .search-form .search-submit {
-	left: 0;
+	left: 3px;
 	right: auto;
 }
 
@@ -198,7 +198,8 @@ li > ol {
 }
 
 .widget ul li li {
-	padding: 6px 1.5rem 6px 0;
+	padding-left: 0;
+	padding-right: 1.5rem;
 }
 
 /* Footer */
