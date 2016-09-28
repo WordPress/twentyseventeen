@@ -20,7 +20,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-
 			<?php
 			if ( have_posts() ) :
 
@@ -39,11 +38,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					if ( is_home() && ! is_front_page() ) :
-						get_template_part( 'components/post/content', 'excerpt' );
-					else :
-						get_template_part( 'components/post/content', get_post_format() );
-					endif;
+					get_template_part( 'components/post/content', get_post_format() );
 
 				endwhile;
 

@@ -101,6 +101,11 @@ li > ol {
 }
 
 /* Blog, Archive, Search */
+.sticky:before {
+	left: auto;
+	right: -1.25em;
+}
+
 .prev.page-numbers {
 	float: right;
 }
@@ -165,6 +170,20 @@ li > ol {
     text-align: left;
 }
 
+/* Post Formats */
+
+.format-quote blockquote:before {
+	content: '\f106';
+	left: auto;
+	right: -1.25em;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+
+
 /* Post Navigation */
 .nav-links .nav-previous .nav-title:before,
 .nav-links .nav-next .nav-title:after {
@@ -223,7 +242,7 @@ li > ol {
 		float: none;
 	}
 
-	.has-sidebar #primary {
+	.has-sidebar:not(.error404) #primary {
 		float: right;
 	}
 
@@ -317,19 +336,27 @@ li > ol {
 	}
 
 	/* Blog, Archive, Search */
-	body:not(.has-sidebar) .page-title {
+	body:not(.has-sidebar) .page-header,
+	body.has-sidebar.error404 #primary .page-header {
 		float: right;
 	}
 
 	.blog:not(.has-sidebar) #primary article,
 	.archive:not(.has-sidebar) #primary article,
-	.search:not(.has-sidebar) #primary article {
+	.search:not(.has-sidebar) #primary article,
+	body.has-sidebar.error404 #primary .page-content {
 		float: left;
 	}
 
 	.entry-footer .edit-link a.post-edit-link {
 		margin-left: 0;
 		margin-right: 1em;
+	}
+
+	/* Post formats */
+	.format-quote blockquote:before {
+		left: auto;
+		right: -1.5em;
 	}
 
 	.navigation.pagination {
