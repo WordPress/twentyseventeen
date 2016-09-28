@@ -139,33 +139,46 @@ li > ol {
 
 /* Comments */
 .comment-body {
-	padding-left: 0;
-	padding-right: 100px;
+	margin-left: 0;
+	margin-right: 65px;
 }
 
-.children {
-	padding-left: 0;
-	padding-right: 40px;
+.comment-reply-link:before {
+	-webkit-transform: scale(-1, 1);
+	-moz-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
 }
 
-.comment-author .avatar-container {
-	float: right;
+.comment-author .avatar {
 	left: auto;
-	right: -100px;
+	right: -65px;
 }
 
-.children .comment-author .avatar-container {
+.comment-reply-link:before {
 	left: auto;
-	right: -80px;
+	right: -2em;
 }
 
-.bypostauthor:before {
+.children .comment-author .avatar {
 	left: auto;
-	right: 0;
+	right: -45px;
+}
+
+.bypostauthor > .comment-body > .comment-meta > .comment-author:before {
+	left: auto;
+	right: -65px;
+	margin: -6px -6px 0 0;
+}
+
+.children .bypostauthor > .comment-body > .comment-meta > .comment-author:before {
+	left: auto;
+	right: -45px
 }
 
 .form-submit {
-    text-align: left;
+	text-align: left;
 }
 
 /* Post Formats */
@@ -340,7 +353,8 @@ li > ol {
 	.blog:not(.has-sidebar) #primary article,
 	.archive:not(.has-sidebar) #primary article,
 	.search:not(.has-sidebar) #primary article,
-	body.has-sidebar.error404 #primary .page-content {
+	.has-sidebar.error404 #primary .page-content,
+	.error404.has-sidebar #primary .page-content {
 		float: left;
 	}
 
@@ -363,31 +377,22 @@ li > ol {
 		float: none;
 	}
 
-	.comment-navigation .nav-previous,
-	.posts-navigation .nav-previous,
 	.post-navigation .nav-previous {
 		float: right;
 	}
 
-	.comment-navigation .nav-next,
-	.posts-navigation .nav-next,
 	.post-navigation .nav-next {
 		float: left;
 		text-align: left;
 	}
 
-	.comment-list .children {
-		margin-left: 0;
-		margin-right: 30px;
+	/* Comments */
+
+	ol.children .children {
+		padding-left: 0;
+		padding-right: 2em;
 	}
 
-	.comment-author {
-		float: right;
-	}
-
-	.comment-metadata {
-		float: left;
-	}
 
 	/* Post Navigation */
 	.nav-links .nav-previous .nav-title:after,
