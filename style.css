@@ -1341,7 +1341,8 @@ body {
 }
 
 .page .panel-content .entry-title,
-.page-title {
+.page-title,
+.page:not(.twentyseventeen-front-page) .entry-title {
 	color: #222;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1474,8 +1475,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 /* Single Post */
 
-.single-post:not(.has-sidebar) #primary,
-.page:not(.has-sidebar):not(.twentyseventeen-front-page) #primary {
+.single-post:not(.has-sidebar) #primary
+/*, .page:not(.has-sidebar):not(.twentyseventeen-front-page) #primary */ {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 740px;
@@ -3014,16 +3015,18 @@ article.panel-placeholder {
 	}
 
 	body:not(.has-sidebar) .page-header,
-	body.has-sidebar.error404 #primary .page-header {
+	body.has-sidebar.error404 #primary .page-header,
+	body.page:not(.twentyseventeen-front-page) #primary .entry-header {
 		float: left;
-		width: 36%;
+		width: 36%;.page:not(.has-sidebar):not(.twentyseventeen-front-page) #primary
 	}
 
 	.blog:not(.has-sidebar) #primary article,
 	.archive:not(.has-sidebar) #primary article,
 	.search:not(.has-sidebar) #primary article,
 	.error404:not(.has-sidebar) #primary .page-content,
-	.error404.has-sidebar #primary .page-content {
+	.error404.has-sidebar #primary .page-content,
+	body.page:not(.twentyseventeen-front-page) #primary .entry-content {
 		float: right;
 		width: 58%;
 	}
@@ -3101,13 +3104,15 @@ article.panel-placeholder {
 	/* blog and archive */
 
 	body.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft {
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
+	body.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignleft {
 		margin-left: -72.5%;
 		width: 62%;
 	}
 
 	body.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	body.archive:not(.has-sidebar) .entry-content blockquote.alignright {
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignright,
+	body.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignright {
 		margin-right: 0;
 		width: 36%;
 	}
@@ -3250,7 +3255,8 @@ article.panel-placeholder {
 	}
 
 	body.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	body.archive:not(.has-sidebar) .entry-content blockquote.alignright {
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignright,
+	body.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignright {
 		margin-right: -20%;
 	}
 }
