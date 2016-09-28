@@ -544,11 +544,13 @@ q:after {
 .prev.page-numbers:before,
 .next.page-numbers:before,
 .search-form .search-submit:before {
-	font-family: Genericons;
+	display: inline-block;
+	font-family: "Genericons";
 	font-size: 1em;
 	font-style: normal;
 	font-weight: normal;
 	line-height: 1;
+	speak: none;
 	text-decoration: none;
 	vertical-align: text-bottom;
 	-webkit-font-smoothing: antialiased;
@@ -1002,7 +1004,9 @@ body {
 }
 
 .custom-header-image {
+	background-color: #333;
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	height: 0;
 	padding-top: 66%;
@@ -1194,7 +1198,9 @@ body {
 }
 
 .panel-image {
+	background-color: #333;
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 }
@@ -1239,7 +1245,7 @@ body {
 
 /* Front Page - Recent Posts */
 
-.panel-content .recent-posts article {
+.twentyseventeen-front-page .panel-content .recent-posts article {
 	border: 0;
 	color: #333;
 	margin-bottom: 3em;
@@ -1393,6 +1399,15 @@ body {
 }
 
 /* Entry content */
+
+/* Aligned blockquotes */
+.entry-content blockquote.alignleft,
+.entry-content blockquote.alignright {
+	color: #666;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	width: 48%
+}
 
 /* Blog landing, search, archives */
 
@@ -2205,10 +2220,9 @@ h2.widget-title {
 --------------------------------------------------------------*/
 
 img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
+	height: auto; /* Make sure images are scaled correctly. */
+	width: inherit;  /* Make images fill their parent's space. Solves IE8. */
+	max-width: 100%; /* Adhere to container width. */
 }
 
 .page-content .wp-smiley,
@@ -3028,6 +3042,50 @@ article.panel-placeholder {
 		margin-left: 1em;
 	}
 
+	/* Entry content */
+
+	/* without sidebar */
+	body:not( .has-sidebar ) .entry-content blockquote.alignleft {
+		margin-left: -17.5%;
+		width: 48%;
+	}
+
+	body:not( .has-sidebar ) .entry-content blockquote.alignright {
+		margin-right: -17.5%;
+		width: 48%;
+	}
+
+	/* with sidebar */
+
+	.has-sidebar .entry-content blockquote.alignleft {
+		margin-left: 0;
+		width: 34%;
+	}
+
+	.has-sidebar .entry-content blockquote.alignright {
+		margin-right: 0;
+		width: 34%;
+	}
+
+	.has-sidebar .entry-content blockquote.alignright.below-entry-meta {
+		margin-right: -72.5%;
+		width: 62%;
+	}
+
+	/* blog and archive */
+
+	body.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft {
+		margin-left: -72.5%;
+		width: 62%;
+	}
+
+	body.blog:not(.has-sidebar) .entry-content blockquote.alignright,
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignright {
+		margin-right: 0;
+		width: 36%;
+	}
+
 	/* Post formats */
 	.format-quote blockquote:before {
 		font-size: 32px;
@@ -3157,5 +3215,16 @@ article.panel-placeholder {
 	/* Comments */
 	.comment-body {
 		margin-left: 0;
+	}
+}
+
+@media screen and ( min-width: 79em ) {
+	.has-sidebar .entry-content blockquote.alignleft {
+		margin-left: -20%;
+	}
+
+	body.blog:not(.has-sidebar) .entry-content blockquote.alignright,
+	body.archive:not(.has-sidebar) .entry-content blockquote.alignright {
+		margin-right: -20%;
 	}
 }
