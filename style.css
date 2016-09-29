@@ -1430,6 +1430,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding-top: 0;
 }
 
+.taxonomy-description {
+	color: #666;
+	font-size: 13px;
+	font-size: 0.8125rem;
+}
+
 /* Single Post */
 
 .single-post:not(.has-sidebar) #primary,
@@ -2531,6 +2537,14 @@ article.panel-placeholder {
 		margin-bottom: 0;
 	}
 
+	/* Blog Index, Archive, Search */
+
+	.taxonomy-description {
+		font-size: 14px;
+		font-size: 0.875rem;
+	}
+
+
 	/* Site Footer */
 
 	.site-footer {
@@ -2578,22 +2592,6 @@ article.panel-placeholder {
 
 	.error404 #primary {
 		float: none;
-	}
-
-	.has-sidebar.blog .page-header,
-	.has-sidebar.archive .page-header,
-	.has-sidebar.search .page-header,
-	.has-sidebar.page .entry-header {
-		position: absolute;
-		top: 0;
-	}
-
-	.has-sidebar.blog #content .wrap,
-	.has-sidebar.archive #content .wrap,
-	.has-sidebar.search  #content .wrap,
-	.has-sidebar.page #content .wrap {
-		padding-top: 5em;
-		position: relative;
 	}
 
 	/* Site Branding */
