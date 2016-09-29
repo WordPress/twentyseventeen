@@ -351,7 +351,7 @@ li > ol {
 		float: right;
 	}
 
-	.blog:not(.has-sidebar) #primary article,
+	.blog:not(.has-sidebar):not(.home) #primary article,
 	.archive:not(.has-sidebar) #primary article,
 	.search:not(.has-sidebar) #primary article,
 	.has-sidebar.error404 #primary .page-content,
@@ -374,29 +374,29 @@ li > ol {
 		width: 34%;
 	}
 
-	.has-sidebar .entry-content blockquote.alignright,
-	.has-sidebar .entry-content blockquote.alignright.below-entry-meta {
+	.has-sidebar #primary .entry-content blockquote.alignright,
+	.has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
 		margin-right: 0;
 		width: 34%;
 	}
 
-	.has-sidebar .entry-content blockquote.alignleft.below-entry-meta {
+	.has-sidebar #primary .entry-content blockquote.alignleft.below-entry-meta {
 		margin-left: -72.5%;
 		width: 62%;
 	}
 
 	/* blog index and archive */
 
-	body.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	body.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignleft {
+	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
+	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
+	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignleft {
 		margin-left: 0;
 		width: 34%;
 	}
 
-	body.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	body.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	body.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignright {
+	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignright,
+	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
+	.page-two-column #primary .entry-content blockquote.alignright {
 		margin-right: -72.5%;
 		width: 62%;
 	}
@@ -471,13 +471,14 @@ li > ol {
 }
 
 @media screen and ( min-width: 79em ) {
-	.has-sidebar .entry-content blockquote.alignright {
+	.has-sidebar #primary .entry-content blockquote.alignright,
+	.has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
 		margin-right: -20%;
 	}
 
-	body.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	body.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	body.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignleft {
+	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
+	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
+	.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignleft {
 		margin-left: -20%;
 	}
 }
