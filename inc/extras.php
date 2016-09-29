@@ -73,7 +73,7 @@ function twentyseventeen_panel_count() {
 	$panel_count = 0;
 
 	foreach ( $panels as $panel ) {
-		if ( get_theme_mod( 'twentyseventeen_panel' . $panel ) ) {
+		if ( get_theme_mod( 'twentyseventeen_panel_' . $panel ) ) {
 			$panel_count++;
 		}
 	}
