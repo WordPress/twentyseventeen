@@ -14,3 +14,6 @@ Version 1.0:
 @mrahmadawais
 @Hardeepasrani
 @implenton
+@acmethemes
+@claudiosanches
+@valeriutihai
