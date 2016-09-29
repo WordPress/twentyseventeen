@@ -51,9 +51,11 @@
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title, .site-description' ).css( {
 					'clip': 'auto',
-					'position': 'relative',
+					'position': 'relative'
+				} );
+				$( '.site-branding, .site-branding a, .site-description, .site-description a' ).css( {
 					'color': to
 				} );
 			}
