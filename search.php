@@ -12,16 +12,20 @@
 
 get_header(); ?>
 <div class="wrap">
-	<section id="primary" class="content-area">
+
+	<header class="page-header">
+		<?php if ( have_posts() ) : ?>
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		<?php else : ?>
+			<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
+		<?php endif; ?>
+	</header>
+
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-			<?php
+		if ( have_posts() ) :
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -39,14 +43,16 @@ get_header(); ?>
 				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
 			) );
 
-		else :
+		else : ?>
 
-			get_template_part( 'components/post/content', 'none' );
+			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentyseventeen' ); ?></p>
+			<?php
+				get_search_form();
 
 		endif; ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 <?php

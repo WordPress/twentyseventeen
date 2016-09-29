@@ -1,0 +1,74 @@
+/*
+Theme Name: Twenty Seventeen
+Description: IE8 specific style.
+*/
+
+
+h1 {
+	font-size: 30px;
+	font-size: 1.875rem;
+}
+
+h2,
+.page .panel-content .recent-posts .entry-title {
+	font-size: 26px;
+	font-size: 1.625rem;
+}
+
+h3 {
+	font-size: 22px;
+	font-size: 1.375rem;
+}
+
+h4 {
+	font-size: 18px;
+	font-size: 1.125rem;
+}
+
+h5 {
+	font-size: 13px;
+	font-size: 0.8125rem;
+}
+
+h6 {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+/* Front Page */
+
+.custom-header-image {
+	height: 1000px;
+	padding-bottom: 0;
+}
+
+.page .panel-content .entry-title,
+.page-title,
+.page .entry-title {
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+/* Posts */
+
+time.updated {
+	display: none;
+}
+
+time.published {
+	display: inline-block;
+}
+
+.blog .entry-title {
+	padding-top: 0;
+}
+
+.blog .post,
+.archive .post,
+.search .post,
+.search .page {
+    padding-bottom: 4em;
+}
