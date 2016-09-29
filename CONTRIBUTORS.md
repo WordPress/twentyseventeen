@@ -19,3 +19,4 @@ Version 1.0:
 @valeriutihai
 @pressionate
 @SGr33n
+@doughamlin
