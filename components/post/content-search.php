@@ -1,11 +1,14 @@
 <?php
 /**
- * Template part for displaying results in search pages.
+ * Template part for displaying results in search pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -17,12 +20,12 @@
 				<?php twentyseventeen_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header>
+	</header><!-- .entry-header -->
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-	</div>
+	</div><!-- .entry-summary -->
 	<footer class="entry-footer">
 		<?php twentyseventeen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-</article>
+</article><!-- #post-## -->

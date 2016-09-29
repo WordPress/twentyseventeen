@@ -1,10 +1,12 @@
 <?php
 /**
- * Twenty Seventeen functions and definitions.
+ * Twenty Seventeen functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 if ( ! function_exists( 'twentyseventeen_setup' ) ) :
@@ -46,10 +48,10 @@ function twentyseventeen_setup() {
 
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'top'     => __( 'Top', 'twentyseventeen' ),
-		'social'  => __( 'Social Links Menu', 'twentyseventeen' ),
+		'top'    => __( 'Top', 'twentyseventeen' ),
+		'social' => __( 'Social Links Menu', 'twentyseventeen' ),
 	) );
 
 	/*
@@ -70,10 +72,10 @@ function twentyseventeen_setup() {
 		'default-image' => '',
 	) ) );
 
-	// Add theme support for Custom Logo
+	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
-		'height'      => 400,
-		'width'       => 2400,
+		'height'     => 400,
+		'width'      => 2400,
 		'flex-width' => true,
 	) );
 }
@@ -100,13 +102,15 @@ add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
 function twentyseventeen_fonts_url() {
 	$fonts_url = '';
 
-	/* Translators: If there are characters in your language that are not
+	/*
+	* Translators: If there are characters in your language that are not
 	* supported by Work Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$work_sans = _x( 'on', 'work_sans font: on or off', 'twentyseventeen' );
 
-	/* Translators: If there are characters in your language that are not
+	/*
+	* Translators: If there are characters in your language that are not
 	* supported by Karla, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
@@ -184,7 +188,9 @@ add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
 
 /**
- * Wrap avatars in div for easier styling
+ * Wrap avatars in div for easier styling.
+ *
+ * @param mix $avatar The avatar.
  */
 function twentyseventeen_get_avatar( $avatar ) {
 	if ( ! is_admin() ) {
@@ -196,7 +202,7 @@ add_filter( 'get_avatar', 'twentyseventeen_get_avatar', 10, 5 );
 
 
 /**
- * Output Custom Logo
+ * Output Custom Logo.
  */
 function twentyseventeen_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {
@@ -231,7 +237,7 @@ function twentyseventeen_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Scroll effects (only loaded on front page)
+	// Scroll effects (only loaded on front page).
 	if ( twentyseventeen_is_frontpage() ) {
 		wp_enqueue_script( 'scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '20151030', true );
 	}

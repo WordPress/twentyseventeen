@@ -1,11 +1,14 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,7 +17,7 @@
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
 			</a>
-		</div>
+		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
 	<header class="entry-header">
@@ -32,7 +35,7 @@
 
 			<?php endif;
 		?>
-	</header>
+	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -46,7 +49,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div>
+	</div><!-- .entry-content -->
 	<footer class="entry-footer">
 		<?php twentyseventeen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

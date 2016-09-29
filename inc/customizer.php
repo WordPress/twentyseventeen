@@ -1,8 +1,10 @@
 <?php
 /**
- * Twenty Seventeen Theme Customizer.
+ * Twenty Seventeen Theme Customizer
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 /**
@@ -19,15 +21,15 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	 * Add the Theme Options section
 	 */
 	$wp_customize->add_panel( 'twentyseventeen_options_panel', array(
-		'title'          => __( 'Theme Options', 'twentyseventeen' ),
-		'description'    => __( 'Configure your theme settings', 'twentyseventeen' ),
+		'title'       => __( 'Theme Options', 'twentyseventeen' ),
+		'description' => __( 'Configure your theme settings', 'twentyseventeen' ),
 	) );
 
-	// Top of site content
+	// Top of site content.
 	$wp_customize->add_section( 'twentyseventeen_top_of_site', array(
-		'title'           => __( 'Header Top Text', 'twentyseventeen' ),
-		'panel'           => 'twentyseventeen_options_panel',
-		'description'	  => __( 'Add a short bit of content to the top of your website.', 'twentyseventeen' ),
+		'title'       => __( 'Header Top Text', 'twentyseventeen' ),
+		'panel'       => 'twentyseventeen_options_panel',
+		'description' => __( 'Add a short bit of content to the top of your website.', 'twentyseventeen' ),
 	) );
 
 	$wp_customize->add_setting( 'twentyseventeen_header_top_text_1', array(
@@ -35,10 +37,10 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'twentyseventeen_header_top_text_1', array(
-		'section'		=> 'twentyseventeen_top_of_site',
-		'type'			=> 'textarea',
-		'priority'		=> 1,
-		'label'         => __( 'Header Top Text 1', 'twentyseventeen' ),
+		'section'  => 'twentyseventeen_top_of_site',
+		'type'     => 'textarea',
+		'priority' => 1,
+		'label'    => __( 'Header Top Text 1', 'twentyseventeen' ),
 	) );
 
 	$wp_customize->add_setting( 'twentyseventeen_header_top_text_2', array(
@@ -46,13 +48,13 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'twentyseventeen_header_top_text_2', array(
-		'section'		=> 'twentyseventeen_top_of_site',
-		'type'			=> 'textarea',
-		'priority'		=> 1,
-		'label'			=> __( 'Header Top Text 2', 'twentyseventeen' ),
+		'section'  => 'twentyseventeen_top_of_site',
+		'type'     => 'textarea',
+		'priority' => 1,
+		'label'    => __( 'Header Top Text 2', 'twentyseventeen' ),
 	) );
 
-	// Panel 1
+	// Panel 1.
 	$wp_customize->add_section( 'twentyseventeen_panel1', array(
 		'title'           => __( 'Panel 1', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -86,7 +88,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Panel 2
+	// Panel 2.
 	$wp_customize->add_section( 'twentyseventeen_panel2', array(
 		'title'           => __( 'Panel 2', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -120,7 +122,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Panel 3
+	// Panel 3.
 	$wp_customize->add_section( 'twentyseventeen_panel3', array(
 		'title'           => __( 'Panel 3', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -154,7 +156,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Panel 4
+	// Panel 4.
 	$wp_customize->add_section( 'twentyseventeen_panel4', array(
 		'title'           => __( 'Panel 4', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
@@ -188,7 +190,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Footer Image
+	// Footer Image.
 	$wp_customize->add_section( 'twentyseventeen_footer_settings', array(
 		'title'	  => __( 'Footer Image', 'twentyseventeen' ),
 		'panel'	  => 'twentyseventeen_options_panel',
@@ -196,14 +198,14 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('twentyseventeen_footer_image', array(
-		'transport'			=> 'refresh',
+		'transport'         => 'refresh',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,
 		'twentyseventeen_footer_image', array(
-		'label'		=> __( 'Footer Image', 'twentyseventeen' ),
-		'section'	=> 'twentyseventeen_footer_settings',
+		'label'       => __( 'Footer Image', 'twentyseventeen' ),
+		'section'     => 'twentyseventeen_footer_settings',
 		'description' => __( 'Add an image to be displayed at the bottom of the Front Page template, above the footer.', 'twentyseventeen' ),
 	) ) );
 }
@@ -211,18 +213,22 @@ add_action( 'customize_register', 'twentyseventeen_customize_register' );
 
 
 /**
- * Sanitize a numeric value
+ * Sanitize a numeric value.
+ *
+ * @param int $input Numeric input.
  */
 function twentyseventeen_sanitize_numeric_value( $input ) {
 	if ( is_numeric( $input ) ) {
 		return intval( $input );
-	} else {
-		return 0;
 	}
+
+	return 0;
 }
 
 /**
- * Sanitize a radio button
+ * Sanitize a radio button.
+ *
+ * @param array $input Input array of layout choices.
  */
 function twentyseventeen_sanitize_layout( $input ) {
 	$valid = array(
@@ -232,9 +238,9 @@ function twentyseventeen_sanitize_layout( $input ) {
 
 	if ( array_key_exists( $input, $valid ) ) {
 		return $input;
-	} else {
-		return '';
 	}
+
+	return '';
 }
 
 /**

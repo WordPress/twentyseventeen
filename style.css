@@ -38,13 +38,17 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Media
 	## Galleries
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
-# Normalize
+# Normalize v 4.2.0
+@link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
+
 html {
 	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
+	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -53,57 +57,11 @@ body {
 
 article,
 aside,
-details,
-figcaption,
-figure,
 footer,
 header,
-main,
-menu,
 nav,
-section,
-summary {
+section {
 	display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	vertical-align: baseline;
-}
-
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-
-[hidden],
-template {
-	display: none;
-}
-
-a {
-	background-color: transparent;
-}
-
-a:active,
-a:hover {
-	outline: 0;
-}
-
-abbr[title] {
-	border-bottom: 1px dotted;
-}
-
-b,
-strong {
-	font-weight: bold;
-}
-
-dfn {
-	font-style: italic;
 }
 
 h1 {
@@ -111,8 +69,66 @@ h1 {
 	margin: 0.67em 0;
 }
 
+figcaption,
+figure,
+main {
+	display: block;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+	outline-width: 0;
+}
+
+abbr[title] {
+	border-bottom: none
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+b,
+strong {
+	font-weight: inherit;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+dfn {
+	font-style: italic;
+}
+
 mark {
-	background: #ff0;
+	background-color: #ff0;
 	color: #000;
 }
 
@@ -128,41 +144,30 @@ sup {
 	vertical-align: baseline;
 }
 
-sup {
-	top: -0.5em;
-}
-
 sub {
 	bottom: -0.25em;
 }
 
+sup {
+	top: -0.5em;
+}
+
+audio,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
 img {
-	border: 0;
+	border-style: none;
 }
 
 svg:not(:root) {
 	overflow: hidden;
-}
-
-figure {
-	margin: 0;
-}
-
-hr {
-	box-sizing: content-box;
-	height: 0;
-}
-
-pre {
-	overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
 }
 
 button,
@@ -170,13 +175,14 @@ input,
 optgroup,
 select,
 textarea {
-	border-radius: 0;
-	color: inherit;
-	font: inherit;
+	font-family: sans-serif;
+	font-size: 100%;
+	line-height: 1.15;
 	margin: 0;
 }
 
-button {
+button,
+input {
 	overflow: visible;
 }
 
@@ -186,47 +192,27 @@ select {
 }
 
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
 	-webkit-appearance: button;
-	cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-	cursor: default;
 }
 
 button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
 	padding: 0;
 }
 
-input {
-	line-height: normal;
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-input[type="search"] {
-	-webkit-appearance: none;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
 
 fieldset {
 	border: 1px solid #c0c0c0;
@@ -235,37 +221,76 @@ fieldset {
 }
 
 legend {
-	border: 0;
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
 	padding: 0;
+	white-space: normal;
+}
+
+progress {
+	display: inline-block;
+	vertical-align: baseline;
 }
 
 textarea {
 	overflow: auto;
 }
 
-optgroup {
-	font-weight: bold;
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
 }
 
-td,
-th {
-	border: 1px solid #ddd;
-	padding: 0.5em;
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
 }
 
-th {
-	text-align: left;
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+details,
+menu {
+	display: block;
+}
+
+summary {
+	display: list-item;
+}
+
+canvas {
+	display: inline-block;
+}
+
+template {
+	display: none;
+}
+
+[hidden] {
+	display: none;
 }
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers. */
+
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -295,6 +320,7 @@ th {
 }
 
 /* Do not show the outline on the skip link target. */
+
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
@@ -302,6 +328,7 @@ th {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -324,6 +351,7 @@ th {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -368,6 +396,7 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -517,6 +546,7 @@ q:after {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -588,6 +618,7 @@ textarea {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -626,6 +657,7 @@ input[type="submit"]:focus,
 /*--------------------------------------------------------------
 # Formattings
 --------------------------------------------------------------*/
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -636,6 +668,7 @@ hr {
 /*--------------------------------------------------------------
 # Lists
 --------------------------------------------------------------*/
+
 ul,
 ol {
 	margin: 0 0 1.5em 3em;
@@ -667,6 +700,7 @@ dd {
 /*--------------------------------------------------------------
 # Tables
 --------------------------------------------------------------*/
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -686,6 +720,7 @@ table {
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
+
 a,
 a:visited {
 	color: #999;
@@ -797,6 +832,7 @@ a:active {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+
 html {
 	box-sizing: border-box;
 }
@@ -847,6 +883,7 @@ body {
 }
 
 /* Header top */
+
 .header-top {
 	background-color: #29292a;
 	color: #fff;
@@ -886,6 +923,7 @@ body {
 }
 
 /* Site branding */
+
 .site-branding {
 	color: #fff;
 	text-align: center;
@@ -998,6 +1036,7 @@ body:not(.no-header-image) .custom-header-image:before,
 }
 
 /* Small menu. */
+
 .menu-toggle {
 	background-color: transparent;
 	border: 1px solid rgba(255,255,255,0.2);
@@ -1215,6 +1254,7 @@ body:not(.no-header-image) .custom-header-image:before,
 }
 
 /* Entry footer */
+
 .entry-footer .cat-links,
 .entry-footer .tags-links,
 .entry-footer .comments-link,
@@ -1320,6 +1360,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /*--------------------------------------------------------------
 ## Pages
 --------------------------------------------------------------*/
+
 .page-header {
 	padding-bottom: 2em;
 }
@@ -1442,6 +1483,7 @@ h2.widget-title {
 }
 
 /* widget forms */
+
 .widget input:not([type="button"], [type="submit"], [type="reset"]),
 .widget select,
 .widget textarea {
@@ -1450,6 +1492,7 @@ h2.widget-title {
 
 
 /* widget lists */
+
 .widget ul {
 	list-style: none;
 	margin: 0;
@@ -1866,6 +1909,7 @@ h2.widget-title {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
+
 img {
 	height: auto;
 	/* Make sure images are scaled correctly. */
@@ -1883,6 +1927,7 @@ img {
 }
 
 /* Make sure embeds and iframes fit their containers. */
+
 embed,
 iframe,
 object {
@@ -1912,6 +1957,7 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -1963,7 +2009,9 @@ object {
 /*--------------------------------------------------------------
 # Customizer
 --------------------------------------------------------------*/
+
 /* Hide this until we're in the Customizer */
+
 .twentyseventeen-panel-title {
 	display: none;
 }
@@ -2045,6 +2093,7 @@ object {
 }
 
 /* Add a highlight class to improve Customizer behaviour */
+
 @-webkit-keyframes flash {
 	0%,
 	20%,
@@ -2125,6 +2174,7 @@ article.panel-placeholder {
 @media screen and (min-width: 60em) {
 
 	/* Typography */
+
 	h1 {
 		font-size: 34px;
 		font-size: 2.125rem;
@@ -2182,6 +2232,7 @@ article.panel-placeholder {
 	}
 
 	/* Site branding */
+
 	.header-top .wrap {
 		padding: 1em;
 	}
@@ -2226,6 +2277,7 @@ article.panel-placeholder {
 	}
 
 	/* Header */
+
 	.header-top {
 		left: 0;
 		position: absolute;
@@ -2334,6 +2386,7 @@ article.panel-placeholder {
 	}
 
 	/* One Column */
+
 	.one-column .wrap {
 		padding-left: 1em;
 		padding-right: 1em;
@@ -2367,6 +2420,7 @@ article.panel-placeholder {
 	}
 
 	/* Two Column */
+
 	.two-column .panel-content .entry-content {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
@@ -2377,6 +2431,7 @@ article.panel-placeholder {
 	}
 
 	/* Main Navigation */
+
 	.menu-toggle {
 		display: none;
 	}
@@ -2508,7 +2563,7 @@ article.panel-placeholder {
 	}
 
 	.main-navigation ul ul a {
-	    padding: 0.75em 1.25em;
+		padding: 0.75em 1.25em;
 		width: 250px;
 	}
 
@@ -2576,6 +2631,7 @@ article.panel-placeholder {
 	}
 
 	/* Posts */
+
 	.site-content {
 		padding: 4.5em 0 0;
 	}
@@ -2635,6 +2691,7 @@ article.panel-placeholder {
 	}
 
 	/* Footer */
+
 	.footer-image {
 		background-attachment: fixed;
 		height: 100vh;

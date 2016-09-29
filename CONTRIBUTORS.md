@@ -6,3 +6,11 @@ Version 1.0:
 @laurelfulford
 @davidakennedy
 @grapplerulrich
+@manishsongirkar36
+@joefusco
+@smyoon315
+@B-07
+@rabmalin
+@mrahmadawais
+@Hardeepasrani
+@implenton

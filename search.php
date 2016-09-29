@@ -1,10 +1,12 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying search results pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  * @version 1.0.0
  */
 
@@ -18,7 +20,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header>
+			</header><!-- .page-header -->
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -40,8 +42,8 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main>
-	</section>
+		</main><!-- #main -->
+	</section><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 <?php

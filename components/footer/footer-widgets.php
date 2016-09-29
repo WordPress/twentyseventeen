@@ -1,9 +1,12 @@
 <?php
 /**
- * Displays footer widgets if assigned.
+ * Displays footer widgets if assigned
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
+
 ?>
 
 <?php
@@ -28,8 +31,9 @@ if ( is_active_sidebar( 'sidebar-2' ) ||
 			if ( is_active_sidebar( 'sidebar-4' ) ) { ?>
 				<div class="widget-column">
 					<?php dynamic_sidebar( 'sidebar-4' ); ?>
+				</div>
 			<?php } ?>
-		</div>
+		</div><!-- .wrap -->
 	</aside><!-- .widget-area -->
 
 <?php endif; ?>
