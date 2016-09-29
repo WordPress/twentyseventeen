@@ -930,7 +930,7 @@ body {
 .wrap {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1000px;
+	max-width: 700px;
 	padding-left: 2em;
 	padding-right: 2em;
 }
@@ -2547,6 +2547,10 @@ article.panel-placeholder {
 
 	/* Layout */
 
+	.wrap {
+		max-width: 1000px;
+	}
+
 	.has-sidebar:not(.error404) #primary {
 		float: left;
 		width: 58%;
@@ -3046,7 +3050,8 @@ article.panel-placeholder {
 		width: 58%;
 	}
 
-	.has-sidebar .navigation.pagination {
+	.has-sidebar .navigation.pagination,
+	.home.blog:not(.has-sidebar) .navigation.pagination {
 		float: none;
 		width: 100%;
 	}
@@ -3076,12 +3081,12 @@ article.panel-placeholder {
 	/* Entry content */
 
 	/* without sidebar */
-	body:not( .has-sidebar ) .entry-content blockquote.alignleft {
+	:not( .has-sidebar ) .entry-content blockquote.alignleft {
 		margin-left: -17.5%;
 		width: 48%;
 	}
 
-	body:not( .has-sidebar ) .entry-content blockquote.alignright {
+	:not( .has-sidebar ) .entry-content blockquote.alignright {
 		margin-right: -17.5%;
 		width: 48%;
 	}
@@ -3106,6 +3111,7 @@ article.panel-placeholder {
 	/* blog and archive */
 
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
+	.twentyseventeen-front-page .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignleft {
 		margin-left: -72.5%;
@@ -3113,6 +3119,7 @@ article.panel-placeholder {
 	}
 
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignright,
+	.twentyseventeen-front-page .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignright {
 		margin-right: 0;
@@ -3258,7 +3265,7 @@ article.panel-placeholder {
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignright {
+	.page:not(.has-sidebar) .entry-content blockquote.alignright {
 		margin-right: -20%;
 	}
 }

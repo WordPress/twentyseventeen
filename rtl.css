@@ -392,6 +392,7 @@ li > ol {
 	/* blog index and archive */
 
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
+	.twentyseventeen-front-page .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignleft {
 		margin-left: 0;
@@ -399,6 +400,7 @@ li > ol {
 	}
 
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignright,
+	.twentyseventeen-front-page #primary .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column #primary .entry-content blockquote.alignright {
 		margin-right: -72.5%;
@@ -483,7 +485,7 @@ li > ol {
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.page:not(.has-sidebar):not(.twentyseventeen-front-page) .entry-content blockquote.alignleft {
+	.page:not(.has-sidebar) .entry-content blockquote.alignleft {
 		margin-left: -20%;
 	}
 }
