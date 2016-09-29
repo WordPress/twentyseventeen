@@ -46,7 +46,7 @@ get_header(); ?>
 		$panels = array( '1', '2', '3', '4' );
 		$titles = array();
 
-		global $twentyseventeencounter; // Used in content-frontpage.php file.
+		global $twentyseventeencounter; // Used in components/page/content-front-page-panels.php file.
 
 		if ( 0 !== twentyseventeen_panel_count() || is_customize_preview() ) : // If we have pages to show.
 
