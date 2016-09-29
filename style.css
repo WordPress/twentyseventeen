@@ -1548,34 +1548,26 @@ h2.widget-title {
 	font-size: .81em;
 }
 
-/**
- * Text widget
- */
+/* Text widget */
 
 .widget_text {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
-/**
- * Archives, Categories, Menu, Pages, Recent Comments, Recent Posts
- */
+/* Archives, Categories, Menu, Pages, Recent Comments, Recent Posts */
 
 .widget .rss-date {
 	display: block;
 }
 
-/**
-* Contact Info Widget
-*/
+/* Contact Info Widget */
 
 .widget_contact_info .contact-map {
 	margin-bottom: 0.5em;
 }
 
-/**
-* Goodreads
-*/
+/* Goodreads */
 
 .widget_goodreads div[class^="gr_custom_container"] {
 	background: transparent;
@@ -1598,9 +1590,7 @@ h2.widget-title {
 	text-transform: uppercase;
 }
 
-/**
-* Gravatar
-*/
+/* Gravatar */
 
 .widget-grofile h4 {
 	font-size: 16px;
@@ -1616,17 +1606,13 @@ h2.widget-title {
 	border: 0;
 }
 
-/**
-* Recent Posts widget
-*/
+/* Recent Posts widget */
 
 .widget_recent_entries .post-date {
 	display: block;
 }
 
-/**
-* Search
-*/
+/* Search */
 
 .search-form {
 	position: relative;
@@ -1644,9 +1630,7 @@ h2.widget-title {
 	top: 0;
 }
 
-/**
-* Tag cloud widget
-*/
+/* Tag cloud widget */
 
 .tagcloud,
 .widget_tag_cloud,
