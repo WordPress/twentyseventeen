@@ -9,7 +9,7 @@
  * @package WordPress
  * @subpackage Twenty_Seventeen
  * @since 1.0
- * @version 1.0.0
+ * @version 1.0
  */
 
 if ( 'posts' === get_option( 'show_on_front' ) ) :
