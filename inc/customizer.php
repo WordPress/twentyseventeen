@@ -64,7 +64,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'twentyseventeen_panel1', array(
 		'default'           => false,
-		'sanitize_callback' => 'twentyseventeen_sanitize_numeric_value',
+		'sanitize_callback' => 'absint',
 	) );
 
 	$wp_customize->add_control( 'twentyseventeen_panel1', array(
@@ -98,7 +98,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'twentyseventeen_panel2', array(
 		'default'           => false,
-		'sanitize_callback' => 'twentyseventeen_sanitize_numeric_value',
+		'sanitize_callback' => 'absint',
 	) );
 
 	$wp_customize->add_control( 'twentyseventeen_panel2', array(
@@ -132,7 +132,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'twentyseventeen_panel3', array(
 		'default'           => false,
-		'sanitize_callback' => 'twentyseventeen_sanitize_numeric_value',
+		'sanitize_callback' => 'absint',
 	) );
 
 	$wp_customize->add_control( 'twentyseventeen_panel3', array(
@@ -166,7 +166,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'twentyseventeen_panel4', array(
 		'default'           => false,
-		'sanitize_callback' => 'twentyseventeen_sanitize_numeric_value',
+		'sanitize_callback' => 'absint',
 	) );
 
 	$wp_customize->add_control( 'twentyseventeen_panel4', array(
@@ -210,20 +210,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) ) );
 }
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
-
-
-/**
- * Sanitize a numeric value.
- *
- * @param int $input Numeric input.
- */
-function twentyseventeen_sanitize_numeric_value( $input ) {
-	if ( is_numeric( $input ) ) {
-		return intval( $input );
-	}
-
-	return 0;
-}
 
 /**
  * Sanitize a radio button.
