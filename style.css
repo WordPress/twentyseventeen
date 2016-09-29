@@ -1296,10 +1296,6 @@ body {
 	width: 20px;
 }
 
-.entry-header {
-	margin-bottom: 2.5em;
-}
-
 .page .panel-content .entry-title,
 .page-title,
 .page:not(.twentyseventeen-front-page) .entry-title {
@@ -1426,7 +1422,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 body:not(.twentyseventeen-front-page) .entry-header,
 body:not(.twentyseventeen-front-page) .entry-content,
 body:not(.twentyseventeen-front-page) #comments {
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 body:not(.twentyseventeen-front-page) .entry-header {
@@ -2207,6 +2204,10 @@ h2.widget-title {
 	font-size: 0.875rem;
 }
 
+.site-info a {
+	color: #666;
+}
+
 .site-info .sep {
 	margin: 0;
 	display: block;
@@ -2461,41 +2462,25 @@ article.panel-placeholder {
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 30em) {
-	.site-branding {
-		padding: 3em 0;
-	}
-
-	/* Front Page */
-	.panel-content .wrap {
-		padding-bottom: 2em;
-		padding-top: 3.5em;
-	}
-
-	.panel-content .entry-header {
-		margin-bottom: 4.5em;
-	}
-
-	.panel-content .recent-posts .entry-header {
-		margin-bottom: 0;
-	}
-}
-
-@media screen and (min-width: 48em) {
-
-	body {
-		font-size: 16px;
-		font-size: 1rem;
-		line-height: 1.5;
-	}
 
 	/* Typography */
+
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
 
 	h1 {
 		font-size: 30px;
 		font-size: 1.875rem;
 	}
 
-	h2 {
+	h2,
+	.page .panel-content .recent-posts .entry-title {
 		font-size: 26px;
 		font-size: 1.625rem;
 	}
@@ -2518,6 +2503,60 @@ article.panel-placeholder {
 	h6 {
 		font-size: 16px;
 		font-size: 1rem;
+	}
+
+	.entry-content blockquote.alignleft,
+	.entry-content blockquote.alignright {
+		font-size: 14px;
+		font-size: 0.875rem;
+	}
+
+	/* Site Branding */
+
+	.site-branding {
+		padding: 3em 0;
+	}
+
+	/* Front Page */
+	.panel-content .wrap {
+		padding-bottom: 2em;
+		padding-top: 3.5em;
+	}
+
+	.panel-content .entry-header {
+		margin-bottom: 4.5em;
+	}
+
+	.panel-content .recent-posts .entry-header {
+		margin-bottom: 0;
+	}
+
+	/* Site Footer */
+
+	.site-footer {
+		font-size: 16px;
+		font-size: 1.0rem;
+	}
+}
+
+@media screen and (min-width: 48em) {
+
+	/* Typography */
+
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 16px;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.entry-content blockquote.alignleft,
+	.entry-content blockquote.alignright {
+		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 
 	/* Layout */
@@ -2543,19 +2582,19 @@ article.panel-placeholder {
 
 	.has-sidebar.blog .page-header,
 	.has-sidebar.archive .page-header,
-	.has-sidebar.search .page-header {
+	.has-sidebar.search .page-header,
+	.has-sidebar.page .entry-header {
 		position: absolute;
 		top: 0;
 	}
 
-	/*
 	.has-sidebar.blog #content .wrap,
 	.has-sidebar.archive #content .wrap,
-	.has-sidebar.search  #content .wrap {
+	.has-sidebar.search  #content .wrap,
+	.has-sidebar.page #content .wrap {
 		padding-top: 5em;
 		position: relative;
 	}
-	*/
 
 	/* Site Branding */
 	.site-branding {
@@ -3110,6 +3149,12 @@ article.panel-placeholder {
 		width: 32px;
 	}
 
+	/* Pages */
+
+	.page-one-column .entry-header {
+		margin-bottom: 4em;
+	}
+
 	/* 404 page */
 
 	.error404 .page-content {
@@ -3129,7 +3174,6 @@ article.panel-placeholder {
 	ol.children .children {
 		padding-left: 2em;
 	}
-
 
 	/* Posts pagination */
 	.nav-links .nav-title {
@@ -3207,6 +3251,7 @@ article.panel-placeholder {
 }
 
 @media screen and ( min-width: 55em ) {
+
 	.custom-header-image {
 		background-attachment: fixed;
 	}
@@ -3221,6 +3266,9 @@ article.panel-placeholder {
 }
 
 @media screen and ( min-width: 67em ) {
+
+	/* Layout */
+
 	.wrap {
 		padding-left: 0;
 		padding-right: 0;
