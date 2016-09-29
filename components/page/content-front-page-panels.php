@@ -9,7 +9,7 @@
 
 global $twentyseventeencounter;
 
-$current_panel_layout = 'twentyseventeen_panel' . $twentyseventeencounter . '_layout';
+$current_panel_layout = 'twentyseventeen_panel_' . $twentyseventeencounter . '_layout';
 $panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
 
 ?>

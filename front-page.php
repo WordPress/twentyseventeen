@@ -53,8 +53,8 @@ get_header(); ?>
 			$twentyseventeencounter = 1;
 
 			foreach ( $panels as $panel ) :
-				if ( get_theme_mod( 'twentyseventeen_panel' . $panel ) ) :
-					$post = get_post( get_theme_mod( 'twentyseventeen_panel' . $panel ) );
+				if ( get_theme_mod( 'twentyseventeen_panel_' . $panel ) ) :
+					$post = get_post( get_theme_mod( 'twentyseventeen_panel_' . $panel ) );
 					setup_postdata( $post );
 					set_query_var( 'twentyseventeen_panel', $panel );
 
