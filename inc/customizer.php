@@ -25,6 +25,29 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'description' => __( 'Configure your theme settings', 'twentyseventeen' ),
 	) );
 
+	// Page Options
+	$wp_customize->add_section( 'twentyseventeen_page_options', array(
+		'title'           => __( 'Single Page Layout', 'twentyseventeen' ),
+		'active_callback' =>'twentyseventeen_is_page',
+		'panel'           => 'twentyseventeen_options_panel',
+	) );
+
+	$wp_customize->add_setting( 'twentyseventeen_page_options', array(
+		'default'           => 'two-column',
+		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
+	) );
+
+	$wp_customize->add_control( 'twentyseventeen_page_options', array(
+		'label'       => __( 'Single Page Layout', 'twentyseventeen' ),
+		'section'     => 'twentyseventeen_page_options',
+		'type'        => 'radio',
+		'description' => __( 'When no sidebar widgets are assigned, you can opt to display single pages with a one column or two column layout. When the two column layout is assigned, the page title is in one column and content is in the other.', 'twentyseventeen' ),
+		'choices'     => array(
+			'one-column' => __( 'One Column', 'twentyseventeen' ),
+			'two-column' => __( 'Two Column', 'twentyseventeen' ),
+		),
+	) );
+
 	// Panel 1.
 	$wp_customize->add_section( 'twentyseventeen_panel_1', array(
 		'title'           => __( 'Panel 1', 'twentyseventeen' ),
@@ -42,21 +65,6 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
 		'section' => 'twentyseventeen_panel_1',
 		'type'    => 'dropdown-pages',
-	) );
-
-	$wp_customize->add_setting( 'twentyseventeen_panel_1_layout', array(
-		'default'           => 'one-column',
-		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
-	) );
-
-	$wp_customize->add_control( 'twentyseventeen_panel_1_layout', array(
-		'label'   => __( 'Panel Layout', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_1',
-		'type'    => 'radio',
-		'choices' => array(
-			'one-column' => __( 'One Column', 'twentyseventeen' ),
-			'two-column' => __( 'Two Column', 'twentyseventeen' ),
-		),
 	) );
 
 	// Panel 2.
@@ -117,6 +125,29 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 }
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
+
+/**
+ * Sanitize a radio button
+ */
+function twentyseventeen_sanitize_layout( $input ) {
+	$valid = array(
+		'one-column' => __( 'One Column', 'twentyseventeen' ),
+		'two-column' => __( 'Two Column', 'twentyseventeen' ),
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+
+/**
+ * Custom Active Callback to check for page
+ */
+function twentyseventeen_is_page() {
+	return ( is_page() && ! twentyseventeen_is_frontpage() );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

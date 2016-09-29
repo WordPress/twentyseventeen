@@ -46,6 +46,15 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	}
 
+	// Add class for one or two column page layouts
+	if ( ! twentyseventeen_is_frontpage() && ! is_active_sidebar( 'sidebar-1' ) && ! is_home() ) {
+		if ( 'one-column' === get_theme_mod( 'twentyseventeen_page_options' ) ) {
+			$classes[] = 'page-one-column';
+		} else {
+			$classes[] = 'page-two-column';
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'twentyseventeen_body_classes' );
