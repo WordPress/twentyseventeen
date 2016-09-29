@@ -1435,13 +1435,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 /* Single Post */
 
-.single-post:not(.has-sidebar) #primary
-/*, .page:not(.has-sidebar):not(.twentyseventeen-front-page) #primary */ {
+.single-post:not(.has-sidebar) #primary,
+.page.page-one-column #primary {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 740px;
 }
-
 
 .single-featured-image-header img {
 	display: block;
@@ -2990,9 +2989,9 @@ article.panel-placeholder {
 
 	body:not(.has-sidebar) .page-header,
 	body.has-sidebar.error404 #primary .page-header,
-	body.page:not(.twentyseventeen-front-page) #primary .entry-header {
+	body.page-two-column #primary .entry-header {
 		float: left;
-		width: 36%;.page:not(.has-sidebar):not(.twentyseventeen-front-page) #primary
+		width: 36%;
 	}
 
 	.blog:not(.has-sidebar) #primary article,
@@ -3000,7 +2999,7 @@ article.panel-placeholder {
 	.search:not(.has-sidebar) #primary article,
 	.error404:not(.has-sidebar) #primary .page-content,
 	.error404.has-sidebar #primary .page-content,
-	body.page:not(.twentyseventeen-front-page) #primary .entry-content {
+	body.page-two-column #primary .entry-content {
 		float: right;
 		width: 58%;
 	}
