@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header>
+			</header><!-- .page-header -->
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
