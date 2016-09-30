@@ -75,9 +75,7 @@ function twentyseventeen_setup() {
 		'quote',
 		'link',
 		'gallery',
-		'status',
 		'audio',
-		'chat',
 	) );
 
 	// Set up the WordPress core custom background feature.
