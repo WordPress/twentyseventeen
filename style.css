@@ -1007,11 +1007,19 @@ body:not(.no-header-image) .custom-header-image:before,
 
 .main-navigation ul {
 	background: #111;
-	display: none;
+	display: block;
 	list-style: none;
 	margin: 0;
 	padding: 0 1.5em;
 	text-align: left;
+}
+
+/* Hide the menu on small screens when JavaScript is available.
+ * It only works with JavaScript.
+ */
+
+.js .main-navigation ul {
+	display: none;
 }
 
 .main-navigation ul.nav-menu {
@@ -1039,11 +1047,20 @@ body:not(.no-header-image) .custom-header-image:before,
 /* Small menu. */
 
 .menu-toggle {
+	display: none;
+}
+
+/* Display the menu toggle when JavaScript is available. */
+
+.js .menu-toggle {
+	display: inline-block;
+}
+
+.menu-toggle {
 	background-color: transparent;
 	border: 1px solid rgba(255,255,255,0.2);
 	box-shadow: none;
 	color: #fff;
-	display: inline-block;
 	font-size: 16px;
 	line-height: 1.5;
 	margin: 1em 0;
@@ -2418,7 +2435,7 @@ article.panel-placeholder {
 
 	/* Main Navigation */
 
-	.menu-toggle {
+	.js .menu-toggle {
 		display: none;
 	}
 
@@ -2426,9 +2443,12 @@ article.panel-placeholder {
 		width: auto;
 	}
 
+	.js .main-navigation ul {
+		display: block;
+	}
+
 	.main-navigation ul {
 		background: transparent;
-		display: block;
 		padding: 0;
 	}
 
