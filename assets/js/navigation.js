@@ -1,4 +1,4 @@
-/* global screenReaderText */
+/* global twentyseventeenScreenReaderText */
 /**
  * Theme functions file.
  *
@@ -16,7 +16,7 @@
 			'aria-expanded': false
 		} ).append( $( '<span />', {
 			'class': 'screen-reader-text',
-			text: screenReaderText.expand
+			text: twentyseventeenScreenReaderText.expand
 		} ) );
 
 		container.find( '.menu-item-has-children > a' ).after( dropdownToggle );
@@ -39,7 +39,7 @@
 			// jscs:disable
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			// jscs:enable
-			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === twentyseventeenScreenReaderText.expand ? twentyseventeenScreenReaderText.collapse : twentyseventeenScreenReaderText.expand );
 		} );
 	}
 	initMainNavigation( $( '.main-navigation' ) );
