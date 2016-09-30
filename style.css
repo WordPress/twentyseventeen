@@ -639,9 +639,10 @@ select {
 	max-width: 100%;
 }
 
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 0.5em;
+}
 
 button,
 input[type="button"],
@@ -663,6 +664,14 @@ input[type="submit"] {
 	transition: background 0.2s;
 }
 
+button.secondary,
+input[type="button"].secondary,
+input[type="reset"].secondary,
+input[type="submit"].secondary {
+	background-color: #ddd;
+	color: #222;
+}
+
 button:hover,
 button:focus,
 input[type="button"]:hover,
@@ -673,6 +682,18 @@ input[type="submit"]:hover,
 input[type="submit"]:focus {
 	background: #767676;
 }
+
+button.secondary:hover,
+button.secondary:focus,
+input[type="button"].secondary:hover,
+input[type="button"].secondary:focus,
+input[type="reset"].secondary:hover,
+input[type="reset"].secondary:focus,
+input[type="submit"].secondary:hover,
+input[type="submit"].secondary:focus {
+	background: #bbb;
+}
+
 
 /*--------------------------------------------------------------
 # Formattings
@@ -1026,7 +1047,6 @@ body {
 }
 
 .custom-header-image {
-	background-color: #333;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1238,7 +1258,6 @@ body {
 }
 
 .panel-image {
-	background-color: #333;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1338,7 +1357,7 @@ body {
 
 .page .panel-content .entry-title,
 .page-title,
-.page:not(.twentyseventeen-front-page) .entry-title {
+body.page:not(.twentyseventeen-front-page) .entry-title {
 	color: #222;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1450,8 +1469,7 @@ body {
 
 .blog .post,
 .archive .post,
-.search .post,
-.search .page {
+.search .hentry {
 	padding-bottom: 2em;
 }
 
@@ -1728,13 +1746,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 1.0rem;
 	margin-bottom: 0.4em;
 	position: relative;
+	z-index: 2;
 }
 
 .comment-author .avatar {
 	height: 50px;
 	left: -65px;
 	position: absolute;
-	width: 50px
+	width: 50px;
 }
 
 .comment-author .says {
@@ -2277,6 +2296,10 @@ object {
 }
 
 .wp-caption {
+	color: #666;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
@@ -2289,10 +2312,6 @@ object {
 
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -3076,8 +3095,7 @@ article.panel-placeholder {
 
 	.blog .post,
 	.archive .post,
-	.search .post,
-	.search .page {
+	.search .hentry {
 		padding-bottom: 4em;
 	}
 

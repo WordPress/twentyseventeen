@@ -28,6 +28,7 @@ th {
 }
 
 /* Typography */
+
 textarea {
 	padding-right: 3px;
 }
@@ -45,6 +46,14 @@ li > ul,
 li > ol {
 	margin-left: 0;
 	margin-right: 1.5em;
+}
+
+/* Forms */
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-left: 0.5em;
+	margin-right: 0;
 }
 
 .menu-toggle:after,
