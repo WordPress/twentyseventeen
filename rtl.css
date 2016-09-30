@@ -393,7 +393,7 @@ input[type="checkbox"] {
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
 	.twentyseventeen-front-page .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignleft {
+	.page-two-column .entry-content blockquote.alignleft {
 		margin-left: 0;
 		width: 34%;
 	}
@@ -483,7 +483,8 @@ input[type="checkbox"] {
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.page:not(.has-sidebar) .entry-content blockquote.alignleft {
+	.page-two-column .entry-content blockquote.alignleft,
+	.twentyseventeen-front-page .entry-content blockquote.alignleft {
 		margin-left: -20%;
 	}
 }
