@@ -238,7 +238,7 @@ function twentyseventeen_scripts() {
 
 	wp_enqueue_script( 'twentyseventeen-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
-	wp_localize_script( 'twentyseventeen-navigation', 'screenReaderText', array(
+	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
 		'expand'   => __( 'expand child menu', 'twentyseventeen' ),
 		'collapse' => __( 'collapse child menu', 'twentyseventeen' ),
 	) );
