@@ -42,12 +42,12 @@ function twentyseventeen_body_classes( $classes ) {
 	}
 
 	// Add class if sidebar is used.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! twentyseventeen_is_frontpage() ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() ) {
 		$classes[] = 'has-sidebar';
 	}
 
 	// Add class for one or two column page layouts
-	if ( ! twentyseventeen_is_frontpage() && ! is_active_sidebar( 'sidebar-1' ) && ! is_home() ) {
+	if ( is_page() && ! twentyseventeen_is_frontpage() && ! is_home() ) {
 		if ( 'one-column' === get_theme_mod( 'twentyseventeen_page_options' ) ) {
 			$classes[] = 'page-one-column';
 		} else {

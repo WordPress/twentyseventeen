@@ -3168,7 +3168,7 @@ article.panel-placeholder {
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
 	.twentyseventeen-front-page .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignleft {
+	.page-two-column .entry-content blockquote.alignleft {
 		margin-left: -72.5%;
 		width: 62%;
 	}
@@ -3176,7 +3176,7 @@ article.panel-placeholder {
 	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignright,
 	.twentyseventeen-front-page .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	.page-two-column:not(.has-sidebar) .entry-content blockquote.alignright {
+	.page-two-column .entry-content blockquote.alignright {
 		margin-right: 0;
 		width: 36%;
 	}
@@ -3329,7 +3329,8 @@ article.panel-placeholder {
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	.page:not(.has-sidebar) .entry-content blockquote.alignright {
+	.page-two-column .entry-content blockquote.alignright,
+	.twentyseventeen-front-page .entry-content blockquote.alignright {
 		margin-right: -20%;
 	}
 }
