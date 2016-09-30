@@ -62,7 +62,8 @@ global $twentyseventeencounter;
 				$recent_posts = new WP_Query( array(
 					'posts_per_page'      => 3,
 					'post_status'         => 'publish',
-					'ignore_sticky_posts' => true
+					'ignore_sticky_posts' => true,
+					'no_found_rows'       => true,
 				) );
 				?>
 
