@@ -35,11 +35,29 @@ h6 {
 	font-size: 1rem;
 }
 
+/* Site Branding */
+
+.site-title {
+	font-weight: bolder;
+}
+
+/* Main Navigation */
+.menu-toggle {
+	width: 150px;
+}
+
+.main-navigation ul#top-menu {
+	margin-bottom: -1px;
+	padding: 0;
+}
+
 /* Front Page */
 
-.custom-header-image {
+.custom-header-image,
+.panel-image {
 	height: 1000px;
-	padding-bottom: 0;
+	max-height: 1000px;
+	padding-top: 0;
 }
 
 .page .panel-content .entry-title,
@@ -71,4 +89,8 @@ time.published {
 .search .post,
 .search .page {
     padding-bottom: 4em;
+}
+
+.comment-author .avatar {
+	z-index: -1;
 }
