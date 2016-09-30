@@ -2314,6 +2314,22 @@ object {
 	margin: 0.8075em 0;
 }
 
+/* Media Elements */
+
+.mejs-container {
+	margin-bottom: 1.5em;
+}
+
+/* Audio Player */
+
+.mejs-controls a.mejs-horizontal-volume-slider,
+.mejs-controls a.mejs-horizontal-volume-slider:visited,
+.mejs-controls a.mejs-horizontal-volume-slider:focus,
+.mejs-controls a.mejs-horizontal-volume-slider:hover {
+	background: transparent;
+	border: 0;
+}
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
