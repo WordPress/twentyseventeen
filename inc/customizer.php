@@ -233,7 +233,7 @@ function twentyseventeen_sanitize_layout( $input ) {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function twentyseventeen_customize_preview_js() {
-	wp_enqueue_script( 'twentyseventeen_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'twentyseventeen_customize_preview_js' );
 
@@ -241,6 +241,6 @@ add_action( 'customize_preview_init', 'twentyseventeen_customize_preview_js' );
  * Some extra JavaScript to improve the user experience in the Customizer for this theme.
  */
 function twentyseventeen_panels_js() {
-	wp_enqueue_script( 'twentyseventeen_extra_js', get_template_directory_uri() . '/assets/js/panel-customizer.js', array(), '20151116', true );
+	wp_enqueue_script( 'twentyseventeen-panel-customizer', get_template_directory_uri() . '/assets/js/panel-customizer.js', array(), '20151116', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'twentyseventeen_panels_js' );
