@@ -137,9 +137,8 @@ function twentyseventeen_sanitize_layout( $input ) {
 
 	if ( array_key_exists( $input, $valid ) ) {
 		return $input;
-	} else {
-		return '';
 	}
+	return '';
 }
 
 /**
