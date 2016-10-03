@@ -1166,6 +1166,7 @@ body {
 }
 
 /* Menu toggle */
+
 .menu-toggle {
 	background-color: transparent;
 	border: 0;
@@ -1214,6 +1215,7 @@ body {
 }
 
 /* Dropdown Toggle */
+
 .dropdown-toggle {
 	background-color: transparent;
 	border: 0;
@@ -1248,6 +1250,7 @@ body {
 }
 
 /* Scroll down arrow */
+
 .menu-scroll-down {
 	display: none;
 }
@@ -1465,6 +1468,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 /* Entry content */
 
 /* Aligned blockquotes */
+
 .entry-content blockquote.alignleft,
 .entry-content blockquote.alignright {
 	color: #666;
@@ -2274,7 +2278,6 @@ h2.widget-title {
 	width: 100%;
 }
 
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -2388,7 +2391,6 @@ object {
 .gallery-caption {
 	display: block;
 }
-
 
 /*--------------------------------------------------------------
 # Customizer
@@ -2592,6 +2594,7 @@ article.panel-placeholder {
 	}
 
 	/* Front Page */
+
 	.panel-content .wrap {
 		padding-bottom: 2em;
 		padding-top: 3.5em;
@@ -2663,6 +2666,7 @@ article.panel-placeholder {
 	}
 
 	/* Site Branding */
+
 	.site-branding {
 		margin-bottom: 70px;
 	}
@@ -2714,6 +2718,7 @@ article.panel-placeholder {
 	}
 
 	/* Navigation */
+
 	.navigation-top {
 		bottom: 0;
 		font-size: 14px;
@@ -2806,6 +2811,7 @@ article.panel-placeholder {
 	}
 
 	/* Main Navigation */
+
 	.js .menu-toggle,
 	.js .dropdown-toggle {
 		display: none;
@@ -2966,6 +2972,7 @@ article.panel-placeholder {
 	}
 
 	/* Scroll down arrow */
+
 	.menu-scroll-down {
 		background: transparent;
 		border: 0;
@@ -3158,6 +3165,7 @@ article.panel-placeholder {
 	/* Entry content */
 
 	/* without sidebar */
+
 	:not( .has-sidebar ) .entry-content blockquote.alignleft {
 		margin-left: -17.5%;
 		width: 48%;
@@ -3204,6 +3212,7 @@ article.panel-placeholder {
 	}
 
 	/* Post formats */
+
 	.format-quote blockquote:before {
 		font-size: 32px;
 		font-size: 2.0rem;
@@ -3240,6 +3249,7 @@ article.panel-placeholder {
 	}
 
 	/* Posts pagination */
+
 	.nav-links .nav-title {
 		position: relative;
 	}
@@ -3261,6 +3271,7 @@ article.panel-placeholder {
 	}
 
 	/* Secondary */
+
 	#secondary {
 		font-size: 14px;
 		font-size: 0.875rem;
@@ -3268,6 +3279,7 @@ article.panel-placeholder {
 	}
 
 	/* Widgets */
+
 	h2.widget-title {
 		font-size: 11px;
 		font-size: 0.6875rem;
@@ -3339,6 +3351,7 @@ article.panel-placeholder {
 	}
 
 	/* Comments */
+
 	.comment-body {
 		margin-left: 0;
 	}
