@@ -1127,7 +1127,6 @@ body {
 
 .main-navigation ul#top-menu {
 	border-top: 1px solid #eee;
-	display: none;
 	padding: 0.75em 1.5em;
 }
 
@@ -1136,7 +1135,6 @@ body {
 }
 
 .main-navigation ul ul {
-	display: none;
 	padding: 0 0 0 1.5em;
 }
 
@@ -1169,21 +1167,11 @@ body {
 
 /* Menu toggle */
 .menu-toggle {
-	display: none;
-}
-
-/* Display the menu toggle when JavaScript is available. */
-
-.js .menu-toggle {
-	display: inline-block;
-}
-
-.menu-toggle {
 	background-color: transparent;
 	border: 0;
 	box-shadow: none;
 	color: #222;
-	display: block;
+	display: none;
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: 800;
@@ -1191,6 +1179,12 @@ body {
 	margin: 0 auto;
 	padding: 1.0em;
 	text-shadow: none;
+}
+
+/* Display the menu toggle when JavaScript is available. */
+
+.js .menu-toggle {
+	display: block;
 }
 
 .main-navigation.toggled-on ul.nav-menu {
@@ -2812,7 +2806,6 @@ article.panel-placeholder {
 	}
 
 	/* Main Navigation */
-
 	.js .menu-toggle,
 	.js .dropdown-toggle {
 		display: none;
@@ -2995,7 +2988,6 @@ article.panel-placeholder {
 	.menu-scroll-down:focus {
 		outline: thin dotted;
 	}
-
 
 	.menu-scroll-down:before {
 		content: "\f429";
