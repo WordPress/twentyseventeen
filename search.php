@@ -19,7 +19,7 @@ get_header(); ?>
 		<?php else : ?>
 			<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
 		<?php endif; ?>
-	</header>
+	</header><!-- .page-header -->
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
