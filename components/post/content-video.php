@@ -1,10 +1,13 @@
 <?php
 /**
- * Template part for displaying video posts.
+ * Template part for displaying video posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
  */
 ?>
 
