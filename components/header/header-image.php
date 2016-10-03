@@ -35,14 +35,14 @@
 				<?php // Otherwise, show a blank header ?>
 				<div class="custom-header-simple">
 					<?php get_template_part( 'components/header/site', 'branding' ); ?>
-				</div><!-- .custom-header-image -->
+				</div><!-- .custom-header-simple -->
 
 			<?php endif;
 		// If not the front page, show a shorter plain header
 		else : ?>
 			<div class="custom-header-simple">
 				<?php get_template_part( 'components/header/site', 'branding' ); ?>
-			</div><!-- .custom-header-image -->
+			</div><!-- .custom-header-simple -->
 	<?php endif; ?>
 
 </div><!-- .custom-header -->
