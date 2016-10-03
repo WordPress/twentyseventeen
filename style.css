@@ -562,11 +562,19 @@ q:after {
 # Forms
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
 label {
 	color: #333;
 	display: block;
 	font-weight: 800;
 	margin-bottom: 0.5em;
+}
+
+fieldset {
+	margin-bottom: 1.0em;
 }
 
 input[type="text"],
@@ -615,6 +623,8 @@ textarea:focus {
 
 select {
 	border: 1px solid #bbb;
+	border-radius: 3px;
+	height: 3em;
 	max-width: 100%;
 }
 
@@ -623,9 +633,13 @@ input[type="checkbox"] {
 	margin-right: 0.5em;
 }
 
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+	font-weight: 400;
+}
+
 button,
 input[type="button"],
-input[type="reset"],
 input[type="submit"] {
 	background-color: #222;
 	border: 0;
@@ -644,6 +658,7 @@ input[type="submit"] {
 }
 
 button.secondary,
+input[type="reset"],
 input[type="button"].secondary,
 input[type="reset"].secondary,
 input[type="submit"].secondary {
@@ -655,8 +670,6 @@ button:hover,
 button:focus,
 input[type="button"]:hover,
 input[type="button"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
 	background: #767676;
@@ -664,6 +677,8 @@ input[type="submit"]:focus {
 
 button.secondary:hover,
 button.secondary:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
 input[type="button"].secondary:hover,
 input[type="button"].secondary:focus,
 input[type="reset"].secondary:hover,
@@ -672,7 +687,6 @@ input[type="submit"].secondary:hover,
 input[type="submit"].secondary:focus {
 	background: #bbb;
 }
-
 
 /*--------------------------------------------------------------
 # Formattings
