@@ -46,7 +46,7 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	}
 
-	// Add class for one or two column page layouts
+	// Add class for one or two column page layouts.
 	if ( is_page() && ! twentyseventeen_is_frontpage() && ! is_home() ) {
 		if ( 'one-column' === get_theme_mod( 'twentyseventeen_page_options' ) ) {
 			$classes[] = 'page-one-column';

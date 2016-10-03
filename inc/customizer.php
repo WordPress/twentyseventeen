@@ -25,7 +25,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'description' => __( 'Configure your theme settings', 'twentyseventeen' ),
 	) );
 
-	// Page Options
+	// Page Options.
 	$wp_customize->add_section( 'twentyseventeen_page_options', array(
 		'title'           => __( 'Single Page Layout', 'twentyseventeen' ),
 		'active_callback' =>'twentyseventeen_is_page',
@@ -127,7 +127,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
 
 /**
- * Sanitize a radio button
+ * Sanitize a radio button.
  */
 function twentyseventeen_sanitize_layout( $input ) {
 	$valid = array(
@@ -143,7 +143,7 @@ function twentyseventeen_sanitize_layout( $input ) {
 }
 
 /**
- * Custom Active Callback to check for page
+ * Custom Active Callback to check for page.
  */
 function twentyseventeen_is_page() {
 	return ( is_page() && ! twentyseventeen_is_frontpage() );

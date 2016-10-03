@@ -35,7 +35,7 @@ endif;
 
 if ( ! function_exists( 'twentyseventeen_time_link' ) ) :
 /**
- * Gets a nicely formatted string for the published date
+ * Gets a nicely formatted string for the published date.
  */
 function twentyseventeen_time_link() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -57,7 +57,7 @@ endif;
 
 if ( ! function_exists( 'twentyseventeen_edit_post_link' ) ) :
 /**
- * Prints the post's edit link
+ * Prints the post's edit link.
  */
 function twentyseventeen_edit_post_link() {
 	// Display 'edit' link.
@@ -88,7 +88,7 @@ function twentyseventeen_entry_footer() {
 
 		// Display Categories for posts.
 		$categories_list = get_the_category_list( $separate_meta );
-		// Make sure there's more than one category before displaying
+		// Make sure there's more than one category before displaying.
 		if ( $categories_list && twentyseventeen_categorized_blog() ) {
 			echo '<span class="cat-links"><span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
 		}
