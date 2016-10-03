@@ -33,7 +33,7 @@
 		<div class="navigation-top">
 			<div class="wrap">
 				<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-			</div>
+			</div><!-- .wrap -->
 		</div><!-- .navigation-top -->
 
 	</header><!-- #masthead -->
@@ -43,7 +43,7 @@
 	if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) ) :
 		echo '<div class="single-featured-image-header">';
 		the_post_thumbnail( 'twentyseventeen-featured-image' );
-		echo '</div>';
+		echo '</div><!-- .single-featured-image-header -->';
 	endif;
 	?>
 
