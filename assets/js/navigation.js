@@ -6,7 +6,7 @@
  */
 
 ( function( $ ) {
-	var body, masthead, menuToggle, siteNavigation, resizeTimer;
+	var masthead, menuToggle, siteNavigation;
 
 	function initMainNavigation( container ) {
 
