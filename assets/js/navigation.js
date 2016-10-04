@@ -6,7 +6,7 @@
  */
 
 ( function( $ ) {
-	var body, masthead, menuToggle, siteNavigation, siteHeaderMenu, resizeTimer;
+	var body, masthead, menuToggle, siteNavigation, resizeTimer;
 
 	function initMainNavigation( container ) {
 
@@ -19,14 +19,14 @@
 			text: twentyseventeenScreenReaderText.expand
 		} ) );
 
-		container.find( '.menu-item-has-children > a' ).after( dropdownToggle );
+		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
 		// Toggle buttons and submenu items with active children menu items.
 		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
 		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
 
 		// Add menu items with submenus to aria-haspopup="true".
-		container.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' );
+		container.find( '.menu-item-has-children, .page_item_has_children' ).attr( 'aria-haspopup', 'true' );
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
 			var _this            = $( this ),
@@ -46,8 +46,7 @@
 
 	masthead         = $( '#masthead' );
 	menuToggle       = masthead.find( '.menu-toggle' );
-	siteHeaderMenu   = masthead.find( '.main-navigation' );
-	siteNavigation   = masthead.find( '.menu' );
+	siteNavigation   = masthead.find( '.main-navigation > div > ul' );
 
 	// Enable menuToggle.
 	( function() {
@@ -61,7 +60,7 @@
 		menuToggle.add( siteNavigation ).attr( 'aria-expanded', 'false' );
 
 		menuToggle.on( 'click.twentyseventeen', function() {
-			$( siteHeaderMenu, this ).toggleClass( 'toggled-on' );
+			$( siteNavigation.closest( '.main-navigation' ), this ).toggleClass( 'toggled-on' );
 
 			// jscs:disable
 			$( this ).add( siteNavigation ).attr( 'aria-expanded', $( this ).add( siteNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
@@ -85,7 +84,7 @@
 					}
 				} );
 
-				siteNavigation.find( '.menu-item-has-children > a' ).on( 'touchstart.twentyseventeen', function( e ) {
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).on( 'touchstart.twentyseventeen', function( e ) {
 					var el = $( this ).parent( 'li' );
 
 					if ( ! el.hasClass( 'focus' ) ) {
@@ -96,7 +95,7 @@
 				} );
 
 			} else {
-				siteNavigation.find( '.menu-item-has-children > a' ).unbind( 'touchstart.twentyseventeen' );
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.twentyseventeen' );
 			}
 		}
 
@@ -106,7 +105,7 @@
 		}
 
 		siteNavigation.find( 'a' ).on( 'focus.twentyseventeen blur.twentyseventeen', function() {
-			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
+			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 		} );
 	} )();
 
@@ -120,7 +119,7 @@
 				menuToggle.attr( 'aria-expanded', 'false' );
 			}
 
-			if ( siteHeaderMenu.hasClass( 'toggled-on' ) ) {
+			if ( siteNavigation.closest( '.main-navigation' ).hasClass( 'toggled-on' ) ) {
 				siteNavigation.attr( 'aria-expanded', 'true' );
 			} else {
 				siteNavigation.attr( 'aria-expanded', 'false' );

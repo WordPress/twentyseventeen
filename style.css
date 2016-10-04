@@ -1125,12 +1125,12 @@ body {
 	display: none;
 }
 
-.main-navigation ul#top-menu {
+.main-navigation > div > ul {
 	border-top: 1px solid #eee;
 	padding: 0.75em 1.5em;
 }
 
-.main-navigation.toggled-on ul#top-menu {
+.js .main-navigation.toggled-on > div > ul {
 	display: block;
 }
 
@@ -2823,7 +2823,7 @@ article.panel-placeholder {
 
 	.js .main-navigation ul,
 	.js .main-navigation ul ul,
-	.js .main-navigation ul#top-menu {
+	.js .main-navigation > div > ul {
 		display: block;
 	}
 
@@ -2832,7 +2832,7 @@ article.panel-placeholder {
 		padding: 0;
 	}
 
-	.main-navigation ul#top-menu {
+	.main-navigation > div > ul {
 		border: 0;
 		margin-bottom: 0;
 		padding: 0;
