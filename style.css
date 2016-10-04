@@ -101,7 +101,7 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: none
+	border-bottom: none;
 	text-decoration: underline;
 	text-decoration: underline dotted;
 }
@@ -1893,9 +1893,7 @@ h2.widget-title {
 
 /* widget forms */
 
-.widget input:not([type="button"], [type="submit"], [type="reset"]),
-.widget select,
-.widget textarea {
+.widget select {
 	width: 100%;
 }
 
