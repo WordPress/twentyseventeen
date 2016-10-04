@@ -59,11 +59,25 @@ function twentyseventeen_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',
+	) );
+
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+		'gallery',
+		'audio',
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -74,9 +88,10 @@ function twentyseventeen_setup() {
 
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
-		'height'     => 400,
-		'width'      => 2400,
-		'flex-width' => true,
+		'width'       => 1000,
+		'height'      => 1000,
+		'flex-width'  => true,
+		'flex-height' => true,
 	) );
 }
 endif;
@@ -102,30 +117,16 @@ add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
 function twentyseventeen_fonts_url() {
 	$fonts_url = '';
 
-	/*
-	* Translators: If there are characters in your language that are not
-	* supported by Work Sans, translate this to 'off'. Do not translate
+	/* Translators: If there are characters in your language that are not
+	* supported by Libre Frankin, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$work_sans = _x( 'on', 'work_sans font: on or off', 'twentyseventeen' );
+	$libre_franklin = _x( 'on', 'libre_franklin font: on or off', 'twentyseventeen' );
 
-	/*
-	* Translators: If there are characters in your language that are not
-	* supported by Karla, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$karla = _x( 'on', 'Karla font: on or off', 'twentyseventeen' );
-
-	if ( 'off' !== $work_sans || 'off' !== $karla ) {
+	if ( 'off' !== $libre_franklin ) {
 		$font_families = array();
 
-		if ( 'off' !== $work_sans ) {
-			$font_families[] = 'Work Sans:800';
-		}
-
-		if ( 'off' !== $karla ) {
-			$font_families[] = 'Karla:400,400italic,700,700italic';
-		}
+		$font_families[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -173,32 +174,8 @@ function twentyseventeen_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'twentyseventeen' ),
-		'id'            => 'sidebar-4',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
-
-
-/**
- * Wrap avatars in div for easier styling.
- *
- * @param mix $avatar The avatar.
- */
-function twentyseventeen_get_avatar( $avatar ) {
-	if ( ! is_admin() ) {
-		$avatar = '<span class="avatar-container">' . $avatar . '</span>';
-	}
-	return $avatar;
-}
-add_filter( 'get_avatar', 'twentyseventeen_get_avatar', 10, 5 );
 
 
 /**
@@ -209,6 +186,18 @@ function twentyseventeen_the_custom_logo() {
 		the_custom_logo();
 	}
 }
+
+
+if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
+/**
+ * Replaces the excerpt "more" text by a link
+ */
+function twentyseventeen_excerpt_continue_reading() {
+	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
+}
+}
+add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
+
 
 /**
  * Handles JavaScript detection.
@@ -235,6 +224,10 @@ function twentyseventeen_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 
+	// Load the Internet Explorer 8 specific stylesheet.
+	wp_enqueue_style( 'twentyseventeen-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'twentyseventeen-style' ), '20160928' );
+	wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
+
 	// Load the html5 shiv.
 	wp_enqueue_script( 'twentyseventeen-html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'twentyseventeen-html5', 'conditional', 'lt IE 9' );
@@ -242,6 +235,11 @@ function twentyseventeen_scripts() {
 	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'twentyseventeen-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+
+	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
+		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
+		'collapse' => __( 'Collapse child menu', 'twentyseventeen' ),
+	) );
 
 	wp_enqueue_script( 'twentyseventeen-global', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '20151215', true );
 

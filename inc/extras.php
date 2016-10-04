@@ -41,22 +41,18 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'no-header-image';
 	}
 
-	// Add class if footer image has been added.
-	$footer_image = get_theme_mod( 'twentyseventeen_footer_image' );
-	if ( isset( $footer_image ) ) {
-		$classes[] = 'twentyseventeen-footer-image';
-	}
-
 	// Add class if sidebar is used.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! twentyseventeen_is_frontpage() ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() ) {
 		$classes[] = 'has-sidebar';
 	}
 
-	// Add class if top header content is added.
-	$twentyseventeen_header_top_text_1 = get_theme_mod( 'twentyseventeen_header_top_text_1' );
-	$twentyseventeen_header_top_text_2 = get_theme_mod( 'twentyseventeen_header_top_text_2' );
-	if ( '' !== $twentyseventeen_header_top_text_1 || '' !== $twentyseventeen_header_top_text_2 ) {
-		$classes[] = 'has-top-content';
+	// Add class for one or two column page layouts.
+	if ( is_page() && ! twentyseventeen_is_frontpage() && ! is_home() ) {
+		if ( 'one-column' === get_theme_mod( 'twentyseventeen_page_options' ) ) {
+			$classes[] = 'page-one-column';
+		} else {
+			$classes[] = 'page-two-column';
+		}
 	}
 
 	return $classes;
