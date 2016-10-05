@@ -12,18 +12,21 @@
 
 get_header(); ?>
 <div class="wrap">
+
+	<?php if ( have_posts() ) : ?>
+		<header class="page-header">
+			<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
+	<?php endif; ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -37,7 +40,10 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination( array(
+				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
+			) );
 
 		else :
 

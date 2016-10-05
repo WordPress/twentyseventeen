@@ -1,59 +1,122 @@
 jQuery( document ).ready( function( $ ) {
 
-	var $header = $( '.header-top' ),
-		$headerHeight = $( '.header-top' ).outerHeight(),
-		$headerOffset = $( '.custom-header' ).outerHeight(),
-		$headerHiddenClass = 'site-header-hidden',
-		$headerFixedClass = 'site-header-fixed';
-
-
-	// adjust header margin based on height of menu
-	function adjustHeaderMargin(){
-		// check to see if on mobile by checking menu-toggle display
-		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
-			// if yes, we want to bump the custom header down a bit, so the menu doesn't cut it off
-			$( '.custom-header-image').css( 'margin-top', $headerHeight );
-		}
-	}
+	/**
+	 * Making navigation 'stick'
+	 */
+	var $body = $( 'body' ),
+		$navigation = $( '.navigation-top' ),
+		$branding = $( '.site-branding' ),
+		$navigationHiddenClass = 'site-navigation-hidden',
+		$navigationFixedClass = 'site-navigation-fixed',
+		$headerOffset,
+		$navigationHeight,
+		$resizeTimer;
 
 	//we add the scroll class to the navs
 	function adjustScrollClass() {
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
 
-			if ( $( window ).scrollTop() <= $headerOffset && $header.hasClass( $headerFixedClass ) ) {
-				$header.removeClass( $headerFixedClass );
-				$header.addClass( $headerHiddenClass );
+			$headerOffset = $( '.custom-header' ).innerHeight();
+
+			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
+				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
+				$navigation.removeClass( $navigationFixedClass );
+				$navigation.addClass( $navigationHiddenClass );
 
 			} else if ( $( window ).scrollTop() >= $headerOffset ) {
-				//If the scroll is more than the custom header
-				$header.addClass( $headerFixedClass );
-				$header.removeClass( $headerHiddenClass );
-				$( '.custom-header' ).css( 'margin-top', $headerHeight );
+				 // Otherwise, if the scroll is more than the custom header, switch navigation to 'fixed' class
+				$navigation.addClass( $navigationFixedClass );
+				$navigation.removeClass( $navigationHiddenClass );
 
 			} else {
-				//If not we remove it
-				$header.removeClass( $headerFixedClass );
-				$header.removeClass( $headerHiddenClass );
-				$( '.custom-header' ).css( 'margin-top', 'auto' );
+				// In all other cases, remove both classes
+				$navigation.removeClass( $navigationFixedClass );
+				$navigation.removeClass( $navigationHiddenClass );
 			}
 		}
 	}
 
-	// Let's fire some JavaScript!
+	function adjustHeaderHeight() {
 
-	// On load, we want to adjust the header margin
-	adjustHeaderMargin();
-	adjustScrollClass();
+		$navigationHeight = $navigation.innerHeight();
 
-	// On scroll, we want to stick/unstick the header
-	$( window ).on( 'scroll', function() {
-		adjustScrollClass();
+		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+			$branding.css( 'margin-bottom', $navigationHeight );
+		} else {
+			$branding.css( 'margin-bottom', '0' );
+		}
+	}
+
+	/**
+	 * 'Scroll Down' arrow in menu area
+	 */
+	var $menuTop = 0;
+	if( $( 'body' ).hasClass( 'admin-bar' ) ) {
+		$menuTop = -32	;
+	}
+	$( '.menu-scroll-down' ).click( function( e ) {
+		e.preventDefault();
+		$( window ).scrollTo( '#primary' , {
+			duration: 600,
+			offset: { 'top': $menuTop }
+		} );
 	} );
 
-	// we also want to do the same on window rezize
-	$( window ).on( 'resize', function() {
-		setTimeout( adjustHeaderMargin, 500 );
+	/**
+	 * Add 'below-entry-meta' class to elements.
+	 */
+	function belowEntryMetaClass( param ) {
+		if ( ! $body.hasClass( 'has-sidebar' ) || (
+				$body.hasClass( 'search' ) ||
+				$body.hasClass( 'single-attachment' ) ||
+				$body.hasClass( 'error404' ) ||
+				$body.hasClass( 'twentyseventeen-front-page'
+			) ) ) {
+			return;
+		}
+
+		var sidebar          	 = $( '#secondary' ),
+			sidebarPos      	 = sidebar.offset(),
+			sidebarPosBottom 	 = sidebarPos.top + ( sidebar.height() + 28 );
+
+		$( '.entry-content' ).find( param ).each( function() {
+			var element              = $( this ),
+				elementPos           = element.offset(),
+				elementPosTop        = elementPos.top;
+
+			// Add 'below-entry-meta' to elements below the entry meta.
+			if ( elementPosTop > sidebarPosBottom ) {
+				element.addClass( 'below-entry-meta' );
+			} else {
+				element.removeClass( 'below-entry-meta' );
+			}
+		} );
+	}
+
+	// Let's fire some JavaScript!
+	adjustScrollClass();
+	adjustHeaderHeight();
+
+	$( document ).ready( function() {
+		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+	} );
+
+	// On scroll, we want to stick/unstick the navigation
+	$( window ).on( 'scroll', function() {
+		adjustScrollClass();
+		adjustHeaderHeight();
+	} );
+
+	// Also want to make sure the navigation is where it should be on resize
+	$( window ).resize( function() {
+		setTimeout( adjustScrollClass, 500 );
+		setTimeout( adjustHeaderHeight, 1000 );
+
+		clearTimeout( $resizeTimer );
+		$resizeTimer = setTimeout( function() {
+			belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+		}, 300 );
 	} );
 
 } );
