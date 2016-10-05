@@ -1,11 +1,15 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found.
+ * Template part for displaying a message that posts cannot be found
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
  */
+
 ?>
 
 <section class="no-results not-found">
@@ -18,18 +22,12 @@
 
 			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twentyseventeen' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-		<?php elseif ( is_search() ) : ?>
-
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentyseventeen' ); ?></p>
-			<?php
-				get_search_form();
-
-		else : ?>
+		<?php else : ?>
 
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentyseventeen' ); ?></p>
 			<?php
 				get_search_form();
 
 		endif; ?>
-	</div>
+	</div><!-- .page-content -->
 </section><!-- .no-results -->

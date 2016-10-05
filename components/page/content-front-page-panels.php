@@ -1,18 +1,18 @@
 <?php
 /**
- * Template part for displaying pages on front page.
+ * Template part for displaying pages on front page
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
  */
 
 global $twentyseventeencounter;
 
-$current_panel_layout = 'twentyseventeen_panel' . $twentyseventeencounter . '_layout';
-$panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' . esc_attr( $panel_layout ) ); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
 	<span class="panel twentyseventeen-panel<?php echo esc_attr( $twentyseventeencounter ); ?>" id="panel<?php echo esc_attr( $twentyseventeencounter ); ?>">
 		<span class="twentyseventeen-panel-title"><?php printf( __( 'Panel %1$s', 'twentyseventeen' ), esc_attr( $twentyseventeencounter ) ); ?></span>
@@ -24,13 +24,14 @@ $panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
 		$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 
 		$thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'twentyseventeen-featured-image' );
-		//Calculate aspect ratio: h / w * 100%
+
+		// Calculate aspect ratio: h / w * 100%.
 		$ratio = $thumbnail_attributes[2] / $thumbnail_attributes[1] * 100;
 		?>
 
 		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
 			<div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
-		</div>
+		</div><!-- .panel-image -->
 
 	<?php endif; ?>
 
@@ -47,11 +48,38 @@ $panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
 				<?php
 					/* translators: %s: Name of current post */
 					the_content( sprintf(
-						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentyseventeen' ),
+						__( 'Continue reading %s', 'twentyseventeen' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					) );
 				?>
 			</div><!-- .entry-content -->
+
+			<?php
+			// Show recent blog posts if is blog posts page (Note that get_option returns a string, so we're casting the result as an int)
+			if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) : ?>
+
+				<?php // Show four most recent posts
+				$recent_posts = new WP_Query( array(
+					'posts_per_page'      => 3,
+					'post_status'         => 'publish',
+					'ignore_sticky_posts' => true,
+					'no_found_rows'       => true,
+				) );
+				?>
+
+		 		<?php if ( $recent_posts->have_posts() ) : ?>
+
+					<div class="recent-posts">
+
+						<?php
+						while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+							get_template_part( 'components/post/content', 'excerpt' );
+						endwhile;
+						wp_reset_postdata();
+						?>
+					</div><!-- .pique-recent-posts -->
+				<?php endif; ?>
+			<?php endif; ?>
 
 		</div><!-- .wrap -->
 	</div><!-- .panel-content -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying audio posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,7 +9,6 @@
  * @since 1.0
  * @version 1.0
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -33,7 +32,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
@@ -42,7 +41,26 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php
+
+		<?php if ( ! is_single() ) :
+
+			// If not a single post, highlight the audio file
+
+			$content = apply_filters( 'the_content', get_the_content() );
+			$audio = get_media_embedded_in_content( $content, array( 'audio' ) );
+
+			if ( ! empty( $audio ) ) :
+				foreach ( $audio as $audio_html ) {
+					echo '<div class="entry-audio">';
+						echo $audio_html;
+					echo '</div><!-- .entry-audio -->';
+				}
+			endif;
+
+		endif;
+
+		if ( is_single() || empty( $audio ) ) :
+
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				__( 'Continue reading %s', 'twentyseventeen' ),
@@ -55,13 +73,9 @@
 				'link_before' => '<span class="page-number">',
 				'link_after'  => '</span>',
 			) );
-		?>
-	</div><!-- .entry-content -->
 
-	<?php if ( is_single() ) : ?>
-		<footer class="entry-footer">
-			<?php twentyseventeen_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+		endif; ?>
+
+	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

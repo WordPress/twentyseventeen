@@ -1,10 +1,12 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Custom template tags for this theme
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Twenty Seventeen
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
@@ -16,7 +18,26 @@ function twentyseventeen_posted_on() {
 	/* translators: used between list items, there is a space after the comma */
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
-	// Let's get a nicely formatted string for the published date
+	// Wrap that in a link, and preface it with 'Posted on'.
+	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_link();
+
+	// Get the author name; wrap it in a link.
+	$byline = sprintf(
+		_x( 'by %s', 'post author', 'twentyseventeen' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
+	);
+
+	// Finally, let's write all of this to the page.
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+}
+endif;
+
+
+if ( ! function_exists( 'twentyseventeen_time_link' ) ) :
+/**
+ * Gets a nicely formatted string for the published date.
+ */
+function twentyseventeen_time_link() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -29,36 +50,17 @@ function twentyseventeen_posted_on() {
 		get_the_modified_date()
 	);
 
-	// Wrap that in a link, and preface it with 'Posted on'
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'twentyseventeen' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	// Get the author name; wrap it in a link
-	$byline = sprintf(
-		_x( 'by %s', 'post author', 'twentyseventeen' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
-	);
-
-	// Check to make sure we have more than one category before writing to page.
-	$categories_list = get_the_category_list( $separate_meta );
-	if ( $categories_list && twentyseventeen_categorized_blog() ) {
-		$categories = sprintf( _x( 'in %1$s', 'prefaces list of categories assigned to the post', 'twentyseventeen' ), $categories_list ); // WPCS: XSS OK.
-	}
-
-	// Finally, let's write all of this to the page
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span><span class="cat-links"> ' . $categories . '</span>'; // WPCS: XSS OK.
+	return '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 }
 endif;
 
 
 if ( ! function_exists( 'twentyseventeen_edit_post_link' ) ) :
 /**
- * Prints the post's edit link
+ * Prints the post's edit link.
  */
 function twentyseventeen_edit_post_link() {
-	// Display 'edit' link
+	// Display 'edit' link.
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
@@ -81,18 +83,22 @@ function twentyseventeen_entry_footer() {
 	/* translators: used between list items, there is a space after the comma */
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
-	// Display Tags for posts
 	if ( 'post' === get_post_type() ) {
+		echo '<span class="cat-tags-links">';
+
+		// Display Categories for posts.
+		$categories_list = get_the_category_list( $separate_meta );
+		// Make sure there's more than one category before displaying.
+		if ( $categories_list && twentyseventeen_categorized_blog() ) {
+			echo '<span class="cat-links"><span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+		}
+
+		// Display Tags for posts.
 		$tags_list = get_the_tag_list( '', $separate_meta );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'twentyseventeen' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo '<span class="tags-links"><span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
 		}
-	}
 
-	// Display link to comments
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'twentyseventeen' ), __( '1 Comment', 'twentyseventeen' ), __( '% Comments', 'twentyseventeen' ) );
 		echo '</span>';
 	}
 
@@ -103,27 +109,26 @@ endif;
 
 /**
  * Returns an accessibility-friendly link to edit a post or page.
+ *
  * This also gives us a little context about what exactly we're editing
  * (post or page?) so that users understand a bit more where they are in terms
  * of the template hierarchy and their content. Helpful when/if the single-page
  * layout with multiple posts/pages shown gets confusing.
+ *
+ * @param int $id The post ID.
  */
 function twentyseventeen_edit_link( $id ) {
-	if ( is_page() ) :
-		$type = __( 'Page', 'twentyseventeen' );
-	elseif ( get_post( $id ) ) :
-		$type = __( 'Post', 'twentyseventeen' );
-	endif;
+
 	$link = edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit %1$s %2$s', 'twentyseventeen' ),
-			$type,
+			__( 'Edit %s', 'twentyseventeen' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
 		'</span>'
 	);
+
 	return $link;
 }
 
@@ -152,11 +157,12 @@ function twentyseventeen_categorized_blog() {
 	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so twentyseventeen_categorized_blog should return true.
 		return true;
-	} else {
-		// This blog has only 1 category so twentyseventeen_categorized_blog should return false.
-		return false;
 	}
+
+	// This blog has only 1 category so twentyseventeen_categorized_blog should return false.
+	return false;
 }
+
 
 /**
  * Flush out the transients used in twentyseventeen_categorized_blog.
