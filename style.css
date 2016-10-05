@@ -40,7 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Normalize v 4.2.0
+# Normalize v5.0.0
 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 
@@ -212,7 +212,6 @@ button:-moz-focusring,
 [type="submit"]:-moz-focusring {
 	outline: 1px dotted ButtonText;
 }
-
 
 fieldset {
 	border: 1px solid #c0c0c0;
