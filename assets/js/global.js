@@ -8,6 +8,7 @@ jQuery( document ).ready( function( $ ) {
 		$branding = $( '.site-branding' ),
 		$navigationHiddenClass = 'site-navigation-hidden',
 		$navigationFixedClass = 'site-navigation-fixed',
+		$navgationMenuItem = $navigation.find( '.menu-item' ),
 		$headerOffset,
 		$navigationHeight,
 		$resizeTimer;
@@ -24,8 +25,9 @@ jQuery( document ).ready( function( $ ) {
 				$navigation.removeClass( $navigationFixedClass );
 				$navigation.addClass( $navigationHiddenClass );
 
-			} else if ( $( window ).scrollTop() >= $headerOffset ) {
-				 // Otherwise, if the scroll is more than the custom header, switch navigation to 'fixed' class
+			} else if ( $( window ).scrollTop() >= $headerOffset && $navgationMenuItem.length < 20 ) {
+				 // Otherwise, if the scroll is more than the custom header and there are less thane 20 menu itmes,
+				 // switch navigation to 'fixed' class
 				$navigation.addClass( $navigationFixedClass );
 				$navigation.removeClass( $navigationHiddenClass );
 
