@@ -6,7 +6,6 @@ jQuery( document ).ready( function( $ ) {
 	var $body = $( 'body' ),
 		$navigation = $( '.navigation-top' ),
 		$branding = $( '.site-branding' ),
-		$navigationHiddenClass = 'site-navigation-hidden',
 		$navigationFixedClass = 'site-navigation-fixed',
 		$headerOffset,
 		$navigationHeight,
@@ -27,23 +26,15 @@ jQuery( document ).ready( function( $ ) {
 				$headerOffset = $( '.custom-header' ).innerHeight();
 			}
 
-			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
+			if ( $( window ).scrollTop() >= $headerOffset ) {
 
-				// If the navigation is just offscreen, add hidden class and make sure fixed class is removed
-				$navigation.removeClass( $navigationFixedClass );
-				$navigation.addClass( $navigationHiddenClass );
-
-			} else if ( $( window ).scrollTop() >= $headerOffset ) {
-
-				// Otherwise, if the scroll is more than the custom header, switch navigation to 'fixed' class
+				// If the scroll is more than the custom header, switch navigation to 'fixed' class
 				$navigation.addClass( $navigationFixedClass );
-				$navigation.removeClass( $navigationHiddenClass );
 
 			} else {
 
 				// In all other cases, remove both classes
 				$navigation.removeClass( $navigationFixedClass );
-				$navigation.removeClass( $navigationHiddenClass );
 			}
 		}
 	}
