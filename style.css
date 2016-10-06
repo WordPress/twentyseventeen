@@ -1977,29 +1977,6 @@ h2.widget-title {
 	margin-bottom: 0.5em;
 }
 
-/* Goodreads */
-
-.widget_goodreads div[class^="gr_custom_container"] {
-	background: transparent;
-	border: 0;
-	padding: 0;
-}
-
-.widget_goodreads div[class^="gr_custom_each_container"] {
-	border-bottom: 0;
-}
-
-.widget_goodreads div[class^="gr_custom_each_container"] a {
-	color: inherit;
-}
-
-.widget_goodreads div[class^="gr_custom_author"] {
-	font-size: 12px;
-	font-size: 0.75rem;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-}
-
 /* Gravatar */
 
 .widget-grofile h4 {
