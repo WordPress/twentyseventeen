@@ -8,10 +8,10 @@ jQuery( document ).ready( function( $ ) {
 		$branding = $( '.site-branding' ),
 		$navigationHiddenClass = 'site-navigation-hidden',
 		$navigationFixedClass = 'site-navigation-fixed',
-		$navgationMenuItem = $navigation.find( '.menu-item' ),
 		$headerOffset,
 		$navigationHeight,
 		$resizeTimer;
+
 
 	//we add the scroll class to the navs
 	function adjustScrollClass() {
@@ -20,14 +20,17 @@ jQuery( document ).ready( function( $ ) {
 
 			$headerOffset = $( '.custom-header' ).innerHeight();
 
+			// Check to see if the nav is bigger than half the viewport size
+			var navIsTooBig = (($(window).height() / 2) - $navigationHeight) <= 0;
+
 			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
 				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
 				$navigation.removeClass( $navigationFixedClass );
 				$navigation.addClass( $navigationHiddenClass );
 
-			} else if ( $( window ).scrollTop() >= $headerOffset && $navgationMenuItem.length < 20 ) {
-				 // Otherwise, if the scroll is more than the custom header and there are less thane 20 menu itmes,
-				 // switch navigation to 'fixed' class
+			} else if ( $( window ).scrollTop() >= $headerOffset && !navIsTooBig ) {
+				 // Otherwise, if the scroll is more than the custom header
+				 // and the nav isn't too big, switch navigation to 'fixed' class
 				$navigation.addClass( $navigationFixedClass );
 				$navigation.removeClass( $navigationHiddenClass );
 
