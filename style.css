@@ -1036,7 +1036,7 @@ body {
 }
 
 .site-description {
-	color: #777;
+	color: #767676;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -1574,7 +1574,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .entry-footer .cat-links:before,
 .entry-footer .tags-links:before {
-	color: #999;
+	color: #bbb;
 	display: inline-block;
 	font-size: 16px;
 	font-size: 1.0rem;
@@ -2974,7 +2974,7 @@ article.panel-placeholder {
 	.menu-scroll-down {
 		background: transparent;
 		border: 0;
-		color: #999;
+		color: #767676;
 		display: block;
 		padding: 0.75em;
 		position: absolute;
