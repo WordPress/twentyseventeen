@@ -12,7 +12,6 @@ jQuery( document ).ready( function( $ ) {
 		$navigationHeight,
 		$resizeTimer;
 
-
 	//we add the scroll class to the navs
 	function adjustScrollClass() {
 		// Make sure we're not on a mobile screen
