@@ -20,7 +20,7 @@ jQuery( document ).ready( function( $ ) {
 			$headerOffset = $( '.custom-header' ).innerHeight();
 
 			// Check to see if the nav is bigger than half the viewport size
-			var navIsTooBig = (($(window).height() / 2) - $navigationHeight) <= 0;
+			var navIsTooBig = (($(window).height() / 3) - $navigationHeight) <= 0;
 
 			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
 				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
