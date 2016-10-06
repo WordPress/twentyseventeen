@@ -1982,8 +1982,15 @@ h2.widget-title {
 
 /* Archives, Categories, Menu, Pages, Recent Comments, Recent Posts */
 
+/* RSS Widget */
+
 .widget .rss-date {
 	display: block;
+	margin: 0.75em 0;
+}
+
+.widget .rssSummary {
+	margin-bottom: 0.75em;
 }
 
 /* Contact Info Widget */
