@@ -1506,6 +1506,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 0.8125rem;
 }
 
+/* More tag */
+
+.entry-content .more-link:before {
+	content: '';
+	display: block;
+	margin-top: 1.5em;
+}
+
 /* Single Post */
 
 .single-post:not(.has-sidebar) #primary,
