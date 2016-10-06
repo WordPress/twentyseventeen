@@ -662,6 +662,7 @@ input[type="submit"] {
 	border-radius: 2px;
 	box-shadow: none;
 	color: #fff;
+	cursor: pointer;
 	display: inline-block;
 	font-size: 14px;
 	font-size: 0.875rem;
