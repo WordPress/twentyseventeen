@@ -128,8 +128,8 @@ dfn {
 }
 
 mark {
-	background-color: #ff0;
-	color: #000;
+	background-color: #eee;
+	color: #222;
 }
 
 small {
@@ -214,7 +214,7 @@ button:-moz-focusring,
 }
 
 fieldset {
-	border: 1px solid #c0c0c0;
+	border: 1px solid #bbb;
 	margin: 0 2px;
 	padding: 0.35em 0.625em 0.75em;
 }
@@ -521,7 +521,7 @@ abbr, acronym {
 }
 
 mark, ins {
-	background: #fff9c0;
+	background: #eee;
 	text-decoration: none;
 }
 
@@ -633,7 +633,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: #222;
 	border-color: #333;
 }
 
@@ -709,7 +709,7 @@ input[type="submit"].secondary:focus {
 --------------------------------------------------------------*/
 
 hr {
-	background-color: #ccc;
+	background-color: #bbb;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -1038,7 +1038,7 @@ body {
 }
 
 .twentyseventeen-front-page:not(.no-header-image) .site-description {
-	color: #ccc;
+	color: #bbb;
 }
 
 .custom-logo-link img {
@@ -1430,7 +1430,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .page-numbers.current {
-	color: #707070;
+	color: #767676;
 }
 
 .prev.page-numbers,
@@ -1524,7 +1524,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .page-links .page-number {
-	color: #707070;
+	color: #767676;
 	display: inline-block;
 	padding: 0.5em 1em;
 }
@@ -2052,7 +2052,7 @@ h2.widget-title {
 .widget.widget_tag_cloud a:focus,
 .wp_widget_tag_cloud a:hover,
 .wp_widget_tag_cloud a:focus {
-	border-color: #ccc;
+	border-color: #bbb;
 	text-decoration: none;
 }
 
