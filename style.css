@@ -2735,66 +2735,6 @@ article.panel-placeholder {
 		top: 32px;
 	}
 
-	.site-navigation-fixed.navigation-top .wrap,
-	.site-navigation-hidden.navigation-top .wrap {
-		padding-bottom: 0.25em;
-		padding-top: 0.25em;
-	}
-
-	.site-navigation-fixed.navigation-top {
-		-webkit-animation: navigation-down 0.2s ease-in;
-		animation: navigation-down 0.2s ease-in;
-		-webkit-transform: translate(0);
-		transform: translate(0);
-	}
-
-	.site-navigation-hidden.navigation-top {
-		-webkit-animation: navigation-up 0.5s ease-in;
-		animation: navigation-up 0.5s ease-in;
-		-webkit-transform: translate(-100%);
-		transform: translate(-100%);
-	}
-
-	@-webkit-keyframes navigation-down {
-		from {
-			-webkit-transform: translate(0, -100%);
-		}
-
-		to {
-			-webkit-transform: translate(0);
-		}
-	}
-
-	@keyframes navigation-down {
-		from {
-			transform: translate(0, -100%);
-		}
-
-		to {
-			transform: translate(0);
-		}
-	}
-
-	@-webkit-keyframes navigation-up {
-		from {
-			-webkit-transform: translate(0);
-		}
-
-		to {
-			-webkit-transform: translate(0, -100%);
-		}
-	}
-
-	@keyframes navigation-up {
-		from {
-			transform: translate(0);
-		}
-
-		to {
-			transform: translate(0, -100%);
-		}
-	}
-
 	/* Main Navigation */
 
 	.js .menu-toggle,
@@ -2834,12 +2774,6 @@ article.panel-placeholder {
 
 	.main-navigation a {
 		padding: 1em 1.25em;
-	}
-
-	.site-navigation-fixed.navigation-top .main-navigation a,
-	.site-navigation-hidden.navigation-top .main-navigation a {
-		padding-bottom: 0.75em;
-		padding-top: 0.75em;
 	}
 
 	.main-navigation ul ul {
