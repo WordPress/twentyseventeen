@@ -19,7 +19,7 @@ jQuery( document ).ready( function( $ ) {
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
 			// When there's a custom header image, the header offset includes the height of the navigation
-			$navigationHeight = $navigation.innerHeight();
+			$navigationHeight = $navigation.outerHeight();
 			if ( $( '.custom-header-image' ).length ) {
 				$headerOffset = $( '.custom-header' ).innerHeight() - $navigationHeight;
 			} else {
@@ -41,7 +41,7 @@ jQuery( document ).ready( function( $ ) {
 
 	function adjustHeaderHeight() {
 
-		$navigationHeight = $navigation.innerHeight();
+		$navigationHeight = $navigation.outerHeight();
 
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 			$branding.css( 'margin-bottom', $navigationHeight );
