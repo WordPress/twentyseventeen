@@ -48,7 +48,7 @@ function twentyseventeen_body_classes( $classes ) {
 
 	// Add class for one or two column page layouts.
 	if ( is_page() && ! twentyseventeen_is_frontpage() && ! is_home() ) {
-		if ( 'one-column' === get_theme_mod( 'twentyseventeen_page_options' ) ) {
+		if ( 'one-column' === get_theme_mod( 'page_options' ) ) {
 			$classes[] = 'page-one-column';
 		} else {
 			$classes[] = 'page-two-column';
@@ -69,7 +69,7 @@ function twentyseventeen_panel_count() {
 	$panel_count = 0;
 
 	foreach ( $panels as $panel ) {
-		if ( get_theme_mod( 'twentyseventeen_panel_' . $panel ) ) {
+		if ( get_theme_mod( 'panel_' . $panel ) ) {
 			$panel_count++;
 		}
 	}
