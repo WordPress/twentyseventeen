@@ -20,26 +20,26 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	/**
 	 * Add the Theme Options section
 	 */
-	$wp_customize->add_panel( 'twentyseventeen_options_panel', array(
+	$wp_customize->add_panel( 'options_panel', array(
 		'title'       => __( 'Theme Options', 'twentyseventeen' ),
 		'description' => __( 'Configure your theme settings', 'twentyseventeen' ),
 	) );
 
 	// Page Options.
-	$wp_customize->add_section( 'twentyseventeen_page_options', array(
+	$wp_customize->add_section( 'page_options', array(
 		'title'           => __( 'Single Page Layout', 'twentyseventeen' ),
 		'active_callback' =>'twentyseventeen_is_page',
-		'panel'           => 'twentyseventeen_options_panel',
+		'panel'           => 'options_panel',
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_page_options', array(
+	$wp_customize->add_setting( 'page_options', array(
 		'default'           => 'two-column',
 		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
 	) );
 
-	$wp_customize->add_control( 'twentyseventeen_page_options', array(
+	$wp_customize->add_control( 'page_options', array(
 		'label'       => __( 'Single Page Layout', 'twentyseventeen' ),
-		'section'     => 'twentyseventeen_page_options',
+		'section'     => 'page_options',
 		'type'        => 'radio',
 		'description' => __( 'When no sidebar widgets are assigned, you can opt to display single pages with a one column or two column layout. When the two column layout is assigned, the page title is in one column and content is in the other.', 'twentyseventeen' ),
 		'choices'     => array(
@@ -49,78 +49,78 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 
 	// Panel 1.
-	$wp_customize->add_section( 'twentyseventeen_panel_1', array(
+	$wp_customize->add_section( 'panel_1', array(
 		'title'           => __( 'Panel 1', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
-		'panel'           => 'twentyseventeen_options_panel',
+		'panel'           => 'options_panel',
 		'description'     => __( 'Add an image to your panel by setting a featured image in the page editor. If you don&rsquo;t select a page, this panel will not be displayed.', 'twentyseventeen' ),
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel_1', array(
+	$wp_customize->add_setting( 'panel_1', array(
 		'default'           => false,
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( 'twentyseventeen_panel_1', array(
+	$wp_customize->add_control( 'panel_1', array(
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_1',
+		'section' => 'panel_1',
 		'type'    => 'dropdown-pages',
 	) );
 
 	// Panel 2.
-	$wp_customize->add_section( 'twentyseventeen_panel_2', array(
+	$wp_customize->add_section( 'panel_2', array(
 		'title'           => __( 'Panel 2', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
-		'panel'           => 'twentyseventeen_options_panel',
+		'panel'           => 'options_panel',
 		'description'     => __( 'Add an image to your panel by setting a featured image in the page editor. If you don&rsquo;t select a page, this panel will not be displayed.', 'twentyseventeen' ),
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel_2', array(
+	$wp_customize->add_setting( 'panel_2', array(
 		'default'           => false,
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( 'twentyseventeen_panel_2', array(
+	$wp_customize->add_control( 'panel_2', array(
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_2',
+		'section' => 'panel_2',
 		'type'    => 'dropdown-pages',
 	) );
 
 	// Panel 3.
-	$wp_customize->add_section( 'twentyseventeen_panel_3', array(
+	$wp_customize->add_section( 'panel_3', array(
 		'title'           => __( 'Panel 3', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
-		'panel'           => 'twentyseventeen_options_panel',
+		'panel'           => 'options_panel',
 		'description'     => __( 'Add an image to your panel by setting a featured image in the page editor. If you don&rsquo;t select a page, this panel will not be displayed.', 'twentyseventeen' ),
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel_3', array(
+	$wp_customize->add_setting( 'panel_3', array(
 		'default'           => false,
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( 'twentyseventeen_panel_3', array(
+	$wp_customize->add_control( 'panel_3', array(
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_3',
+		'section' => 'panel_3',
 		'type'    => 'dropdown-pages',
 	) );
 
 	// Panel 4.
-	$wp_customize->add_section( 'twentyseventeen_panel_4', array(
+	$wp_customize->add_section( 'panel_4', array(
 		'title'           => __( 'Panel 4', 'twentyseventeen' ),
 		'active_callback' => 'is_front_page',
-		'panel'           => 'twentyseventeen_options_panel',
+		'panel'           => 'options_panel',
 		'description'     => __( 'Add an image to your panel by setting a featured image in the page editor. If you don&rsquo;t select a page, this panel will not be displayed.', 'twentyseventeen' ),
 	) );
 
-	$wp_customize->add_setting( 'twentyseventeen_panel_4', array(
+	$wp_customize->add_setting( 'panel_4', array(
 		'default'           => false,
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( 'twentyseventeen_panel_4', array(
+	$wp_customize->add_control( 'panel_4', array(
 		'label'   => __( 'Panel Content', 'twentyseventeen' ),
-		'section' => 'twentyseventeen_panel_4',
+		'section' => 'panel_4',
 		'type'    => 'dropdown-pages',
 	) );
 }
