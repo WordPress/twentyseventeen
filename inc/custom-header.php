@@ -17,7 +17,7 @@
 function twentyseventeen_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'twentyseventeen_custom_header_args', array(
 		'default-image'      => get_template_directory_uri() . '/assets/images/header.jpg',
-		'default-text-color' => '000000',
+		'default-text-color' => '222222',
 		'width'              => 2000,
 		'height'             => 1200,
 		'flex-height'        => true,
@@ -58,7 +58,10 @@ function twentyseventeen_header_style() {
 		else :
 	?>
 		.site-title a,
-		.site-description {
+		.twentyseventeen-front-page:not(.no-header-image) .site-title,
+		.twentyseventeen-front-page:not(.no-header-image) .site-title a,
+		.site-description,
+		.twentyseventeen-front-page:not(.no-header-image) .site-description {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
