@@ -132,7 +132,7 @@ body.colors-custom,
 	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 40% ); /* base: #666; */
 }
 
-.colors-custom h5
+.colors-custom h5,
 .colors-custom .entry-meta,
 .colors-custom .entry-meta a,
 .colors-custom .nav-subtitle,
