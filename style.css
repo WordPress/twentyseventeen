@@ -2276,7 +2276,7 @@ object {
 	max-width: 100%;
 }
 
-.wp-caption, .gallery-item .gallery-caption {
+.wp-caption {
 	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -2324,14 +2324,7 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-	margin:0 0 1.5em;
-	padding:0 0.75em;
 }
-
-.gallery-item a {
-	border-bottom:none;
-}
-
 
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
@@ -2368,7 +2361,6 @@ object {
 .gallery-caption {
 	display: block;
 }
-
 
 /*--------------------------------------------------------------
 # Customizer
