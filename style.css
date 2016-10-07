@@ -2276,7 +2276,7 @@ object {
 	max-width: 100%;
 }
 
-.wp-caption {
+.wp-caption, .gallery-caption {
 	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -2324,7 +2324,25 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	margin: 0 0 1.5em 0;
+	padding: 0 .5em;
 }
+
+.gallery-item a {
+	display:inline-block;
+	border-bottom:none;
+	background:none;
+}
+
+.gallery-item a img {
+	opacity:1;
+	transition: opacity 0.2s ease-in;
+}
+
+.gallery-item a:hover img {
+	opacity:0.8;
+}
+
 
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
