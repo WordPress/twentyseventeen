@@ -2829,7 +2829,7 @@ article.panel-placeholder {
 
 	.main-navigation ul ul {
 		background: #fff;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
 		padding: 0;
 		position: absolute;
 		top: 100%;
@@ -2840,17 +2840,18 @@ article.panel-placeholder {
 	.main-navigation ul ul:before,
 	.main-navigation ul ul:after {
 		border-style: solid;
-		border-width: 0 6px 6px 6px;
+		border-width: 0 6px 7px 6px;
 		content: "";
 		height: 0;
 		position: absolute;
 		right: 0.5em;
 		top: -6px;
 		width: 0;
+		z-index: -1;
 	}
 
 	.main-navigation ul ul:before {
-		border-color: transparent transparent #eee transparent;
+		border-color: transparent transparent #ddd transparent;
 		top: -7px;
 	}
 
