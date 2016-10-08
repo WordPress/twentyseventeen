@@ -2717,7 +2717,7 @@ article.panel-placeholder {
 
 	.admin-bar .site-navigation-fixed.navigation-top,
 	.admin-bar .site-navigation-hidden.navigation-top {
-		top: 46px;
+		top: 32px;
 	}
 
 	.site-navigation-fixed.navigation-top .wrap,
@@ -3338,4 +3338,13 @@ article.panel-placeholder {
 	.twentyseventeen-front-page .entry-content blockquote.alignright {
 		margin-right: -20%;
 	}
+}
+
+@media screen and (max-width: 768px) and (min-width: 882px) {
+
+    .admin-bar .site-navigation-fixed.navigation-top,
+    .admin-bar .site-navigation-hidden.navigation-top {
+        top: 46px;
+    }
+
 }
