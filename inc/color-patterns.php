@@ -406,7 +406,10 @@ body.colors-custom,
 .colors-custom .menu-toggle,
 .colors-custom .menu-toggle:hover,
 .colors-custom .menu-toggle:focus,
-.colors-custom .menu .dropdown-toggle {
+.colors-custom .menu .dropdown-toggle
+.colors-custom .menu-scroll-down,
+.colors-custom .menu-scroll-down:hover,
+.colors-custom .menu-scroll-down:focus {
 	background-color: transparent;
 }
 
