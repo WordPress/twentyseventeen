@@ -53,7 +53,8 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 		'section'  => 'colors',
 		'priority' => 6,
-		// @todo change this to a visual hue picker control, ideally extending the color control and leveraging iris, and possibly being moved to core after merge
+		'description' => 'Temporary hue slider will be replaced with a visual hue picker that is only shown when a custom scheme is selected', // intentionally untranslated
+		// @todo change this to a visual hue picker control, ideally extending the color control and leveraging iris by adding a `hue` mode in core
 		// @todo only show this control when the colorscheme is custom
 	) );
 
