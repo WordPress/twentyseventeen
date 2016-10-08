@@ -2334,15 +2334,12 @@ object {
 	border-bottom:none;
 	background:none;
 	border:10px solid transparent;
-
 }
+
 .gallery-item a:hover {
 	background:none;
-	border:10px solid #ddd;
-	
+	border:10px solid #ddd;	
 }
-
-
 
 .gallery-item a img {
 	display:block;
@@ -2351,8 +2348,6 @@ object {
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
-
-
 
 .gallery-caption {
 	display: block;
@@ -2594,6 +2589,7 @@ article.panel-placeholder {
 	.gallery-item {
 		max-width: 25%;
 	}
+
 	.gallery-columns-3 .gallery-item {
 		max-width: 33.33%;
 	}
@@ -3306,6 +3302,7 @@ article.panel-placeholder {
 	}
 
 	/* Gallery Columns */
+	
 	.gallery-columns-5 .gallery-item {
 		max-width: 20%;
 	}
