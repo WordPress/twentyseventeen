@@ -9,7 +9,7 @@
 .colors-dark input[type="submit"],
 .colors-dark .bypostauthor > .comment-body > .comment-meta > .comment-author:before,
 .colors-dark .entry-footer .edit-link a.post-edit-link {
-	background-color: #ddd;
+	background-color: #fff;
 }
 
 .colors-dark input[type="text"]:focus,
@@ -49,7 +49,7 @@
 .colors-dark .comment-reply-link:before,
 .colors-dark h2.widget-title,
 .colors-dark mark {
-	color: #ddd;
+	color: #fff;
 }
 
 body.colors-dark,
@@ -68,7 +68,7 @@ body.colors-dark,
 .colors-dark .format-quote blockquote,
 .colors-dark .nav-title,
 .colors-dark .comment-body {
-	color: #ccc;
+	color: #eee;
 }
 
 
@@ -88,7 +88,7 @@ body.colors-dark,
 .colors-dark input[type="datetime-local"]:focus,
 .colors-dark input[type="color"]:focus,
 .colors-dark textarea:focus {
-	border-color: #ccc;
+	border-color: #eee;
 }
 
 .colors-dark h2,
@@ -109,6 +109,10 @@ body.colors-dark,
 .colors-dark input[type="datetime-local"],
 .colors-dark input[type="color"],
 .colors-dark textarea,
+.colors-dark .navigation-top .current-menu-item > a,
+.colors-dark .navigation-top .current-menu-item > a:visited,
+.colors-dark .navigation-top .current_page_item > a,
+.colors-dark .navigation-top .current_page_item > a:visited,
 .colors-dark .entry-content blockquote.alignleft,
 .colors-dark .entry-content blockquote.alignright,
 .colors-dark .taxonomy-description,
@@ -133,7 +137,7 @@ body.colors-dark,
 .colors-dark .page-numbers.current,
 .colors-dark .page-links .page-number,
 .colors-dark .site-description {
-	color: #898989;
+	color: #999;
 }
 
 .colors-dark button:hover,
@@ -194,15 +198,11 @@ body.colors-dark,
 .colors-dark .widget .widget-title a:hover,
 .colors-dark .widget ul li a:focus,
 .colors-dark .widget ul li a:hover,
-.colors-dark .navigation-top .current-menu-item > a,
-.colors-dark .navigation-top .current-menu-item > a:visited,
-.colors-dark .navigation-top .current_page_item > a,
-.colors-dark .navigation-top .current_page_item > a:visited,
 .colors-dark .entry-footer .edit-link a.post-edit-link:hover,
 .colors-dark .entry-footer .edit-link a.post-edit-link:focus,
 .colors-dark .social-navigation a:hover:before,
 .colors-dark .social-navigation a:focus:before {
-	background: #898989;
+	background: #999;
 }
 
 .colors-dark .entry-content a,
@@ -217,7 +217,7 @@ body.colors-dark,
 .colors-dark .posts-navigation a:visited,
 .colors-dark .widget_authors a strong,
 .colors-dark .widget_authors a:visited strong {
-	border-bottom-color: #898989;
+	border-bottom-color: #999;
 }
 
 .colors-dark button.secondary:hover,
@@ -275,28 +275,28 @@ body.colors-dark,
 .colors-dark input[type="submit"].secondary,
 .colors-dark .prev.page-numbers,
 .colors-dark .next.page-numbers {
-	background-color: #333;
+	background-color: #444;
 }
 
 .colors-dark .widget .tagcloud a,
 .colors-dark .widget.widget_tag_cloud a,
 .colors-dark .wp_widget_tag_cloud a {
-	border-color: #333;
+	border-color: #444;
 }
 
 .colors-dark .twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child),
 .colors-dark .widget ul li {
-	border-top-color: #333;
+	border-top-color: #444;
 }
 
 .colors-dark .widget ul li {
-	border-bottom-color: #333;
+	border-bottom-color: #444;
 }
 
 .colors-dark pre,
 .colors-dark mark,
 .colors-dark ins {
-	background: #111;
+	background: #333;
 }
 
 .colors-dark .navigation-top,
@@ -305,18 +305,18 @@ body.colors-dark,
 .colors-dark .comment-navigation,
 .colors-dark .entry-footer,
 .colors-dark .site-footer {
-	border-top-color: #111;
+	border-top-color: #333;
 }
 
 .colors-dark .navigation-top,
 .colors-dark .main-navigation li,
 .colors-dark .entry-footer,
 .colors-dark #comments {
-	border-bottom-color: #111;
+	border-bottom-color: #333;
 }
 
 .colors-dark .site-header {
-	background-color: #060606;
+	background-color: #262626;
 }
 
 .colors-dark .entry-content a:focus,
@@ -378,19 +378,18 @@ body.colors-dark,
 .colors-dark input[type="submit"],
 .colors-dark .entry-footer .edit-link a.post-edit-link,
 .colors-dark .bypostauthor > .comment-body > .comment-meta > .comment-author:before {
-	color: #000;
+	color: #222;
 }
 
 body.colors-dark,
 .colors-dark .navigation-top,
 .colors-dark .main-navigation ul,
-.colors-dark .social-navigation a:before,
 .colors-dark .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
-	background: #000;
+	background: #222;
 }
 
 .colors-dark .bypostauthor > .comment-body > .comment-meta > .comment-author:before {
-	border-color: #000;
+	border-color: #222;
 }
 
 .colors-dark .panel-image:before {
@@ -403,7 +402,10 @@ body.colors-dark,
 .colors-dark .menu-toggle,
 .colors-dark .menu-toggle:hover,
 .colors-dark .menu-toggle:focus,
-.colors-dark .dropdown-toggle {
+.colors-dark .dropdown-toggle,
+.colors-custom .menu-scroll-down,
+.colors-custom .menu-scroll-down:hover,
+.colors-custom .menu-scroll-down:focus {
 	background-color: transparent;
 }
 
@@ -419,32 +421,32 @@ body.colors-dark,
 
 	.colors-dark .nav-links .nav-previous .nav-title:before,
 	.colors-dark .nav-links .nav-next .nav-title:after {
-		color: #ddd;
+		color: #eee;
 	}
 
 	.colors-dark .main-navigation li li:hover,
 	.colors-dark .main-navigation li li.focus {
-		background: #898989;
+		background: #999;
 	}
 
 	.colors-dark .menu-scroll-down {
-		color: #898989;
+		color: #999;
 	}
 
 	.colors-dark .main-navigation ul ul {
-		border-color: #111;
+		border-color: #333;
 	}
 
 	.colors-dark .main-navigation ul ul:before {
-		border-bottom-color: #111;
+		border-bottom-color: #333;
 	}
 
 	.colors-dark .main-navigation ul ul {
-		background: #000;
+		background: #222;
 	}
 
 	.colors-dark .main-navigation ul ul:after {
-		border-bottom-color: #000;
+		border-bottom-color: #222;
 	}
 
 	.colors-dark .main-navigation li li.focus > a,
@@ -456,7 +458,7 @@ body.colors-dark,
 	.colors-dark .main-navigation li li.current-menu-item a:hover,
 	.colors-dark .main-navigation li li.current_page_item a:focus,
 	.colors-dark .main-navigation li li.current-menu-item a:focus {
-		color: #000;
+		color: #222;
 	}
 
 }
