@@ -123,6 +123,17 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		'section' => 'panel_4',
 		'type'    => 'dropdown-pages',
 	) );
+
+	$wp_customize->add_setting( 'header_image_textcolor' , array(
+	    'default'     => '#000000',
+	    'transport'   => 'refresh',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_image_textcolor', array(
+		'label'        => __( 'Header Color (Over Image)', 'mytheme' ),
+		'section'    => 'colors',
+		'settings'   => 'header_image_textcolor',
+	) ) );
 }
 add_action( 'customize_register', 'twentyseventeen_customize_register' );
 
