@@ -2276,7 +2276,8 @@ object {
 	max-width: 100%;
 }
 
-.wp-caption, .gallery-caption {
+.wp-caption, 
+.gallery-caption {
 	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -2324,25 +2325,25 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-	margin: 0 0 1.5em 0;
-	padding: 0 .5em;
+	margin: 0 0 1.5em;
+	padding: 0 0.5em;
 	width:50%;
 }
 
 .gallery-item a {
-	display:inline-block;
-	border-bottom:none;
-	background:none;
-	border:10px solid transparent;
+	display: inline-block;
+	border-bottom: none;
+	background: none;
+	border: 10px solid transparent;
 }
 
 .gallery-item a:hover {
 	background:none;
-	border:10px solid #ddd;	
+	border: 10px solid #ddd;	
 }
 
 .gallery-item a img {
-	display:block;
+	display: block;
 }
 
 .gallery-columns-2 .gallery-item {
