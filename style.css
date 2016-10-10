@@ -1732,7 +1732,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 #comments {
 	border-bottom: 1px solid #eee;
 	padding: 0 0 0.5em;
-	margin: 2em 0 0 0;
+	margin: 2em 0 0;
 }
 
 .comments-title {
