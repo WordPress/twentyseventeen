@@ -847,7 +847,9 @@ a:visited .nav-title,
 .widget .widget-title a,
 .widget .widget-title a:visited,
 .widget ul li a,
-.widget ul li a:visited {
+.widget ul li a:visited,
+.site-footer .widget ul li a,
+.site-footer .widget ul li a:visited {
 	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -1916,8 +1918,8 @@ h2.widget-title {
 	padding-bottom: 0;
 }
 
-.widget ul li + li {
-	margin-top: -1px;
+.site-footer .widget ul li a {
+	border: none;
 }
 
 .widget ul li ul {
