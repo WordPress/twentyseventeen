@@ -1512,8 +1512,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .single-featured-image-header {
-    background-color: #fafafa;
-    border-bottom: 1px solid #eee;
+	background-color: #fafafa;
+	border-bottom: 1px solid #eee;
 }
 
 .single-featured-image-header img {
