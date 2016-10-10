@@ -394,9 +394,9 @@ body.colors-dark,
 
 .colors-dark .panel-image:before {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+100 */
-	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top,  rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .colors-dark .menu-toggle,
@@ -414,9 +414,9 @@ body.colors-dark,
 
 	.colors-dark .custom-header-image:before {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
-		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 75%, rgba(255,255,255,0.3) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 75%,rgba(255,255,255,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 75%,rgba(255,255,255,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		background: -moz-linear-gradient(top,  rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.3) 75%,rgba(255, 255, 255, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.3) 75%,rgba(255, 255, 255, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	}
 
 	.colors-dark .nav-links .nav-previous .nav-title:before,
