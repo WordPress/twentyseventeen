@@ -76,7 +76,7 @@
 
 		// Toggle `focus` class to allow submenu access on tablets.
 		function toggleFocusClassTouchScreen() {
-			if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
 				$( document.body ).on( 'touchstart.twentyseventeen', function( e ) {
 					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
@@ -111,7 +111,7 @@
 
 	// Add the default ARIA attributes for the menu toggle and the navigations.
 	function onResizeARIA() {
-		if ( 'block' === $( '.menu-toggle').css( 'display') ) {
+		if ( 'block' === $( '.menu-toggle' ).css( 'display' ) ) {
 
 			if ( menuToggle.hasClass( 'toggled-on' ) ) {
 				menuToggle.attr( 'aria-expanded', 'true' );
