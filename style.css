@@ -993,7 +993,8 @@ body {
 	transition: margin-bottom 0.2s;
 }
 
-.twentyseventeen-front-page:not(.no-header-image) .site-branding {
+.twentyseventeen-front-page:not(.no-header-image) .site-branding,
+.home.blog:not(.no-header-image) .site-branding {
 	bottom: 0;
 	position: absolute;
 	width: 100%;
@@ -1027,7 +1028,9 @@ body {
 }
 
 .twentyseventeen-front-page:not(.no-header-image) .site-title,
-.twentyseventeen-front-page:not(.no-header-image) .site-title a {
+.twentyseventeen-front-page:not(.no-header-image) .site-title a,
+.home.blog:not(.no-header-image) .site-title,
+.home.blog:not(.no-header-image) .site-title a {
 	color: #fff;
 }
 
@@ -1038,7 +1041,8 @@ body {
 	margin-bottom: 0;
 }
 
-.twentyseventeen-front-page:not(.no-header-image) .site-description {
+.twentyseventeen-front-page:not(.no-header-image) .site-description,
+.home.blog:not(.no-header-image) .site-description {
 	color: #bbb;
 }
 
@@ -2688,7 +2692,8 @@ article.panel-placeholder {
 		max-width: 400px;
 	}
 
-	.twentyseventeen-front-page:not(.no-header-image) .custom-logo-link img {
+	.twentyseventeen-front-page:not(.no-header-image) .custom-logo-link img,
+	.home.blog:not(.no-header-image) .custom-logo-link img {
 		max-height: 500px;
 		max-width: 500px;
 	}
@@ -2980,13 +2985,15 @@ article.panel-placeholder {
 
 	/* Front Page */
 
-	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
+	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image,
+	.home.blog:not(.no-header-image) .custom-header-image {
 		height: 1200px;
 		height: 100vh;
 		max-height: 100%;
 	}
 
-	.admin-bar.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
+	.admin-bar.twentyseventeen-front-page:not(.no-header-image) .custom-header-image,
+	.admin-bar.home.blog:not(.no-header-image) .custom-header-image {
 		height: calc( 100vh - 32px );
 	}
 
@@ -3308,7 +3315,8 @@ article.panel-placeholder {
 		background-attachment: fixed;
 	}
 
-	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image {
+	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image,
+	.home.blog:not(.no-header-image) .custom-header-image {
 		background-attachment: fixed;
 	}
 
