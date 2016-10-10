@@ -13,7 +13,7 @@
 	<?php
 
 		// If front page.
-		if ( twentyseventeen_is_frontpage() ) :
+		if ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) :
 
 			// Check if Custom Header image has been added
 			$header_image = get_header_image();
@@ -22,7 +22,7 @@
 				<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $header_image ); ?>)"></div>
 				<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
-			<?php elseif ( has_post_thumbnail() ) :
+			<?php elseif ( twentyseventeen_is_frontpage() && has_post_thumbnail() ) :
 				// If not, fall back to front page's featured image
 				$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 				$thumbnail_attributes = wp_get_attachment_image_src( $post_thumbnail_id, 'twentyseventeen-featured-image' );
