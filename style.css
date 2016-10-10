@@ -1912,10 +1912,6 @@ h2.widget-title {
 	padding: 0.5em 0;
 }
 
-.widget ul li:last-child {
-	padding-bottom: 0;
-}
-
 .widget ul li + li {
 	margin-top: -1px;
 }
