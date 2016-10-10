@@ -45,7 +45,6 @@
 		<?php if ( ! is_single() ) :
 
 			// If not a single post, highlight the video file
-
 			$content = apply_filters( 'the_content', get_the_content() );
 			$video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
 

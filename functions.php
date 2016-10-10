@@ -117,10 +117,11 @@ add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
 function twentyseventeen_fonts_url() {
 	$fonts_url = '';
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Libre Frankin, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Libre Frankin, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$libre_franklin = _x( 'on', 'libre_franklin font: on or off', 'twentyseventeen' );
 
 	if ( 'off' !== $libre_franklin ) {

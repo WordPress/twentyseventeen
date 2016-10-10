@@ -45,7 +45,6 @@
 		<?php if ( is_single() || '' === get_the_post_thumbnail() ) :
 
 			// Only show content if is a single post, or if there's no featured image.
-
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				__( 'Continue reading %s', 'twentyseventeen' ),
