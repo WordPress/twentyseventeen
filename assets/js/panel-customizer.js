@@ -5,7 +5,7 @@
  * and adjust our preview pane accordingly.
  */
 
-( function( $ ) {
+( function() {
 
 	wp.customize.bind( 'ready', function() {
 
