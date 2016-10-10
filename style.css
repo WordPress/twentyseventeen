@@ -662,6 +662,7 @@ input[type="submit"] {
 	border-radius: 2px;
 	box-shadow: none;
 	color: #fff;
+	cursor: pointer;
 	display: inline-block;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1509,6 +1510,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 740px;
+}
+
+.single-featured-image-header {
+	background-color: #fafafa;
+	border-bottom: 1px solid #eee;
 }
 
 .single-featured-image-header img {
