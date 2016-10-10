@@ -101,9 +101,8 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: none;
-	text-decoration: underline;
-	text-decoration: underline dotted;
+	border-bottom: 1px #999 dotted;
+	text-decoration: none;
 }
 
 b,
@@ -847,7 +846,9 @@ a:visited .nav-title,
 .widget .widget-title a,
 .widget .widget-title a:visited,
 .widget ul li a,
-.widget ul li a:visited {
+.widget ul li a:visited,
+.site-footer .widget ul li a,
+.site-footer .widget ul li a:visited {
 	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -1548,7 +1549,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .entry-footer {
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
-	margin-top: 2em;
+	margin: 2em 0;
 	padding: 2em 0;
 }
 
@@ -1730,7 +1731,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 #comments {
 	border-bottom: 1px solid #eee;
-	padding: 2em 0 0.5em;
+	padding: 0 0 0.5em;
+	margin: 2em 0 0 0;
 }
 
 .comments-title {
@@ -1916,8 +1918,8 @@ h2.widget-title {
 	padding-bottom: 0;
 }
 
-.widget ul li + li {
-	margin-top: -1px;
+.site-footer .widget ul li a {
+	border: none;
 }
 
 .widget ul li ul {
@@ -3213,7 +3215,7 @@ article.panel-placeholder {
 	/* Comments */
 
 	#comments {
-		padding-top: 5em;
+		padding-top: 3em;
 	}
 
 	.comments-title {
