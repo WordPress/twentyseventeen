@@ -57,7 +57,7 @@ if ( post_password_required() ) {
 					'avatar_size' => 100,
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'reply_text'  => twentyseventeen_get_svg( $args = array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
+					'reply_text'  => twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
 				) );
 			?>
 		</ol>
