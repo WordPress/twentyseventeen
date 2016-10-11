@@ -2344,10 +2344,16 @@ object {
 
 .gallery-item a:hover {
 	background: none;
+	
 }
 
 .gallery-item a img {
 	display: block;
+	transition: all .2s ease-in;
+}
+
+.gallery-item a:hover img {
+	filter: grayscale(60%) opacity(70%);
 }
 
 .gallery-columns-2 .gallery-item {
@@ -2357,6 +2363,7 @@ object {
 .gallery-caption {
 	display: block;
 	text-align: left;
+	padding: 0 10px 0 0;
 }
 
 /*--------------------------------------------------------------
