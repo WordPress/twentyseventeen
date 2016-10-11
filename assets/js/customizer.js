@@ -19,6 +19,7 @@
 					offset: { 'top': -40 }
 				} );
 				$( '.' + data.section ).addClass( 'twentyseventeen-highlight' );
+
 			// If we've left the panel, remove the highlight and scroll back to the top
 			} else {
 				$.scrollTo( $( '#masthead' ), {

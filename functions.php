@@ -117,10 +117,11 @@ add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
 function twentyseventeen_fonts_url() {
 	$fonts_url = '';
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Libre Frankin, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Libre Frankin, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$libre_franklin = _x( 'on', 'libre_franklin font: on or off', 'twentyseventeen' );
 
 	if ( 'off' !== $libre_franklin ) {
@@ -248,7 +249,7 @@ function twentyseventeen_scripts() {
 	}
 
 	// Scroll effects (only loaded on front page).
-	if ( twentyseventeen_is_frontpage() ) {
+	if ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) {
 		wp_enqueue_script( 'jquery-scrollto', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '20151030', true );
 	}
 
