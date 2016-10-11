@@ -100,7 +100,7 @@ a:hover {
 	outline-width: 0;
 }
 
-abbr[title] {
+abbr[title] { 
 	border-bottom: none;
 	text-decoration: underline;
 	text-decoration: underline dotted;
