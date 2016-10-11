@@ -2349,7 +2349,8 @@ object {
 
 .gallery-item a img {
 	display: block;
-	transition: all .2s ease-in;
+	transition: filter .2s ease-in;
+	-webkit-backface-visibility: hidden;
 }
 
 .gallery-item a:hover img {
