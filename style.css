@@ -1038,7 +1038,8 @@ body {
 }
 
 .twentyseventeen-front-page:not(.no-header-image) .site-description {
-	color: #bbb;
+	color: #fff;
+    opacity: 0.8;
 }
 
 .custom-logo-link img {
