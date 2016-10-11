@@ -10,26 +10,31 @@ jQuery( document ).ready( function( $ ) {
 		$navigationFixedClass = 'site-navigation-fixed',
 		$headerOffset,
 		$navigationHeight,
-		$resizeTimer;
+		$resizeTimer,
+		$menuTop = 0;
 
-	//we add the scroll class to the navs
+	// We add the scroll class to the navs
 	function adjustScrollClass() {
+
 		// Make sure we're not on a mobile screen
-		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
 			$headerOffset = $( '.custom-header' ).innerHeight();
 
 			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
+
 				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
 				$navigation.removeClass( $navigationFixedClass );
 				$navigation.addClass( $navigationHiddenClass );
 
 			} else if ( $( window ).scrollTop() >= $headerOffset ) {
+
 				 // Otherwise, if the scroll is more than the custom header, switch navigation to 'fixed' class
 				$navigation.addClass( $navigationFixedClass );
 				$navigation.removeClass( $navigationHiddenClass );
 
 			} else {
+
 				// In all other cases, remove both classes
 				$navigation.removeClass( $navigationFixedClass );
 				$navigation.removeClass( $navigationHiddenClass );
@@ -41,7 +46,7 @@ jQuery( document ).ready( function( $ ) {
 
 		$navigationHeight = $navigation.innerHeight();
 
-		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 			$branding.css( 'margin-bottom', $navigationHeight );
 		} else {
 			$branding.css( 'margin-bottom', '0' );
@@ -51,13 +56,12 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * 'Scroll Down' arrow in menu area
 	 */
-	var $menuTop = 0;
-	if( $( 'body' ).hasClass( 'admin-bar' ) ) {
+	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 		$menuTop = -32	;
 	}
 	$( '.menu-scroll-down' ).click( function( e ) {
 		e.preventDefault();
-		$( window ).scrollTo( '#primary' , {
+		$( window ).scrollTo( '#primary', {
 			duration: 600,
 			offset: { 'top': $menuTop }
 		} );
@@ -67,6 +71,8 @@ jQuery( document ).ready( function( $ ) {
 	 * Add 'below-entry-meta' class to elements.
 	 */
 	function belowEntryMetaClass( param ) {
+		var sidebar, sidebarPos, sidebarPosBottom;
+
 		if ( ! $body.hasClass( 'has-sidebar' ) || (
 				$body.hasClass( 'search' ) ||
 				$body.hasClass( 'single-attachment' ) ||
@@ -76,9 +82,9 @@ jQuery( document ).ready( function( $ ) {
 			return;
 		}
 
-		var sidebar          	 = $( '#secondary' ),
-			sidebarPos      	 = sidebar.offset(),
-			sidebarPosBottom 	 = sidebarPos.top + ( sidebar.height() + 28 );
+		sidebar          = $( '#secondary' );
+		sidebarPos       = sidebar.offset();
+		sidebarPosBottom = sidebarPos.top + ( sidebar.height() + 28 );
 
 		$( '.entry-content' ).find( param ).each( function() {
 			var element              = $( this ),

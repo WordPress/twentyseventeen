@@ -28,7 +28,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	// Page Options.
 	$wp_customize->add_section( 'page_options', array(
 		'title'           => __( 'Single Page Layout', 'twentyseventeen' ),
-		'active_callback' =>'twentyseventeen_is_page',
+		'active_callback' => 'twentyseventeen_is_page',
 		'panel'           => 'options_panel',
 	) );
 

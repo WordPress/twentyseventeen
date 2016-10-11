@@ -61,7 +61,7 @@ get_header(); ?>
 					wp_reset_postdata();
 				else :
 					// The output placeholder anchor.
-					echo '<article class="panel-placeholder panel twentyseventeen-panel twentyseventeen-panel' . esc_attr( $twentyseventeencounter ) .'" id="panel' . esc_attr( $twentyseventeencounter ) . '"><span class="twentyseventeen-panel-title">' . sprintf( __( 'Panel %1$s Placeholder', 'twentyseventeen' ), esc_attr( $twentyseventeencounter ) ) . '</span></article>';
+					echo '<article class="panel-placeholder panel twentyseventeen-panel twentyseventeen-panel' . esc_attr( $twentyseventeencounter ) . '" id="panel' . esc_attr( $twentyseventeencounter ) . '"><span class="twentyseventeen-panel-title">' . sprintf( __( 'Panel %1$s Placeholder', 'twentyseventeen' ), esc_attr( $twentyseventeencounter ) ) . '</span></article>';
 				endif;
 
 				$twentyseventeencounter++;
