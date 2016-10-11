@@ -2365,7 +2365,7 @@ object {
 }
 
 .gallery-item a:hover img {
-	filter: grayscale(60%) opacity(70%);
+	filter: opacity(60%);
 }
 
 .gallery-columns-2 .gallery-item {
