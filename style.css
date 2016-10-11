@@ -490,6 +490,7 @@ blockquote {
 	font-style: italic;
 	line-height: 1.7;
 	margin: 0;
+	overflow: hidden;
 	padding: 0;
 }
 
