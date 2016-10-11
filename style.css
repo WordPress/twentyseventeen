@@ -101,9 +101,8 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: none;
-	text-decoration: underline;
-	text-decoration: underline dotted;
+	border-bottom: 1px #999 dotted;
+	text-decoration: none;
 }
 
 b,
