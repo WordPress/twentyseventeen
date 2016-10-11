@@ -55,8 +55,9 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'avatar_size' => 100,
-					'style'      => 'ol',
-					'short_ping' => true,
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'reply_text'  => twentyseventeen_get_svg( $args = array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
 				) );
 			?>
 		</ol>

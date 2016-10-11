@@ -90,13 +90,13 @@ function twentyseventeen_entry_footer() {
 		$categories_list = get_the_category_list( $separate_meta );
 		// Make sure there's more than one category before displaying.
 		if ( $categories_list && twentyseventeen_categorized_blog() ) {
-			echo '<span class="cat-links"><span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+			echo '<span class="cat-links">' . twentyseventeen_get_svg( $args = array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
 		}
 
 		// Display Tags for posts.
 		$tags_list = get_the_tag_list( '', $separate_meta );
 		if ( $tags_list ) {
-			echo '<span class="tags-links"><span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
+			echo '<span class="tags-links">' . twentyseventeen_get_svg( $args = array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
 		}
 
 		echo '</span>';
