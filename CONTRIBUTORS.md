@@ -25,3 +25,5 @@ Version 1.0:
 @nikschavan
 @joshcummingsdesign
 @enodekciw
+@joshcummingsdesign
+@jordesign
