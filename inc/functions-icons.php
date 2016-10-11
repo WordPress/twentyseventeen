@@ -17,7 +17,7 @@ function twentyseventeen_include_svg_icons() {
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
-		echo file_get_contents( $svg_icons );
+		require_once( $svg_icons );
 	}
 
 }
@@ -26,12 +26,12 @@ add_action( 'wp_footer', 'twentyseventeen_include_svg_icons', 9999 );
 /**
  * Return SVG markup.
  *
- * @param  array  $args {
+ * @param array $args {
  *     Parameters needed to display an SVG.
  *
- *     @param string $icon Required. Use the icon filename, e.g. "facebook-square".
- *     @param string $title Optional. SVG title, e.g. "Facebook".
- *     @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
+ *     @type string $icon  Required SVG icon filename.
+ *     @type string $title Optional SVG title.
+ *     @type string $desc  Optional SVG description.
  * }
  * @return string SVG markup.
  */
@@ -75,36 +75,27 @@ function twentyseventeen_get_svg( $args = array() ) {
 	// Begin SVG markup.
 	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
-		// If there is a title, display it.
-		if ( $args['title'] ) {
-			$svg .= '<title>' . esc_html( $args['title'] ) . '</title>';
-		}
+	// If there is a title, display it.
+	if ( $args['title'] ) {
+		$svg .= '<title>' . esc_html( $args['title'] ) . '</title>';
+	}
 
-		// If there is a description, display it.
-		if ( $args['desc'] ) {
-			$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
-		}
+	// If there is a description, display it.
+	if ( $args['desc'] ) {
+		$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
+	}
 
-		// Use absolute path in the Customizer so that icons show up in there.
-		if ( is_customize_preview() ) {
-			$svg .= '<use xlink:href="' . get_template_directory_uri() . '/assets/images/svg-icons.svg' . '#icon-' . esc_html( $args['icon'] ) . '"></use>';
-		} else {
-			$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
-		}
+	// Use absolute path in the Customizer so that icons show up in there.
+	if ( is_customize_preview() ) {
+		$svg .= '<use xlink:href="' . get_template_directory_uri() . '/assets/images/svg-icons.svg' . '#icon-' . esc_html( $args['icon'] ) . '"></use>';
+	} else {
+		$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
+	}
 
-		$svg .= '</svg>';
+	$svg .= '</svg>';
 
 	return $svg;
 
-}
-
-/**
- * Display an SVG icon.
- *
- * @param  array $args Parameters needed to display an SVG.
- */
-function twentyseventeen_do_svg( $args = array() ) {
-	echo twentyseventeen_get_svg( $args );
 }
 
 /**
@@ -122,7 +113,7 @@ function twentyseventeen_nav_menu_social_icons( $item_output, $item, $depth, $ar
 	$social_icons = twentyseventeen_social_links_icons();
 
 	// Change SVG icon inside social links menu if there is supported URL.
-	if ( 'social' == $args->theme_location ) {
+	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
 				$item_output = str_replace( $args->link_after, '</span>' . twentyseventeen_get_svg( array( 'icon' => esc_attr( $value ) ) ), $item_output );
@@ -138,22 +129,20 @@ add_filter( 'walker_nav_menu_start_el', 'twentyseventeen_nav_menu_social_icons',
 /**
  * Add dropdown icon if menu item has children.
  *
- * @param string $title The menu item's title.
- * @param object $item  The current menu item.
- * @param array  $args  An array of wp_nav_menu() arguments.
- * @param int    $depth Depth of menu item. Used for padding.
+ * @param  string $title The menu item's title.
+ * @param  object $item  The current menu item.
+ * @param  array  $args  An array of wp_nav_menu() arguments.
+ * @param  int    $depth Depth of menu item. Used for padding.
  * @return string $title The menu item's title with dropdown icon.
  */
 function twentyseventeen_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 
-	if ( 'top' == $args->theme_location ) {
-
+	if ( 'top' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
-			if ( 'menu-item-has-children' == $value || 'page_item_has_children' == $value ) {
+			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
 				$title = $title . twentyseventeen_get_svg( array( 'icon' => 'expand' ) );
 			}
 		}
-
 	}
 
 	return $title;
