@@ -54,6 +54,10 @@ Genericons icon font, Copyright 2013-2016 Automattic.com
 **License:** GNU GPL, Version 2 (or later)
 Source: https://genericons.com/
 
+Font Awesome icons, Copyright Dave Gandy
+**License:** SIL Open Font License, version 1.1.
+Source: http://fontawesome.io/
+
 
 ## Changelog
 
