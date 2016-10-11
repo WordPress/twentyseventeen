@@ -2342,7 +2342,7 @@ object {
 	text-align: left;
 	vertical-align: top;
 	width: 100%;
-	margin: 0 0 1.5em 0;
+	margin: 0 0 1.5em;
 	padding: 0 1em 0 0;
 	width: 50%;
 }
@@ -2360,7 +2360,7 @@ object {
 
 .gallery-item a img {
 	display: block;
-	transition: filter .2s ease-in;
+	transition: filter 0.2s ease-in;
 	-webkit-backface-visibility: hidden;
 }
 
@@ -3396,4 +3396,3 @@ article.panel-placeholder {
 		margin-right: -20%;
 	}
 }
-0
