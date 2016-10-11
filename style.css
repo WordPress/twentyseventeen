@@ -849,8 +849,7 @@ a:visited .nav-title,
 .widget ul li a,
 .widget ul li a:visited, 
 .site-footer .widget-area ul li a,
-.site-footer .widget-area ul li a:visited
- {
+.site-footer .widget-area ul li a:visited {
 	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
