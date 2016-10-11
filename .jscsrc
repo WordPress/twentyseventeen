@@ -1,0 +1,8 @@
+{
+    "preset": "wordpress",
+    "fileExtensions": [ ".js" ],
+    "excludeFiles": [
+        "assets/js/html5.js",
+        "assets/js/jquery.scrollTo.js"
+    ]
+}

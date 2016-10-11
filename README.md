@@ -1,5 +1,7 @@
 # Twenty Seventeen
 
+[![Build Status](https://travis-ci.org/WordPress/twentyseventeen.svg?branch=master)](https://travis-ci.org/WordPress/twentyseventeen)
+
 **Contributors:** the WordPress team  
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.7  
