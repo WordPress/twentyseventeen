@@ -2331,7 +2331,7 @@ object {
 	text-align: left;
 	vertical-align: top;
 	width: 100%;
-	margin: 0 0 1.5em -10px;
+	margin: 0 0 1.5em 0;
 	padding: 0 1em 0 0;
 	width: 50%;
 }
@@ -2340,12 +2340,10 @@ object {
 	display: inline-block;
 	border-bottom: none;
 	background: none;
-	border: 10px solid transparent;
 }
 
 .gallery-item a:hover {
 	background: none;
-	border: 10px solid #ddd;	
 }
 
 .gallery-item a img {
@@ -2358,8 +2356,7 @@ object {
 
 .gallery-caption {
 	display: block;
-	text-align: center;
-	padding: 0 10px;
+	text-align: left;
 }
 
 /*--------------------------------------------------------------
