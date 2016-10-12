@@ -16,7 +16,7 @@ jQuery( document ).ready( function( $ ) {
 	function adjustScrollClass() {
 
 		// Check to see if the nav is bigger than half the viewport size
-		var navIsTooBig = ( ( $( window).height() / 3 ) - $navigationHeight ) <= 0;
+		var navIsTooBig = ( ( $( window ).height() / 3 ) - $navigationHeight ) <= 0;
 
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
