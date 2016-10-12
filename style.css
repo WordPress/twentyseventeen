@@ -801,6 +801,9 @@ a:active {
 .post-navigation a,
 .logged-in-as a,
 .comment-navigation a,
+.logged-in-as a:visited,
+.comments-pagination a,
+.comments-pagination a:visited,
 .comment-metadata a,
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
@@ -809,7 +812,10 @@ a .nav-title,
 .site-info a,
 .widget .widget-title a,
 .widget ul li a,
-.site-footer .widget-area ul li a {
+.site-footer .widget-area ul li a,
+.widget ul li a:visited,
+.site-footer .widget-area ul li a,
+.site-footer .widget-area ul li a:visited {
 	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -825,8 +831,8 @@ a .nav-title,
 .site-footer .widget-area a:hover,
 .posts-navigation a:focus,
 .posts-navigation a:hover,
-.comment-navigation a:focus,
-.comment-navigation a:hover,
+.comments-pagination a:focus,
+.comments-pagination a:hover,
 .comment-metadata a:focus,
 .comment-metadata a:hover,
 .comment-metadata a.comment-edit-link:focus,
@@ -858,8 +864,8 @@ a .nav-title,
 .post-navigation a:hover,
 .logged-in-as a:focus,
 .logged-in-as a:hover,
-.comment-navigation a:focus,
-.comment-navigation a:hover,
+.comments-pagination a:focus,
+.comments-pagination a:hover,
 a:focus .nav-title,
 a:hover .nav-title,
 .edit-link a:focus,
@@ -1382,7 +1388,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 .pagination,
-.comment-navigation {
+.comments-pagination {
 	border-top: 1px solid #eee;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1391,7 +1397,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	text-align: center;
 }
 
-.comment-navigation {
+.comments-pagination {
 	border: 0;
 }
 
@@ -1804,7 +1810,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-style: italic;
 }
 
-.comment-navigation {
+.comments-pagination {
 	margin: 2em 0 3em;
 }
 
@@ -2840,7 +2846,7 @@ article.panel-placeholder {
 		font-size: 1.625rem;
 	}
 
-	.comment-navigation,
+	.comments-pagination,
 	.post-navigation {
 		clear: both;
 	}
