@@ -270,7 +270,6 @@ add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
-	//if ( 'page' === get_post_type() || ( ! is_active_sidebar( 'sidebar-1' ) && is_single() ) ) {}
 	740 <= $width && $sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
 
 	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() ) {
