@@ -159,7 +159,9 @@ function twentyseventeen_social_links_icons() {
 
 	// Supported social links icons.
 	$social_links_icons = array(
+		'behance.net'     => 'behance',
 		'codepen.io'      => 'codepen',
+		'deviantart.com'  => 'deviantart',
 		'digg.com'        => 'digg',
 		'dribbble.com'    => 'dribbble',
 		'dropbox.com'     => 'dropbox',
@@ -171,6 +173,7 @@ function twentyseventeen_social_links_icons() {
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin',
 		'mailto:'         => 'envelope-o',
+		'medium.com'      => 'medium',
 		'path.com'        => 'path',
 		'pinterest.com'   => 'pinterest-p',
 		'getpocket.com'   => 'get-pocket',
@@ -178,6 +181,8 @@ function twentyseventeen_social_links_icons() {
 		'reddit.com'      => 'reddit-alien',
 		'skype.com'       => 'skype',
 		'skype:'          => 'skype',
+		'slideshare.net'  => 'slideshare',
+		'snapchat.com'    => 'snapchat-ghost',
 		'soundcloud.com'  => 'soundcloud',
 		'spotify.com'     => 'spotify',
 		'stumbleupon.com' => 'stumbleupon',
@@ -185,8 +190,11 @@ function twentyseventeen_social_links_icons() {
 		'twitch.tv'       => 'twitch',
 		'twitter.com'     => 'twitter',
 		'vimeo.com'       => 'vimeo',
+		'vine.co'         => 'vine',
+		'vk.com'          => 'vk',
 		'wordpress.org'   => 'wordpress',
 		'wordpress.com'   => 'wordpress',
+		'yelp.com'        => 'yelp',
 		'youtube.com'     => 'youtube',
 	);
 
