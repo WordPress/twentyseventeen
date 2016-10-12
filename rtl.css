@@ -261,10 +261,8 @@ input[type="checkbox"] {
 
 .gallery-item,
 .gallery-caption {
-	text-align:right;
+	text-align: right;
 }
-
-
 
 /* Media queries */
 
