@@ -1041,7 +1041,8 @@ body {
 	margin-bottom: 0;
 }
 
-.twentyseventeen-front-page:not(.no-header-image) .site-description {
+.twentyseventeen-front-page:not(.no-header-image) .site-description,
+.home.blog:not(.no-header-image) .site-description {
 	color: #fff;
 	opacity: 0.8;
 }
