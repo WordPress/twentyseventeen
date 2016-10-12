@@ -16,7 +16,7 @@
 		'menu_id'        => 'top-menu',
 	) ); ?>
 
-	<?php if( twentyseventeen_is_frontpage() ) : ?>
+	<?php if ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) : ?>
 		<button class="menu-scroll-down"><span class="screen-reader-text"><?php _e( 'Scroll Down', 'twentyseventeen' ); ?></span></button>
 	<?php endif; ?>
 </nav><!-- #site-navigation -->
