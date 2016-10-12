@@ -33,7 +33,6 @@ jQuery( document ).ready( function( $ ) {
 
 				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
 				$navigation.removeClass( $navigationFixedClass );
-				$navigation.addClass( $navigationHiddenClass );
 
 			} else if ( $( window ).scrollTop() >= $headerOffset && ! navIsTooBig ) {
 
