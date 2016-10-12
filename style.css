@@ -2341,7 +2341,6 @@ object {
 	display: inline-block;
 	text-align: left;
 	vertical-align: top;
-	width: 100%;
 	margin: 0 0 1.5em;
 	padding: 0 1em 0 0;
 	width: 50%;
@@ -2355,7 +2354,6 @@ object {
 
 .gallery-item a:hover {
 	background: none;
-	
 }
 
 .gallery-item a img {
@@ -2366,6 +2364,7 @@ object {
 
 .gallery-item a:hover img {
 	filter: opacity(60%);
+	
 }
 
 .gallery-columns-2 .gallery-item {
@@ -2622,7 +2621,6 @@ article.panel-placeholder {
 	.gallery-columns-4 .gallery-item {
 		max-width: 25%;
 	}
-
 }
 
 @media screen and (min-width: 48em) {
