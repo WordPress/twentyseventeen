@@ -15,11 +15,11 @@ jQuery( document ).ready( function( $ ) {
 	// We add the scroll class to the navs
 	function adjustScrollClass() {
 
-		// Check to see if the nav is bigger than half the viewport size
-		var navIsTooBig = ( ( $( window ).height() / 3 ) - $navigationHeight ) <= 0;
-
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
+
+			// Check to see if the nav is bigger than half the viewport size
+			var navIsTooBig = ( ( $( window ).height() / 3 ) - $navigationHeight ) <= 0;
 
 			// When there's a custom header image, the header offset includes the height of the navigation
 			$navigationHeight = $navigation.outerHeight();
@@ -29,20 +29,15 @@ jQuery( document ).ready( function( $ ) {
 				$headerOffset = $( '.custom-header' ).innerHeight();
 			}
 
-			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
+			if ( $( window ).scrollTop() >= $headerOffset && ! navIsTooBig ) {
 
-				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
-				$navigation.removeClass( $navigationFixedClass );
-
-			} else if ( $( window ).scrollTop() >= $headerOffset && ! navIsTooBig ) {
-
-				 // Otherwise, if the scroll is more than the custom header
-				 // and the nav isn't too big, switch navigation to 'fixed' class
+				// If the scroll is more than the custom header,
+				// and the nav isn't too big, switch navigation to 'fixed' class
 				$navigation.addClass( $navigationFixedClass );
 
 			} else {
 
-				// In all other cases, remove both classes
+				// In all other cases, remove 'fixed' class
 				$navigation.removeClass( $navigationFixedClass );
 			}
 		}
