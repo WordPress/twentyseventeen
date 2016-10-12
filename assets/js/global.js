@@ -9,6 +9,7 @@ jQuery( document ).ready( function( $ ) {
 		$navigationFixedClass = 'site-navigation-fixed',
 		$headerOffset,
 		$navigationHeight,
+		navIsTooBig,
 		$resizeTimer,
 		$menuTop = 0;
 
@@ -18,9 +19,6 @@ jQuery( document ).ready( function( $ ) {
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-			// Check to see if the nav is bigger than half the viewport size
-			var navIsTooBig = ( ( $( window ).height() / 3 ) - $navigationHeight ) <= 0;
-
 			// When there's a custom header image, the header offset includes the height of the navigation
 			$navigationHeight = $navigation.outerHeight();
 			if ( $( '.custom-header-image' ).length ) {
@@ -29,6 +27,8 @@ jQuery( document ).ready( function( $ ) {
 				$headerOffset = $( '.custom-header' ).innerHeight();
 			}
 
+			// Check to see if the nav is bigger than half the viewport size
+			navIsTooBig = ( ( $( window ).height() / 3 ) - $navigationHeight ) <= 0;
 			if ( $( window ).scrollTop() >= $headerOffset && ! navIsTooBig ) {
 
 				// If the scroll is more than the custom header,
