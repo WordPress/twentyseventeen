@@ -1,6 +1,7 @@
 # Files to exclude when creating archive.
 
 *.git export-ignore
+*.github export-ignore
 *.gitignore export-ignore
 *.gitattributes export-ignore
 .jscsrc export-ignore
