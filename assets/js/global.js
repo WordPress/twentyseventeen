@@ -43,8 +43,7 @@ jQuery( document ).ready( function( $ ) {
 
 				if ( $( window ).scrollTop() >= $headerOffset ) {
 
-					// If the scroll is more than the custom header,
-					// and the nav isn't too big, switch navigation to 'fixed' class
+					// If the scroll is more than the custom header, switch navigation to 'fixed' class
 					$navigation.addClass( $navigationFixedClass );
 
 				} else {
