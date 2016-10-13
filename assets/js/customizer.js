@@ -74,12 +74,13 @@
 	// Custom color hue.
 	wp.customize( 'colorscheme_hue', function( value ) {
 		value.bind( function( to ) {
+
 			// Update custom color CSS
 			var style = $( '#custom-theme-colors' ),
 			    hue = style.data( 'hue' ),
 			    css = style.html();
 
-			css = css.split( hue + ',' ).join( to + ',' ); // css.replaceAll, followed by comma to prevent values with units from being changed.
+			css = css.split( hue + ',' ).join( to + ',' ); // Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
 			style.html( css )
 			     .data( 'hue', to );
 		} );
