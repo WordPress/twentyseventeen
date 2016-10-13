@@ -1193,7 +1193,7 @@ body {
 }
 
 .menu-toggle:focus {
-	outline: thin dotted;
+	outline: thin solid;
 }
 
 .menu-toggle:before {
