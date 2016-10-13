@@ -53,8 +53,9 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 		'section'  => 'colors',
 		'priority' => 6,
-		'description' => 'Temporary hue slider will be replaced with a visual hue picker that is only shown when a custom scheme is selected', // intentionally untranslated
+		'description' => 'Temporary hue slider will be replaced with a visual hue picker that is only shown when a custom scheme is selected', // temporary, intentionally untranslated
 		// @todo change this to a visual hue picker control, ideally extending the color control and leveraging iris by adding a `hue` mode in core
+		// See https://core.trac.wordpress.org/ticket/38263
 		// @todo only show this control when the colorscheme is custom
 	) );
 
@@ -188,9 +189,9 @@ function twentyseventeen_sanitize_layout( $input ) {
 function twentyseventeen_sanitize_colorscheme( $input ) {
 	$valid = array( 'light', 'dark', 'custom' );
 
-	if ( array_key_exists( $input, $valid ) ) {
+	if ( in_array( $input, $valid ) ) {
 		return $input;
-	} else{
+	} else {
 		return 'light';
 	}
 }
