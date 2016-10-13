@@ -1171,7 +1171,7 @@ body {
 	font-size: 0.875rem;
 	font-weight: 800;
 	line-height: 1.5;
-	margin: 0 auto;
+	margin: 1px auto 2px;
 	padding: 1.0em;
 	text-shadow: none;
 }
