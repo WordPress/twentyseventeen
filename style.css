@@ -579,6 +579,26 @@ q:after {
 	text-rendering: auto;
 }
 
+/* Typography for Thai Font */
+
+html[lang="th"] h1, 
+html[lang="th"] h2,
+html[lang="th"] h3,
+html[lang="th"] h4,
+html[lang="th"] h5,
+html[lang="th"] h6 {
+	letter-spacing: 0;
+	line-height: 1.65;
+}
+
+html[lang="th"] body,
+html[lang="th"] button,
+html[lang="th"] input,
+html[lang="th"] select,
+html[lang="th"] textarea {
+	line-height: 1.8;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
