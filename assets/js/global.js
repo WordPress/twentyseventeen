@@ -4,20 +4,20 @@ jQuery( document ).ready( function( $ ) {
 	 * Making navigation 'stick'
 	 */
 	var $body = $( 'body' ),
-			$navigation = $( '.navigation-top' ),
-			$navWrap = $navigation.find( '.wrap' ),
-			$navMenuItem = $navigation.find( '.menu-item' ),
-			navigationHeight,
-			navigationOuterHeight,
-			navPadding,
-			navMenuItemHeight,
-			idealNavHeight,
-			navIsNotTooTall,
-			$branding = $( '.site-branding' ),
-			$navigationFixedClass = 'site-navigation-fixed',
-			$headerOffset,
-			$resizeTimer,
-			$menuTop = 0;
+		$navigation = $( '.navigation-top' ),
+		$navWrap = $navigation.find( '.wrap' ),
+		$navMenuItem = $navigation.find( '.menu-item' ),
+		navigationHeight,
+		navigationOuterHeight,
+		navPadding,
+		navMenuItemHeight,
+		idealNavHeight,
+		navIsNotTooTall,
+		$branding = $( '.site-branding' ),
+		$navigationFixedClass = 'site-navigation-fixed',
+		$headerOffset,
+		$resizeTimer,
+		$menuTop = 0;
 
 	// We add the scroll class to the navs
 	function adjustScrollClass() {
