@@ -912,9 +912,9 @@ a:hover .nav-title,
 /* Fixes linked images */
 .entry-content a img,
 .widget a img {
-    background: #fff;
-    box-shadow: 0 0 0 6px #fff;
-		filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#ffffff);
+	background: #fff;
+	box-shadow: 0 0 0 6px #fff;
+	filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#ffffff);
 }
 
 /*--------------------------------------------------------------
