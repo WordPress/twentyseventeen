@@ -80,12 +80,6 @@ function twentyseventeen_setup() {
 		'audio',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'twentyseventeen_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
 		'width'       => 1000,
