@@ -13,7 +13,7 @@
 function twentyseventeen_custom_colors_css() {
 	$hue = get_theme_mod( 'colorscheme_hue', 250 );
 	$saturation = apply_filters( 'twentyseventeen_custom_colors_saturation', '80%' );
-	$css ='
+	$css = '
 /**
  * Twenty Seventeen: Color Patterns
  */
