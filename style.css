@@ -2876,15 +2876,13 @@ article.panel-placeholder {
 		display: none;
 	}
 
-	.site-navigation-fixed .menu-scroll-down {
+	.site-navigation-fixed.navigation-top .menu-scroll-down {
 		display: none;
 	}
 
 	/* Scroll down arrow */
 
-	.menu-scroll-down {
-		background: transparent;
-		border: 0;
+	.navigation-top .menu-scroll-down {
 		color: #999;
 		display: block;
 		padding: 0.75em;
@@ -2894,11 +2892,6 @@ article.panel-placeholder {
 		-webkit-transform: rotate( 90deg ); /* Chrome, Safari, Opera */
 		-ms-transform: rotate( 90deg ); /* IE 9 */
 		transform: rotate( 90deg );
-	}
-
-	.menu-scroll-down:hover,
-	.menu-scroll-down:focus {
-		background: transparent;
 	}
 
 	.menu-scroll-down:focus {

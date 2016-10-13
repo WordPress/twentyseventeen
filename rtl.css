@@ -333,7 +333,7 @@ input[type="checkbox"] {
 
 	/* Scroll down arrow */
 
-	.menu-scroll-down {
+	.navigation-top .menu-scroll-down {
 		left: 0;
 		right: auto;
 	}
