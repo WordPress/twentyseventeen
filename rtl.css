@@ -363,7 +363,7 @@ input[type="checkbox"] {
 		float: right;
 	}
 
-	.blog:not(.has-sidebar):not(.home) #primary article,
+	.blog:not(.has-sidebar) #primary article,
 	.archive:not(.has-sidebar) #primary article,
 	.search:not(.has-sidebar) #primary article,
 	.has-sidebar.error404 #primary .page-content,

@@ -1511,8 +1511,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /* Single Post */
 
 .single-post:not(.has-sidebar) #primary,
-.page.page-one-column #primary,
-.home.blog:not(.has-sidebar) #primary {
+.page.page-one-column #primary {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 740px;
@@ -3014,7 +3013,7 @@ article.panel-placeholder {
 		width: 36%;
 	}
 
-	.blog:not(.has-sidebar):not(.home) #primary article,
+	.blog:not(.has-sidebar) #primary article,
 	.archive:not(.has-sidebar) #primary article,
 	.search:not(.has-sidebar) #primary article,
 	.error404:not(.has-sidebar) #primary .page-content,
@@ -3036,8 +3035,7 @@ article.panel-placeholder {
 		width: 58%;
 	}
 
-	.has-sidebar .navigation.pagination,
-	.home.blog:not(.has-sidebar) .navigation.pagination {
+	.has-sidebar .navigation.pagination {
 		float: none;
 		width: 100%;
 	}
