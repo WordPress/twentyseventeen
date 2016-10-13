@@ -32,8 +32,6 @@ jQuery( document ).ready( function( $ ) {
 			idealNavHeight    = navPadding + navMenuItemHeight;
 			navIsNotTooTall   = navigationHeight <= idealNavHeight;
 
-			console.log(navIsNotTooTall);
-
 			if ( navIsNotTooTall ) {
 
 				// When there's a custom header image, the header offset includes the height of the navigation
