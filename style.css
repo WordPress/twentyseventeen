@@ -795,8 +795,7 @@ table {
 # Links
 --------------------------------------------------------------*/
 
-a,
-a:visited {
+a {
 	color: #222;
 	text-decoration: none;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -815,62 +814,36 @@ a:active {
 /* Hover effects */
 
 .entry-content a,
-.entry-content a:visited,
 .entry-summary a,
-.entry-summary a:visited,
 .widget a,
-.widget a:visited,
 .site-footer .widget-area a,
-.site-footer .widget-area a:visited,
 .posts-navigation a,
-.posts-navigation a:visited,
-.widget_authors a strong,
-.widget_authors a:visited strong {
+.widget_authors a strong {
 	border-bottom: 2px solid #767676;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 .entry-title a,
-.entry-title a:visited,
 .entry-meta a,
-.entry-meta a:visited,
 .page-links a,
-.page-links a:visited,
 .page-links a .page-number,
-.page-links a:visited .page-number,
 .entry-footer a,
-.entry-footer a:visited,
 .entry-footer .cat-links a,
-.entry-footer .cat-links a:visited,
 .entry-footer .tags-links a,
-.entry-footer .tags-links a:visited,
 .edit-link a,
-.edit-link a:visited,
 .post-navigation a,
-.post-navigation a:visited,
 .logged-in-as a,
-.logged-in-as a:visited,
 .comment-navigation a,
-.comment-navigation a:visited,
 .comment-metadata a,
-.comment-metadata a:visited,
 .comment-metadata a.comment-edit-link,
-.comment-metadata a.comment-edit-link:visited,
 .comment-reply-link,
-.comment-reply-link:visited,
 a .nav-title,
-a:visited .nav-title,
 .pagination a,
-.pagination a:visited,
 .site-info a,
-.site-info a:visited,
 .widget .widget-title a,
-.widget .widget-title a:visited,
 .widget ul li a,
-.widget ul li a:visited, 
-.site-footer .widget-area ul li a,
-.site-footer .widget-area ul li a:visited {
+.site-footer .widget-area ul li a {
 	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -1114,8 +1087,7 @@ body {
 	max-width: calc( 1000px + 2.5em);
 }
 
-.navigation-top a,
-.navigation-top a:visited {
+.navigation-top a {
 	color: #222;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
@@ -1123,9 +1095,7 @@ body {
 }
 
 .navigation-top .current-menu-item > a,
-.navigation-top .current-menu-item > a:visited,
-.navigation-top .current_page_item > a,
-.navigation-top .current_page_item > a:visited {
+.navigation-top .current_page_item > a {
 	color: #767676;
 }
 
@@ -2343,7 +2313,6 @@ object {
 /* Audio Player */
 
 .mejs-controls a.mejs-horizontal-volume-slider,
-.mejs-controls a.mejs-horizontal-volume-slider:visited,
 .mejs-controls a.mejs-horizontal-volume-slider:focus,
 .mejs-controls a.mejs-horizontal-volume-slider:hover {
 	background: transparent;
