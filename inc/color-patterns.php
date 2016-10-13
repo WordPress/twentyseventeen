@@ -7,9 +7,9 @@
  * @since 1.0
  */
 
-// @todo update to reflect recent changes
-// @todo convert hex to hsl, based on arbitrary hue...
-
+/**
+ * Generate the CSS for the current custom color scheme.
+ */
 function twentyseventeen_custom_colors_css() {
 	$hue = get_theme_mod( 'colorscheme_hue', 250 );
 	$saturation = apply_filters( 'twentyseventeen_custom_colors_saturation', '80%' );
