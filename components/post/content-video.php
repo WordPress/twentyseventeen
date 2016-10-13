@@ -32,7 +32,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php 
+	<?php
 		$content = apply_filters( 'the_content', get_the_content() );
 		$video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
 	?>
