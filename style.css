@@ -2333,10 +2333,6 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 
-.gallery {
-	margin-bottom: 1.5em;
-}
-
 .gallery-item {
 	display: inline-block;
 	text-align: left;
@@ -2380,6 +2376,7 @@ object {
 	display: block;
 	text-align: left;
 	padding: 0 10px 0 0;
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
