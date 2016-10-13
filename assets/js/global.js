@@ -32,6 +32,8 @@ jQuery( document ).ready( function( $ ) {
 			idealNavHeight    = navPadding + navMenuItemHeight;
 			navIsNotTooTall   = navigationHeight <= idealNavHeight;
 
+			console.log(navIsNotTooTall);
+
 			if ( navIsNotTooTall ) {
 
 				// When there's a custom header image, the header offset includes the height of the navigation
@@ -48,9 +50,14 @@ jQuery( document ).ready( function( $ ) {
 
 				} else {
 
-					// In all other cases, remove 'fixed' class
+					// Otherwise, remove 'fixed' class
 					$navigation.removeClass( $navigationFixedClass );
 				}
+
+			} else {
+
+				// Otherwise, remove 'fixed' class if nav is taller than two rows
+				$navigation.removeClass( $navigationFixedClass );
 			}
 		}
 	}
