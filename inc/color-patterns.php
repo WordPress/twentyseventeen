@@ -1,6 +1,10 @@
 <?php
 /**
  * Twenty Seventeen: Color Patterns
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
  */
 
 // @todo update to reflect recent changes
