@@ -19,6 +19,7 @@
 					offset: { 'top': -40 }
 				} );
 				$( '.' + data.section ).addClass( 'twentyseventeen-highlight' );
+
 			// If we've left the panel, remove the highlight and scroll back to the top
 			} else {
 				$.scrollTo( $( '#masthead' ), {
@@ -46,7 +47,7 @@
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title, .site-description' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );

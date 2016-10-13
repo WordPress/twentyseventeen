@@ -6,42 +6,44 @@ jQuery( document ).ready( function( $ ) {
 	var $body = $( 'body' ),
 		$navigation = $( '.navigation-top' ),
 		$branding = $( '.site-branding' ),
-		$navigationHiddenClass = 'site-navigation-hidden',
 		$navigationFixedClass = 'site-navigation-fixed',
 		$headerOffset,
 		$navigationHeight,
-		$resizeTimer;
+		$resizeTimer,
+		$menuTop = 0;
 
-	//we add the scroll class to the navs
+	// We add the scroll class to the navs
 	function adjustScrollClass() {
+
 		// Make sure we're not on a mobile screen
-		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-			$headerOffset = $( '.custom-header' ).innerHeight();
+			// When there's a custom header image, the header offset includes the height of the navigation
+			$navigationHeight = $navigation.outerHeight();
+			if ( $( '.custom-header-image' ).length ) {
+				$headerOffset = $( '.custom-header' ).innerHeight() - $navigationHeight;
+			} else {
+				$headerOffset = $( '.custom-header' ).innerHeight();
+			}
 
-			if ( $( window ).scrollTop() <= $headerOffset && $navigation.hasClass( $navigationFixedClass ) ) {
-				 // If the navigation is just offscreen, add hidden class and make sure fixed class is removed
-				$navigation.removeClass( $navigationFixedClass );
-				$navigation.addClass( $navigationHiddenClass );
+			if ( $( window ).scrollTop() >= $headerOffset ) {
 
-			} else if ( $( window ).scrollTop() >= $headerOffset ) {
-				 // Otherwise, if the scroll is more than the custom header, switch navigation to 'fixed' class
+				// If the scroll is more than the custom header, switch navigation to 'fixed' class
 				$navigation.addClass( $navigationFixedClass );
-				$navigation.removeClass( $navigationHiddenClass );
 
 			} else {
+
 				// In all other cases, remove both classes
 				$navigation.removeClass( $navigationFixedClass );
-				$navigation.removeClass( $navigationHiddenClass );
 			}
 		}
 	}
 
 	function adjustHeaderHeight() {
 
-		$navigationHeight = $navigation.innerHeight();
+		$navigationHeight = $navigation.outerHeight();
 
-		if ( 'none' === $( '.menu-toggle').css( 'display') ) {
+		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 			$branding.css( 'margin-bottom', $navigationHeight );
 		} else {
 			$branding.css( 'margin-bottom', '0' );
@@ -51,13 +53,12 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * 'Scroll Down' arrow in menu area
 	 */
-	var $menuTop = 0;
-	if( $( 'body' ).hasClass( 'admin-bar' ) ) {
-		$menuTop = -32	;
+	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+		$menuTop = -32;
 	}
 	$( '.menu-scroll-down' ).click( function( e ) {
 		e.preventDefault();
-		$( window ).scrollTo( '#primary' , {
+		$( window ).scrollTo( '#primary', {
 			duration: 600,
 			offset: { 'top': $menuTop }
 		} );
@@ -67,6 +68,8 @@ jQuery( document ).ready( function( $ ) {
 	 * Add 'below-entry-meta' class to elements.
 	 */
 	function belowEntryMetaClass( param ) {
+		var sidebar, sidebarPos, sidebarPosBottom;
+
 		if ( ! $body.hasClass( 'has-sidebar' ) || (
 				$body.hasClass( 'search' ) ||
 				$body.hasClass( 'single-attachment' ) ||
@@ -76,9 +79,9 @@ jQuery( document ).ready( function( $ ) {
 			return;
 		}
 
-		var sidebar          	 = $( '#secondary' ),
-			sidebarPos      	 = sidebar.offset(),
-			sidebarPosBottom 	 = sidebarPos.top + ( sidebar.height() + 28 );
+		sidebar          = $( '#secondary' );
+		sidebarPos       = sidebar.offset();
+		sidebarPosBottom = sidebarPos.top + ( sidebar.height() + 28 );
 
 		$( '.entry-content' ).find( param ).each( function() {
 			var element              = $( this ),

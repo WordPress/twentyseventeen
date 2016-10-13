@@ -32,7 +32,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
@@ -45,7 +45,6 @@
 		<?php if ( ! is_single() ) :
 
 			// If not a single post, highlight the video file
-
 			$content = apply_filters( 'the_content', get_the_content() );
 			$video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
 

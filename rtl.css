@@ -113,7 +113,7 @@ input[type="checkbox"] {
 
 .sticky:before {
 	left: auto;
-	right: -1.25em;
+	right: -1em;
 }
 
 .prev.page-numbers {
@@ -484,6 +484,16 @@ input[type="checkbox"] {
 		float: right;
 		margin-left: 0;
 		margin-right: 6%;
+	}
+}
+
+@media screen and ( min-width: 67em ) {
+
+	/* Sticky posts */
+
+	.sticky:before {
+		left: auto;
+		right: -1.25em;
 	}
 }
 
