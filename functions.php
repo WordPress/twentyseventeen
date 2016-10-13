@@ -188,7 +188,7 @@ if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
  * Replaces the excerpt "more" text by a link
  */
 function twentyseventeen_excerpt_continue_reading() {
-	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
+	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading %s', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
 }
 }
 add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
