@@ -2890,7 +2890,7 @@ article.panel-placeholder {
 		padding: 0.75em;
 		position: absolute;
 		right: 0;
-		top: 0.75em;
+		top: 0.40em;
 		-webkit-transform: rotate( 90deg ); /* Chrome, Safari, Opera */
 		-ms-transform: rotate( 90deg ); /* IE 9 */
 		transform: rotate( 90deg );
