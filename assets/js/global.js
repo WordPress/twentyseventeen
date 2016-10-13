@@ -4,14 +4,20 @@ jQuery( document ).ready( function( $ ) {
 	 * Making navigation 'stick'
 	 */
 	var $body = $( 'body' ),
-		$navigation = $( '.navigation-top' ),
-		$branding = $( '.site-branding' ),
-		$navigationFixedClass = 'site-navigation-fixed',
-		$headerOffset,
-		$navigationHeight,
-		navIsTooBig,
-		$resizeTimer,
-		$menuTop = 0;
+			$navigation = $( '.navigation-top' ),
+			$navWrap = $navigation.find( '.wrap' ),
+			$navMenuItem = $navigation.find( '.menu-item' ),
+			navigationHeight,
+			navigationOuterHeight,
+			navPadding,
+			navMenuItemHeight,
+			idealNavHeight,
+			navIsNotTooTall,
+			$branding = $( '.site-branding' ),
+			$navigationFixedClass = 'site-navigation-fixed',
+			$headerOffset,
+			$resizeTimer,
+			$menuTop = 0;
 
 	// We add the scroll class to the navs
 	function adjustScrollClass() {
@@ -19,36 +25,43 @@ jQuery( document ).ready( function( $ ) {
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-			// When there's a custom header image, the header offset includes the height of the navigation
-			$navigationHeight = $navigation.outerHeight();
-			if ( $( '.custom-header-image' ).length ) {
-				$headerOffset = $( '.custom-header' ).innerHeight() - $navigationHeight;
-			} else {
-				$headerOffset = $( '.custom-header' ).innerHeight();
-			}
+			// Make sure the nav isn't taller than two rows
+			navigationHeight  = $navigation.height();
+			navPadding        = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
+			navMenuItemHeight = $navMenuItem.outerHeight() * 2;
+			idealNavHeight    = navPadding + navMenuItemHeight;
+			navIsNotTooTall   = navigationHeight <= idealNavHeight;
 
-			// Check to see if the nav is bigger than half the viewport size
-			navIsTooBig = ( ( $( window ).height() / 3 ) - $navigationHeight ) <= 0;
-			if ( $( window ).scrollTop() >= $headerOffset && ! navIsTooBig ) {
+			if ( navIsNotTooTall ) {
 
-				// If the scroll is more than the custom header,
-				// and the nav isn't too big, switch navigation to 'fixed' class
-				$navigation.addClass( $navigationFixedClass );
+				// When there's a custom header image, the header offset includes the height of the navigation
+				if ( $( '.custom-header-image' ).length ) {
+					$headerOffset = $( '.custom-header' ).innerHeight() - navigationOuterHeight;
+				} else {
+					$headerOffset = $( '.custom-header' ).innerHeight();
+				}
 
-			} else {
+				if ( $( window ).scrollTop() >= $headerOffset ) {
 
-				// In all other cases, remove 'fixed' class
-				$navigation.removeClass( $navigationFixedClass );
+					// If the scroll is more than the custom header,
+					// and the nav isn't too big, switch navigation to 'fixed' class
+					$navigation.addClass( $navigationFixedClass );
+
+				} else {
+
+					// In all other cases, remove 'fixed' class
+					$navigation.removeClass( $navigationFixedClass );
+				}
 			}
 		}
 	}
 
 	function adjustHeaderHeight() {
 
-		$navigationHeight = $navigation.outerHeight();
+		navigationOuterHeight = $navigation.outerHeight();
 
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
-			$branding.css( 'margin-bottom', $navigationHeight );
+			$branding.css( 'margin-bottom', navigationOuterHeight );
 		} else {
 			$branding.css( 'margin-bottom', '0' );
 		}
