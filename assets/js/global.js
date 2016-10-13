@@ -53,14 +53,15 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * 'Scroll Down' arrow in menu area
 	 */
+	$menuTop = -30; // Start with a 30px offset, so the menu doesn't hit the content
 	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-		$menuTop = -32;
+		$menuTop -= 32;
 	}
 	$( '.menu-scroll-down' ).click( function( e ) {
 		e.preventDefault();
 		$( window ).scrollTo( '#primary', {
 			duration: 600,
-			offset: { 'top': $menuTop }
+			offset: { 'top': $menuTop - $navigation.outerHeight() }
 		} );
 	} );
 
