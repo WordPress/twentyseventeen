@@ -543,6 +543,14 @@ q:after {
 	outline: none;
 }
 
+html[lang="ko-KR"] body,
+html[lang="ko-KR"] button,
+html[lang="ko-KR"] input,
+html[lang="ko-KR"] select,
+html[lang="ko-KR"] textarea {
+	font-family: "Apple Neo Gothic SD", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
+}
+
 /* Genericons */
 
 .social-navigation a:before,
