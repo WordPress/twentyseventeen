@@ -14,7 +14,7 @@
 	<div class="panel-content">
 		<div class="wrap">
 			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 				<?php twentyseventeen_edit_link( get_the_ID() ); ?>
 
