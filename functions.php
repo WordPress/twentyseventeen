@@ -272,8 +272,10 @@ function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 
 	740 <= $width && $sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
 
-	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() ) {
-		767 <= $width && $sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
+		if ( !( is_page() && 'one-column' === get_theme_mod( 'twentyseventeen_page_options' ) ) ) {
+			767 <= $width && $sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+		}
 	}
 
 	return $sizes;
@@ -293,7 +295,7 @@ add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_att
  */
 function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( is_archive() || is_search() || is_home() ) {
-		$attr['sizes'] = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
+		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
 	} else {
 		$attr['sizes'] = '100vw';
 	}
