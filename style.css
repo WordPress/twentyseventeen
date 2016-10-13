@@ -580,7 +580,7 @@ q:after {
 
 /* Typography for Thai Font */
 
-html[lang="th"] h1, 
+html[lang="th"] h1,
 html[lang="th"] h2,
 html[lang="th"] h3,
 html[lang="th"] h4,
@@ -907,6 +907,13 @@ a:hover .nav-title,
 .widget ul li a:hover {
 	background-color: #767676;
 	color: #fff;
+}
+
+/* Fixes linked images */
+.entry-content a img,
+.widget a img {
+    background: #fff;
+    box-shadow: 0 0 0 6px #fff;
 }
 
 /*--------------------------------------------------------------
