@@ -1984,9 +1984,14 @@ h2.widget-title {
 
 /* RSS Widget */
 
+.widget .rsswidget {
+	display: inline-block;
+	margin-bottom: 0.5em;
+}
+
 .widget .rss-date {
 	display: block;
-	margin: 0.75em 0;
+	margin-bottom: 0.75em;
 }
 
 .widget .rssSummary {
