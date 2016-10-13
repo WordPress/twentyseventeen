@@ -101,9 +101,8 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: none;
-	text-decoration: underline;
-	text-decoration: underline dotted;
+	border-bottom: 1px #767676 dotted;
+	text-decoration: none;
 }
 
 b,
@@ -433,7 +432,7 @@ h6:first-child {
 
 h1 {
 	font-size: 24px;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	font-weight: 300;
 }
 
@@ -577,6 +576,26 @@ q:after {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: auto;
+}
+
+/* Typography for Thai Font */
+
+html[lang="th"] h1, 
+html[lang="th"] h2,
+html[lang="th"] h3,
+html[lang="th"] h4,
+html[lang="th"] h5,
+html[lang="th"] h6 {
+	letter-spacing: 0;
+	line-height: 1.65;
+}
+
+html[lang="th"] body,
+html[lang="th"] button,
+html[lang="th"] input,
+html[lang="th"] select,
+html[lang="th"] textarea {
+	line-height: 1.8;
 }
 
 /*--------------------------------------------------------------
@@ -775,8 +794,7 @@ table {
 # Links
 --------------------------------------------------------------*/
 
-a,
-a:visited {
+a {
 	color: #222;
 	text-decoration: none;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -795,62 +813,36 @@ a:active {
 /* Hover effects */
 
 .entry-content a,
-.entry-content a:visited,
 .entry-summary a,
-.entry-summary a:visited,
 .widget a,
-.widget a:visited,
 .site-footer .widget-area a,
-.site-footer .widget-area a:visited,
 .posts-navigation a,
-.posts-navigation a:visited,
-.widget_authors a strong,
-.widget_authors a:visited strong {
+.widget_authors a strong {
 	border-bottom: 2px solid #767676;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 .entry-title a,
-.entry-title a:visited,
 .entry-meta a,
-.entry-meta a:visited,
 .page-links a,
-.page-links a:visited,
 .page-links a .page-number,
-.page-links a:visited .page-number,
 .entry-footer a,
-.entry-footer a:visited,
 .entry-footer .cat-links a,
-.entry-footer .cat-links a:visited,
 .entry-footer .tags-links a,
-.entry-footer .tags-links a:visited,
 .edit-link a,
-.edit-link a:visited,
 .post-navigation a,
-.post-navigation a:visited,
 .logged-in-as a,
-.logged-in-as a:visited,
 .comment-navigation a,
-.comment-navigation a:visited,
 .comment-metadata a,
-.comment-metadata a:visited,
 .comment-metadata a.comment-edit-link,
-.comment-metadata a.comment-edit-link:visited,
 .comment-reply-link,
-.comment-reply-link:visited,
 a .nav-title,
-a:visited .nav-title,
 .pagination a,
-.pagination a:visited,
 .site-info a,
-.site-info a:visited,
 .widget .widget-title a,
-.widget .widget-title a:visited,
 .widget ul li a,
-.widget ul li a:visited, 
-.site-footer .widget-area ul li a,
-.site-footer .widget-area ul li a:visited {
+.site-footer .widget-area ul li a {
 	border: 0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
@@ -1047,7 +1039,8 @@ body {
 
 .twentyseventeen-front-page:not(.no-header-image) .site-description,
 .home.blog:not(.no-header-image) .site-description {
-	color: #bbb;
+	color: #fff;
+	opacity: 0.8;
 }
 
 .custom-logo-link img {
@@ -1093,8 +1086,7 @@ body {
 	max-width: calc( 1000px + 2.5em);
 }
 
-.navigation-top a,
-.navigation-top a:visited {
+.navigation-top a {
 	color: #222;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
@@ -1102,9 +1094,7 @@ body {
 }
 
 .navigation-top .current-menu-item > a,
-.navigation-top .current-menu-item > a:visited,
-.navigation-top .current_page_item > a,
-.navigation-top .current_page_item > a:visited {
+.navigation-top .current_page_item > a {
 	color: #767676;
 }
 
@@ -1358,12 +1348,12 @@ body {
 .sticky:before {
 	content: '\f308';
 	display: block;
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 24px;
+	font-size: 1.5rem;
 	height: 20px;
-	left: -1.25em;
+	left: -1em;
 	position: absolute;
-	top: 1.25em;
+	top: 1.1em;
 	-ms-transform: rotate( -45deg ); /* IE 9 */
 	-webkit-transform: rotate( -45deg ); /* Chrome, Safari, Opera */
 	transform: rotate( -45deg );
@@ -2322,7 +2312,6 @@ object {
 /* Audio Player */
 
 .mejs-controls a.mejs-horizontal-volume-slider,
-.mejs-controls a.mejs-horizontal-volume-slider:visited,
 .mejs-controls a.mejs-horizontal-volume-slider:focus,
 .mejs-controls a.mejs-horizontal-volume-slider:hover {
 	background: transparent;
@@ -3018,15 +3007,6 @@ article.panel-placeholder {
 
 	/* Blog, archive, search */
 
-	.sticky:before {
-		font-size: 32px;
-		font-size: 2.0rem;
-		height: 32px;
-		left: -1.25em;
-		top: 0.75em;
-		width: 32px;
-	}
-
 	body:not(.has-sidebar) .page-header,
 	body.has-sidebar.error404 #primary .page-header,
 	body.page-two-column #primary .entry-header {
@@ -3271,6 +3251,17 @@ article.panel-placeholder {
 	.wrap {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	/* Sticky posts */
+
+	.sticky:before {
+		font-size: 32px;
+		font-size: 2.0rem;
+		height: 32px;
+		left: -1.25em;
+		top: 0.75em;
+		width: 32px;
 	}
 
 	/* Comments */
