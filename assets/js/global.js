@@ -53,7 +53,9 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * 'Scroll Down' arrow in menu area
 	 */
-	$menuTop = -30; // Start with a 30px offset, so the menu doesn't hit the content
+	if ( $( 'body' ).hasClass( 'blog' ) ) {
+		$menuTop -= 30; // The div for latest posts has no space above content, add some to account for this
+	}
 	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 		$menuTop -= 32;
 	}
