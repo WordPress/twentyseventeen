@@ -1349,12 +1349,12 @@ body {
 .sticky:before {
 	content: '\f308';
 	display: block;
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 24px;
+	font-size: 1.5rem;
 	height: 20px;
-	left: -1.25em;
+	left: -1em;
 	position: absolute;
-	top: 1.25em;
+	top: 1.1em;
 	-ms-transform: rotate( -45deg ); /* IE 9 */
 	-webkit-transform: rotate( -45deg ); /* Chrome, Safari, Opera */
 	transform: rotate( -45deg );
@@ -3008,15 +3008,6 @@ article.panel-placeholder {
 
 	/* Blog, archive, search */
 
-	.sticky:before {
-		font-size: 32px;
-		font-size: 2.0rem;
-		height: 32px;
-		left: -1.25em;
-		top: 0.75em;
-		width: 32px;
-	}
-
 	body:not(.has-sidebar) .page-header,
 	body.has-sidebar.error404 #primary .page-header,
 	body.page-two-column #primary .entry-header {
@@ -3261,6 +3252,17 @@ article.panel-placeholder {
 	.wrap {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	/* Sticky posts */
+
+	.sticky:before {
+		font-size: 32px;
+		font-size: 2.0rem;
+		height: 32px;
+		left: -1.25em;
+		top: 0.75em;
+		width: 32px;
 	}
 
 	/* Comments */
