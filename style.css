@@ -580,7 +580,7 @@ q:after {
 
 /* Typography for Thai Font */
 
-html[lang="th"] h1, 
+html[lang="th"] h1,
 html[lang="th"] h2,
 html[lang="th"] h3,
 html[lang="th"] h4,
@@ -2709,7 +2709,13 @@ article.panel-placeholder {
 	}
 
 	.navigation-top .wrap {
-		padding: 0.75em 0;
+		/* The font size is 14px here and we need 32px padding in ems */
+		padding: 0.75em 2.2857142857em;
+		max-width: 1000px;
+	}
+
+	.navigation-top nav {
+		margin-left: -1.25em;
 	}
 
 	.site-navigation-fixed.navigation-top {
@@ -3251,6 +3257,16 @@ article.panel-placeholder {
 	.wrap {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	/* Navigation */
+	.navigation-top .wrap {
+		padding: 0.75em 0;
+		max-width: calc( 1000px + 2.5em);
+	}
+
+	.navigation-top nav {
+		margin-left: 0;
 	}
 
 	/* Sticky posts */
