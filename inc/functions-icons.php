@@ -39,12 +39,12 @@ function twentyseventeen_get_svg( $args = array() ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return esc_html__( 'Please define default parameters in the form of an array.', 'twentyseventeen' );
+		return __( 'Please define default parameters in the form of an array.', 'twentyseventeen' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_html__( 'Please define an SVG icon filename.', 'twentyseventeen' );
+		return __( 'Please define an SVG icon filename.', 'twentyseventeen' );
 	}
 
 	// Set defaults.
@@ -73,7 +73,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 	}
 
 	// Begin SVG markup.
-	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// If there is a title, display it.
 	if ( $args['title'] ) {
