@@ -17,6 +17,6 @@
 	) ); ?>
 
 	<?php if ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) : ?>
-		<button class="menu-scroll-down"><?php echo twentyseventeen_get_svg( array( 'icon' => 'next' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down', 'twentyseventeen' ); ?></span></button>
+		<a href="#content" class="menu-scroll-down"><?php echo twentyseventeen_get_svg( array( 'icon' => 'next' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down', 'twentyseventeen' ); ?></span></a>
 	<?php endif; ?>
 </nav><!-- #site-navigation -->
