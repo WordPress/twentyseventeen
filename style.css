@@ -2117,6 +2117,7 @@ h2.widget-title {
 	display: inline-block;
 	height: 40px;
 	margin: 0 1em 0 0;
+	text-align: center;
 	width: 40px;
 }
 
