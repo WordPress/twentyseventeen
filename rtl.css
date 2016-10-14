@@ -301,7 +301,15 @@ input[type="checkbox"] {
 
 	.main-navigation ul li:hover > ul,
 	.main-navigation ul li.focus > ul {
-		left: 0.5em;
+		left: auto;
+		right: 0.5em;
+	}
+
+	.main-navigation ul li.menu-item-has-children:before,
+	.main-navigation ul li.menu-item-has-children:after,
+	.main-navigation ul li.page_item_has_children:before,
+	.main-navigation ul li.page_item_has_children:after {
+		left: 1em;
 		right: auto;
 	}
 
