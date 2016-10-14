@@ -1473,9 +1473,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 /* Blog landing, search, archives */
 
-.blog .post,
-.archive .post,
-.search .hentry {
+.blog .site-main > article,
+.archive .site-main > article,
+.search .site-main > article {
 	padding-bottom: 2em;
 }
 
@@ -3030,9 +3030,9 @@ article.panel-placeholder {
 		width: 58%;
 	}
 
-	.blog .post,
-	.archive .post,
-	.search .hentry {
+	.blog .site-main > article,
+	.archive .site-main > article,
+	.search .site-main > article {
 		padding-bottom: 4em;
 	}
 
