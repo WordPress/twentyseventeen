@@ -14,7 +14,8 @@
 		var dropdownToggle = $( '<button />', {
 			'class': 'dropdown-toggle',
 			'aria-expanded': false
-		} ).append( $( '<span />', {
+		} ).append( twentyseventeenScreenReaderText.icon )
+		.append( $( '<span />', {
 			'class': 'screen-reader-text',
 			text: twentyseventeenScreenReaderText.expand
 		} ) );
