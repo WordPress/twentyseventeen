@@ -25,5 +25,12 @@ Version 1.0:
 @nikschavan
 @joshcummingsdesign
 @enodekciw
-@joshcummingsdesign
 @jordesign
+@patilvikasj
+@ryelle
+@mahesh901122
+@williampatton
+@juanfra
+@imnok
+@LittleBigThing
+@mor10
