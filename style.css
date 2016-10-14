@@ -40,7 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Normalize v5.0.0
+# Normalizing styles based on Normalize v5.0.0
 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 
@@ -76,7 +76,7 @@ main {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 1em 0;
 }
 
 hr {
