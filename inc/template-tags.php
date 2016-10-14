@@ -139,9 +139,11 @@ function twentyseventeen_edit_link( $id ) {
  * @return bool
  */
 function twentyseventeen_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'twentyseventeen_categories' ) ) ) {
+	$category_count = get_transient( 'twentyseventeen_categories' );
+
+	if ( false === $category_count ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$categories = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
 			// We only need to know if there is more than one category.
@@ -149,18 +151,12 @@ function twentyseventeen_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$category_count = count( $categories );
 
-		set_transient( 'twentyseventeen_categories', $all_the_cool_cats );
+		set_transient( 'twentyseventeen_categories', $category_count );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so twentyseventeen_categorized_blog should return true.
-		return true;
-	}
-
-	// This blog has only 1 category so twentyseventeen_categorized_blog should return false.
-	return false;
+	return $category_count > 1;
 }
 
 
