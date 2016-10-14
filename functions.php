@@ -303,6 +303,21 @@ add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnai
 
 
 /**
+ * Use front-page.php when Front page displayes is set to a static page.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param string $template front-page.php
+ *
+ * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template
+ */
+function twentyseventeen_front_page_template( $template ) {
+    return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

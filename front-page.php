@@ -12,11 +12,6 @@
  * @version 1.0
  */
 
-if ( 'posts' === get_option( 'show_on_front' ) ) :
-
-	get_template_part( 'index' );
-
-else :
 
 // Access global variable directly to set content_width global.
 if ( isset( $GLOBALS['content_width'] ) ) {
@@ -75,5 +70,3 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php get_footer();
-
-endif; ?>
