@@ -246,7 +246,7 @@ input[type="checkbox"] {
 
 /* Footer */
 
-.social-navigation a:before {
+.social-navigation a {
 	margin: 0 0 0 1em;
 }
 

@@ -32,7 +32,12 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+	<?php
+		$content = apply_filters( 'the_content', get_the_content() );
+		$video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
+	?>
+
+	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() && empty( $video ) ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
@@ -45,9 +50,6 @@
 		<?php if ( ! is_single() ) :
 
 			// If not a single post, highlight the video file
-			$content = apply_filters( 'the_content', get_the_content() );
-			$video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
-
 			if ( ! empty( $video ) ) :
 				foreach ( $video as $video_html ) {
 					echo '<div class="entry-video">';
@@ -76,5 +78,11 @@
 		endif; ?>
 
 	</div><!-- .entry-content -->
+
+	<?php if ( is_single() ) : ?>
+		<footer class="entry-footer">
+			<?php twentyseventeen_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	<?php endif; ?>
 
 </article><!-- #post-## -->

@@ -5,10 +5,17 @@ jQuery( document ).ready( function( $ ) {
 	 */
 	var $body = $( 'body' ),
 		$navigation = $( '.navigation-top' ),
+		$navWrap = $navigation.find( '.wrap' ),
+		$navMenuItem = $navigation.find( '.menu-item' ),
+		navigationHeight,
+		navigationOuterHeight,
+		navPadding,
+		navMenuItemHeight,
+		idealNavHeight,
+		navIsNotTooTall,
 		$branding = $( '.site-branding' ),
 		$navigationFixedClass = 'site-navigation-fixed',
 		$headerOffset,
-		$navigationHeight,
 		$resizeTimer,
 		$menuTop = 0;
 
@@ -18,22 +25,36 @@ jQuery( document ).ready( function( $ ) {
 		// Make sure we're not on a mobile screen
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-			// When there's a custom header image, the header offset includes the height of the navigation
-			$navigationHeight = $navigation.outerHeight();
-			if ( $( '.custom-header-image' ).length ) {
-				$headerOffset = $( '.custom-header' ).innerHeight() - $navigationHeight;
+			// Make sure the nav isn't taller than two rows
+			navigationHeight  = $navigation.height();
+			navPadding        = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
+			navMenuItemHeight = $navMenuItem.outerHeight() * 2;
+			idealNavHeight    = navPadding + navMenuItemHeight;
+			navIsNotTooTall   = navigationHeight <= idealNavHeight;
+
+			if ( navIsNotTooTall ) {
+
+				// When there's a custom header image, the header offset includes the height of the navigation
+				if ( $( '.custom-header-image' ).length ) {
+					$headerOffset = $( '.custom-header' ).innerHeight() - navigationOuterHeight;
+				} else {
+					$headerOffset = $( '.custom-header' ).innerHeight();
+				}
+
+				if ( $( window ).scrollTop() >= $headerOffset ) {
+
+					// If the scroll is more than the custom header, switch navigation to 'fixed' class
+					$navigation.addClass( $navigationFixedClass );
+
+				} else {
+
+					// Otherwise, remove 'fixed' class
+					$navigation.removeClass( $navigationFixedClass );
+				}
+
 			} else {
-				$headerOffset = $( '.custom-header' ).innerHeight();
-			}
 
-			if ( $( window ).scrollTop() >= $headerOffset ) {
-
-				// If the scroll is more than the custom header, switch navigation to 'fixed' class
-				$navigation.addClass( $navigationFixedClass );
-
-			} else {
-
-				// In all other cases, remove both classes
+				// Otherwise, remove 'fixed' class if nav is taller than two rows
 				$navigation.removeClass( $navigationFixedClass );
 			}
 		}
@@ -41,10 +62,10 @@ jQuery( document ).ready( function( $ ) {
 
 	function adjustHeaderHeight() {
 
-		$navigationHeight = $navigation.outerHeight();
+		navigationOuterHeight = $navigation.outerHeight();
 
 		if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
-			$branding.css( 'margin-bottom', $navigationHeight );
+			$branding.css( 'margin-bottom', navigationOuterHeight );
 		} else {
 			$branding.css( 'margin-bottom', '0' );
 		}

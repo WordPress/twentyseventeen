@@ -40,7 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Normalize v5.0.0
+# Normalizing styles based on Normalize v5.0.0
 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 
@@ -76,7 +76,7 @@ main {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 1em 0;
 }
 
 hr {
@@ -580,7 +580,7 @@ q:after {
 
 /* Typography for Thai Font */
 
-html[lang="th"] h1, 
+html[lang="th"] h1,
 html[lang="th"] h2,
 html[lang="th"] h3,
 html[lang="th"] h4,
@@ -1031,7 +1031,7 @@ body {
 }
 
 .site-description {
-	color: #777;
+	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -1473,9 +1473,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 /* Blog landing, search, archives */
 
-.blog .post,
-.archive .post,
-.search .hentry {
+.blog .site-main > article,
+.archive .site-main > article,
+.search .site-main > article {
 	padding-bottom: 2em;
 }
 
@@ -2109,14 +2109,18 @@ h2.widget-title {
 	display: inline;
 }
 
+.social-navigation a {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
 .social-navigation a:before {
-	background: #bbb;
+	background: #767676;
 	border-radius: 40px;
 	color: #fff;
 	display: inline-block;
 	height: 40px;
 	line-height: 40px;
-	margin: 0 1em 0 0;
 	text-align: center;
 	-webkit-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
@@ -2125,7 +2129,7 @@ h2.widget-title {
 
 .social-navigation a:hover:before,
 .social-navigation a:focus:before {
-	background: #767676;
+	background: #333;
 }
 
 .social-navigation a[href*="codepen.io"]:before {
@@ -2709,7 +2713,13 @@ article.panel-placeholder {
 	}
 
 	.navigation-top .wrap {
-		padding: 0.75em 0;
+		/* The font size is 14px here and we need 32px padding in ems */
+		padding: 0.75em 2.2857142857em;
+		max-width: 1000px;
+	}
+
+	.navigation-top nav {
+		margin-left: -1.25em;
 	}
 
 	.site-navigation-fixed.navigation-top {
@@ -3024,9 +3034,9 @@ article.panel-placeholder {
 		width: 58%;
 	}
 
-	.blog .post,
-	.archive .post,
-	.search .hentry {
+	.blog .site-main > article,
+	.archive .site-main > article,
+	.search .site-main > article {
 		padding-bottom: 4em;
 	}
 
@@ -3251,6 +3261,16 @@ article.panel-placeholder {
 	.wrap {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	/* Navigation */
+	.navigation-top .wrap {
+		padding: 0.75em 0;
+		max-width: calc( 1000px + 2.5em);
+	}
+
+	.navigation-top nav {
+		margin-left: 0;
 	}
 
 	/* Sticky posts */
