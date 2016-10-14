@@ -295,7 +295,25 @@ body.colors-dark,
 
 .colors-dark pre,
 .colors-dark mark,
-.colors-dark ins {
+.colors-dark ins,
+.colors-dark input[type="text"],
+.colors-dark input[type="email"],
+.colors-dark input[type="url"],
+.colors-dark input[type="password"],
+.colors-dark input[type="search"],
+.colors-dark input[type="number"],
+.colors-dark input[type="tel"],
+.colors-dark input[type="range"],
+.colors-dark input[type="date"],
+.colors-dark input[type="month"],
+.colors-dark input[type="week"],
+.colors-dark input[type="time"],
+.colors-dark input[type="datetime"],
+.colors-dark input[type="datetime-local"],
+.colors-dark input[type="color"],
+.colors-dark textarea,
+.colors-dark select,
+.colors-dark fieldset {
 	background: #333;
 }
 
