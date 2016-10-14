@@ -2026,12 +2026,12 @@ h2.widget-title {
 }
 
 .widget_rss .rss-date {
-	margin: 1.5em 0 3em 0;
+	margin: 0.5em 0 1.5em 0;
 	padding: 0;
 }
 
 .widget_rss .rssSummary {
-	margin-bottom: 0.375em;
+	margin-bottom: 0.5em;
 }
 
 /* Contact Info Widget */
