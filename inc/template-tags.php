@@ -18,9 +18,6 @@ function twentyseventeen_posted_on() {
 	/* translators: used between list items, there is a space after the comma */
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
-	// Wrap that in a link, and preface it with 'Posted on'.
-	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_link();
-
 	// Get the author name; wrap it in a link.
 	$byline = sprintf(
 		_x( 'by %s', 'post author', 'twentyseventeen' ),
@@ -28,7 +25,7 @@ function twentyseventeen_posted_on() {
 	);
 
 	// Finally, let's write all of this to the page.
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . twentyseventeen_time_link() . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 endif;
 
@@ -50,7 +47,8 @@ function twentyseventeen_time_link() {
 		get_the_modified_date()
 	);
 
-	return '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	// Wrap the time string in a link, and preface it with 'Posted on'.
+	return '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 }
 endif;
 
