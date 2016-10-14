@@ -94,3 +94,9 @@ time.published {
 .comment-author .avatar {
 	z-index: -1;
 }
+
+/* Fixes linked images */
+.entry-content a img,
+.widget a img {
+	filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#ffffff);
+}

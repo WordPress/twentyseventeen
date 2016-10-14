@@ -909,6 +909,13 @@ a:hover .nav-title,
 	color: #fff;
 }
 
+/* Fixes linked images */
+.entry-content a img,
+.widget a img {
+	background: #fff;
+	box-shadow: 0 0 0 6px #fff;
+}
+
 /*--------------------------------------------------------------
 # Featured Image hover
 --------------------------------------------------------------*/
