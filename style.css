@@ -2801,7 +2801,7 @@ article.panel-placeholder {
 		content: "";
 		height: 0;
 		position: absolute;
-		right: 0.5em;
+		left: 0.5em;
 		top: -6px;
 		width: 0;
 	}
@@ -2855,8 +2855,8 @@ article.panel-placeholder {
 
 	.main-navigation ul li:hover > ul,
 	.main-navigation ul li.focus > ul {
-		left: auto;
-		right: 0.5em;
+		left: 0.5em;
+		right: auto;
 	}
 
 	.main-navigation .menu-item-has-children > a:after,
