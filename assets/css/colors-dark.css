@@ -118,12 +118,12 @@ body.colors-dark,
 .colors-dark .taxonomy-description,
 .colors-dark .site-info a,
 .colors-dark .wp-caption {
-	color: #aaa;
+	color: #ccc;
 }
 
 .colors-dark abbr,
 .colors-dark acronym {
-	border-bottom-color: #aaa;
+	border-bottom-color: #ccc;
 }
 
 .colors-dark h5,
@@ -137,7 +137,7 @@ body.colors-dark,
 .colors-dark .page-numbers.current,
 .colors-dark .page-links .page-number,
 .colors-dark .site-description {
-	color: #999;
+	color: #bbb;
 }
 
 .colors-dark button:hover,
@@ -202,7 +202,7 @@ body.colors-dark,
 .colors-dark .entry-footer .edit-link a.post-edit-link:focus,
 .colors-dark .social-navigation a:hover:before,
 .colors-dark .social-navigation a:focus:before {
-	background: #999;
+	background: #bbb;
 }
 
 .colors-dark .entry-content a,
@@ -217,7 +217,7 @@ body.colors-dark,
 .colors-dark .posts-navigation a:visited,
 .colors-dark .widget_authors a strong,
 .colors-dark .widget_authors a:visited strong {
-	border-bottom-color: #999;
+	border-bottom-color: #bbb;
 }
 
 .colors-dark button.secondary:hover,
