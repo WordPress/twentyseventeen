@@ -66,9 +66,10 @@
 	// Color scheme.
 	wp.customize( 'colorscheme', function( value ) {
 		value.bind( function( to ) {
+
 			// Update color body class.
 			$( 'body' ).removeClass( 'colors-light colors-dark colors-custom' )
-			           .addClass( 'colors-' + to );
+				.addClass( 'colors-' + to );
 		} );
 	} );
 
