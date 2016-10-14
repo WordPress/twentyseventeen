@@ -914,7 +914,6 @@ a:hover .nav-title,
 .widget a img {
 	background: #fff;
 	box-shadow: 0 0 0 6px #fff;
-	filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#ffffff);
 }
 
 /*--------------------------------------------------------------
