@@ -1031,7 +1031,7 @@ body {
 }
 
 .site-description {
-	color: #777;
+	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -2109,14 +2109,18 @@ h2.widget-title {
 	display: inline;
 }
 
+.social-navigation a {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
 .social-navigation a:before {
-	background: #bbb;
+	background: #767676;
 	border-radius: 40px;
 	color: #fff;
 	display: inline-block;
 	height: 40px;
 	line-height: 40px;
-	margin: 0 1em 0 0;
 	text-align: center;
 	-webkit-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
@@ -2125,7 +2129,7 @@ h2.widget-title {
 
 .social-navigation a:hover:before,
 .social-navigation a:focus:before {
-	background: #767676;
+	background: #333;
 }
 
 .social-navigation a[href*="codepen.io"]:before {
