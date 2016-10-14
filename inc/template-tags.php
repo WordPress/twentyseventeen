@@ -15,9 +15,6 @@ if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
  */
 function twentyseventeen_posted_on() {
 
-	/* translators: used between list items, there is a space after the comma */
-	$separate_meta = __( ', ', 'twentyseventeen' );
-
 	// Wrap that in a link, and preface it with 'Posted on'.
 	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_link();
 
