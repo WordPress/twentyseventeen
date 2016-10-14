@@ -12,7 +12,9 @@
  */
 function twentyseventeen_custom_colors_css() {
 	$hue = get_theme_mod( 'colorscheme_hue', 250 );
-	$saturation = apply_filters( 'twentyseventeen_custom_colors_saturation', '80%' );
+	$saturation = apply_filters( 'twentyseventeen_custom_colors_saturation', 50 );
+	$reduced_saturation = ( .8 * $saturation ) . '%';
+	$saturation = $saturation . '%';
 	$css = '
 /**
  * Twenty Seventeen: Color Patterns
@@ -82,7 +84,7 @@ body.colors-custom,
 .colors-custom .format-quote blockquote,
 .colors-custom .nav-title,
 .colors-custom .comment-body {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 20% ); /* base: #333; */
+	color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
 }
 
 
@@ -102,7 +104,7 @@ body.colors-custom,
 .colors-custom input[type="datetime-local"]:focus,
 .colors-custom input[type="color"]:focus,
 .colors-custom textarea:focus {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 20% ); /* base: #333; */
+	border-color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
 }
 
 .colors-custom h2,
