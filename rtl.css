@@ -56,21 +56,6 @@ input[type="checkbox"] {
 	margin-right: 0;
 }
 
-.menu-toggle:after,
-.menu-item-has-children > a:before,
-.page_item_has_children > a:before {
-	font-family: Genericons;
-	font-size: 1em;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: auto;
-}
-
 /* Media */
 
 .mejs-offscreen {
@@ -88,20 +73,9 @@ input[type="checkbox"] {
 	padding-right: 1.5em;
 }
 
-.menu-toggle:before {
-	display: none;
-}
-
-.menu-toggle:after {
-	content: "\f419";
-	font-weight: normal;
+.menu-toggle .icon {
 	margin-left: 0.5em;
-	position: relative;
-	top: -2px;
-}
-
-.toggled-on .menu-toggle:after {
-	content: "\f406";
+	margin-right: 0;
 }
 
 .dropdown-toggle {
@@ -111,25 +85,25 @@ input[type="checkbox"] {
 
 /* Blog, Archive, Search */
 
-.sticky:before {
+.sticky .icon-pinned {
 	left: auto;
 	right: -1em;
+}
+
+.prev.page-numbers .icon,
+.next.page-numbers .icon {
+	display: inline-block;
+	-ms-transform: rotate( 180deg ); /* IE 9 */
+	-webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
+	transform: rotate( 180deg );
 }
 
 .prev.page-numbers {
 	float: right;
 }
 
-.prev.page-numbers:before {
-	content: "\f429";
-}
-
 .next.page-numbers {
 	float: left;
-}
-
-.next.page-numbers:before {
-	content: "\f430";
 }
 
 /* Blog Entries */
@@ -140,8 +114,8 @@ input[type="checkbox"] {
 	padding-right: 2.5em;
 }
 
-.entry-footer .cat-links:before,
-.entry-footer .tags-links:before {
+.entry-footer .cat-links .icon,
+.entry-footer .tags-links .icon {
 	left: auto;
 	margin-left: 0.5em;
 	margin-right: 0;
@@ -155,7 +129,9 @@ input[type="checkbox"] {
 	margin-right: 65px;
 }
 
-.comment-reply-link:before {
+.comment-reply-link .icon {
+	left: auto;
+	right: -2em;
 	-webkit-transform: scale(-1, 1);
 	-moz-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
@@ -208,17 +184,12 @@ input[type="checkbox"] {
 
 /* Post Navigation */
 
-.nav-links .nav-previous .nav-title:before,
-.nav-links .nav-next .nav-title:after {
-	display: none;
-}
-
-.nav-links .nav-previous .nav-title:after {
-	content: "\f429";
-}
-
-.nav-links .nav-next .nav-title:before {
-	content: "\f430";
+.nav-links .nav-previous .nav-title .nav-title-icon-wrapper,
+.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
+	display: inline-block;
+	-ms-transform: rotate( 180deg ); /* IE 9 */
+	-webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
+	transform: rotate( 180deg );
 }
 
 /* Widgets */
@@ -313,29 +284,18 @@ input[type="checkbox"] {
 		right: auto;
 	}
 
-	.main-navigation .menu-item-has-children > a:after,
-	.main-navigation .page_item_has_children > a:after {
-		display: none;
-	}
-
-	.main-navigation .menu-item-has-children > a:before,
-	.main-navigation .page_item_has_children > a:before {
-		content: "\f431";
-		display: inline;
-		position: relative;
+	.main-navigation .menu-item-has-children > a > .icon,
+	.main-navigation .page_item_has_children > a > .icon {
+		left: auto;
 		right: 5px;
-		top: -2px;
 	}
 
-	.main-navigation ul ul .menu-item-has-children > a:before,
-	.main-navigation ul ul .page_item_has_children > a:before {
-		margin-top: -7px;
+	.main-navigation ul ul .menu-item-has-children > a > .icon, 
+	.main-navigation ul ul .page_item_has_children > a > .icon {
 		left: 1.0em;
-		position: absolute;
 		right: auto;
-		top: 50%;
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
 		transform: rotate(90deg);
 	}
 
@@ -369,6 +329,11 @@ input[type="checkbox"] {
 	}
 
 	/* Blog, Archive, Search */
+
+	.sticky .icon-pinned {
+		left: auto;
+		right: -2.5em;
+	}
 
 	body:not(.has-sidebar) .page-header,
 	body.has-sidebar.error404 #primary .page-header,
@@ -459,23 +424,16 @@ input[type="checkbox"] {
 		padding-right: 2em;
 	}
 
-
 	/* Post Navigation */
 
-	.nav-links .nav-previous .nav-title:after,
-	.nav-links .nav-next .nav-title:before {
-		color: #222;
-		position: absolute;
-		text-align: center;
-		width: 1.5em;
+	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
+		left: auto;
+		right: -2em;
 	}
 
-	.nav-links .nav-previous .nav-title:after {
-		right: -1.5em;
-	}
-
-	.nav-links .nav-next .nav-title:before {
-		left: -1.5em;
+	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
+		left: -2em;
+		right: auto;
 	}
 
 	/* Footer */
@@ -504,7 +462,7 @@ input[type="checkbox"] {
 
 	/* Sticky posts */
 
-	.sticky:before {
+	.sticky .icon-pinned {
 		left: auto;
 		right: -1.25em;
 	}

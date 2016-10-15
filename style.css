@@ -582,7 +582,7 @@ html[lang="ja"] h6 {
 	letter-spacing: normal;
 	font-weight: 700;
 }
-
+.nav-links .nav-previous .nav-title .nav-title-icon-wrapper
 /* Typography for Korean font */
 
 html[lang="ko-KR"] body,
@@ -3158,10 +3158,6 @@ article.panel-placeholder {
 		width: 2em;
 	}
 
-	.nav-links .nav-previous .nav-title .icon,
-	.nav-links .nav-next .nav-title .icon {
-	}
-
 	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
 		left: -2em;
 	}
@@ -3264,7 +3260,7 @@ article.panel-placeholder {
 
 	/* Sticky posts */
 
-	.sticky:before {
+	.sticky .icon-pinned {
 		font-size: 32px;
 		font-size: 2.0rem;
 		height: 32px;
