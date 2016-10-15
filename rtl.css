@@ -184,17 +184,12 @@ input[type="checkbox"] {
 
 /* Post Navigation */
 
-.nav-links .nav-previous .nav-title:before,
-.nav-links .nav-next .nav-title:after {
-	display: none;
-}
-
-.nav-links .nav-previous .nav-title:after {
-	content: "\f429";
-}
-
-.nav-links .nav-next .nav-title:before {
-	content: "\f430";
+.nav-links .nav-previous .nav-title .nav-title-icon-wrapper,
+.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
+	display: inline-block;
+	-ms-transform: rotate( 180deg ); /* IE 9 */
+	-webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
+	transform: rotate( 180deg );
 }
 
 /* Widgets */
@@ -424,23 +419,16 @@ input[type="checkbox"] {
 		padding-right: 2em;
 	}
 
-
 	/* Post Navigation */
 
-	.nav-links .nav-previous .nav-title:after,
-	.nav-links .nav-next .nav-title:before {
-		color: #222;
-		position: absolute;
-		text-align: center;
-		width: 1.5em;
+	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
+		left: auto;
+		right: -2em;
 	}
 
-	.nav-links .nav-previous .nav-title:after {
-		right: -1.5em;
-	}
-
-	.nav-links .nav-next .nav-title:before {
-		left: -1.5em;
+	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
+		left: -2em;
+		right: auto;
 	}
 
 	/* Footer */

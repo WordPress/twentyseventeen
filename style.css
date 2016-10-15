@@ -562,7 +562,7 @@ html[lang="th"] select,
 html[lang="th"] textarea {
 	line-height: 1.8;
 }
-
+.nav-links .nav-previous .nav-title .nav-title-icon-wrapper
 /* Typography for Korean font */
 
 html[lang="ko-KR"] body,
@@ -3136,10 +3136,6 @@ article.panel-placeholder {
 		position: absolute;
 		text-align: center;
 		width: 2em;
-	}
-
-	.nav-links .nav-previous .nav-title .icon,
-	.nav-links .nav-next .nav-title .icon {
 	}
 
 	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
