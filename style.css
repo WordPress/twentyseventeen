@@ -2357,7 +2357,7 @@ object {
 }
 
 .gallery-item a:hover img {
-	filter: opacity(60%);	
+	filter: opacity(60%);
 }
 
 .gallery-caption {
