@@ -1751,7 +1751,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 --------------------------------------------------------------*/
 
 #comments {
-	border-bottom: 1px solid #eee;
 	padding: 2em 0 0.5em;
 }
 
@@ -3193,6 +3192,7 @@ article.panel-placeholder {
 		font-size: 14px;
 		font-size: 0.875rem;
 		line-height: 1.6;
+		margin-top: 3em;
 	}
 
 	.site-footer .widget-column {
