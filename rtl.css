@@ -85,7 +85,7 @@ input[type="checkbox"] {
 
 /* Blog, Archive, Search */
 
-.sticky:before {
+.sticky .icon-pinned {
 	left: auto;
 	right: -1em;
 }
@@ -330,6 +330,11 @@ input[type="checkbox"] {
 
 	/* Blog, Archive, Search */
 
+	.sticky .icon-pinned {
+		left: auto;
+		right: -2.5em;
+	}
+
 	body:not(.has-sidebar) .page-header,
 	body.has-sidebar.error404 #primary .page-header,
 	body.page-two-column #primary .entry-header {
@@ -457,7 +462,7 @@ input[type="checkbox"] {
 
 	/* Sticky posts */
 
-	.sticky:before {
+	.sticky .icon-pinned {
 		left: auto;
 		right: -1.25em;
 	}

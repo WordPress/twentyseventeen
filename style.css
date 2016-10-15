@@ -3239,7 +3239,7 @@ article.panel-placeholder {
 
 	/* Sticky posts */
 
-	.sticky:before {
+	.sticky .icon-pinned {
 		font-size: 32px;
 		font-size: 2.0rem;
 		height: 32px;
