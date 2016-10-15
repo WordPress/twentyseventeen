@@ -545,42 +545,20 @@ q:after {
 
 /* Typography for Chinese Font */
 
-html[lang="zh-HK"] body,
-html[lang="zh-HK"] button,
-html[lang="zh-HK"] input,
-html[lang="zh-HK"] select,
-html[lang="zh-HK"] textarea,
-html[lang="zh-TW"] body,
-html[lang="zh-TW"] button,
-html[lang="zh-TW"] input,
-html[lang="zh-TW"] select,
-html[lang="zh-TW"] textarea,
-html[lang="zh-CN"] body,
-html[lang="zh-CN"] button,
-html[lang="zh-CN"] input,
-html[lang="zh-CN"] select,
-html[lang="zh-CN"] textarea  {
+html[lang^="zh-"] body,
+html[lang^="zh-"] button,
+html[lang^="zh-"] input,
+html[lang^="zh-"] select,
+html[lang^="zh-"] textarea {
 	font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
 }
 
-html[lang="zh-HK"] h1,
-html[lang="zh-HK"] h2,
-html[lang="zh-HK"] h3,
-html[lang="zh-HK"] h4,
-html[lang="zh-HK"] h5,
-html[lang="zh-HK"] h6,
-html[lang="zh-TW"] h1,
-html[lang="zh-TW"] h2,
-html[lang="zh-TW"] h3,
-html[lang="zh-TW"] h4,
-html[lang="zh-TW"] h5,
-html[lang="zh-TW"] h6,
-html[lang="zh-CN"] h1,
-html[lang="zh-CN"] h2,
-html[lang="zh-CN"] h3,
-html[lang="zh-CN"] h4,
-html[lang="zh-CN"] h5,
-html[lang="zh-CN"] h6 {
+html[lang^="zh-"] h1,
+html[lang^="zh-"] h2,
+html[lang^="zh-"] h3,
+html[lang^="zh-"] h4,
+html[lang^="zh-"] h5,
+html[lang^="zh-"] h6 {
 	letter-spacing: normal;
 	font-weight: 700;
 }
