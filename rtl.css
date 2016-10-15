@@ -90,20 +90,20 @@ input[type="checkbox"] {
 	right: -1em;
 }
 
+.prev.page-numbers .icon,
+.next.page-numbers .icon {
+	display: inline-block;
+	-ms-transform: rotate( 180deg ); /* IE 9 */
+	-webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
+	transform: rotate( 180deg );
+}
+
 .prev.page-numbers {
 	float: right;
 }
 
-.prev.page-numbers:before {
-	content: "\f429";
-}
-
 .next.page-numbers {
 	float: left;
-}
-
-.next.page-numbers:before {
-	content: "\f430";
 }
 
 /* Blog Entries */
