@@ -25,7 +25,7 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom input[type="submit"],
 .colors-custom .bypostauthor > .comment-body > .comment-meta > .comment-author:before,
 .colors-custom .entry-footer .edit-link a.post-edit-link {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); /* base: #222; */
+	background-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 13% ); /* base: #222; */
 }
 
 .colors-custom input[type="text"]:focus,
@@ -65,7 +65,7 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .comment-reply-link:before,
 .colors-custom h2.widget-title,
 .colors-custom mark {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); /* base: #222; */
+	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 13% ); /* base: #222; */
 }
 
 body.colors-custom,
@@ -84,7 +84,7 @@ body.colors-custom,
 .colors-custom .format-quote blockquote,
 .colors-custom .nav-title,
 .colors-custom .comment-body {
-	color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
+	color: hsl( ' . esc_attr( $hue ) . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
 }
 
 
@@ -104,7 +104,7 @@ body.colors-custom,
 .colors-custom input[type="datetime-local"]:focus,
 .colors-custom input[type="color"]:focus,
 .colors-custom textarea:focus {
-	border-color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
+	border-color: hsl( ' . esc_attr( $hue ) . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
 }
 
 .colors-custom h2,
@@ -130,12 +130,12 @@ body.colors-custom,
 .colors-custom .colors-custom .taxonomy-description,
 .colors-custom .site-info a,
 .colors-custom .wp-caption {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 40% ); /* base: #666; */
+	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 40% ); /* base: #666; */
 }
 
 .colors-custom abbr,
 .colors-custom acronym {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 40% ); /* base: #666; */
+	border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 40% ); /* base: #666; */
 }
 
 .colors-custom h5,
@@ -153,7 +153,7 @@ body.colors-custom,
 .colors-custom .navigation-top .current-menu-item > a:visited,
 .colors-custom .navigation-top .current_page_item > a,
 .colors-custom .navigation-top .current_page_item > a:visited {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
+	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
 }
 
 .colors-custom button:hover,
@@ -218,7 +218,7 @@ body.colors-custom,
 .colors-custom .entry-footer .edit-link a.post-edit-link:focus,
 .colors-custom .social-navigation a:hover:before,
 .colors-custom .social-navigation a:focus:before {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
+	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
 }
 
 .colors-custom .entry-content a,
@@ -233,7 +233,7 @@ body.colors-custom,
 .colors-custom .posts-navigation a:visited,
 .colors-custom .widget_authors a strong,
 .colors-custom .widget_authors a:visited strong {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
+	border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
 }
 
 .colors-custom button.secondary:hover,
@@ -248,7 +248,7 @@ body.colors-custom,
 .colors-custom input[type="submit"].secondary:focus,
 .colors-custom .social-navigation a:before, /* @todo this needs higher contrast by default */
 .colors-custom hr {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
 .colors-custom input[type="text"],
@@ -275,13 +275,13 @@ body.colors-custom,
 .colors-custom .widget.widget_tag_cloud a:focus,
 .colors-custom .wp_widget_tag_cloud a:hover,
 .colors-custom .wp_widget_tag_cloud a:focus {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
 .colors-custom .entry-footer .cat-links:before,
 .colors-custom .entry-footer .tags-links:before,
 .colors-custom .twentyseventeen-front-page:not(.no-header-image) .site-description {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
 .colors-custom button.secondary,
@@ -291,28 +291,28 @@ body.colors-custom,
 .colors-custom input[type="submit"].secondary,
 .colors-custom .prev.page-numbers,
 .colors-custom .next.page-numbers {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	background-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 87% ); /* base: #ddd; */
 }
 
 .colors-custom .widget .tagcloud a,
 .colors-custom .widget.widget_tag_cloud a,
 .colors-custom .wp_widget_tag_cloud a {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 87% ); /* base: #ddd; */
 }
 
 .colors-custom .twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child),
 .colors-custom .widget ul li {
-	border-top-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	border-top-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 87% ); /* base: #ddd; */
 }
 
 .colors-custom .widget ul li {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 87% ); /* base: #ddd; */
 }
 
 .colors-custom pre,
 .colors-custom mark,
 .colors-custom ins {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
 }
 
 .colors-custom .navigation-top,
@@ -321,18 +321,18 @@ body.colors-custom,
 .colors-custom .comment-navigation,
 .colors-custom .entry-footer,
 .colors-custom .site-footer {
-	border-top-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	border-top-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
 }
 
 .colors-custom .navigation-top,
 .colors-custom .main-navigation li,
 .colors-custom .entry-footer,
 .colors-custom #comments {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
 }
 
 .colors-custom .site-header {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 98% ); /* base: #fafafa; */
+	background-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 98% ); /* base: #fafafa; */
 }
 
 .colors-custom .entry-content a:focus,
@@ -395,18 +395,18 @@ body.colors-custom,
 .colors-custom .entry-footer .edit-link a.post-edit-link,
 .colors-custom .bypostauthor > .comment-body > .comment-meta > .comment-author:before,
 .colors-custom .social-navigation a:before {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
 
 body.colors-custom,
 .colors-custom .navigation-top,
 .colors-custom .main-navigation ul,
 .colors-custom .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
 
 .colors-custom .bypostauthor > .comment-body > .comment-meta > .comment-author:before {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+	border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
 
 .colors-custom .menu-toggle,
@@ -424,32 +424,32 @@ body.colors-custom,
 
 	.colors-custom .nav-links .nav-previous .nav-title:before,
 	.colors-custom .nav-links .nav-next .nav-title:after {
-		color: hsl( ' . $hue . ', ' . $saturation . ', 20% ); /* base: #222; */
+		color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 20% ); /* base: #222; */
 	}
 
 	.colors-custom .main-navigation li li:hover,
 	.colors-custom .main-navigation li li.focus {
-		background: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
+		background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
 	}
 
 	.colors-custom .menu-scroll-down {
-		color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */;
+		color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */;
 	}
 
 	.colors-custom .main-navigation ul ul {
-		border-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+		border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
 	}
 
 	.colors-custom .main-navigation ul ul:before {
-		border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+		border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
 	}
 
 	.colors-custom .main-navigation ul ul {
-		background: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+		background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 	}
 
 	.colors-custom .main-navigation ul ul:after {
-		border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+		border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 	}
 
 	.colors-custom .main-navigation li li.focus > a,
@@ -461,7 +461,7 @@ body.colors-custom,
 	.colors-custom .main-navigation li li.current-menu-item a:hover,
 	.colors-custom .main-navigation li li.current_page_item a:focus,
 	.colors-custom .main-navigation li li.current-menu-item a:focus {
-		color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+		color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 	}
 }';
 	return $css;
