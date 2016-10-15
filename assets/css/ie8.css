@@ -63,11 +63,11 @@ h6 {
 .page .panel-content .entry-title,
 .page-title,
 .page .entry-title {
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
 }
 
 /* Posts */
@@ -88,9 +88,15 @@ time.published {
 .archive .post,
 .search .post,
 .search .page {
-    padding-bottom: 4em;
+	padding-bottom: 4em;
 }
 
 .comment-author .avatar {
 	z-index: -1;
+}
+
+/* Fixes linked images */
+.entry-content a img,
+.widget a img {
+	filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#ffffff);
 }

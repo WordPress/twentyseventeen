@@ -32,7 +32,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
@@ -45,7 +45,6 @@
 		<?php if ( is_single() || '' === get_the_post_thumbnail() ) :
 
 			// Only show content if is a single post, or if there's no featured image.
-
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				__( 'Continue reading %s', 'twentyseventeen' ),
@@ -62,5 +61,11 @@
 		endif; ?>
 
 	</div><!-- .entry-content -->
+
+	<?php if ( is_single() ) : ?>
+		<footer class="entry-footer">
+			<?php twentyseventeen_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	<?php endif; ?>
 
 </article><!-- #post-## -->

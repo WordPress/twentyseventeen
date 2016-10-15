@@ -1,5 +1,7 @@
 # Twenty Seventeen
 
+[![Build Status](https://travis-ci.org/WordPress/twentyseventeen.svg?branch=master)](https://travis-ci.org/WordPress/twentyseventeen)
+
 **Contributors:** the WordPress team  
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.7  
@@ -11,7 +13,7 @@
 
 ## Description
 
-Description
+Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in any language, for any abilities, and on any device.
 
 
 ## Installation
@@ -51,6 +53,14 @@ Source: https://necolas.github.io/normalize.css/
 Genericons icon font, Copyright 2013-2016 Automattic.com
 **License:** GNU GPL, Version 2 (or later)
 Source: https://genericons.com/
+
+Font Awesome icons, Copyright Dave Gandy
+**License:** SIL Open Font License, version 1.1.
+Source: http://fontawesome.io/
+
+Bundled header image, Copyright Alvin Engler
+**License:** CC0 1.0 Universal (CC0 1.0)
+Source: https://unsplash.com/@englr?photo=bIhpiQA009k
 
 
 ## Changelog

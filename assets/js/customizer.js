@@ -19,6 +19,7 @@
 					offset: { 'top': -40 }
 				} );
 				$( '.' + data.section ).addClass( 'twentyseventeen-highlight' );
+
 			// If we've left the panel, remove the highlight and scroll back to the top
 			} else {
 				$.scrollTo( $( '#masthead' ), {
@@ -46,7 +47,7 @@
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title, .site-description' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
@@ -59,6 +60,31 @@
 					'color': to
 				} );
 			}
+		} );
+	} );
+
+	// Color scheme.
+	wp.customize( 'colorscheme', function( value ) {
+		value.bind( function( to ) {
+
+			// Update color body class.
+			$( 'body' ).removeClass( 'colors-light colors-dark colors-custom' )
+				.addClass( 'colors-' + to );
+		} );
+	} );
+
+	// Custom color hue.
+	wp.customize( 'colorscheme_hue', function( value ) {
+		value.bind( function( to ) {
+
+			// Update custom color CSS
+			var style = $( '#custom-theme-colors' ),
+			    hue = style.data( 'hue' ),
+			    css = style.html();
+
+			css = css.split( hue + ',' ).join( to + ',' ); // Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
+			style.html( css )
+			     .data( 'hue', to );
 		} );
 	} );
 } )( jQuery );

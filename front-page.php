@@ -50,10 +50,10 @@ get_header(); ?>
 			$twentyseventeencounter = 1;
 
 			foreach ( $panels as $panel ) :
-				if ( get_theme_mod( 'twentyseventeen_panel_' . $panel ) ) :
-					$post = get_post( get_theme_mod( 'twentyseventeen_panel_' . $panel ) );
+				if ( get_theme_mod( 'panel_' . $panel ) ) :
+					$post = get_post( get_theme_mod( 'panel_' . $panel ) );
 					setup_postdata( $post );
-					set_query_var( 'twentyseventeen_panel', $panel );
+					set_query_var( 'panel', $panel );
 
 					$titles[] = get_the_title(); // Put page titles in an array for use in navigation.
 					get_template_part( 'components/page/content', 'front-page-panels' );
@@ -61,7 +61,7 @@ get_header(); ?>
 					wp_reset_postdata();
 				else :
 					// The output placeholder anchor.
-					echo '<article class="panel-placeholder panel twentyseventeen-panel twentyseventeen-panel' . esc_attr( $twentyseventeencounter ) .'" id="panel' . esc_attr( $twentyseventeencounter ) . '"><span class="twentyseventeen-panel-title">' . sprintf( __( 'Panel %1$s Placeholder', 'twentyseventeen' ), esc_attr( $twentyseventeencounter ) ) . '</span></article>';
+					echo '<article class="panel-placeholder panel twentyseventeen-panel twentyseventeen-panel' . esc_attr( $twentyseventeencounter ) . '" id="panel' . esc_attr( $twentyseventeencounter ) . '"><span class="twentyseventeen-panel-title">' . sprintf( __( 'Panel %1$s Placeholder', 'twentyseventeen' ), esc_attr( $twentyseventeencounter ) ) . '</span></article>';
 				endif;
 
 				$twentyseventeencounter++;
