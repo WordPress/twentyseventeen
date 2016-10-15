@@ -3252,8 +3252,6 @@ article.panel-placeholder {
 		margin-right: -20%;
 	}
 }
-<<<<<<< HEAD
-=======
 
 @media screen and ( max-width: 48.875em ) and (min-width: 48em ) {
 	.admin-bar .site-navigation-fixed.navigation-top,
@@ -3423,4 +3421,3 @@ article.panel-placeholder {
 		padding: 0;
 	}
 }
->>>>>>> 075f2672a66938c422c55dffb65e291b93c4b97e
