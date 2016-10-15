@@ -15,9 +15,6 @@ if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
  */
 function twentyseventeen_posted_on() {
 
-	/* translators: used between list items, there is a space after the comma */
-	$separate_meta = __( ', ', 'twentyseventeen' );
-
 	// Get the author name; wrap it in a link.
 	$byline = sprintf(
 		_x( 'by %s', 'post author', 'twentyseventeen' ),
