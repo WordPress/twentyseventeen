@@ -3205,3 +3205,10 @@ article.panel-placeholder {
 		margin-right: -20%;
 	}
 }
+
+@media screen and (max-width: 782px) and (min-width: 768px) {
+    .admin-bar .site-navigation-fixed.navigation-top,
+    .admin-bar .site-navigation-hidden.navigation-top {
+        top: 46px;
+    }
+}
