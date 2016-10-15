@@ -45,8 +45,6 @@
 		<?php if ( ! is_single() ) :
 
 			// If not a single post, highlight the gallery
-			$content = apply_filters( 'the_content', get_the_content() );
-
 			if ( get_post_gallery() ) :
 				echo '<div class="entry-gallery">';
 					echo get_post_gallery();
