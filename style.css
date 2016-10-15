@@ -832,8 +832,6 @@ table {
 a {
 	color: #222;
 	text-decoration: none;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 a:focus {
@@ -842,6 +840,7 @@ a:focus {
 
 a:hover,
 a:active {
+	color: #000;
 	outline: 0;
 }
 
@@ -853,9 +852,8 @@ a:active {
 .site-footer .widget-area a,
 .posts-navigation a,
 .widget_authors a strong {
-	border-bottom: 2px solid #767676;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	box-shadow: inset 0 -1px 0 rgba( 15, 15, 15, 1.0);
+	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
 }
 
 .entry-title a,
@@ -884,9 +882,9 @@ a .nav-title,
 .widget ul li a:visited,
 .site-footer .widget-area ul li a,
 .site-footer .widget-area ul li a:visited {
-	border: 0;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	box-shadow: inset 0 -1px 0 rgba( 15, 15, 15, 1.0);
+	text-decoration: none;
+	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
 }
 
 .entry-content a:focus,
@@ -911,9 +909,8 @@ a .nav-title,
 .widget_authors a:hover strong,
 .project-terms a:focus,
 .project-terms a:hover {
-	border-bottom-color: transparent;
-	background-color: #767676;
-	color: #fff;
+	color: #000;
+	box-shadow: inset 0 0 0 rgba( 0, 0, 0, 0), 0 3px 0 rgba(0,0,0, 1);
 }
 
 .entry-title a:focus,
@@ -946,8 +943,8 @@ a:hover .nav-title,
 .widget .widget-title a:hover,
 .widget ul li a:focus,
 .widget ul li a:hover {
-	background-color: #767676;
-	color: #fff;
+	color: #000;
+	box-shadow: inset 0 0 0 rgba( 0, 0, 0, 0), 0 3px 0 rgba(0,0,0, 1);
 }
 
 /* Fixes linked images */
@@ -1434,8 +1431,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 .entry-title a {
 	color: #333;
 	text-decoration: none;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
 	margin-left: -2px;
 }
 
