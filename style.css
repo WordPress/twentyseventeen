@@ -535,14 +535,12 @@ big {
 	font-size: 125%;
 }
 
-blockquote, q {
+blockquote {
 	quotes: "" "";
 }
 
 blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:after {
 	content: "";
 }
 
