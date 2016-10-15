@@ -8,7 +8,7 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentyseventeen
-Tags:
+Tags: one-column, two-column, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -23,25 +23,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Clearings
 # Typography
 # Forms
-# Buttons
 # Formatting
 # Lists
 # Tables
-# Navigation
 # Links
+# Featured Image Hover
+# Navigation
 # Layout
-	## Posts
-	## Pages
+   ## Header
+   ## Front Page
+   ## Regular Content
+   ## Posts
+   ## Pages
+   ## Footer
 # Comments
 # Widgets
-# Infinite scroll
 # Media
 	## Galleries
+# Customizer
+# Media Queries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Normalizing styles based on Normalize v5.0.0
-@link https://github.com/necolas/normalize.css
+# Normalize
+Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 
 html {
@@ -291,11 +296,12 @@ template {
 
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
 	height: 1px;
-	width: 1px;
 	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
 }
+
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -532,6 +538,7 @@ big {
 blockquote, q {
 	quotes: "" "";
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -541,6 +548,63 @@ q:after {
 
 :focus {
 	outline: none;
+}
+
+/* Typography for Hebrew Font */
+
+html[lang="he-IL"] body,
+html[lang="he-IL"] button,
+html[lang="he-IL"] input,
+html[lang="he-IL"] select,
+html[lang="he-IL"] textarea {
+	font-family: "Arial Hebrew", Arial, sans-serif;
+}
+
+html[lang="he-IL"] h1,
+html[lang="he-IL"] h2,
+html[lang="he-IL"] h3,
+html[lang="he-IL"] h4,
+html[lang="he-IL"] h5,
+html[lang="he-IL"] h6 {
+	font-weight: bold;
+	letter-spacing: normal;
+}
+
+/* Typography for Japanese Font */
+
+html[lang="ja"] body,
+html[lang="ja"] button,
+html[lang="ja"] input,
+html[lang="ja"] select,
+html[lang="ja"] textarea {
+	font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+}
+
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="ja"] h3,
+html[lang="ja"] h4,
+html[lang="ja"] h5,
+html[lang="ja"] h6 {
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+html[lang="ko-KR"] body,
+html[lang="ko-KR"] button,
+html[lang="ko-KR"] input,
+html[lang="ko-KR"] select,
+html[lang="ko-KR"] textarea {
+	font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
+}
+
+html[lang="ko-KR"] h1,
+html[lang="ko-KR"] h2,
+html[lang="ko-KR"] h3,
+html[lang="ko-KR"] h4,
+html[lang="ko-KR"] h5,
+html[lang="ko-KR"] h6 {
+	font-weight: 600;
 }
 
 /* Typography for Thai Font */
@@ -561,44 +625,6 @@ html[lang="th"] input,
 html[lang="th"] select,
 html[lang="th"] textarea {
 	line-height: 1.8;
-}
-
-/* Typography for Korean font */
-
-html[lang="ko-KR"] body,
-html[lang="ko-KR"] button,
-html[lang="ko-KR"] input,
-html[lang="ko-KR"] select,
-html[lang="ko-KR"] textarea {
-	font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-html[lang="ko-KR"] h1,
-html[lang="ko-KR"] h2,
-html[lang="ko-KR"] h3,
-html[lang="ko-KR"] h4,
-html[lang="ko-KR"] h5,
-html[lang="ko-KR"] h6 {
-	font-weight: 600;
-}
-/* Typography for Japanese Font */
-
-html[lang="ja"] body,
-html[lang="ja"] button,
-html[lang="ja"] input,
-html[lang="ja"] select,
-html[lang="ja"] textarea {
-	font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
-}
-
-html[lang="ja"] h1,
-html[lang="ja"] h2,
-html[lang="ja"] h3,
-html[lang="ja"] h4,
-html[lang="ja"] h5,
-html[lang="ja"] h6 {
-	letter-spacing: normal;
-	font-weight: 700;
 }
 
 /*--------------------------------------------------------------
@@ -729,7 +755,7 @@ input[type="submit"].secondary:focus {
 }
 
 /*--------------------------------------------------------------
-# Formattings
+# Formatting
 --------------------------------------------------------------*/
 
 hr {
@@ -931,7 +957,7 @@ a:hover .nav-title,
 }
 
 /*--------------------------------------------------------------
-# Featured Image hover
+# Featured Image Hover
 --------------------------------------------------------------*/
 
 .post-thumbnail {
@@ -950,148 +976,7 @@ a:hover .nav-title,
 }
 
 /*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-body {
-	background: #fff;
-	/* Fallback for when there is no custom background color defined. */
-}
-
-#page {
-	position: relative;
-	-ms-word-wrap: break-word;
-	word-wrap: break-word;
-}
-
-.wrap {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 700px;
-	padding-left: 2em;
-	padding-right: 2em;
-}
-
-.wrap:after {
-	clear: both;
-	content: "";
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-
-#masthead .wrap {
-	position: relative;
-}
-
-.site-header {
-	background-color: #fafafa;
-	position: relative;
-}
-
-/* Site branding */
-
-.site-branding {
-	padding: 1em 0;
-	-webkit-transition: margin-bottom 0.2s;
-	transition: margin-bottom 0.2s;
-}
-
-.twentyseventeen-front-page:not(.no-header-image) .site-branding,
-.home.blog:not(.no-header-image) .site-branding {
-	bottom: 0;
-	position: absolute;
-	width: 100%;
-}
-
-.site-branding a {
-	text-decoration: none;
-	-webkit-transition: opacity 0.2s;
-	transition: opacity 0.2s;
-}
-
-.site-branding a:hover,
-.site-branding a:focus {
-	opacity: 0.7;
-}
-
-.site-title {
-	font-size: 24px;
-	font-size: 1.5rem;
-	font-weight: 800;
-	line-height: 1.25;
-	letter-spacing: 0.08em;
-	margin: 0;
-	padding: 0;
-	text-transform: uppercase;
-}
-
-.site-title,
-.site-title a {
-	color: #222;
-}
-
-.twentyseventeen-front-page:not(.no-header-image) .site-title,
-.twentyseventeen-front-page:not(.no-header-image) .site-title a,
-.home.blog:not(.no-header-image) .site-title,
-.home.blog:not(.no-header-image) .site-title a {
-	color: #fff;
-}
-
-.site-description {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	margin-bottom: 0;
-}
-
-.twentyseventeen-front-page:not(.no-header-image) .site-description,
-.home.blog:not(.no-header-image) .site-description {
-	color: #fff;
-	opacity: 0.8;
-}
-
-.custom-logo-link img {
-	max-height: 200px;
-	width: auto;
-}
-
-.custom-logo-link a:hover,
-.custom-logo-link a:focus {
-	opacity: 0.9;
-}
-
-.custom-header {
-	position: relative;
-}
-
-.custom-header-image {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 0;
-	padding-top: 66%;
-}
-
-.no-header-image .custom-header-image {
-	padding: 5% 0;
-}
-
-/*--------------------------------------------------------------
-# Main Navigation
+# Navigation
 --------------------------------------------------------------*/
 
 .navigation-top {
@@ -1277,7 +1162,148 @@ body {
 }
 
 /*--------------------------------------------------------------
-# Front Page
+# Layout
+--------------------------------------------------------------*/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+#page {
+	position: relative;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+#masthead .wrap {
+	position: relative;
+}
+
+.site-header {
+	background-color: #fafafa;
+	position: relative;
+}
+
+/* Site branding */
+
+.site-branding {
+	padding: 1em 0;
+	-webkit-transition: margin-bottom 0.2s;
+	transition: margin-bottom 0.2s;
+}
+
+.twentyseventeen-front-page:not(.no-header-image) .site-branding,
+.home.blog:not(.no-header-image) .site-branding {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.site-branding a {
+	text-decoration: none;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.site-branding a:hover,
+.site-branding a:focus {
+	opacity: 0.7;
+}
+
+.site-title {
+	font-size: 24px;
+	font-size: 1.5rem;
+	font-weight: 800;
+	line-height: 1.25;
+	letter-spacing: 0.08em;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.site-title,
+.site-title a {
+	color: #222;
+}
+
+.twentyseventeen-front-page:not(.no-header-image) .site-title,
+.twentyseventeen-front-page:not(.no-header-image) .site-title a,
+.home.blog:not(.no-header-image) .site-title,
+.home.blog:not(.no-header-image) .site-title a {
+	color: #fff;
+}
+
+.site-description {
+	color: #666;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	margin-bottom: 0;
+}
+
+.twentyseventeen-front-page:not(.no-header-image) .site-description,
+.home.blog:not(.no-header-image) .site-description {
+	color: #fff;
+	opacity: 0.8;
+}
+
+.custom-logo-link img {
+	max-height: 200px;
+	width: auto;
+}
+
+.custom-logo-link a:hover,
+.custom-logo-link a:focus {
+	opacity: 0.9;
+}
+
+.custom-header {
+	position: relative;
+}
+
+.custom-header-image {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 0;
+	padding-top: 66%;
+}
+
+.no-header-image .custom-header-image {
+	padding: 5% 0;
+}
+
+/*--------------------------------------------------------------
+## Front Page
 --------------------------------------------------------------*/
 
 .twentyseventeen-front-page .site-content {
@@ -1475,8 +1501,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 .next.page-numbers {
 	float: right;
 }
-
-/* Entry content */
 
 /* Aligned blockquotes */
 
@@ -1726,11 +1750,86 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 /*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+	border-top: 1px solid #eee;
+	padding: 0 0 1.5em;
+}
+
+/* Footer widgets */
+
+.site-footer .widget-area {
+	padding-bottom: 2em;
+	padding-top: 4em;
+}
+
+/* Social nav */
+
+.social-navigation {
+	font-size: 16px;
+	font-size: 1.0rem;
+	margin-bottom: 1em;
+}
+
+.social-navigation ul {
+	list-style: none;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.social-navigation li {
+	display: inline;
+}
+
+.social-navigation a {
+	background-color: #767676;
+	border-radius: 40px;
+	color: #fff;
+	display: inline-block;
+	height: 40px;
+	margin: 0 1em 0 0;
+	text-align: center;
+	width: 40px;
+}
+
+.social-navigation a:hover,
+.social-navigation a:focus {
+	background-color: #333;
+}
+
+.social-navigation .icon {
+	height: 16px;
+	top: 12px;
+	width: 16px;
+	vertical-align: top;
+}
+
+/* Site info */
+
+.site-info {
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+.site-info a {
+	color: #666;
+}
+
+.site-info .sep {
+	margin: 0;
+	display: block;
+	visibility: hidden;
+	height: 0;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
 
 #comments {
-	border-bottom: 1px solid #eee;
 	padding: 2em 0 0.5em;
 }
 
@@ -1966,8 +2065,6 @@ h2.widget-title {
 	word-wrap: break-word;
 }
 
-/* Archives, Categories, Menu, Pages, Recent Comments, Recent Posts */
-
 /* RSS Widget */
 
 .widget_rss .widget-title .rsswidget:first-child {
@@ -2119,82 +2216,6 @@ h2.widget-title {
 }
 
 /*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-
-.site-footer {
-	border-top: 1px solid #eee;
-	padding: 0 0 1.5em;
-}
-
-/* Footer widgets */
-
-.site-footer .widget-area {
-	padding-bottom: 2em;
-	padding-top: 4em;
-}
-
-/* Social nav */
-
-.social-navigation {
-	font-size: 16px;
-	font-size: 1.0rem;
-	margin-bottom: 1em;
-}
-
-.social-navigation ul {
-	list-style: none;
-	margin-bottom: 0;
-	margin-left: 0;
-}
-
-.social-navigation li {
-	display: inline;
-}
-
-.social-navigation a {
-	background-color: #767676;
-	border-radius: 40px;
-	color: #fff;
-	display: inline-block;
-	height: 40px;
-	margin: 0 1em 0 0;
-	text-align: center;
-	width: 40px;
-}
-
-.social-navigation a:hover,
-.social-navigation a:focus {
-	background-color: #333;
-}
-
-.social-navigation .icon {
-	height: 16px;
-	top: 12px;
-	width: 16px;
-	vertical-align: top;
-}
-
-/* Site info */
-
-.site-info {
-	font-size: 14px;
-	font-size: 0.875rem;
-}
-
-.site-info a {
-	color: #666;
-}
-
-.site-info .sep {
-	margin: 0;
-	display: block;
-	visibility: hidden;
-	height: 0;
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 
@@ -2222,7 +2243,8 @@ object {
 	max-width: 100%;
 }
 
-.wp-caption {
+.wp-caption,
+.gallery-caption {
 	color: #666;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -2272,14 +2294,16 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 
-.gallery {
-	margin-bottom: 1.5em;
-}
-
 .gallery-item {
 	display: inline-block;
-	text-align: center;
+	text-align: left;
 	vertical-align: top;
+	margin: 0 0 1.5em;
+	padding: 0 1em 0 0;
+	width: 50%;
+}
+
+.gallery-columns-1 .gallery-item {
 	width: 100%;
 }
 
@@ -2287,36 +2311,33 @@ object {
 	max-width: 50%;
 }
 
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+.gallery-item a {
+	border-bottom: none;
+	background: none;
+	display: inline-block;
 }
 
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
+.gallery-item a:hover {
+	background: none;
 }
 
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
+.gallery-item a img {
+	display: block;
+	transition: filter 0.2s ease-in;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+.gallery-item a:hover img,
+.gallery-item a:focus img {
+	filter: opacity(60%);
 }
 
 .gallery-caption {
 	display: block;
+	text-align: left;
+	padding: 0 10px 0 0;
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -2549,6 +2570,28 @@ article.panel-placeholder {
 		font-size: 16px;
 		font-size: 1.0rem;
 	}
+
+	/* Gallery Columns */
+
+	.gallery-item {
+		max-width: 25%;
+	}
+
+	.gallery-columns-1 .gallery-item {
+		max-width: 100%;
+	}
+
+	.gallery-columns-2 .gallery-item {
+		max-width: 50%;
+	}
+
+	.gallery-columns-3 .gallery-item {
+		max-width: 33.33%;
+	}
+
+	.gallery-columns-4 .gallery-item {
+		max-width: 25%;
+	}
 }
 
 @media screen and (min-width: 48em) {
@@ -2659,9 +2702,9 @@ article.panel-placeholder {
 	}
 
 	.navigation-top .wrap {
+		max-width: 1000px;
 		/* The font size is 14px here and we need 32px padding in ems */
 		padding: 0.75em 2.2857142857em;
-		max-width: 1000px;
 	}
 
 	.navigation-top nav {
@@ -2726,10 +2769,10 @@ article.panel-placeholder {
 	.main-navigation ul ul {
 		background: #fff;
 		border: 1px solid #bbb;
+		left: -999em;
 		padding: 0;
 		position: absolute;
 		top: 100%;
-		left: -999em;
 		z-index: 99999;
 	}
 
@@ -3138,10 +3181,6 @@ article.panel-placeholder {
 		width: 2em;
 	}
 
-	.nav-links .nav-previous .nav-title .icon,
-	.nav-links .nav-next .nav-title .icon {
-	}
-
 	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
 		left: -2em;
 	}
@@ -3172,6 +3211,7 @@ article.panel-placeholder {
 		font-size: 14px;
 		font-size: 0.875rem;
 		line-height: 1.6;
+		margin-top: 3em;
 	}
 
 	.site-footer .widget-column {
@@ -3203,6 +3243,28 @@ article.panel-placeholder {
 		visibility: visible;
 		height: auto;
 		width: auto;
+	}
+
+	/* Gallery Columns */
+
+	.gallery-columns-5 .gallery-item {
+		max-width: 20%;
+	}
+
+	.gallery-columns-6 .gallery-item {
+		max-width: 16.66%;
+	}
+
+	.gallery-columns-7 .gallery-item {
+		max-width: 14.28%;
+	}
+
+	.gallery-columns-8 .gallery-item {
+		max-width: 12.5%;
+	}
+
+	.gallery-columns-9 .gallery-item {
+		max-width: 11.11%;
 	}
 }
 
@@ -3243,7 +3305,7 @@ article.panel-placeholder {
 
 	/* Sticky posts */
 
-	.sticky:before {
+	.sticky .icon-pinned {
 		font-size: 32px;
 		font-size: 2.0rem;
 		height: 32px;
