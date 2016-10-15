@@ -563,6 +563,31 @@ html[lang="th"] textarea {
 	line-height: 1.8;
 }
 
+/* Typography for Hebrew Font */
+
+html[lang="he-IL"] h1,
+html[lang="he-IL"] h2,
+html[lang="he-IL"] h3,
+html[lang="he-IL"] h4,
+html[lang="he-IL"] h5,
+html[lang="he-IL"] h6 {
+	font-family: "Arial Hebrew", Arial, sans-serif;
+	letter-spacing: normal;
+}
+
+html[lang="he-IL"] h1 {
+	font-weight: bold;
+}
+
+html[lang="he-IL"] body,
+html[lang="he-IL"] button,
+html[lang="he-IL"] input,
+html[lang="he-IL"] select,
+html[lang="he-IL"] textarea {
+	font-family: "Arial Hebrew", Arial, sans-serif;
+	letter-spacing: normal;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
