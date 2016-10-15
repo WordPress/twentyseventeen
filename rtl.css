@@ -338,6 +338,11 @@ input[type="checkbox"] {
 		right: auto;
 	}
 
+	.entry-title a {
+		margin-left: auto;
+		margin-right: -2px;
+	}
+
 	/* Front Page */
 
 	.panel-content .entry-header {

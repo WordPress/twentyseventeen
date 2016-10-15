@@ -1362,6 +1362,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	text-decoration: none;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
+	margin-left: -2px;
 }
 
 .entry-title:not(:first-child) {
@@ -3207,8 +3208,8 @@ article.panel-placeholder {
 }
 
 @media screen and (max-width: 782px) and (min-width: 768px) {
-    .admin-bar .site-navigation-fixed.navigation-top,
-    .admin-bar .site-navigation-hidden.navigation-top {
-        top: 46px;
-    }
+	.admin-bar .site-navigation-fixed.navigation-top,
+	.admin-bar .site-navigation-hidden.navigation-top {
+		top: 46px;
+	}
 }
