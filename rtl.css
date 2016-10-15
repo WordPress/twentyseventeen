@@ -129,7 +129,9 @@ input[type="checkbox"] {
 	margin-right: 65px;
 }
 
-.comment-reply-link:before {
+.comment-reply-link .icon {
+	left: auto;
+	right: -2em;
 	-webkit-transform: scale(-1, 1);
 	-moz-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
