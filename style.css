@@ -1144,6 +1144,10 @@ body {
 	text-decoration: none;
 }
 
+.main-navigation a:hover {
+	color: #767676;
+}
+
 /* Menu toggle */
 
 .menu-toggle {
