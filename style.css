@@ -2683,7 +2683,7 @@ article.panel-placeholder {
 
 	.main-navigation ul ul {
 		background: #fff;
-		border: 1px solid #eee;
+		border: 1px solid #bbb;
 		padding: 0;
 		position: absolute;
 		top: 100%;
@@ -2704,7 +2704,7 @@ article.panel-placeholder {
 	}
 
 	.main-navigation ul ul:before {
-		border-color: transparent transparent #eee transparent;
+		border-color: transparent transparent #bbb transparent;
 		top: -7px;
 	}
 
