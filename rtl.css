@@ -228,6 +228,13 @@ input[type="checkbox"] {
 	right: auto;
 }
 
+/* Gallery Styles */
+
+.gallery-item,
+.gallery-caption {
+	text-align: right;
+}
+
 /* Media queries */
 
 @media screen and (min-width: 48em) {
