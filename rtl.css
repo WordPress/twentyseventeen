@@ -287,29 +287,18 @@ input[type="checkbox"] {
 		right: auto;
 	}
 
-	.main-navigation .menu-item-has-children > a:after,
-	.main-navigation .page_item_has_children > a:after {
-		display: none;
-	}
-
-	.main-navigation .menu-item-has-children > a:before,
-	.main-navigation .page_item_has_children > a:before {
-		content: "\f431";
-		display: inline;
-		position: relative;
+	.main-navigation .menu-item-has-children > a > .icon,
+	.main-navigation .page_item_has_children > a > .icon {
+		left: auto;
 		right: 5px;
-		top: -2px;
 	}
 
-	.main-navigation ul ul .menu-item-has-children > a:before,
-	.main-navigation ul ul .page_item_has_children > a:before {
-		margin-top: -7px;
+	.main-navigation ul ul .menu-item-has-children > a > .icon, 
+	.main-navigation ul ul .page_item_has_children > a > .icon {
 		left: 1.0em;
-		position: absolute;
 		right: auto;
-		top: 50%;
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
 		transform: rotate(90deg);
 	}
 
