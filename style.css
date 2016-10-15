@@ -543,44 +543,26 @@ q:after {
 	outline: none;
 }
 
-/* Typography for Thai Font */
+/* Typography for Hebrew Font */
 
-html[lang="th"] h1,
-html[lang="th"] h2,
-html[lang="th"] h3,
-html[lang="th"] h4,
-html[lang="th"] h5,
-html[lang="th"] h6 {
-	letter-spacing: 0;
-	line-height: 1.65;
+html[lang="he-IL"] body,
+html[lang="he-IL"] button,
+html[lang="he-IL"] input,
+html[lang="he-IL"] select,
+html[lang="he-IL"] textarea {
+	font-family: "Arial Hebrew", Arial, sans-serif;
 }
 
-html[lang="th"] body,
-html[lang="th"] button,
-html[lang="th"] input,
-html[lang="th"] select,
-html[lang="th"] textarea {
-	line-height: 1.8;
+html[lang="he-IL"] h1,
+html[lang="he-IL"] h2,
+html[lang="he-IL"] h3,
+html[lang="he-IL"] h4,
+html[lang="he-IL"] h5,
+html[lang="he-IL"] h6 {
+	font-weight: bold;
+	letter-spacing: normal;
 }
 
-/* Typography for Korean font */
-
-html[lang="ko-KR"] body,
-html[lang="ko-KR"] button,
-html[lang="ko-KR"] input,
-html[lang="ko-KR"] select,
-html[lang="ko-KR"] textarea {
-	font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-html[lang="ko-KR"] h1,
-html[lang="ko-KR"] h2,
-html[lang="ko-KR"] h3,
-html[lang="ko-KR"] h4,
-html[lang="ko-KR"] h5,
-html[lang="ko-KR"] h6 {
-	font-weight: 600;
-}
 /* Typography for Japanese Font */
 
 html[lang="ja"] body,
@@ -601,24 +583,43 @@ html[lang="ja"] h6 {
 	font-weight: 700;
 }
 
-/* Typography for Hebrew Font */
+/* Typography for Korean font */
 
-html[lang="he-IL"] body,
-html[lang="he-IL"] button,
-html[lang="he-IL"] input,
-html[lang="he-IL"] select,
-html[lang="he-IL"] textarea {
-	font-family: "Arial Hebrew", Arial, sans-serif;
+html[lang="ko-KR"] body,
+html[lang="ko-KR"] button,
+html[lang="ko-KR"] input,
+html[lang="ko-KR"] select,
+html[lang="ko-KR"] textarea {
+	font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
 }
 
-html[lang="he-IL"] h1,
-html[lang="he-IL"] h2,
-html[lang="he-IL"] h3,
-html[lang="he-IL"] h4,
-html[lang="he-IL"] h5,
-html[lang="he-IL"] h6 {
-	font-weight: bold;
-	letter-spacing: normal;
+html[lang="ko-KR"] h1,
+html[lang="ko-KR"] h2,
+html[lang="ko-KR"] h3,
+html[lang="ko-KR"] h4,
+html[lang="ko-KR"] h5,
+html[lang="ko-KR"] h6 {
+	font-weight: 600;
+}
+
+/* Typography for Thai Font */
+
+html[lang="th"] h1,
+html[lang="th"] h2,
+html[lang="th"] h3,
+html[lang="th"] h4,
+html[lang="th"] h5,
+html[lang="th"] h6 {
+	letter-spacing: 0;
+	line-height: 1.65;
+}
+
+html[lang="th"] body,
+html[lang="th"] button,
+html[lang="th"] input,
+html[lang="th"] select,
+html[lang="th"] textarea {
+	line-height: 1.8;
 }
 
 /*--------------------------------------------------------------
