@@ -15,12 +15,6 @@ if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
  */
 function twentyseventeen_posted_on() {
 
-	/* translators: used between list items, there is a space after the comma */
-	$separate_meta = __( ', ', 'twentyseventeen' );
-
-	// Wrap that in a link, and preface it with 'Posted on'.
-	$posted_on = '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> ' . twentyseventeen_time_link();
-
 	// Get the author name; wrap it in a link.
 	$byline = sprintf(
 		_x( 'by %s', 'post author', 'twentyseventeen' ),
@@ -28,7 +22,7 @@ function twentyseventeen_posted_on() {
 	);
 
 	// Finally, let's write all of this to the page.
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . twentyseventeen_time_link() . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 endif;
 
@@ -50,7 +44,8 @@ function twentyseventeen_time_link() {
 		get_the_modified_date()
 	);
 
-	return '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	// Wrap the time string in a link, and preface it with 'Posted on'.
+	return '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 }
 endif;
 
@@ -90,13 +85,13 @@ function twentyseventeen_entry_footer() {
 		$categories_list = get_the_category_list( $separate_meta );
 		// Make sure there's more than one category before displaying.
 		if ( $categories_list && twentyseventeen_categorized_blog() ) {
-			echo '<span class="cat-links"><span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+			echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
 		}
 
 		// Display Tags for posts.
 		$tags_list = get_the_tag_list( '', $separate_meta );
 		if ( $tags_list ) {
-			echo '<span class="tags-links"><span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
+			echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
 		}
 
 		echo '</span>';

@@ -22,9 +22,12 @@ get_header(); ?>
 		<header class="page-header">
 			<h1 class="page-title"><?php single_post_title(); ?></h1>
 		</header>
-	<?php
-	endif;
-	?>
+	<?php elseif ( is_home() ) : ?>
+		<?php $posts_page = get_post( get_option( 'page_for_posts' ) ); ?>
+		<header class="page-header">
+			<h2 class="page-title"><?php echo apply_filters( 'the_title', $posts_page->post_title ); ?></h2>
+		</header>
+	<?php endif; ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -44,8 +47,8 @@ get_header(); ?>
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
+					'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'previous' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'next' ) ),
 				) );
 
 			else :

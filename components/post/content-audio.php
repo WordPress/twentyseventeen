@@ -77,4 +77,10 @@
 
 	</div><!-- .entry-content -->
 
+	<?php if ( is_single() ) : ?>
+		<footer class="entry-footer">
+			<?php twentyseventeen_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	<?php endif; ?>
+
 </article><!-- #post-## -->

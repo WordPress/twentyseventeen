@@ -13,6 +13,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+		if ( is_sticky() ) :
+			echo twentyseventeen_get_svg( array( 'icon' => 'pinned' ) );
+		endif;
+	?>
 	<header class="entry-header">
 		<?php
 			if ( 'post' === get_post_type() ) :
