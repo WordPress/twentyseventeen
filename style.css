@@ -609,7 +609,6 @@ html[lang="he-IL"] input,
 html[lang="he-IL"] select,
 html[lang="he-IL"] textarea {
 	font-family: "Arial Hebrew", Arial, sans-serif;
-	letter-spacing: normal;
 }
 
 html[lang="he-IL"] h1,
