@@ -581,6 +581,25 @@ html[lang="ko-KR"] h5,
 html[lang="ko-KR"] h6 {
 	font-weight: 600;
 }
+/* Typography for Japanese Font */
+
+html[lang="ja"] body,
+html[lang="ja"] button,
+html[lang="ja"] input,
+html[lang="ja"] select,
+html[lang="ja"] textarea {
+	font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+}
+
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="ja"] h3,
+html[lang="ja"] h4,
+html[lang="ja"] h5,
+html[lang="ja"] h6 {
+	letter-spacing: normal;
+	font-weight: 700;
+}
 
 /*--------------------------------------------------------------
 # Forms
