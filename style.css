@@ -2341,7 +2341,6 @@ object {
 }
 
 .gallery-item a {
-	display: inline-block;
 	border-bottom: none;
 	background: none;
 }
