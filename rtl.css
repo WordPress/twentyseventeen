@@ -114,8 +114,8 @@ input[type="checkbox"] {
 	padding-right: 2.5em;
 }
 
-.entry-footer .cat-links:before,
-.entry-footer .tags-links:before {
+.entry-footer .cat-links .icon,
+.entry-footer .tags-links .icon {
 	left: auto;
 	margin-left: 0.5em;
 	margin-right: 0;
