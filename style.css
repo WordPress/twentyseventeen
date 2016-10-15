@@ -2251,6 +2251,7 @@ object {
 .gallery-item a {
 	border-bottom: none;
 	background: none;
+	display: inline-block;
 }
 
 .gallery-item a:hover {
@@ -2264,7 +2265,8 @@ object {
 	backface-visibility: hidden;
 }
 
-.gallery-item a:hover img {
+.gallery-item a:hover img,
+.gallery-item a:focus img {
 	filter: opacity(60%);
 }
 
