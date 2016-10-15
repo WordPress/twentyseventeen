@@ -18,6 +18,48 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	/**
+	 * Custom colors.
+	 */
+	$wp_customize->add_setting( 'colorscheme', array(
+		'default'           => 'light',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'twentyseventeen_sanitize_colorscheme',
+	) );
+
+	$wp_customize->add_setting( 'colorscheme_hue', array(
+		'default'           => 250,
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'absint', // The hue is stored as a positive integer.
+	) );
+
+	$wp_customize->add_control( 'colorscheme', array(
+		'type'    => 'radio',
+		'label'    => __( 'Color Scheme', 'twentyseventeen' ),
+		'choices'  => array(
+			'light'  => __( 'Light', 'twentyseventeen' ),
+			'dark'   => __( 'Dark', 'twentyseventeen' ),
+			'custom' => __( 'Custom', 'twentyseventeen' ),
+		),
+		'section'  => 'colors',
+		'priority' => 5,
+	) );
+
+	$wp_customize->add_control( 'colorscheme_hue', array(
+		'type'    => 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 359,
+			'step' => 1,
+		),
+		'section'  => 'colors',
+		'priority' => 6,
+		'description' => 'Temporary hue slider will be replaced with a visual hue picker that is only shown when a custom scheme is selected', // temporary, intentionally untranslated
+		// @todo change this to a visual hue picker control, ideally extending the color control and leveraging iris by adding a `hue` mode in core
+		// See https://core.trac.wordpress.org/ticket/38263
+		// @todo only show this control when the colorscheme is custom
+	) );
+
+	/**
 	 * Add the Theme Options section
 	 */
 	$wp_customize->add_panel( 'options_panel', array(
@@ -142,6 +184,19 @@ function twentyseventeen_sanitize_layout( $input ) {
 }
 
 /**
+ * Sanitize the colorscheme.
+ */
+function twentyseventeen_sanitize_colorscheme( $input ) {
+	$valid = array( 'light', 'dark', 'custom' );
+
+	if ( in_array( $input, $valid ) ) {
+		return $input;
+	} else {
+		return 'light';
+	}
+}
+
+/**
  * Custom Active Callback to check for page.
  */
 function twentyseventeen_is_page() {
@@ -163,3 +218,31 @@ function twentyseventeen_panels_js() {
 	wp_enqueue_script( 'twentyseventeen-panel-customizer', get_template_directory_uri() . '/assets/js/panel-customizer.js', array(), '20151116', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'twentyseventeen_panels_js' );
+
+/**
+ * Add colorscheme body class.
+ */
+function twentyseventeen_body_class_colors( $classes ) {
+	// Get the colorschme or the default if there isn't one.
+	$colors = twentyseventeen_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
+	$classes[] = 'colors-' . $colors;
+	return $classes;
+}
+add_filter( 'body_class', 'twentyseventeen_body_class_colors' );
+
+/**
+ * Display custom color CSS.
+ */
+function twentyseventeen_colors_css_wrap() {
+	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
+		return;
+	}
+
+	require_once( 'color-patterns.php' );
+	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+?>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
+		<?php echo twentyseventeen_custom_colors_css(); ?>
+	</style>
+<?php }
+add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );

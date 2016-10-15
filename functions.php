@@ -188,7 +188,7 @@ if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
  * Replaces the excerpt "more" text by a link
  */
 function twentyseventeen_excerpt_continue_reading() {
-	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
+	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading %s', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
 }
 }
 add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
@@ -213,11 +213,13 @@ function twentyseventeen_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'twentyseventeen-fonts', twentyseventeen_fonts_url(), array(), null );
 
-	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/genericons/genericons.css', array(), '3.4.1' );
-
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
+
+	// Load the dark colorscheme.
+	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
+		wp_enqueue_style( 'twentyseventeen-colors-dark', get_template_directory_uri() . '/assets/css/colors-dark.css', array( 'twentyseventeen-style' ), '20161006' );
+	}
 
 	// Load the Internet Explorer 8 specific stylesheet.
 	wp_enqueue_style( 'twentyseventeen-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'twentyseventeen-style' ), '20160928' );
@@ -234,6 +236,7 @@ function twentyseventeen_scripts() {
 	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
 		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
 		'collapse' => __( 'Collapse child menu', 'twentyseventeen' ),
+		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
 	) );
 
 	wp_enqueue_script( 'twentyseventeen-global', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '20151215', true );
@@ -318,3 +321,8 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * SVG icons functions and filters.
+ */
+require get_template_directory() . '/inc/functions-icons.php';

@@ -246,7 +246,7 @@ input[type="checkbox"] {
 
 /* Footer */
 
-.social-navigation a:before {
+.social-navigation a {
 	margin: 0 0 0 1em;
 }
 
@@ -340,9 +340,14 @@ input[type="checkbox"] {
 
 	/* Scroll down arrow */
 
-	.menu-scroll-down {
+	.navigation-top .menu-scroll-down {
 		left: 0;
 		right: auto;
+	}
+
+	.entry-title a {
+		margin-left: auto;
+		margin-right: -2px;
 	}
 
 	/* Front Page */
@@ -370,7 +375,7 @@ input[type="checkbox"] {
 		float: right;
 	}
 
-	.blog:not(.has-sidebar):not(.home) #primary article,
+	.blog:not(.has-sidebar) #primary article,
 	.archive:not(.has-sidebar) #primary article,
 	.search:not(.has-sidebar) #primary article,
 	.has-sidebar.error404 #primary .page-content,

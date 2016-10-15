@@ -74,14 +74,17 @@ jQuery( document ).ready( function( $ ) {
 	/**
 	 * 'Scroll Down' arrow in menu area
 	 */
+	if ( $( 'body' ).hasClass( 'blog' ) ) {
+		$menuTop -= 30; // The div for latest posts has no space above content, add some to account for this
+	}
 	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-		$menuTop = -32;
+		$menuTop -= 32;
 	}
 	$( '.menu-scroll-down' ).click( function( e ) {
 		e.preventDefault();
 		$( window ).scrollTo( '#primary', {
 			duration: 600,
-			offset: { 'top': $menuTop }
+			offset: { 'top': $menuTop - $navigation.outerHeight() }
 		} );
 	} );
 
