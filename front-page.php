@@ -12,11 +12,6 @@
  * @version 1.0
  */
 
-if ( 'posts' === get_option( 'show_on_front' ) ) :
-
-	get_template_part( 'index' );
-
-else :
 
 get_header(); ?>
 
@@ -70,5 +65,3 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php get_footer();
-
-endif; ?>
