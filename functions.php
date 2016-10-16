@@ -313,9 +313,9 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Additional features to allow styling of the templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
@@ -325,4 +325,4 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * SVG icons functions and filters.
  */
-require get_template_directory() . '/inc/functions-icons.php';
+require get_template_directory() . '/inc/icon-functions.php';
