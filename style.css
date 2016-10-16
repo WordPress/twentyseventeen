@@ -540,7 +540,7 @@ blockquote {
 }
 
 q {
-	quotes: "“" "”";
+	quotes: "“" "”" "‘" "’";
 }
 
 blockquote:before,
