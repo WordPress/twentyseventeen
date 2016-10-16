@@ -125,7 +125,7 @@ function twentyseventeen_content_width() {
 add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
 
 /**
- * Register custom fonts
+ * Register custom fonts.
  */
 function twentyseventeen_fonts_url() {
 	$fonts_url = '';
@@ -193,7 +193,7 @@ add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
 if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
 /**
- * Replaces the excerpt "more" text by a link
+ * Replaces the excerpt "more" text by a link.
  */
 function twentyseventeen_excerpt_continue_reading() {
 	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading %s', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
@@ -288,7 +288,7 @@ add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
- * for content images
+ * for content images.
  *
  * @since Twenty Seventeen 1.0
  *
@@ -314,13 +314,13 @@ add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_att
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
- * for post thumbnails
+ * for post thumbnails.
  *
  * @since Twenty Seventeen 1.0
  *
- * @param array $attr Attributes for the image markup.
+ * @param array $attr       Attributes for the image markup.
  * @param int   $attachment Image attachment ID.
- * @param array $size Registered image size or flat array of height and width dimensions.
+ * @param array $size       Registered image size or flat array of height and width dimensions.
  * @return string A source size value for use in a post thumbnail 'sizes' attribute.
  */
 function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
@@ -334,7 +334,7 @@ function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
 add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
- * Use front-page.php when Front page displayes is set to a static page.
+ * Use front-page.php when Front page displays is set to a static page.
  *
  * @since Twenty Seventeen 1.0
  *

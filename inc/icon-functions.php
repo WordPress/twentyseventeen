@@ -1,6 +1,6 @@
 <?php
 /**
- * SVG icons related functions and filters.
+ * SVG icons related functions and filters
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen

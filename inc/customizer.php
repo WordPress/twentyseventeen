@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Seventeen Theme Customizer
+ * Twenty Seventeen: Theme Customizer
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -60,7 +60,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Add the Theme Options section
+	 * Add the Theme Options section.
 	 */
 	$wp_customize->add_panel( 'options_panel', array(
 		'title'       => __( 'Theme Options', 'twentyseventeen' ),

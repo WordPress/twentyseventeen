@@ -36,7 +36,7 @@ add_action( 'after_setup_theme', 'twentyseventeen_custom_header_setup' );
 
 if ( ! function_exists( 'twentyseventeen_header_style' ) ) :
 /**
- * Styles the header image and text displayed on the blog
+ * Styles the header image and text displayed on the blog.
  *
  * @see twentyseventeen_custom_header_setup().
  */
