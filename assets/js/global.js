@@ -128,6 +128,17 @@
 		});
 	}
 
+	/**
+	 * Test if SVGs are supported.
+	 */
+	function supportsSvg() {
+		var div = document.createElement('div');
+		div.innerHTML = '<svg/>';
+		if ( 'http://www.w3.org/2000/svg' !== ( div.firstChild && div.firstChild.namespaceURI ) ) {
+			$body.addClass( 'no-svg' );
+		}
+	}
+
 	// Fires on document ready
 	$( document ).ready( function() {
 
@@ -149,6 +160,7 @@
 		setNavProps();
 		adjustScrollClass();
 		adjustHeaderHeight();
+		supportsSvg();
 	} );
 
 	// On scroll, we want to stick/unstick the navigation

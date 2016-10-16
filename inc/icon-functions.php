@@ -92,6 +92,9 @@ function twentyseventeen_get_svg( $args = array() ) {
 		$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
 	}
 
+	// Add some markup to use as a fallback for browsers that do not support SVGs.
+	$svg .= '<span class="svg-fallback icon-'. esc_attr( $args['icon'] ) . '"></span>';
+
 	$svg .= '</svg>';
 
 	return $svg;
