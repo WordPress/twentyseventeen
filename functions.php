@@ -227,7 +227,7 @@ function twentyseventeen_colors_css_wrap() {
 		return;
 	}
 
-	require_once( 'color-patterns.php' );
+	require_once( 'inc/color-patterns.php' );
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 ?>
 	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
