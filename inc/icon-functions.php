@@ -53,6 +53,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 		'title'       => '',
 		'desc'        => '',
 		'aria_hidden' => true, // Hide from screen readers.
+		'fallback'    => false,
 	);
 
 	// Parse args.
@@ -93,7 +94,9 @@ function twentyseventeen_get_svg( $args = array() ) {
 	}
 
 	// Add some markup to use as a fallback for browsers that do not support SVGs.
-	$svg .= '<span class="svg-fallback icon-'. esc_attr( $args['icon'] ) . '"></span>';
+	if ( $args['fallback'] ) {
+		$svg .= '<span class="svg-fallback icon-'. esc_attr( $args['icon'] ) . '"></span>';
+	}
 
 	$svg .= '</svg>';
 
