@@ -44,7 +44,7 @@
 
 		<?php if ( ! is_single() ) :
 
-			// If not a single post, highlight the gallery
+			// If not a single post, highlight the gallery.
 			$content = apply_filters( 'the_content', get_the_content() );
 
 			if ( get_post_gallery() ) :
@@ -58,7 +58,7 @@
 		if ( is_single() || ! get_post_gallery() ) :
 
 			the_content( sprintf(
-				/* translators: %s: Name of current post. */
+				/* translators: %s: Name of current post */
 				__( 'Continue reading %s', 'twentyseventeen' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );

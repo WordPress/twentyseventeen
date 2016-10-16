@@ -17,6 +17,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
+				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
 					get_template_part( 'components/post/content', get_post_format() );

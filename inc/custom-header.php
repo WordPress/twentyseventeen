@@ -43,7 +43,7 @@ if ( ! function_exists( 'twentyseventeen_header_style' ) ) :
 function twentyseventeen_header_style() {
 	$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
+	// If no custom options for text are set, let's bail.
 	// get_header_textcolor() options: add_theme_support( 'custom-header' ) is default, hide text (returns 'blank') or any hex value.
 	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 		return;

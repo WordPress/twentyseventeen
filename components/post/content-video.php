@@ -49,13 +49,13 @@
 
 		<?php if ( ! is_single() ) :
 
-			// If not a single post, highlight the video file
+			// If not a single post, highlight the video file.
 			if ( ! empty( $video ) ) :
 				foreach ( $video as $video_html ) {
 					echo '<div class="entry-video">';
 						echo $video_html;
 					echo '</div>';
-				} // endforeach
+				}
 			endif;
 
 		endif;
@@ -63,7 +63,7 @@
 		if ( is_single() || empty( $video ) ) :
 
 			the_content( sprintf(
-				/* translators: %s: Name of current post. */
+				/* translators: %s: Name of current post */
 				__( 'Continue reading %s', 'twentyseventeen' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );

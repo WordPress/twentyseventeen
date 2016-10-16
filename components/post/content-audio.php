@@ -9,6 +9,7 @@
  * @since 1.0
  * @version 1.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -61,7 +62,7 @@
 		if ( is_single() || empty( $audio ) ) :
 
 			the_content( sprintf(
-				/* translators: %s: Name of current post. */
+				/* translators: %s: Name of current post */
 				__( 'Continue reading %s', 'twentyseventeen' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
