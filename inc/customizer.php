@@ -197,13 +197,6 @@ function twentyseventeen_sanitize_colorscheme( $input ) {
 }
 
 /**
- * Custom Active Callback to check for page.
- */
-function twentyseventeen_is_page() {
-	return ( is_page() && ! twentyseventeen_is_frontpage() );
-}
-
-/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function twentyseventeen_customize_preview_js() {
@@ -218,31 +211,3 @@ function twentyseventeen_panels_js() {
 	wp_enqueue_script( 'twentyseventeen-panel-customizer', get_template_directory_uri() . '/assets/js/panel-customizer.js', array(), '20151116', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'twentyseventeen_panels_js' );
-
-/**
- * Add colorscheme body class.
- */
-function twentyseventeen_body_class_colors( $classes ) {
-	// Get the colorschme or the default if there isn't one.
-	$colors = twentyseventeen_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
-	$classes[] = 'colors-' . $colors;
-	return $classes;
-}
-add_filter( 'body_class', 'twentyseventeen_body_class_colors' );
-
-/**
- * Display custom color CSS.
- */
-function twentyseventeen_colors_css_wrap() {
-	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
-		return;
-	}
-
-	require_once( 'color-patterns.php' );
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
-?>
-	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
-		<?php echo twentyseventeen_custom_colors_css(); ?>
-	</style>
-<?php }
-add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );

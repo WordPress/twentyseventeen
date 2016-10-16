@@ -1,8 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
- *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Additional features to allow styling of the templates
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -55,6 +53,10 @@ function twentyseventeen_body_classes( $classes ) {
 		}
 	}
 
+	// Get the colorschme or the default if there isn't one.
+	$colors = twentyseventeen_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
+	$classes[] = 'colors-' . $colors;
+
 	return $classes;
 }
 add_filter( 'body_class', 'twentyseventeen_body_classes' );
@@ -89,11 +91,8 @@ function twentyseventeen_is_frontpage() {
 }
 
 /**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
+ * Custom Active Callback to check for page.
  */
-function twentyseventeen_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
-	}
+function twentyseventeen_is_page() {
+	return ( is_page() && ! twentyseventeen_is_frontpage() );
 }
-add_action( 'wp_head', 'twentyseventeen_pingback_header' );
