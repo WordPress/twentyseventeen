@@ -91,7 +91,6 @@ function twentyseventeen_setup() {
 endif;
 add_action( 'after_setup_theme', 'twentyseventeen_setup' );
 
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -110,7 +109,6 @@ function twentyseventeen_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', $content_width );
 }
 add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
-
 
 /**
  * Register custom fonts
@@ -179,7 +177,6 @@ function twentyseventeen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
-
 /**
  * Output Custom Logo.
  */
@@ -188,7 +185,6 @@ function twentyseventeen_the_custom_logo() {
 		the_custom_logo();
 	}
 }
-
 
 if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
 /**
@@ -212,6 +208,33 @@ function twentyseventeen_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'twentyseventeen_javascript_detection', 0 );
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function twentyseventeen_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'twentyseventeen_pingback_header' );
+
+/**
+ * Display custom color CSS.
+ */
+function twentyseventeen_colors_css_wrap() {
+	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
+		return;
+	}
+
+	require_once( 'color-patterns.php' );
+	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+?>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
+		<?php echo twentyseventeen_custom_colors_css(); ?>
+	</style>
+<?php }
+add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );
 
 /**
  * Enqueue scripts and styles.
@@ -320,9 +343,9 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Additional features to allow styling of the templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
@@ -332,4 +355,4 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * SVG icons functions and filters.
  */
-require get_template_directory() . '/inc/functions-icons.php';
+require get_template_directory() . '/inc/icon-functions.php';
