@@ -10,6 +10,7 @@
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  */
+
 /**
  * Prevent switching to Twenty Seventeen on old versions of WordPress.
  *
@@ -23,6 +24,7 @@ function twentyseventeen_switch_theme() {
 	add_action( 'admin_notices', 'twentyseventeen_upgrade_notice' );
 }
 add_action( 'after_switch_theme', 'twentyseventeen_switch_theme' );
+
 /**
  * Adds a message for unsuccessful theme switch.
  *
@@ -37,6 +39,7 @@ function twentyseventeen_upgrade_notice() {
 	$message = sprintf( __( 'Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'twentyseventeen' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
+
 /**
  * Prevents the Customizer from being loaded on WordPress versions prior to 4.7.
  *
@@ -50,6 +53,7 @@ function twentyseventeen_customize() {
 	) );
 }
 add_action( 'load-customize.php', 'twentyseventeen_customize' );
+
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.7.
  *
