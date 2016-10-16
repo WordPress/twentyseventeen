@@ -38,9 +38,9 @@ function twentyseventeen_time_link() {
 	}
 
 	$time_string = sprintf( $time_string,
-		get_the_date( 'c' ),
+		get_the_date( DATE_W3C ),
 		get_the_date(),
-		get_the_modified_date( 'c' ),
+		get_the_modified_date( DATE_W3C ),
 		get_the_modified_date()
 	);
 
