@@ -538,7 +538,9 @@ big {
 blockquote {
 	quotes: "" "";
 }
-
+q {
+	quotes: "“" "”";
+}
 blockquote:before,
 blockquote:after {
 	content: "";
