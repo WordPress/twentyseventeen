@@ -40,15 +40,20 @@ textarea {
 	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
-	font-weight: normal;
+	font-weight: 400;
 	line-height: 1.66;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 	line-height: 1.4;
 	margin: 0 0 0.75em;
-	padding: 1.5em 0 0 0;
+	padding: 1.5em 0 0;
 }
 
 h1:first-child,
@@ -108,7 +113,10 @@ p {
 	padding: 0;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
 
@@ -146,18 +154,23 @@ pre {
 	padding: 1.6em;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
 
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
 	background: #eee;
 	text-decoration: none;
 }
@@ -166,9 +179,11 @@ big {
 	font-size: 125%;
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -241,7 +256,7 @@ li > ol {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
@@ -323,7 +338,7 @@ object {
  * 6.0 - Galleries
  */
 
- .gallery {
+.gallery {
 	margin-bottom: 1.5em;
 }
 
