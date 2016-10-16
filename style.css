@@ -723,6 +723,12 @@ input[type="submit"] {
 	transition: background 0.2s;
 }
 
+input + button,
+input + input[type="button"],
+input + input[type="submit"] {
+	padding: 0.75em 2em;
+}
+
 button.secondary,
 input[type="reset"],
 input[type="button"].secondary,
