@@ -267,6 +267,7 @@ function twentyseventeen_scripts() {
 		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
 		'collapse' => __( 'Collapse child menu', 'twentyseventeen' ),
 		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
+		'quote'    => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
 	) );
 
 	wp_enqueue_script( 'twentyseventeen-global', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '20151215', true );

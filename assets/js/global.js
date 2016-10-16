@@ -12,6 +12,7 @@
 			$menuScrollDown = $navigation.find( '.menu-scroll-down' ),
 			$sidebar = $body.find( '#secondary' ),
 			$entryContent = $body.find( '.entry-content' ),
+			$formatQuote = $body.find( '.format-quote blockquote' ),
 			navigationFixedClass = 'site-navigation-fixed',
 			navigationHeight,
 			navigationOuterHeight,
@@ -78,6 +79,13 @@
 			$branding.css( 'margin-bottom', '0' );
 		}
 	}
+
+	/**
+	 * Sets icon for quotes
+	 */
+	 function setQuotesIcon() {
+		 $( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
+	 }
 
 	/**
 	 * 'Scroll Down' arrow in menu area
@@ -149,6 +157,7 @@
 		setNavProps();
 		adjustScrollClass();
 		adjustHeaderHeight();
+		setQuotesIcon();
 	} );
 
 	// On scroll, we want to stick/unstick the navigation
