@@ -9,6 +9,14 @@
  * @since 1.0
  */
 
+/**
+ * Twenty Seventeen only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
 if ( ! function_exists( 'twentyseventeen_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -177,15 +185,6 @@ function twentyseventeen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
-/**
- * Output Custom Logo.
- */
-function twentyseventeen_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-}
-
 if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
 /**
  * Replaces the excerpt "more" text by a link
@@ -195,7 +194,6 @@ function twentyseventeen_excerpt_continue_reading() {
 }
 }
 add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
-
 
 /**
  * Handles JavaScript detection.
@@ -248,20 +246,20 @@ function twentyseventeen_scripts() {
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
-		wp_enqueue_style( 'twentyseventeen-colors-dark', get_template_directory_uri() . '/assets/css/colors-dark.css', array( 'twentyseventeen-style' ), '20161006' );
+		wp_enqueue_style( 'twentyseventeen-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'twentyseventeen-style' ), '20161006' );
 	}
 
 	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'twentyseventeen-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'twentyseventeen-style' ), '20160928' );
+	wp_enqueue_style( 'twentyseventeen-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'twentyseventeen-style' ), '20160928' );
 	wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
 
 	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
+	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '20151215', true );
 
-	wp_enqueue_script( 'twentyseventeen-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '20151215', true );
 
 	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
 		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
@@ -269,7 +267,7 @@ function twentyseventeen_scripts() {
 		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
 	) );
 
-	wp_enqueue_script( 'twentyseventeen-global', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -279,10 +277,8 @@ function twentyseventeen_scripts() {
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'jquery-scrollto', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '20151030', true );
 	}
-
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
-
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -331,7 +327,6 @@ function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
 }
 add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10 , 3 );
 
-
 /**
  * Use front-page.php when Front page displayes is set to a static page.
  *
@@ -350,24 +345,24 @@ add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_parent_theme_file_path( '/inc/custom-header.php' );
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_parent_theme_file_path( '/inc/template-tags.php' );
 
 /**
  * Additional features to allow styling of the templates.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_parent_theme_file_path( '/inc/template-functions.php' );
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_parent_theme_file_path( '/inc/customizer.php' );
 
 /**
  * SVG icons functions and filters.
  */
-require get_template_directory() . '/inc/icon-functions.php';
+require get_parent_theme_file_path( '/inc/icon-functions.php' );

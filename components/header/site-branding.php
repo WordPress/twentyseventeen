@@ -12,7 +12,7 @@
 <div class="site-branding">
 	<div class="wrap">
 
-		<?php twentyseventeen_the_custom_logo(); ?>
+		<?php the_custom_logo(); ?>
 
 		<?php if ( is_front_page() ) : ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
