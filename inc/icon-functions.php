@@ -33,7 +33,7 @@ add_action( 'wp_footer', 'twentyseventeen_include_svg_icons', 9999 );
  *     @type string $title Optional SVG title.
  *     @type string $desc  Optional SVG description.
  * }
- * @return string SVG markup.
+ * @return string SVG markup. 
  */
 function twentyseventeen_get_svg( $args = array() ) {
 
@@ -95,7 +95,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 
 	// Add some markup to use as a fallback for browsers that do not support SVGs.
 	if ( $args['fallback'] ) {
-		$svg .= '<span class="svg-fallback icon-'. esc_attr( $args['icon'] ) . '"></span>';
+		$svg .= '<span class="svg-fallback icon-' . esc_attr( $args['icon'] ) . '"></span>';
 	}
 
 	$svg .= '</svg>';

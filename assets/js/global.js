@@ -132,7 +132,7 @@
 	 * Test if SVGs are supported.
 	 */
 	function supportsSvg() {
-		var div = document.createElement('div');
+		var div = document.createElement( 'div' );
 		div.innerHTML = '<svg/>';
 		if ( 'http://www.w3.org/2000/svg' !== ( div.firstChild && div.firstChild.namespaceURI ) ) {
 			$body.addClass( 'no-svg' );
