@@ -18,11 +18,6 @@ if ( 'posts' === get_option( 'show_on_front' ) ) :
 
 else :
 
-// Access global variable directly to set content_width global.
-if ( isset( $GLOBALS['content_width'] ) ) {
-	$GLOBALS['content_width'] = 1120;
-}
-
 get_header(); ?>
 
 

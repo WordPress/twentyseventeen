@@ -100,7 +100,14 @@ add_action( 'after_setup_theme', 'twentyseventeen_setup' );
  * @global int $content_width
  */
 function twentyseventeen_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', 700 );
+
+	$content_width = 700;
+
+	if ( twentyseventeen_is_frontpage() ) {
+		$content_width = 1120;
+	}
+
+	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', $content_width );
 }
 add_action( 'after_setup_theme', 'twentyseventeen_content_width', 0 );
 
