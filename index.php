@@ -23,9 +23,8 @@ get_header(); ?>
 			<h1 class="page-title"><?php single_post_title(); ?></h1>
 		</header>
 	<?php elseif ( is_home() ) : ?>
-		<?php $posts_page = get_post( get_option( 'page_for_posts' ) ); ?>
 		<header class="page-header">
-			<h2 class="page-title"><?php echo apply_filters( 'the_title', $posts_page->post_title ); ?></h2>
+			<h2 class="page-title"><?php echo get_the_title( get_option( 'page_for_posts' ) ); ?></h2>
 		</header>
 	<?php endif; ?>
 	<div id="primary" class="content-area">
