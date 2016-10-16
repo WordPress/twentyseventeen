@@ -14,6 +14,7 @@
 	<?php wp_nav_menu( array(
 		'theme_location' => 'top',
 		'menu_id'        => 'top-menu',
+		'fallback_cb'    => wp_page_menu( array( 'link_after' => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ) ) ),
 	) ); ?>
 
 	<?php if ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) : ?>
