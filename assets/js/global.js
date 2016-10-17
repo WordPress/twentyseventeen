@@ -26,14 +26,14 @@
 	/**
 	 * Sets properties of navigation
 	 */
-	 function setNavProps() {
-		 navigationHeight      = $navigation.height();
-		 navigationOuterHeight = $navigation.outerHeight();
-		 navPadding            = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
-		 navMenuItemHeight     = $navMenuItem.outerHeight() * 2;
-		 idealNavHeight        = navPadding + navMenuItemHeight;
-		 navIsNotTooTall       = navigationHeight <= idealNavHeight;
-	 }
+	function setNavProps() {
+		navigationHeight      = $navigation.height();
+		navigationOuterHeight = $navigation.outerHeight();
+		navPadding            = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
+		navMenuItemHeight     = $navMenuItem.outerHeight() * 2;
+		idealNavHeight        = navPadding + navMenuItemHeight;
+		navIsNotTooTall       = navigationHeight <= idealNavHeight;
+	}
 
 	/**
 	 * Makes navigation 'stick'
