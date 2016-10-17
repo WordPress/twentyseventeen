@@ -199,10 +199,14 @@ body.colors-dark,
 .colors-dark .widget ul li a:focus,
 .colors-dark .widget ul li a:hover,
 .colors-dark .entry-footer .edit-link a.post-edit-link:hover,
-.colors-dark .entry-footer .edit-link a.post-edit-link:focus,
-.colors-dark .social-navigation a:hover:before,
-.colors-dark .social-navigation a:focus:before {
+.colors-dark .entry-footer .edit-link a.post-edit-link:focus {
 	background: #bbb;
+}
+
+.colors-dark .social-navigation a:hover,
+.colors-dark .social-navigation a:focus {
+	background: #999;
+	color: #222;
 }
 
 .colors-dark .entry-content a,
