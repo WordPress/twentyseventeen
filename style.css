@@ -3658,6 +3658,10 @@ article.panel-placeholder {
 		width: 58%;
 	}
 
+	.social-navigation + .site-info {
+		margin-left: 6%;
+	}
+
 	.site-info .sep {
 		margin: 0 0.5em;
 		display: inline;
