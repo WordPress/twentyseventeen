@@ -1475,8 +1475,7 @@ body {
 	transition: margin-bottom 0.2s;
 }
 
-.twentyseventeen-front-page:not(.no-header-image) .site-branding,
-.home.blog:not(.no-header-image) .site-branding {
+body.has-header-image .site-branding {
 	bottom: 0;
 	position: absolute;
 	width: 100%;
@@ -1510,10 +1509,8 @@ body {
 	color: #222;
 }
 
-.twentyseventeen-front-page:not(.no-header-image) .site-title,
-.twentyseventeen-front-page:not(.no-header-image) .site-title a,
-.home.blog:not(.no-header-image) .site-title,
-.home.blog:not(.no-header-image) .site-title a {
+body.has-header-image .site-title,
+body.has-header-image .site-title a {
 	color: #fff;
 }
 
@@ -1524,8 +1521,7 @@ body {
 	margin-bottom: 0;
 }
 
-.twentyseventeen-front-page:not(.no-header-image) .site-description,
-.home.blog:not(.no-header-image) .site-description {
+body.has-header-image .site-description {
 	color: #fff;
 	opacity: 0.8;
 }
@@ -3143,14 +3139,14 @@ article.panel-placeholder {
 	/* Site Branding */
 
 	.site-branding {
-		margin-bottom: 70px;
+		margin-bottom: 0;
 	}
 
 	.custom-header-image {
-		height: 750px;
-		height: 75vh;
+		height: 165px;
 		padding: 10% 0;
 		position: relative;
+		background-position: bottom;
 	}
 
 	.custom-header-image:before {
@@ -3162,7 +3158,7 @@ article.panel-placeholder {
 		bottom: 0;
 		content: "";
 		display: block;
-		height: 33%;
+		height: 100%;
 		left: 0;
 		position: absolute;
 		right: 0;
@@ -3433,11 +3429,21 @@ article.panel-placeholder {
 
 	/* Front Page */
 
+	.twentyseventeen-front-page:not(.no-header-image) .site-branding,
+	.home.blog:not(.no-header-image) .site-branding {
+		margin-bottom: 70px;
+	}
+
 	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image,
 	.home.blog:not(.no-header-image) .custom-header-image {
 		height: 1200px;
 		height: 100vh;
 		max-height: 100%;
+	}
+
+	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image:before,
+	.home.blog:not(.no-header-image) .custom-header-image:before {
+		height: 33%;
 	}
 
 	.admin-bar.twentyseventeen-front-page:not(.no-header-image) .custom-header-image,
@@ -3775,10 +3781,6 @@ article.panel-placeholder {
 }
 
 @media screen and ( min-width: 55em ) {
-
-	.custom-header-image {
-		background-attachment: fixed;
-	}
 
 	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image,
 	.home.blog:not(.no-header-image) .custom-header-image {
