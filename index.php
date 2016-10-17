@@ -55,7 +55,8 @@ get_header(); ?>
 
 				get_template_part( 'components/post/content', 'none' );
 
-			endif; ?>
+			endif;
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

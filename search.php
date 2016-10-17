@@ -50,7 +50,8 @@ get_header(); ?>
 			<?php
 				get_search_form();
 
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

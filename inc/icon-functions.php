@@ -11,7 +11,6 @@
  * Add SVG definitions to the footer.
  */
 function twentyseventeen_include_svg_icons() {
-
 	// Define SVG sprite file.
 	$svg_icons = get_parent_theme_file_path( '/assets/images/svg-icons.svg' );
 
@@ -19,7 +18,6 @@ function twentyseventeen_include_svg_icons() {
 	if ( file_exists( $svg_icons ) ) {
 		require_once( $svg_icons );
 	}
-
 }
 add_action( 'wp_footer', 'twentyseventeen_include_svg_icons', 9999 );
 
@@ -36,7 +34,6 @@ add_action( 'wp_footer', 'twentyseventeen_include_svg_icons', 9999 );
  * @return string SVG markup.
  */
 function twentyseventeen_get_svg( $args = array() ) {
-
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return __( 'Please define default parameters in the form of an array.', 'twentyseventeen' );
@@ -95,7 +92,6 @@ function twentyseventeen_get_svg( $args = array() ) {
 	$svg .= '</svg>';
 
 	return $svg;
-
 }
 
 /**
@@ -108,7 +104,6 @@ function twentyseventeen_get_svg( $args = array() ) {
  * @return string  $item_output The menu item output with social icon.
  */
 function twentyseventeen_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
-
 	// Get supported social icons.
 	$social_icons = twentyseventeen_social_links_icons();
 
@@ -122,7 +117,6 @@ function twentyseventeen_nav_menu_social_icons( $item_output, $item, $depth, $ar
 	}
 
 	return $item_output;
-
 }
 add_filter( 'walker_nav_menu_start_el', 'twentyseventeen_nav_menu_social_icons', 10, 4 );
 
@@ -136,7 +130,6 @@ add_filter( 'walker_nav_menu_start_el', 'twentyseventeen_nav_menu_social_icons',
  * @return string $title The menu item's title with dropdown icon.
  */
 function twentyseventeen_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
-
 	if ( 'top' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
@@ -146,7 +139,6 @@ function twentyseventeen_dropdown_icon_to_menu_link( $title, $item, $args, $dept
 	}
 
 	return $title;
-
 }
 add_filter( 'nav_menu_item_title', 'twentyseventeen_dropdown_icon_to_menu_link', 10, 4 );
 
@@ -156,7 +148,6 @@ add_filter( 'nav_menu_item_title', 'twentyseventeen_dropdown_icon_to_menu_link',
  * @return array $social_links_icons
  */
 function twentyseventeen_social_links_icons() {
-
 	// Supported social links icons.
 	$social_links_icons = array(
 		'behance.net'     => 'behance',
@@ -199,5 +190,4 @@ function twentyseventeen_social_links_icons() {
 	);
 
 	return apply_filters( 'twentyseventeen_social_links_icons', $social_links_icons );
-
 }

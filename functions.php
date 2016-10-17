@@ -191,14 +191,14 @@ function twentyseventeen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
-if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
+if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) :
 /**
  * Replaces the excerpt "more" text by a link
  */
 function twentyseventeen_excerpt_continue_reading() {
 	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading %s', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
 }
-}
+endif;
 add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
 
 /**
@@ -310,7 +310,7 @@ function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_attr', 10 , 2 );
+add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_attr', 10, 2 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -329,9 +329,10 @@ function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
 	} else {
 		$attr['sizes'] = '100vw';
 	}
+
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10, 3 );
 
 /**
  * Use front-page.php when Front page displayes is set to a static page.
@@ -346,7 +347,6 @@ function twentyseventeen_front_page_template( $template ) {
 	return is_home() ? '' : $template;
 }
 add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
-
 
 /**
  * Implement the Custom Header feature.
