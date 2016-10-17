@@ -2546,6 +2546,12 @@ object {
 	color: #fff;
 }
 
+.site-content .wp-playlist-light a.wp-playlist-caption:hover,
+.site-content .wp-playlist-light .wp-playlist-item:hover a,
+.site-content .wp-playlist-light .wp-playlist-item:focus a {
+	color: #fff;
+}
+
 /* Playlist Color Overrides: Dark */
 
 .site-content .wp-playlist-dark {
@@ -2559,10 +2565,6 @@ object {
 
 .site-content .wp-playlist-dark .wp-playlist-caption {
 	color: #fff;
-}
-
-.site-content .wp-playlist-dark .wp-playlist-caption:hover {
-	background-color: transparent;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-album {
@@ -2587,6 +2589,12 @@ object {
 .site-content .wp-playlist-dark .wp-playlist-item:focus {
 	border-bottom-color: rgba(0, 0, 0, 0);
 	background-color: #aaa;
+	color: #222;
+}
+
+.site-content .wp-playlist-dark a.wp-playlist-caption:hover,
+.site-content .wp-playlist-dark .wp-playlist-item:hover a,
+.site-content .wp-playlist-dark .wp-playlist-item:focus a {
 	color: #222;
 }
 
@@ -2626,8 +2634,10 @@ object {
 	border-bottom: none;
 }
 
+.site-content .wp-playlist-item a,
+.site-content .wp-playlist-item a:focus,
 .site-content .wp-playlist-item a:hover {
-	border-bottom: none;
+	box-shadow: none;
 	background: transparent;
 }
 
