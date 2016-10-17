@@ -160,9 +160,9 @@
 		adjustScrollClass();
 		adjustHeaderHeight();
 		supportsInlineSVG();
-        if ( supportsInlineSVG() === true ) {
-            document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/,'$1svg$2' );
-        }
+		if ( supportsInlineSVG() === true ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/,'$1svg$2' );
+		}
 	} );
 
 	// On scroll, we want to stick/unstick the navigation
