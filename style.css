@@ -2545,13 +2545,8 @@ object {
 	z-index: 3;
 }
 
-.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1) .twentyseventeen-panel-title {
-	background: #a64b55;
-}
-
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1)::after {
-	border-color: #a64b55;
-	color: #a64b55;
+	border: none;
 }
 
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(2) .twentyseventeen-panel-title {
