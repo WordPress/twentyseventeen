@@ -867,7 +867,6 @@ a:active {
 .post-navigation a,
 .logged-in-as a,
 .comment-navigation a,
-.logged-in-as a:visited,
 .comment-metadata a,
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
@@ -877,9 +876,7 @@ a .nav-title,
 .widget .widget-title a,
 .widget ul li a,
 .site-footer .widget-area ul li a,
-.widget ul li a:visited,
-.site-footer .widget-area ul li a,
-.site-footer .widget-area ul li a:visited {
+.site-footer .widget-area ul li a {
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
 	text-decoration: none;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
@@ -1649,6 +1646,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-weight: 800;
 	margin-top: 2em;
 	padding: 0.7em 2em;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 }
 
 .entry-footer .edit-link a.post-edit-link:hover,
@@ -2392,14 +2391,12 @@ object {
 	max-width: 50%;
 }
 
-.gallery-item a {
-	border-bottom: none;
+.gallery-item a,
+.gallery-item a:hover,
+.gallery-item a:focus {
+	box-shadow: none;
 	background: none;
 	display: inline-block;
-}
-
-.gallery-item a:hover {
-	background: none;
 }
 
 .gallery-item a img {
@@ -2419,6 +2416,12 @@ object {
 	text-align: left;
 	padding: 0 10px 0 0;
 	margin-bottom: 0;
+}
+
+.tiled-gallery a,
+.tiled-gallery a:focus,
+.tiled-gallery a:hover {
+	box-shadow: none;
 }
 
 /*--------------------------------------------------------------
