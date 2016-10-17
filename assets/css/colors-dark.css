@@ -263,8 +263,7 @@ body.colors-dark,
 }
 
 .colors-dark .entry-footer .cat-links:before,
-.colors-dark .entry-footer .tags-links:before,
-.colors-dark.twentyseventeen-front-page:not(.no-header-image) .site-description {
+.colors-dark .entry-footer .tags-links:before {
 	color: #555;
 }
 
@@ -389,8 +388,6 @@ body.colors-dark,
 .colors-dark .widget .widget-title a:hover,
 .colors-dark .widget ul li a:focus,
 .colors-dark .widget ul li a:hover,
-.colors-dark.twentyseventeen-front-page:not(.no-header-image) .site-title,
-.colors-dark.twentyseventeen-front-page:not(.no-header-image) .site-title a,
 .colors-dark button,
 .colors-dark input[type="button"],
 .colors-dark input[type="submit"],
@@ -401,8 +398,7 @@ body.colors-dark,
 
 body.colors-dark,
 .colors-dark .navigation-top,
-.colors-dark .main-navigation ul,
-.colors-dark.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
+.colors-dark .main-navigation ul {
 	background: #222;
 }
 

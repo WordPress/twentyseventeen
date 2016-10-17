@@ -279,8 +279,7 @@ body.colors-custom,
 }
 
 .colors-custom .entry-footer .cat-links:before,
-.colors-custom .entry-footer .tags-links:before,
-.colors-custom.twentyseventeen-front-page:not(.no-header-image) .site-description {
+.colors-custom .entry-footer .tags-links:before {
 	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
@@ -387,8 +386,6 @@ body.colors-custom,
 .colors-custom .widget .widget-title a:hover,
 .colors-custom .widget ul li a:focus,
 .colors-custom .widget ul li a:hover,
-.colors-custom.twentyseventeen-front-page:not(.no-header-image) .site-title,
-.colors-custom.twentyseventeen-front-page:not(.no-header-image) .site-title a,
 .colors-custom button,
 .colors-custom input[type="button"],
 .colors-custom input[type="submit"],
@@ -400,8 +397,7 @@ body.colors-custom,
 
 body.colors-custom,
 .colors-custom .navigation-top,
-.colors-custom .main-navigation ul,
-.colors-custom.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
+.colors-custom .main-navigation ul {
 	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
 
