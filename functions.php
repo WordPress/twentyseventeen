@@ -17,7 +17,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'twentyseventeen_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -102,7 +101,6 @@ function twentyseventeen_setup() {
  	 */
 	add_editor_style( array( 'assets/css/editor-style.css', twentyseventeen_fonts_url() ) );
 }
-endif;
 add_action( 'after_setup_theme', 'twentyseventeen_setup' );
 
 /**
@@ -191,13 +189,11 @@ function twentyseventeen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
-if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
 /**
  * Replaces the excerpt "more" text by a link
  */
 function twentyseventeen_excerpt_continue_reading() {
 	return ' &hellip; <p class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading %s', 'twentyseventeen' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ) . '</a></p>';
-}
 }
 add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
 
