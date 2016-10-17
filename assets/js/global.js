@@ -1,3 +1,4 @@
+/* global twentyseventeenScreenReaderText */
 ( function( $ ) {
 
 	// Variables and DOM Caching
