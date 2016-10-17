@@ -1562,6 +1562,26 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 165px;
+}
+
+.custom-header-image:before {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
+	background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.twentyseventeen-front-page.has-header-image .custom-header-image,
+.home.blog.has-header-image .custom-header-image {
 	height: 0;
 	padding-top: 66%;
 }
@@ -3144,24 +3164,8 @@ article.panel-placeholder {
 
 	.custom-header-image {
 		height: 165px;
-		padding: 10% 0;
 		position: relative;
 		background-position: bottom;
-	}
-
-	.custom-header-image:before {
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
-		background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
-		bottom: 0;
-		content: "";
-		display: block;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		right: 0;
 	}
 
 	.no-header-image .custom-header-image {
@@ -3439,6 +3443,7 @@ article.panel-placeholder {
 		height: 1200px;
 		height: 100vh;
 		max-height: 100%;
+		padding: 10% 0;
 	}
 
 	.twentyseventeen-front-page:not(.no-header-image) .custom-header-image:before,
