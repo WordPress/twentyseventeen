@@ -135,7 +135,7 @@
 	function supportsInlineSVG() {
 		var div = document.createElement( 'div' );
 		div.innerHTML = '<svg/>';
-		return ( typeof SVGRect != 'undefined' && div.firstChild && div.firstChild.namespaceURI ) == 'http://www.w3.org/2000/svg';
+		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
 
 	// Fires on document ready
@@ -160,8 +160,8 @@
 		adjustScrollClass();
 		adjustHeaderHeight();
 		supportsInlineSVG();
-		if ( supportsInlineSVG() === true ) {
-			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/,'$1svg$2' );
+		if ( true === supportsInlineSVG() ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
 	} );
 
