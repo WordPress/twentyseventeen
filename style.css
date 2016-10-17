@@ -2705,12 +2705,6 @@ object {
 	margin-bottom: 0;
 }
 
-.tiled-gallery a,
-.tiled-gallery a:focus,
-.tiled-gallery a:hover {
-	box-shadow: none;
-}
-
 /*--------------------------------------------------------------
 # Customizer
 --------------------------------------------------------------*/

@@ -391,12 +391,6 @@ object {
 	display: block;
 }
 
-.tiled-gallery a,
-.tiled-gallery a:focus,
-.tiled-gallery a:hover {
-	box-shadow: none;
-}
-
 /**
  * 7.0 - Media Elements
  */
