@@ -53,6 +53,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 		'title'       => '',
 		'desc'        => '',
 		'aria_hidden' => true, // Hide from screen readers.
+		'fallback'    => false,
 	);
 
 	// Parse args.
@@ -90,6 +91,11 @@ function twentyseventeen_get_svg( $args = array() ) {
 		$svg .= '<use xlink:href="' . get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) . '"></use>';
 	} else {
 		$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
+	}
+
+	// Add some markup to use as a fallback for browsers that do not support SVGs.
+	if ( $args['fallback'] ) {
+		$svg .= '<span class="svg-fallback icon-' . esc_attr( $args['icon'] ) . '"></span>';
 	}
 
 	$svg .= '</svg>';

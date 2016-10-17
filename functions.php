@@ -270,7 +270,7 @@ function twentyseventeen_scripts() {
 	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
 		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
 		'collapse' => __( 'Collapse child menu', 'twentyseventeen' ),
-		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
+		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand', 'fallback' => true ) ),
 	) );
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
