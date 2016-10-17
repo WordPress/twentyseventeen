@@ -86,6 +86,7 @@
 
 		} else {
 			$customHeader.css( 'margin-bottom', '0' );
+			$branding.css( 'margin-bottom', '0' );
 		}
 	}
 
