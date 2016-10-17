@@ -16,6 +16,7 @@
  */
 
 get_header(); ?>
+
 <div class="wrap">
 	<?php
 	if ( is_home() && ! is_front_page() ) : ?>
@@ -62,5 +63,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
-<?php
-get_footer();
+
+<?php get_footer();

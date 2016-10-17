@@ -11,6 +11,7 @@
  */
 
 get_header(); ?>
+
 <div class="wrap">
 
 	<?php if ( have_posts() ) : ?>
@@ -56,5 +57,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
-<?php
-get_footer();
+
+<?php get_footer();
