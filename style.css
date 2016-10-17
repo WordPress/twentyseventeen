@@ -1253,7 +1253,7 @@ a:hover .nav-title,
 .js .main-navigation ul,
 .main-navigation .menu-item-has-children > a > .icon,
 .main-navigation .page_item_has_children > a > .icon,
-.main-navigation a > .icon {
+.main-navigation ul a > .icon {
 	display: none;
 }
 
@@ -1387,7 +1387,7 @@ a:hover .nav-title,
 
 /* Scroll down arrow */
 
-.menu-scroll-down {
+.navigation-top .menu-scroll-down {
 	display: none;
 }
 
