@@ -102,6 +102,6 @@ function twentyseventeen_is_page() {
  */
 function twentyseventeen_fallback_menu() {
 	wp_page_menu( array(
-		'link_after' => twentyseventeen_get_svg( array( 'icon' => 'expand' ) )
+		'link_after' => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
 	) );
 }
