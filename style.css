@@ -1055,8 +1055,6 @@ table {
 a {
 	color: #222;
 	text-decoration: none;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 a:focus {
@@ -1065,6 +1063,7 @@ a:focus {
 
 a:hover,
 a:active {
+	color: #000;
 	outline: 0;
 }
 
@@ -1076,9 +1075,8 @@ a:active {
 .site-footer .widget-area a,
 .posts-navigation a,
 .widget_authors a strong {
-	border-bottom: 2px solid #767676;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
+	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
 }
 
 .entry-title a,
@@ -1092,9 +1090,6 @@ a:active {
 .post-navigation a,
 .logged-in-as a,
 .comment-navigation a,
-.logged-in-as a:visited,
-.comments-pagination a,
-.comments-pagination a:visited,
 .comment-metadata a,
 .comment-metadata a.comment-edit-link,
 .comment-reply-link,
@@ -1104,12 +1099,10 @@ a .nav-title,
 .widget .widget-title a,
 .widget ul li a,
 .site-footer .widget-area ul li a,
-.widget ul li a:visited,
-.site-footer .widget-area ul li a,
-.site-footer .widget-area ul li a:visited {
-	border: 0;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+.site-footer .widget-area ul li a {
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);
+	text-decoration: none;
+	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
 }
 
 .entry-content a:focus,
@@ -1122,8 +1115,6 @@ a .nav-title,
 .site-footer .widget-area a:hover,
 .posts-navigation a:focus,
 .posts-navigation a:hover,
-.comments-pagination a:focus,
-.comments-pagination a:hover,
 .comment-metadata a:focus,
 .comment-metadata a:hover,
 .comment-metadata a.comment-edit-link:focus,
@@ -1134,9 +1125,8 @@ a .nav-title,
 .widget_authors a:hover strong,
 .project-terms a:focus,
 .project-terms a:hover {
-	border-bottom-color: transparent;
-	background-color: #767676;
-	color: #fff;
+	color: #000;
+	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
 }
 
 .entry-title a:focus,
@@ -1155,29 +1145,24 @@ a .nav-title,
 .post-navigation a:hover,
 .logged-in-as a:focus,
 .logged-in-as a:hover,
-.comments-pagination a:focus,
-.comments-pagination a:hover,
 a:focus .nav-title,
 a:hover .nav-title,
 .edit-link a:focus,
 .edit-link a:hover,
-.pagination a:focus,
-.pagination a:hover,
 .site-info a:focus,
 .site-info a:hover,
 .widget .widget-title a:focus,
 .widget .widget-title a:hover,
 .widget ul li a:focus,
 .widget ul li a:hover {
-	background-color: #767676;
-	color: #fff;
+	color: #000;
+	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
 }
 
 /* Fixes linked images */
 .entry-content a img,
 .widget a img {
-	background: #fff;
-	box-shadow: 0 0 0 6px #fff;
+	box-shadow: 0 0 0 8px #fff;
 }
 
 .post-navigation a:focus .icon,
@@ -1677,8 +1662,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 .entry-title a {
 	color: #333;
 	text-decoration: none;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
 	margin-left: -2px;
 }
 
@@ -1741,6 +1724,20 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	line-height: 1;
 	margin-top: -0.3em;
 	padding: 0.25em 0.5em 0.4em;
+}
+
+.prev.page-numbers,
+.next.page-numbers {
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.prev.page-numbers:focus,
+.prev.page-numbers:hover,
+.next.page-numbers:focus,
+.next.page-numbers:hover {
+	background-color: #767676;
+	color: #fff;
 }
 
 .prev.page-numbers {
@@ -1884,6 +1881,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .entry-footer .edit-link a.post-edit-link {
 	background-color: #222;
 	border-radius: 2px;
+	box-shadow: none;
 	color: #fff;
 	display: inline-block;
 	font-size: 14px;
@@ -1891,6 +1889,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-weight: 800;
 	margin-top: 2em;
 	padding: 0.7em 2em;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 }
 
 .entry-footer .edit-link a.post-edit-link:hover,
@@ -2429,6 +2429,7 @@ h2.widget-title {
 .widget.widget_tag_cloud a,
 .wp_widget_tag_cloud a {
 	border: 1px solid #ddd;
+	box-shadow: none;
 	display: inline-block;
 	float: left;
 	font-size: 14px !important; /* !important to overwrite inline styles */
@@ -2451,6 +2452,7 @@ h2.widget-title {
 .wp_widget_tag_cloud a:hover,
 .wp_widget_tag_cloud a:focus {
 	border-color: #bbb;
+	box-shadow: none;
 	text-decoration: none;
 }
 
@@ -2561,6 +2563,12 @@ object {
 	color: #fff;
 }
 
+.site-content .wp-playlist-light a.wp-playlist-caption:hover,
+.site-content .wp-playlist-light .wp-playlist-item:hover a,
+.site-content .wp-playlist-light .wp-playlist-item:focus a {
+	color: #fff;
+}
+
 /* Playlist Color Overrides: Dark */
 
 .site-content .wp-playlist-dark {
@@ -2574,10 +2582,6 @@ object {
 
 .site-content .wp-playlist-dark .wp-playlist-caption {
 	color: #fff;
-}
-
-.site-content .wp-playlist-dark .wp-playlist-caption:hover {
-	background-color: transparent;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-album {
@@ -2602,6 +2606,12 @@ object {
 .site-content .wp-playlist-dark .wp-playlist-item:focus {
 	border-bottom-color: rgba(0, 0, 0, 0);
 	background-color: #aaa;
+	color: #222;
+}
+
+.site-content .wp-playlist-dark a.wp-playlist-caption:hover,
+.site-content .wp-playlist-dark .wp-playlist-item:hover a,
+.site-content .wp-playlist-dark .wp-playlist-item:focus a {
 	color: #222;
 }
 
@@ -2641,8 +2651,10 @@ object {
 	border-bottom: none;
 }
 
+.site-content .wp-playlist-item a,
+.site-content .wp-playlist-item a:focus,
 .site-content .wp-playlist-item a:hover {
-	border-bottom: none;
+	box-shadow: none;
 	background: transparent;
 }
 
@@ -2683,14 +2695,12 @@ object {
 	max-width: 50%;
 }
 
-.gallery-item a {
-	border-bottom: none;
+.gallery-item a,
+.gallery-item a:hover,
+.gallery-item a:focus {
+	box-shadow: none;
 	background: none;
 	display: inline-block;
-}
-
-.gallery-item a:hover {
-	background: none;
 }
 
 .gallery-item a img {
