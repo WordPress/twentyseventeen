@@ -2284,13 +2284,10 @@ object {
 	border: 0;
 }
 
+/* Playlist Style Overrides */
+
 .site-content .wp-playlist {
 	padding: 0.625em 0.625em 0.3125em;
-}
-
-.site-content .wp-playlist-light {
-	border-color: #eee;
-	color: #222;
 }
 
 .site-content .wp-playlist-current-item .wp-playlist-item-title {
@@ -2298,12 +2295,10 @@ object {
 }
 
 .site-content .wp-playlist-current-item .wp-playlist-item-album {
-	color: #333;
 	font-style: normal;
 }
 
 .site-content .wp-playlist-current-item .wp-playlist-item-artist {
-	color: #767676;
 	font-size: 10px;
 	font-size: 0.625rem;
 	font-weight: 800;
@@ -2313,21 +2308,11 @@ object {
 
 .site-content .wp-playlist-item {
 	padding: 0 0.3125em;
-	border-bottom: 1px dotted #eee;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	cursor: pointer;
 }
 
 .site-content .wp-playlist-item:last-of-type {
 	border-bottom: none;
-}
-
-.site-content .wp-playlist-item:hover,
-.site-content .wp-playlist-item:focus {
-	border-bottom-color: rgba(0, 0, 0, 0);
-	background-color: #767676;
-	color: #fff;
 }
 
 .site-content .wp-playlist-item a {
@@ -2342,6 +2327,34 @@ object {
 
 .site-content .wp-playlist-item-length {
 	top: 5px;
+}
+
+/* Playlist Color Overrides */
+
+.site-content .wp-playlist-light {
+	border-color: #eee;
+	color: #222;
+}
+
+.site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album {
+	color: #333;
+}
+
+.site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-artist {
+	color: #767676;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item {
+	border-bottom: 1px dotted #eee;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item:hover,
+.site-content .wp-playlist-light .wp-playlist-item:focus {
+	border-bottom-color: rgba(0, 0, 0, 0);
+	background-color: #767676;
+	color: #fff;
 }
 
 /* SVG Icons base styles */
