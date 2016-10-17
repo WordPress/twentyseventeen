@@ -1,3 +1,4 @@
+/* global twentyseventeenScreenReaderText */
 ( function( $ ) {
 
 	// Variables and DOM Caching
@@ -12,6 +13,7 @@
 			$menuScrollDown = $navigation.find( '.menu-scroll-down' ),
 			$sidebar = $body.find( '#secondary' ),
 			$entryContent = $body.find( '.entry-content' ),
+			$formatQuote = $body.find( '.format-quote blockquote' ),
 			navigationFixedClass = 'site-navigation-fixed',
 			navigationHeight,
 			navigationOuterHeight,
@@ -80,6 +82,13 @@
 	}
 
 	/**
+	 * Sets icon for quotes
+	 */
+	function setQuotesIcon() {
+		$( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
+	}
+
+	/**
 	 * Add 'below-entry-meta' class to elements.
 	 */
 	function belowEntryMetaClass( param ) {
@@ -145,6 +154,7 @@
 		setNavProps();
 		adjustScrollClass();
 		adjustHeaderHeight();
+		setQuotesIcon();
 		supportsInlineSVG();
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );

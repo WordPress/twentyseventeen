@@ -1893,18 +1893,16 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	font-size: 20px;
 	font-size: 1.25rem;
 	font-weight: 300;
+	overflow: visible;
 	position: relative;
 }
 
-.format-quote blockquote:before {
-	content: '\f106';
+.format-quote blockquote .icon {
 	display: block;
-	font-size: 24px;
-	font-size: 1.5rem;
 	height: 20px;
 	left: -1.25em;
 	position: absolute;
-	top: 0.2em;
+	top: 0.4em;
 	-webkit-transform: scale(-1, 1);
 	-moz-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
@@ -3556,13 +3554,8 @@ article.panel-placeholder {
 
 	/* Post formats */
 
-	.format-quote blockquote:before {
-		font-size: 32px;
-		font-size: 2.0rem;
-		height: 32px;
+	.format-quote blockquote .icon {
 		left: -1.5em;
-		top: 0;
-		width: 32px;
 	}
 
 	/* Pages */
