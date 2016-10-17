@@ -2328,7 +2328,7 @@ object {
 }
 
 .site-content .wp-playlist-dark .wp-playlist-caption:hover {
-	background-color: #aaa;
+	background-color: transparent;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-album {
