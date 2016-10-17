@@ -1163,7 +1163,7 @@ a:hover .nav-title,
 
 /* Scroll down arrow */
 
-.menu-scroll-down {
+.navigation-top .menu-scroll-down {
 	display: none;
 }
 
