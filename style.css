@@ -2454,6 +2454,12 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+img.alignleft,
+img.alignright {
+	float: none;
+	margin: 0;
+}
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -2874,6 +2880,16 @@ article.panel-placeholder {
 	.entry-content blockquote.alignright {
 		font-size: 14px;
 		font-size: 0.875rem;
+	}
+
+	/* Fix image alignment */
+	img.alignleft {
+		float: left;
+		margin-right: 1.5em;
+	}
+	img.alignright {
+		float: right;
+		margin-left: 1.5em;
 	}
 
 	/* Site Branding */
