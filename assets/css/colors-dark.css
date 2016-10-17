@@ -46,7 +46,7 @@
 .colors-dark.page:not(.twentyseventeen-front-page) .entry-title,
 .colors-dark .page-links a .page-number,
 .colors-dark .comment-metadata a.comment-edit-link,
-.colors-dark .comment-reply-link:before,
+.colors-dark .comment-reply-link .icon,
 .colors-dark h2.widget-title,
 .colors-dark mark {
 	color: #fff;
@@ -230,7 +230,7 @@ body.colors-dark,
 .colors-dark input[type="reset"].secondary:focus,
 .colors-dark input[type="submit"].secondary:hover,
 .colors-dark input[type="submit"].secondary:focus,
-.colors-dark .social-navigation a:before, /* @todo this needs higher contrast by default */
+.colors-dark .social-navigation a,
 .colors-dark hr {
 	background: #555;
 }
@@ -262,9 +262,9 @@ body.colors-dark,
 	border-color: #555;
 }
 
-.colors-dark .entry-footer .cat-links:before,
-.colors-dark .entry-footer .tags-links:before {
-	color: #555;
+.colors-dark .entry-footer .cat-links .icon,
+.colors-dark .entry-footer .tags-links .icon {
+	color: #666;
 }
 
 .colors-dark button.secondary,
@@ -391,8 +391,7 @@ body.colors-dark,
 .colors-dark button,
 .colors-dark input[type="button"],
 .colors-dark input[type="submit"],
-.colors-dark .entry-footer .edit-link a.post-edit-link,
-.colors-dark .bypostauthor > .comment-body > .comment-meta > .comment-author:before {
+.colors-dark .entry-footer .edit-link a.post-edit-link {
 	color: #222;
 }
 
@@ -419,8 +418,8 @@ body.colors-dark,
 
 @media screen and (min-width: 48em) {
 
-	.colors-dark .nav-links .nav-previous .nav-title:before,
-	.colors-dark .nav-links .nav-next .nav-title:after {
+	.colors-dark .nav-links .nav-previous .nav-title .icon,
+	.colors-dark .nav-links .nav-next .nav-title .icon {
 		color: #eee;
 	}
 
