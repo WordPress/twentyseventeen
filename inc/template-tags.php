@@ -96,8 +96,8 @@ function twentyseventeen_edit_link() {
 	$link = edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit %s', 'twentyseventeen' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+			get_the_title()
 		),
 		'<span class="edit-link">',
 		'</span>'

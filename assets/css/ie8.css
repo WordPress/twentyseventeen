@@ -95,6 +95,10 @@ time.published {
 	z-index: -1;
 }
 
+img {
+	width: inherit;  /* Make images fill their parent's space. */
+}
+
 /* Fixes linked images */
 .entry-content a img,
 .widget a img {

@@ -535,19 +535,104 @@ big {
 	font-size: 125%;
 }
 
-blockquote, q {
+blockquote {
 	quotes: "" "";
 }
 
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
 blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:after {
 	content: "";
 }
 
 :focus {
 	outline: none;
+}
+
+/* Typography for Chinese Font */
+
+html[lang^="zh-"] body,
+html[lang^="zh-"] button,
+html[lang^="zh-"] input,
+html[lang^="zh-"] select,
+html[lang^="zh-"] textarea {
+	font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
+}
+
+html[lang^="zh-"] h1,
+html[lang^="zh-"] h2,
+html[lang^="zh-"] h3,
+html[lang^="zh-"] h4,
+html[lang^="zh-"] h5,
+html[lang^="zh-"] h6 {
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+/* Typography for Cyrillic Font */
+
+html[lang="bg-BG"] body,
+html[lang="bg-BG"] button,
+html[lang="bg-BG"] input,
+html[lang="bg-BG"] select,
+html[lang="bg-BG"] textarea,
+html[lang="ru-RU"] body,
+html[lang="ru-RU"] button,
+html[lang="ru-RU"] input,
+html[lang="ru-RU"] select,
+html[lang="ru-RU"] textarea,
+html[lang="uk"] body,
+html[lang="uk"] button,
+html[lang="uk"] input,
+html[lang="uk"] select,
+html[lang="uk"] textarea {
+	font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+}
+
+html[lang="bg-BG"] h1,
+html[lang="bg-BG"] h2,
+html[lang="bg-BG"] h3,
+html[lang="bg-BG"] h4,
+html[lang="bg-BG"] h5,
+html[lang="bg-BG"] h6,
+html[lang="ru-RU"] h1,
+html[lang="ru-RU"] h2,
+html[lang="ru-RU"] h3,
+html[lang="ru-RU"] h4,
+html[lang="ru-RU"] h5,
+html[lang="ru-RU"] h6,
+html[lang="uk"] h1,
+html[lang="uk"] h2,
+html[lang="uk"] h3,
+html[lang="uk"] h4,
+html[lang="uk"] h5,
+html[lang="uk"] h6 {
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+/* Typography for Greek Font */
+
+html[lang="el"] body,
+html[lang="el"] button,
+html[lang="el"] input,
+html[lang="el"] select,
+html[lang="el"] textarea {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html[lang="el"] h1,
+html[lang="el"] h2,
+html[lang="el"] h3,
+html[lang="el"] h4,
+html[lang="el"] h5,
+html[lang="el"] h6 {
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: normal;
 }
 
 /* Typography for Hebrew Font */
@@ -1029,7 +1114,8 @@ a:hover .nav-title,
 
 .js .main-navigation ul,
 .main-navigation .menu-item-has-children > a > .icon,
-.main-navigation .page_item_has_children > a > .icon  {
+.main-navigation .page_item_has_children > a > .icon,
+.main-navigation a > .icon {
 	display: none;
 }
 
@@ -2227,7 +2313,6 @@ h2.widget-title {
 
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	width: inherit;  /* Make images fill their parent's space. Solves IE8. */
 	max-width: 100%; /* Adhere to container width. */
 }
 
@@ -2282,6 +2367,79 @@ object {
 .mejs-controls a.mejs-horizontal-volume-slider:hover {
 	background: transparent;
 	border: 0;
+}
+
+/* Playlist Style Overrides */
+
+.site-content .wp-playlist {
+	padding: 0.625em 0.625em 0.3125em;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-title {
+	font-weight: 700;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-album {
+	font-style: normal;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-artist {
+	font-size: 10px;
+	font-size: 0.625rem;
+	font-weight: 800;
+	letter-spacing: 0.1818em;
+	text-transform: uppercase;
+}
+
+.site-content .wp-playlist-item {
+	padding: 0 0.3125em;
+	cursor: pointer;
+}
+
+.site-content .wp-playlist-item:last-of-type {
+	border-bottom: none;
+}
+
+.site-content .wp-playlist-item a {
+	padding: 0.3125em 0;
+	border-bottom: none;
+}
+
+.site-content .wp-playlist-item a:hover {
+	border-bottom: none;
+	background: transparent;
+}
+
+.site-content .wp-playlist-item-length {
+	top: 5px;
+}
+
+/* Playlist Color Overrides */
+
+.site-content .wp-playlist-light {
+	border-color: #eee;
+	color: #222;
+}
+
+.site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album {
+	color: #333;
+}
+
+.site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-artist {
+	color: #767676;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item {
+	border-bottom: 1px dotted #eee;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item:hover,
+.site-content .wp-playlist-light .wp-playlist-item:focus {
+	border-bottom-color: rgba(0, 0, 0, 0);
+	background-color: #767676;
+	color: #fff;
 }
 
 /* SVG Icons base styles */
@@ -2387,13 +2545,8 @@ object {
 	z-index: 3;
 }
 
-.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1) .twentyseventeen-panel-title {
-	background: #a64b55;
-}
-
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1)::after {
-	border-color: #a64b55;
-	color: #a64b55;
+	border: none;
 }
 
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(2) .twentyseventeen-panel-title {
