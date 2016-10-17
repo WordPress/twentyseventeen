@@ -434,17 +434,16 @@ body.colors-dark,
 
 	.colors-dark .main-navigation ul ul {
 		border-color: #333;
-	}
-
-	.colors-dark .main-navigation ul ul:before {
-		border-bottom-color: #333;
-	}
-
-	.colors-dark .main-navigation ul ul {
 		background: #222;
 	}
 
-	.colors-dark .main-navigation ul ul:after {
+	.colors-dark .main-navigation ul li.menu-item-has-children:before,
+	.colors-dark .main-navigation ul li.page_item_has_children:before {
+		border-bottom-color: #333;
+	}
+
+	.main-navigation ul li.menu-item-has-children:after,
+	.main-navigation ul li.page_item_has_children:after {
 		border-bottom-color: #222;
 	}
 
