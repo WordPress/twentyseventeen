@@ -38,33 +38,14 @@ function twentyseventeen_time_link() {
 	}
 
 	$time_string = sprintf( $time_string,
-		get_the_date( 'c' ),
+		get_the_date( DATE_W3C ),
 		get_the_date(),
-		get_the_modified_date( 'c' ),
+		get_the_modified_date( DATE_W3C ),
 		get_the_modified_date()
 	);
 
 	// Wrap the time string in a link, and preface it with 'Posted on'.
 	return '<span class="screen-reader-text">' . _x( 'Posted on', 'post date', 'twentyseventeen' ) . '</span> <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
-}
-endif;
-
-
-if ( ! function_exists( 'twentyseventeen_edit_post_link' ) ) :
-/**
- * Prints the post's edit link.
- */
-function twentyseventeen_edit_post_link() {
-	// Display 'edit' link.
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			__( 'Edit %s', 'twentyseventeen' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
 }
 endif;
 
@@ -97,7 +78,7 @@ function twentyseventeen_entry_footer() {
 		echo '</span>';
 	}
 
-	twentyseventeen_edit_post_link();
+	twentyseventeen_edit_link();
 }
 endif;
 
@@ -109,16 +90,14 @@ endif;
  * (post or page?) so that users understand a bit more where they are in terms
  * of the template hierarchy and their content. Helpful when/if the single-page
  * layout with multiple posts/pages shown gets confusing.
- *
- * @param int $id The post ID.
  */
-function twentyseventeen_edit_link( $id ) {
+function twentyseventeen_edit_link() {
 
 	$link = edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit %s', 'twentyseventeen' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+			get_the_title()
 		),
 		'<span class="edit-link">',
 		'</span>'

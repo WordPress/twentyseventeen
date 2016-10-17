@@ -13,7 +13,7 @@
 function twentyseventeen_include_svg_icons() {
 
 	// Define SVG sprite file.
-	$svg_icons = get_template_directory() . '/assets/images/svg-icons.svg';
+	$svg_icons = get_parent_theme_file_path( '/assets/images/svg-icons.svg' );
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
@@ -53,6 +53,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 		'title'       => '',
 		'desc'        => '',
 		'aria_hidden' => true, // Hide from screen readers.
+		'fallback'    => false,
 	);
 
 	// Parse args.
@@ -87,9 +88,14 @@ function twentyseventeen_get_svg( $args = array() ) {
 
 	// Use absolute path in the Customizer so that icons show up in there.
 	if ( is_customize_preview() ) {
-		$svg .= '<use xlink:href="' . get_template_directory_uri() . '/assets/images/svg-icons.svg' . '#icon-' . esc_html( $args['icon'] ) . '"></use>';
+		$svg .= '<use xlink:href="' . get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) . '"></use>';
 	} else {
 		$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
+	}
+
+	// Add some markup to use as a fallback for browsers that do not support SVGs.
+	if ( $args['fallback'] ) {
+		$svg .= '<span class="svg-fallback icon-' . esc_attr( $args['icon'] ) . '"></span>';
 	}
 
 	$svg .= '</svg>';

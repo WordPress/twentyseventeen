@@ -27,14 +27,14 @@
 	/**
 	 * Sets properties of navigation
 	 */
-	 function setNavProps() {
-		 navigationHeight      = $navigation.height();
-		 navigationOuterHeight = $navigation.outerHeight();
-		 navPadding            = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
-		 navMenuItemHeight     = $navMenuItem.outerHeight() * 2;
-		 idealNavHeight        = navPadding + navMenuItemHeight;
-		 navIsNotTooTall       = navigationHeight <= idealNavHeight;
-	 }
+	function setNavProps() {
+		navigationHeight      = $navigation.height();
+		navigationOuterHeight = $navigation.outerHeight();
+		navPadding            = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
+		navMenuItemHeight     = $navMenuItem.outerHeight() * 2;
+		idealNavHeight        = navPadding + navMenuItemHeight;
+		navIsNotTooTall       = navigationHeight <= idealNavHeight;
+	}
 
 	/**
 	 * Makes navigation 'stick'
@@ -83,26 +83,9 @@
 	/**
 	 * Sets icon for quotes
 	 */
-	 function setQuotesIcon() {
-		 $( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
-	 }
-
-	/**
-	 * 'Scroll Down' arrow in menu area
-	 */
-	if ( $( 'body' ).hasClass( 'blog' ) ) {
-		menuTop -= 30; // The div for latest posts has no space above content, add some to account for this
+	function setQuotesIcon() {
+		$( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
 	}
-	if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-		menuTop -= 32;
-	}
-	$( '.menu-scroll-down' ).click( function( e ) {
-		e.preventDefault();
-		$( window ).scrollTo( '#primary', {
-			duration: 600,
-			offset: { 'top': menuTop - $navigation.outerHeight() }
-		} );
-	} );
 
 	/**
 	 * Add 'below-entry-meta' class to elements.
@@ -136,6 +119,16 @@
 		});
 	}
 
+	/**
+     * Test if inline SVGs are supported.
+     * @link https://github.com/Modernizr/Modernizr/
+     */
+	function supportsInlineSVG() {
+		var div = document.createElement( 'div' );
+		div.innerHTML = '<svg/>';
+		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
+	}
+
 	// Fires on document ready
 	$( document ).ready( function() {
 
@@ -145,11 +138,14 @@
 		if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 			menuTop = -32;
 		}
+		if ( $( 'body' ).hasClass( 'blog' ) ) {
+			menuTop -= 30; // The div for latest posts has no space above content, add some to account for this
+		}
 		$menuScrollDown.click( function( e ) {
 			e.preventDefault();
 			$( window ).scrollTo( '#primary', {
 				duration: 600,
-				offset: { 'top': menuTop }
+				offset: { 'top': menuTop - navigationOuterHeight }
 			} );
 		} );
 
@@ -158,6 +154,10 @@
 		adjustScrollClass();
 		adjustHeaderHeight();
 		setQuotesIcon();
+		supportsInlineSVG();
+		if ( true === supportsInlineSVG() ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+		}
 	} );
 
 	// On scroll, we want to stick/unstick the navigation

@@ -9,6 +9,14 @@
  * @since 1.0
  */
 
+/**
+ * Twenty Seventeen only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
 if ( ! function_exists( 'twentyseventeen_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -87,6 +95,12 @@ function twentyseventeen_setup() {
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
+
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, and column width.
+ 	 */
+	add_editor_style( array( 'assets/css/editor-style.css', twentyseventeen_fonts_url() ) );
 }
 endif;
 add_action( 'after_setup_theme', 'twentyseventeen_setup' );
@@ -148,7 +162,7 @@ function twentyseventeen_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'twentyseventeen' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentyseventeen' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -158,7 +172,7 @@ function twentyseventeen_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'twentyseventeen' ),
 		'id'            => 'sidebar-2',
-		'description'   => '',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -168,7 +182,7 @@ function twentyseventeen_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer 2', 'twentyseventeen' ),
 		'id'            => 'sidebar-3',
-		'description'   => '',
+		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -176,15 +190,6 @@ function twentyseventeen_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
-
-/**
- * Output Custom Logo.
- */
-function twentyseventeen_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-}
 
 if ( ! function_exists( 'twentyseventeen_excerpt_continue_reading' ) ) {
 /**
@@ -195,7 +200,6 @@ function twentyseventeen_excerpt_continue_reading() {
 }
 }
 add_filter( 'excerpt_more', 'twentyseventeen_excerpt_continue_reading' );
-
 
 /**
  * Handles JavaScript detection.
@@ -227,7 +231,7 @@ function twentyseventeen_colors_css_wrap() {
 		return;
 	}
 
-	require_once( 'color-patterns.php' );
+	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 ?>
 	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
@@ -248,29 +252,29 @@ function twentyseventeen_scripts() {
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
-		wp_enqueue_style( 'twentyseventeen-colors-dark', get_template_directory_uri() . '/assets/css/colors-dark.css', array( 'twentyseventeen-style' ), '20161006' );
+		wp_enqueue_style( 'twentyseventeen-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'twentyseventeen-style' ), '1.0' );
 	}
 
 	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'twentyseventeen-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'twentyseventeen-style' ), '20160928' );
+	wp_enqueue_style( 'twentyseventeen-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'twentyseventeen-style' ), '1.0' );
 	wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
 
 	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
+	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
-	wp_enqueue_script( 'twentyseventeen-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '1.0', true );
 
 	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
 		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
 		'collapse' => __( 'Collapse child menu', 'twentyseventeen' ),
-		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
+		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand', 'fallback' => true ) ),
 		'quote'    => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
 	) );
 
-	wp_enqueue_script( 'twentyseventeen-global', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -278,12 +282,10 @@ function twentyseventeen_scripts() {
 
 	// Scroll effects (only loaded on front page).
 	if ( is_front_page() ) {
-		wp_enqueue_script( 'jquery-scrollto', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '20151030', true );
+		wp_enqueue_script( 'jquery-scrollto', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '2.1.2', true );
 	}
-
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
-
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -332,28 +334,42 @@ function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
 }
 add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10 , 3 );
 
+/**
+ * Use front-page.php when Front page displays is set to a static page.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param string $template front-page.php.
+ *
+ * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
+ */
+function twentyseventeen_front_page_template( $template ) {
+	return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
+
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_parent_theme_file_path( '/inc/custom-header.php' );
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_parent_theme_file_path( '/inc/template-tags.php' );
 
 /**
  * Additional features to allow styling of the templates.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_parent_theme_file_path( '/inc/template-functions.php' );
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_parent_theme_file_path( '/inc/customizer.php' );
 
 /**
  * SVG icons functions and filters.
  */
-require get_template_directory() . '/inc/icon-functions.php';
+require get_parent_theme_file_path( '/inc/icon-functions.php' );

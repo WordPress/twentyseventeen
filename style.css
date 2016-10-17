@@ -535,19 +535,240 @@ big {
 	font-size: 125%;
 }
 
-blockquote, q {
+blockquote {
 	quotes: "" "";
 }
 
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
 blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:after {
 	content: "";
 }
 
 :focus {
 	outline: none;
+}
+
+/* Typography for Arabic Font */
+
+html[lang="ar"] body,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] select,
+html[lang="ar"] textarea,
+html[lang="ary"] body,
+html[lang="ary"] button,
+html[lang="ary"] input,
+html[lang="ary"] select,
+html[lang="ary"] textarea,
+html[lang="azb"] body,
+html[lang="azb"] button,
+html[lang="azb"] input,
+html[lang="azb"] select,
+html[lang="azb"] textarea,
+html[lang="fa-IR"] body,
+html[lang="fa-IR"] button,
+html[lang="fa-IR"] input,
+html[lang="fa-IR"] select,
+html[lang="fa-IR"] textarea,
+html[lang="haz"] body,
+html[lang="haz"] button,
+html[lang="haz"] input,
+html[lang="haz"] select,
+html[lang="haz"] textarea,
+html[lang="ps"] body,
+html[lang="ps"] button,
+html[lang="ps"] input,
+html[lang="ps"] select,
+html[lang="ps"] textarea {
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ary"] h1,
+html[lang="ary"] h2,
+html[lang="ary"] h3,
+html[lang="ary"] h4,
+html[lang="ary"] h5,
+html[lang="ary"] h6,
+html[lang="azb"] h1,
+html[lang="azb"] h2,
+html[lang="azb"] h3,
+html[lang="azb"] h4,
+html[lang="azb"] h5,
+html[lang="azb"] h6,
+html[lang="fa-IR"] h1,
+html[lang="fa-IR"] h2,
+html[lang="fa-IR"] h3,
+html[lang="fa-IR"] h4,
+html[lang="fa-IR"] h5,
+html[lang="fa-IR"] h6,
+html[lang="haz"] h1,
+html[lang="haz"] h2,
+html[lang="haz"] h3,
+html[lang="haz"] h4,
+html[lang="haz"] h5,
+html[lang="haz"] h6,
+html[lang="ps"] h1,
+html[lang="ps"] h2,
+html[lang="ps"] h3,
+html[lang="ps"] h4,
+html[lang="ps"] h5,
+html[lang="ps"] h6 {
+	font-weight: bold;
+	letter-spacing: normal;
+}
+
+/* Typography for Chinese Font */
+
+html[lang^="zh-"] body,
+html[lang^="zh-"] button,
+html[lang^="zh-"] input,
+html[lang^="zh-"] select,
+html[lang^="zh-"] textarea {
+	font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
+}
+
+html[lang^="zh-"] h1,
+html[lang^="zh-"] h2,
+html[lang^="zh-"] h3,
+html[lang^="zh-"] h4,
+html[lang^="zh-"] h5,
+html[lang^="zh-"] h6 {
+	letter-spacing: normal;
+	font-weight: 700;
+}
+
+/* Typography for Cyrillic Font */
+
+html[lang="bg-BG"] body,
+html[lang="bg-BG"] button,
+html[lang="bg-BG"] input,
+html[lang="bg-BG"] select,
+html[lang="bg-BG"] textarea,
+html[lang="ru-RU"] body,
+html[lang="ru-RU"] button,
+html[lang="ru-RU"] input,
+html[lang="ru-RU"] select,
+html[lang="ru-RU"] textarea,
+html[lang="uk"] body,
+html[lang="uk"] button,
+html[lang="uk"] input,
+html[lang="uk"] select,
+html[lang="uk"] textarea {
+	font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+}
+
+html[lang="bg-BG"] h1,
+html[lang="bg-BG"] h2,
+html[lang="bg-BG"] h3,
+html[lang="bg-BG"] h4,
+html[lang="bg-BG"] h5,
+html[lang="bg-BG"] h6,
+html[lang="ru-RU"] h1,
+html[lang="ru-RU"] h2,
+html[lang="ru-RU"] h3,
+html[lang="ru-RU"] h4,
+html[lang="ru-RU"] h5,
+html[lang="ru-RU"] h6,
+html[lang="uk"] h1,
+html[lang="uk"] h2,
+html[lang="uk"] h3,
+html[lang="uk"] h4,
+html[lang="uk"] h5,
+html[lang="uk"] h6 {
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+/* Typography for Devanagari Font */
+
+html[lang="bn-BD"] body,
+html[lang="bn-BD"] button,
+html[lang="bn-BD"] input,
+html[lang="bn-BD"] select,
+html[lang="bn-BD"] textarea,
+html[lang="hi-IN"] body,
+html[lang="hi-IN"] button,
+html[lang="hi-IN"] input,
+html[lang="hi-IN"] select,
+html[lang="hi-IN"] textarea,
+html[lang="mr-IN"] body,
+html[lang="mr-IN"] button,
+html[lang="mr-IN"] input,
+html[lang="mr-IN"] select,
+html[lang="mr-IN"] textarea {
+	font-family: Arial, sans-serif;
+}
+
+html[lang="bn-BD"] h1,
+html[lang="bn-BD"] h2,
+html[lang="bn-BD"] h3,
+html[lang="bn-BD"] h4,
+html[lang="bn-BD"] h5,
+html[lang="bn-BD"] h6,
+html[lang="hi-IN"] h1,
+html[lang="hi-IN"] h2,
+html[lang="hi-IN"] h3,
+html[lang="hi-IN"] h4,
+html[lang="hi-IN"] h5,
+html[lang="hi-IN"] h6,
+html[lang="mr-IN"] h1,
+html[lang="mr-IN"] h2,
+html[lang="mr-IN"] h3,
+html[lang="mr-IN"] h4,
+html[lang="mr-IN"] h5,
+html[lang="mr-IN"] h6 {
+	font-weight: bold;
+	letter-spacing: normal;
+}
+
+/* Typography for Greek Font */
+
+html[lang="el"] body,
+html[lang="el"] button,
+html[lang="el"] input,
+html[lang="el"] select,
+html[lang="el"] textarea {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html[lang="el"] h1,
+html[lang="el"] h2,
+html[lang="el"] h3,
+html[lang="el"] h4,
+html[lang="el"] h5,
+html[lang="el"] h6 {
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+/* Typography for Gujarati Font */
+
+html[lang="gu-IN"] body,
+html[lang="gu-IN"] button,
+html[lang="gu-IN"] input,
+html[lang="gu-IN"] select,
+html[lang="gu-IN"] textarea {
+	font-family: Arial, sans-serif;
+}
+
+html[lang="gu-IN"] h1,
+html[lang="gu-IN"] h2,
+html[lang="gu-IN"] h3,
+html[lang="gu-IN"] h4,
+html[lang="gu-IN"] h5,
+html[lang="gu-IN"] h6 {
+	font-weight: bold;
+	letter-spacing: normal;
 }
 
 /* Typography for Hebrew Font */
@@ -589,6 +810,8 @@ html[lang="ja"] h6 {
 	letter-spacing: normal;
 	font-weight: 700;
 }
+
+/* Typography for Korean font */
 
 html[lang="ko-KR"] body,
 html[lang="ko-KR"] button,
@@ -721,6 +944,12 @@ input[type="submit"] {
 	text-shadow: none;
 	-webkit-transition: background 0.2s;
 	transition: background 0.2s;
+}
+
+input + button,
+input + input[type="button"],
+input + input[type="submit"] {
+	padding: 0.75em 2em;
 }
 
 button.secondary,
@@ -988,8 +1217,8 @@ a:hover .nav-title,
 }
 
 .navigation-top .wrap {
+	max-width: 1000px;
 	padding: 0;
-	max-width: calc( 1000px + 2.5em);
 }
 
 .navigation-top a {
@@ -1023,13 +1252,14 @@ a:hover .nav-title,
 
 .js .main-navigation ul,
 .main-navigation .menu-item-has-children > a > .icon,
-.main-navigation .page_item_has_children > a > .icon  {
+.main-navigation .page_item_has_children > a > .icon,
+.main-navigation ul a > .icon {
 	display: none;
 }
 
 .main-navigation > div > ul {
 	border-top: 1px solid #eee;
-	padding: 0.75em 1.5em;
+	padding: 0.75em 3.375em;
 }
 
 .js .main-navigation.toggled-on > div > ul {
@@ -1157,7 +1387,7 @@ a:hover .nav-title,
 
 /* Scroll down arrow */
 
-.menu-scroll-down {
+.navigation-top .menu-scroll-down {
 	display: none;
 }
 
@@ -1191,8 +1421,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 700px;
-	padding-left: 2em;
-	padding-right: 2em;
+	padding-left: 3em;
+	padding-right: 3em;
 }
 
 .wrap:after {
@@ -1756,11 +1986,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding: 0 0 1.5em;
 }
 
+.site-footer .wrap {
+	padding-top: 2em;
+}
+
 /* Footer widgets */
 
 .site-footer .widget-area {
 	padding-bottom: 2em;
-	padding-top: 4em;
+	padding-top: 2em;
 }
 
 /* Social nav */
@@ -1925,7 +2159,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	border-radius: 20px;
 	border: 1px solid #fff;
 	color: #fff;
-	content: "\f408";
 	left: -65px;
 	font-size: 16px;
 	font-size: 1.0rem;
@@ -2219,8 +2452,13 @@ h2.widget-title {
 
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	width: inherit;  /* Make images fill their parent's space. Solves IE8. */
 	max-width: 100%; /* Adhere to container width. */
+}
+
+img.alignleft,
+img.alignright {
+	float: none;
+	margin: 0;
 }
 
 .page-content .wp-smiley,
@@ -2274,6 +2512,123 @@ object {
 .mejs-controls a.mejs-horizontal-volume-slider:hover {
 	background: transparent;
 	border: 0;
+}
+
+/* Playlist Color Overrides: Light */
+
+.site-content .wp-playlist-light {
+	border-color: #eee;
+	color: #222;
+}
+
+.site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album {
+	color: #333;
+}
+
+.site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-artist {
+	color: #767676;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item {
+	border-bottom: 1px dotted #eee;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item:hover,
+.site-content .wp-playlist-light .wp-playlist-item:focus {
+	border-bottom-color: rgba(0, 0, 0, 0);
+	background-color: #767676;
+	color: #fff;
+}
+
+/* Playlist Color Overrides: Dark */
+
+.site-content .wp-playlist-dark {
+	background: #222;
+	border-color: #333;
+}
+
+.site-content .wp-playlist-dark .mejs-container .mejs-controls {
+	background-color: #333;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-caption {
+	color: #fff;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-caption:hover {
+	background-color: transparent;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-album {
+	color: #eee;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-artist {
+	color: #aaa;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-playing {
+	background-color: #333;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-item {
+	border-bottom: 1px dotted #555;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-item:hover,
+.site-content .wp-playlist-dark .wp-playlist-item:focus {
+	border-bottom-color: rgba(0, 0, 0, 0);
+	background-color: #aaa;
+	color: #222;
+}
+
+/* Playlist Style Overrides */
+
+.site-content .wp-playlist {
+	padding: 0.625em 0.625em 0.3125em;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-title {
+	font-weight: 700;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-album {
+	font-style: normal;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-artist {
+	font-size: 10px;
+	font-size: 0.625rem;
+	font-weight: 800;
+	letter-spacing: 0.1818em;
+	text-transform: uppercase;
+}
+
+.site-content .wp-playlist-item {
+	padding: 0 0.3125em;
+	cursor: pointer;
+}
+
+.site-content .wp-playlist-item:last-of-type {
+	border-bottom: none;
+}
+
+.site-content .wp-playlist-item a {
+	padding: 0.3125em 0;
+	border-bottom: none;
+}
+
+.site-content .wp-playlist-item a:hover {
+	border-bottom: none;
+	background: transparent;
+}
+
+.site-content .wp-playlist-item-length {
+	top: 5px;
 }
 
 /* SVG Icons base styles */
@@ -2379,13 +2734,8 @@ object {
 	z-index: 3;
 }
 
-.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1) .twentyseventeen-panel-title {
-	background: #a64b55;
-}
-
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1)::after {
-	border-color: #a64b55;
-	color: #a64b55;
+	border: none;
 }
 
 .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(2) .twentyseventeen-panel-title {
@@ -2480,6 +2830,68 @@ article.panel-placeholder {
 }
 
 /*--------------------------------------------------------------
+## SVGs Fallbacks
+--------------------------------------------------------------*/
+
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+.no-svg .dropdown-toggle .svg-fallback.icon-expand {
+	font-size: 16px;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 2.5em;
+	position: absolute;
+	top: 8px;
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	-ms-transform: rotate(180deg); /* IE 9 */
+	transform: rotate(180deg);
+}
+
+.no-svg .dropdown-toggle.toggled-on .svg-fallback.icon-expand {
+	-webkit-transform: rotate(0); /* Chrome, Safari, Opera */
+	-ms-transform: rotate(0); /* IE 9 */
+	transform: rotate(0);
+}
+
+.no-svg .dropdown-toggle .svg-fallback.icon-expand:before {
+	content: "\005E";
+	display: block;
+	height: 25px;
+	text-align: center;
+	width: 20px;
+}
+
+/* Social Menu fallbacks */
+
+.no-svg .social-navigation a {
+	background: transparent;
+	color: #222;
+	height: auto;
+	width: auto;
+}
+
+/* Show screen reader text in some cases */
+
+.no-svg .next.page-numbers .screen-reader-text,
+.no-svg .prev.page-numbers .screen-reader-text,
+.no-svg .social-navigation li a .screen-reader-text,
+.no-svg .search-submit .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important; /* overrides previous !important styles */
+	width: auto;
+}
+
+/*--------------------------------------------------------------
 ## Media Queries
 --------------------------------------------------------------*/
 
@@ -2531,6 +2943,16 @@ article.panel-placeholder {
 	.entry-content blockquote.alignright {
 		font-size: 14px;
 		font-size: 0.875rem;
+	}
+
+	/* Fix image alignment */
+	img.alignleft {
+		float: left;
+		margin-right: 1.5em;
+	}
+	img.alignright {
+		float: right;
+		margin-left: 1.5em;
 	}
 
 	/* Site Branding */
@@ -2701,8 +3123,8 @@ article.panel-placeholder {
 
 	.navigation-top .wrap {
 		max-width: 1000px;
-		/* The font size is 14px here and we need 32px padding in ems */
-		padding: 0.75em 2.2857142857em;
+		/* The font size is 14px here and we need 50px padding in ems */
+		padding: 0.75em 3.4166666666667em;
 	}
 
 	.navigation-top nav {
@@ -3281,15 +3703,9 @@ article.panel-placeholder {
 
 	/* Layout */
 
-	.wrap {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
 	/* Navigation */
 	.navigation-top .wrap {
-		padding: 0.75em 0;
-		max-width: calc( 1000px + 2.5em);
+		padding: 0.75em 2.0em;
 	}
 
 	.navigation-top nav {
