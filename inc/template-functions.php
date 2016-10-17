@@ -96,3 +96,12 @@ function twentyseventeen_is_frontpage() {
 function twentyseventeen_is_page() {
 	return ( is_page() && ! twentyseventeen_is_frontpage() );
 }
+
+/**
+ * Display a default list of pages if no menu is selected.
+ */
+function twentyseventeen_fallback_menu() {
+	wp_page_menu( array(
+		'link_after' => twentyseventeen_get_svg( array( 'icon' => 'expand' ) ),
+	) );
+}
