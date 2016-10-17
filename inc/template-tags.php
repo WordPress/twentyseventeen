@@ -83,7 +83,7 @@ function twentyseventeen_entry_footer() {
 endif;
 
 
-if ( ! function_exists( 'twentyseventeen_entry_footer' ) ) :
+if ( ! function_exists( 'twentyseventeen_edit_link' ) ) :
 /**
  * Returns an accessibility-friendly link to edit a post or page.
  *
