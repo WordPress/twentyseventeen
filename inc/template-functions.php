@@ -53,6 +53,11 @@ function twentyseventeen_body_classes( $classes ) {
 		}
 	}
 
+	// Add class if the site title and tagline is hidden.
+	if ( 'blank' === get_header_textcolor() ) {
+		$classes[] = 'title-tagline-hidden';
+	}
+
 	// Get the colorschme or the default if there isn't one.
 	$colors = twentyseventeen_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
 	$classes[] = 'colors-' . $colors;

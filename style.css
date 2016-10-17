@@ -1471,6 +1471,7 @@ body {
 }
 
 .site-title {
+	clear: none;
 	font-size: 24px;
 	font-size: 1.5rem;
 	font-weight: 800;
@@ -1506,14 +1507,32 @@ body {
 	opacity: 0.8;
 }
 
-.custom-logo-link img {
-	max-height: 200px;
+.custom-logo-link {
+	display: inline-block;
+	padding-right: 1em;
+	vertical-align: middle;
 	width: auto;
+}
+
+.custom-logo-link img {
+	display: inline-block;
+	max-height: 80px;
+	width: auto;
+}
+
+body.home.title-tagline-hidden:not(.no-header-image) .custom-logo-link img {
+	max-height: 200px;
+	max-width: 100%;
 }
 
 .custom-logo-link a:hover,
 .custom-logo-link a:focus {
 	opacity: 0.9;
+}
+
+body:not(.title-tagline-hidden) .site-branding-text {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .custom-header {
@@ -3089,6 +3108,19 @@ article.panel-placeholder {
 		min-height: 20vh;
 	}
 
+	.custom-logo-link {
+		padding-right: 2em;
+	}
+
+	.custom-logo-link img,
+	body.home.title-tagline-hidden:not(.no-header-image) .custom-logo-link img {
+		max-width: 350px;
+	}
+
+	.title-tagline-hidden.home:not(.no-header-image) .custom-logo-link img {
+		max-height: 200px;
+	}
+
 	.site-title {
 		font-size: 36px;
 		font-size: 2.25rem;
@@ -3097,17 +3129,6 @@ article.panel-placeholder {
 	.site-description {
 		font-size: 16px;
 		font-size: 1rem;
-	}
-
-	.custom-logo-link img {
-		max-height: 400px;
-		max-width: 400px;
-	}
-
-	.twentyseventeen-front-page:not(.no-header-image) .custom-logo-link img,
-	.home.blog:not(.no-header-image) .custom-logo-link img {
-		max-height: 500px;
-		max-width: 500px;
 	}
 
 	/* Navigation */

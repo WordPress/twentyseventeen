@@ -51,6 +51,7 @@
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
+				$( 'body' ).addClass( 'title-tagline-hidden' );
 			} else {
 				$( '.site-title, .site-description' ).css( {
 					'clip': 'auto',
@@ -59,6 +60,7 @@
 				$( '.site-branding, .site-branding a, .site-description, .site-description a' ).css( {
 					'color': to
 				} );
+				$( 'body' ).removeClass( 'title-tagline-hidden' );
 			}
 		} );
 	} );

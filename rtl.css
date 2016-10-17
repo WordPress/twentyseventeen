@@ -62,6 +62,13 @@ input[type="checkbox"] {
 	right: -10000px;
 }
 
+/* Site Branding */
+
+.custom-logo-link {
+	padding-left: 1em;
+	padding-right: 0;
+}
+
 /* Main Navigation */
 
 .main-navigation ul {
@@ -254,6 +261,15 @@ input[type="checkbox"] {
 	.error404 #primary {
 		float: none;
 	}
+
+	/* Site Branding */
+
+	.custom-logo-link {
+		padding-left: 2em;
+		padding-right: 0;
+	}
+
+	/* Navigation */
 
 	.main-navigation ul ul {
 		padding-right: 0;
