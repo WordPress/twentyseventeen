@@ -140,9 +140,7 @@ input[type="checkbox"] {
 	left: auto;
 	right: -2em;
 	-webkit-transform: scale(-1, 1);
-	-moz-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
-	-o-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
 
@@ -183,9 +181,7 @@ input[type="checkbox"] {
 	left: auto;
 	right: -1.25em;
 	-webkit-transform: none;
-	-moz-transform: none;
 	-ms-transform: none;
-	-o-transform: none;
 	transform: none;
 }
 
