@@ -80,10 +80,10 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'page_options', array(
-		'label'       => __( 'Single Page Layout', 'twentyseventeen' ),
+		'label'       => __( 'Page Layout', 'twentyseventeen' ),
 		'section'     => 'page_options',
 		'type'        => 'radio',
-		'description' => __( 'When no sidebar widgets are assigned, you can opt to display single pages with a one column or two column layout. When the two column layout is assigned, the page title is in one column and content is in the other.', 'twentyseventeen' ),
+		'description' => __( 'When no sidebar widgets are assigned, you can opt to display all pages with a one column or two column layout. When the two column layout is assigned, the page title is in one column and content is in the other.', 'twentyseventeen' ),
 		'choices'     => array(
 			'one-column' => __( 'One Column', 'twentyseventeen' ),
 			'two-column' => __( 'Two Column', 'twentyseventeen' ),
