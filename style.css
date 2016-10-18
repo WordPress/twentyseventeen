@@ -1829,7 +1829,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /* Single Post */
 
 .single-post:not(.has-sidebar) #primary,
-.page.page-one-column #primary {
+.page.page-one-column:not(.twentyseventeen-front-page) #primary {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 740px;
@@ -3034,6 +3034,10 @@ article.panel-placeholder {
 		padding-top: 3.5em;
 	}
 
+	.page-one-column .panel-content .wrap {
+		max-width: 740px;
+	}
+
 	.panel-content .entry-header {
 		margin-bottom: 4.5em;
 	}
@@ -3436,19 +3440,19 @@ article.panel-placeholder {
 		max-height: 1200px;
 	}
 
-	.panel-content .entry-header {
+	.page-two-column .panel-content .entry-header {
 		float: left;
 		width: 36%;
 	}
 
-	.panel-content .entry-content {
+	.page-two-column .panel-content .entry-content {
 		float: right;
 		width: 58%;
 	}
 
 	/* Front Page - Recent Posts */
 
-	.panel-content .recent-posts {
+	.page-two-column .panel-content .recent-posts {
 		clear: right;
 		float: right;
 		width: 58%;
@@ -3605,7 +3609,7 @@ article.panel-placeholder {
 	/* blog and archive */
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.twentyseventeen-front-page .entry-content blockquote.alignleft,
+	.twentyseventeen-front-page.page-two-column .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.page-two-column .entry-content blockquote.alignleft {
 		margin-left: -72.5%;
@@ -3613,7 +3617,7 @@ article.panel-placeholder {
 	}
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	.twentyseventeen-front-page .entry-content blockquote.alignright,
+	.twentyseventeen-front-page.page-two-column .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column .entry-content blockquote.alignright {
 		margin-right: 0;
