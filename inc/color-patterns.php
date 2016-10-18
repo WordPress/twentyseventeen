@@ -460,5 +460,6 @@ body.colors-custom,
 		color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 	}
 }';
+
 	return $css;
 }

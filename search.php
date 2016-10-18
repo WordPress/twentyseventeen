@@ -11,6 +11,7 @@
  */
 
 get_header(); ?>
+
 <div class="wrap">
 
 	<header class="page-header">
@@ -50,11 +51,12 @@ get_header(); ?>
 			<?php
 				get_search_form();
 
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
-<?php
-get_footer();
+
+<?php get_footer();
