@@ -433,17 +433,16 @@ body.colors-custom,
 
 	.colors-custom .main-navigation ul ul {
 		border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
-	}
-
-	.colors-custom .main-navigation ul ul:before {
-		border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
-	}
-
-	.colors-custom .main-navigation ul ul {
 		background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 	}
 
-	.colors-custom .main-navigation ul ul:after {
+	.colors-custom .main-navigation ul li.menu-item-has-children:before,
+	.colors-custom .main-navigation ul li.page_item_has_children:before {
+		border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 93% ); /* base: #eee; */
+	}
+
+	.colors-custom .main-navigation ul li.menu-item-has-children:after,
+	.colors-custom .main-navigation ul li.page_item_has_children:after {
 		border-bottom-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 	}
 
