@@ -3392,10 +3392,10 @@ article.panel-placeholder {
 	.navigation-top .menu-scroll-down {
 		color: #767676;
 		display: block;
-		padding: 0.75em;
+		padding: 0.5em 0.5em 0.4em;
 		position: absolute;
 		right: 0;
-		top: 0.40em;
+		top: 0.9em;
 		-webkit-transform: rotate( 90deg ); /* Chrome, Safari, Opera */
 		-ms-transform: rotate( 90deg ); /* IE 9 */
 		transform: rotate( 90deg );
