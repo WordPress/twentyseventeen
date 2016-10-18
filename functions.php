@@ -264,16 +264,23 @@ function twentyseventeen_scripts() {
 
 	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
-	wp_enqueue_script( 'twentyseventeen-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '1.0', true );
+	$twentyseventeenScreenReaderText = array( 
+		'quote'          => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
+		'has_navigation' => 'false',
+	);
 
-	wp_localize_script( 'twentyseventeen-navigation', 'twentyseventeenScreenReaderText', array(
-		'expand'   => __( 'Expand child menu', 'twentyseventeen' ),
-		'collapse' => __( 'Collapse child menu', 'twentyseventeen' ),
-		'icon'     => twentyseventeen_get_svg( array( 'icon' => 'expand', 'fallback' => true ) ),
-		'quote'    => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
-	) );
+	if ( has_nav_menu( 'top' ) ) {
+		wp_enqueue_script( 'twentyseventeen-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '1.0', true );
+		
+		$twentyseventeenScreenReaderText['has_navigation'] = 'true';
+		$twentyseventeenScreenReaderText['expand']         = __( 'Expand child menu', 'twentyseventeen' );
+		$twentyseventeenScreenReaderText['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
+		$twentyseventeenScreenReaderText['icon']           = twentyseventeen_get_svg( array( 'icon' => 'expand', 'fallback' => true ) );
+	}
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
+
+	wp_localize_script( 'twentyseventeen-skip-link-focus-fix', 'twentyseventeenScreenReaderText', $twentyseventeenScreenReaderText );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
