@@ -1,7 +1,7 @@
 /*
 Theme Name: Twenty Seventeen
 
-Adding support for languages written in a Right To Left (RTL) direction is easy -
+Adding support for languages written in a Right To Left (RTL) direction is easy,
 it's just a matter of overwriting all the horizontal positioning attributes
 of your CSS stylesheet in a separate stylesheet file named rtl.css.
 
@@ -100,9 +100,9 @@ input[type="checkbox"] {
 .prev.page-numbers .icon,
 .next.page-numbers .icon {
 	display: inline-block;
-	-ms-transform: rotate( 180deg ); /* IE 9 */
-	-webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
-	transform: rotate( 180deg );
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
 }
 
 .prev.page-numbers {
@@ -169,7 +169,7 @@ input[type="checkbox"] {
 
 .children .bypostauthor > .comment-body > .comment-meta > .comment-author:before {
 	left: auto;
-	right: -45px
+	right: -45px;
 }
 
 .form-submit {
@@ -179,7 +179,7 @@ input[type="checkbox"] {
 /* Post Formats */
 
 .format-quote blockquote:before {
-	content: '\f106';
+	content: "\f106";
 	left: auto;
 	right: -1.25em;
 	-webkit-transform: none;
@@ -194,9 +194,9 @@ input[type="checkbox"] {
 .nav-links .nav-previous .nav-title .nav-title-icon-wrapper,
 .nav-links .nav-next .nav-title .nav-title-icon-wrapper {
 	display: inline-block;
-	-ms-transform: rotate( 180deg ); /* IE 9 */
-	-webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
-	transform: rotate( 180deg );
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
 }
 
 /* Widgets */
@@ -314,9 +314,9 @@ input[type="checkbox"] {
 		right: 5px;
 	}
 
-	.main-navigation ul ul .menu-item-has-children > a > .icon, 
+	.main-navigation ul ul .menu-item-has-children > a > .icon,
 	.main-navigation ul ul .page_item_has_children > a > .icon {
-		left: 1.0em;
+		left: 1em;
 		right: auto;
 		-webkit-transform: rotate(90deg);
 		-ms-transform: rotate(90deg);
@@ -496,6 +496,7 @@ input[type="checkbox"] {
 }
 
 @media screen and ( min-width: 79em ) {
+
 	.has-sidebar #primary .entry-content blockquote.alignright,
 	.has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
 		margin-right: -20%;

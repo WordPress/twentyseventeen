@@ -74,7 +74,7 @@ h6 {
 .page .entry-title {
 	font-size: 14px;
 	font-size: 0.875rem;
-	font-weight: bold;
+	font-weight: 700;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
 }
@@ -111,5 +111,5 @@ img {
 /* Fixes linked images */
 .entry-content a img,
 .widget a img {
-	filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#ffffff);
+	filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=5, Color=#fff);
 }
