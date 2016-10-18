@@ -1018,9 +1018,9 @@ ol li {
 }
 
 ol li:before {
-	content: counter(item);
+	content: counter(item)".";
 	counter-increment: item;
-	font-weight: 800;
+	font-weight: 600;
 	left: -1.5em;
 	position: absolute;
 }
