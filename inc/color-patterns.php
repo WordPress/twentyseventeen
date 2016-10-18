@@ -62,7 +62,7 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom.page:not(.twentyseventeen-front-page) .entry-title,
 .colors-custom .page-links a .page-number,
 .colors-custom .comment-metadata a.comment-edit-link,
-.colors-custom .comment-reply-link:before,
+.colors-custom .comment-reply-link .icon,
 .colors-custom h2.widget-title,
 .colors-custom mark {
 	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 13% ); /* base: #222; */
@@ -246,7 +246,7 @@ body.colors-custom,
 .colors-custom input[type="reset"].secondary:focus,
 .colors-custom input[type="submit"].secondary:hover,
 .colors-custom input[type="submit"].secondary:focus,
-.colors-custom .social-navigation a:before, /* @todo this needs higher contrast by default */
+.colors-custom .social-navigation a,
 .colors-custom hr {
 	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
@@ -278,8 +278,8 @@ body.colors-custom,
 	border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
-.colors-custom .entry-footer .cat-links:before,
-.colors-custom .entry-footer .tags-links:before {
+.colors-custom .entry-footer .cat-links .icon,
+.colors-custom .entry-footer .tags-links .icon {
 	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
@@ -390,7 +390,6 @@ body.colors-custom,
 .colors-custom input[type="button"],
 .colors-custom input[type="submit"],
 .colors-custom .entry-footer .edit-link a.post-edit-link,
-.colors-custom .bypostauthor > .comment-body > .comment-meta > .comment-author:before,
 .colors-custom .social-navigation a:before {
 	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
@@ -418,8 +417,8 @@ body.colors-custom,
 
 @media screen and (min-width: 48em) {
 
-	.colors-custom .nav-links .nav-previous .nav-title:before,
-	.colors-custom .nav-links .nav-next .nav-title:after {
+	.colors-custom .nav-links .nav-previous .nav-title .icon,
+	.colors-custom .nav-links .nav-next .nav-title .icon {
 		color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 20% ); /* base: #222; */
 	}
 
