@@ -166,7 +166,7 @@
 	} );
 
 	if ( 'true' === twentyseventeenScreenReaderText.has_navigation ) {
-		
+
 		// On scroll, we want to stick/unstick the navigation
 		$( window ).on( 'scroll', function() {
 			adjustScrollClass();
