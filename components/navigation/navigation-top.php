@@ -14,7 +14,7 @@
 	<?php wp_nav_menu( array(
 		'theme_location' => 'top',
 		'menu_id'        => 'top-menu',
-		'fallback_cb'    => 'twentyseventeen_fallback_menu',
+		'fallback_cb'    => false,
 	) ); ?>
 
 	<?php if ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) : ?>
