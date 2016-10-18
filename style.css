@@ -1980,6 +1980,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding-bottom: 2em;
 }
 
+.page .entry-header .edit-link {
+	font-size: 85%;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
