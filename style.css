@@ -499,6 +499,13 @@ blockquote {
 	padding: 0;
 }
 
+blockquote cite {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: .5em;
+}
+
 address {
 	margin: 0 0 1.5em;
 }
