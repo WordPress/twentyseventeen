@@ -3692,12 +3692,12 @@ article.panel-placeholder {
 		margin-top: 3em;
 	}
 
-	.site-footer .widget-column {
+	.site-footer .widget-column.footer-widget-1 {
 		float: left;
 		width: 36%;
 	}
 
-	.site-footer .widget-column:last-child {
+	.site-footer .widget-column.footer-widget-2 {
 		float: right;
 		width: 58%;
 	}
