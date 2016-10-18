@@ -59,7 +59,7 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .menu-toggle,
 .colors-custom .page .panel-content .entry-title,
 .colors-custom .page-title,
-.colors-custom body.page:not(.twentyseventeen-front-page) .entry-title,
+.colors-custom.page:not(.twentyseventeen-front-page) .entry-title,
 .colors-custom .page-links a .page-number,
 .colors-custom .comment-metadata a.comment-edit-link,
 .colors-custom .comment-reply-link:before,
@@ -78,7 +78,7 @@ body.colors-custom,
 .colors-custom h6,
 .colors-custom label,
 .colors-custom .entry-title a,
-.colors-custom .twentyseventeen-front-page .panel-content .recent-posts article,
+.colors-custom.twentyseventeen-front-page .panel-content .recent-posts article,
 .colors-custom .entry-footer .cat-links a,
 .colors-custom .entry-footer .tags-links a,
 .colors-custom .format-quote blockquote,
@@ -279,8 +279,7 @@ body.colors-custom,
 }
 
 .colors-custom .entry-footer .cat-links:before,
-.colors-custom .entry-footer .tags-links:before,
-.colors-custom .twentyseventeen-front-page:not(.no-header-image) .site-description {
+.colors-custom .entry-footer .tags-links:before {
 	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 73% ); /* base: #bbb; */
 }
 
@@ -300,7 +299,7 @@ body.colors-custom,
 	border-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 87% ); /* base: #ddd; */
 }
 
-.colors-custom .twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child),
+.colors-custom.twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child),
 .colors-custom .widget ul li {
 	border-top-color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 87% ); /* base: #ddd; */
 }
@@ -387,8 +386,6 @@ body.colors-custom,
 .colors-custom .widget .widget-title a:hover,
 .colors-custom .widget ul li a:focus,
 .colors-custom .widget ul li a:hover,
-.colors-custom .twentyseventeen-front-page:not(.no-header-image) .site-title,
-.colors-custom .twentyseventeen-front-page:not(.no-header-image) .site-title a,
 .colors-custom button,
 .colors-custom input[type="button"],
 .colors-custom input[type="submit"],
@@ -400,8 +397,7 @@ body.colors-custom,
 
 body.colors-custom,
 .colors-custom .navigation-top,
-.colors-custom .main-navigation ul,
-.colors-custom .twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
+.colors-custom .main-navigation ul {
 	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
 
