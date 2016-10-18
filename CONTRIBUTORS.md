@@ -52,3 +52,9 @@ Version 1.0:
 @yogasukma
 @BinaryMoon
 @swapnilld
+@swissspidy
+@joyously
+@allancole
+@rianrietveld
+@sixhours
+@alex27
