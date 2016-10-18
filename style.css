@@ -3567,7 +3567,7 @@ article.panel-placeholder {
 
 	/* blog and archive */
 
-	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
+	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.twentyseventeen-front-page .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.page-two-column .entry-content blockquote.alignleft {
@@ -3575,7 +3575,7 @@ article.panel-placeholder {
 		width: 62%;
 	}
 
-	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignright,
+	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
 	.twentyseventeen-front-page .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column .entry-content blockquote.alignright {

@@ -400,7 +400,7 @@ input[type="checkbox"] {
 
 	/* blog index and archive */
 
-	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignleft,
+	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.twentyseventeen-front-page .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.page-two-column .entry-content blockquote.alignleft {
@@ -408,7 +408,7 @@ input[type="checkbox"] {
 		width: 34%;
 	}
 
-	.blog:not(.has-sidebar):not(.home) .entry-content blockquote.alignright,
+	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
 	.twentyseventeen-front-page #primary .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column #primary .entry-content blockquote.alignright {
