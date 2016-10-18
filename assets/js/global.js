@@ -134,7 +134,7 @@
 	$( document ).ready( function() {
 
 		// Let's fire some JavaScript!
-		if( twentyseventeenScreenReaderText.has_navigation === 'true' ) {
+		if ( 'true' === twentyseventeenScreenReaderText.has_navigation ) {
 
 			/**
 			 * 'Scroll Down' arrow in menu area
@@ -160,13 +160,13 @@
 		adjustHeaderHeight();
 		setQuotesIcon();
 		supportsInlineSVG();
-		
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
 	} );
 
-	if( twentyseventeenScreenReaderText.has_navigation === 'true' ) {
+	if ( 'true' === twentyseventeenScreenReaderText.has_navigation ) {
+		
 		// On scroll, we want to stick/unstick the navigation
 		$( window ).on( 'scroll', function() {
 			adjustScrollClass();
