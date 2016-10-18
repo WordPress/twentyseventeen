@@ -37,7 +37,7 @@ get_header(); ?>
 				 */
 				get_template_part( 'components/post/content', 'excerpt' );
 
-			endwhile;
+			endwhile; // End of the loop.
 
 			the_posts_pagination( array(
 				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'previous' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',

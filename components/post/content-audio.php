@@ -9,6 +9,7 @@
  * @since 1.0
  * @version 1.0
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -49,7 +50,7 @@
 
 		<?php if ( ! is_single() ) :
 
-			// If not a single post, highlight the audio file
+			// If not a single post, highlight the audio file.
 			$content = apply_filters( 'the_content', get_the_content() );
 			$audio = get_media_embedded_in_content( $content, array( 'audio' ) );
 
@@ -66,7 +67,7 @@
 		if ( is_single() || empty( $audio ) ) :
 
 			the_content( sprintf(
-				/* translators: %s: Name of current post. */
+				/* translators: %s: Name of current post */
 				__( 'Continue reading %s', 'twentyseventeen' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
