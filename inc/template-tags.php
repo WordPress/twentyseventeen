@@ -60,22 +60,28 @@ function twentyseventeen_entry_footer() {
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
 	if ( 'post' === get_post_type() ) {
-		echo '<span class="cat-tags-links">';
 
-		// Display Categories for posts.
+		// Get Categories for posts.
 		$categories_list = get_the_category_list( $separate_meta );
-		// Make sure there's more than one category before displaying.
-		if ( $categories_list && twentyseventeen_categorized_blog() ) {
-			echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
-		}
 
 		// Display Tags for posts.
 		$tags_list = get_the_tag_list( '', $separate_meta );
-		if ( $tags_list ) {
-			echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
-		}
 
-		echo '</span>';
+		// Make sure we have one or the other before proceeding.
+		if ( ( $categories_list && twentyseventeen_categorized_blog() ) || $tags_list ) {
+			echo '<span class="cat-tags-links">';
+
+			// Make sure there's more than one category before displaying.
+			if ( $categories_list && twentyseventeen_categorized_blog() ) {
+				echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+			}
+
+			if ( $tags_list ) {
+				echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
+			}
+
+			echo '</span>';
+		}
 	}
 
 	twentyseventeen_edit_link();
