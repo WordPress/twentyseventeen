@@ -225,7 +225,8 @@ input[type="checkbox"] {
 /* Footer */
 
 .social-navigation a {
-	margin: 0 0 0 1em;
+	margin-left: 1em;
+	margin-right: 0;
 }
 
 /* Customizer styles */
@@ -476,6 +477,9 @@ input[type="checkbox"] {
 
 	.site-info {
 		float: right;
+	}
+
+	.social-navigation + .site-info {
 		margin-left: 0;
 		margin-right: 6%;
 	}
