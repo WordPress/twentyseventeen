@@ -2006,10 +2006,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .site-footer {
 	border-top: 1px solid #eee;
-	padding: 0 0 1.5em;
 }
 
 .site-footer .wrap {
+	padding-bottom: 1.5em;
 	padding-top: 2em;
 }
 
@@ -2044,7 +2044,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	color: #fff;
 	display: inline-block;
 	height: 40px;
-	margin: 0 1em 0 0;
+	margin: 0 1em 0.5em 0;
 	text-align: center;
 	width: 40px;
 }
@@ -2066,6 +2066,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .site-info {
 	font-size: 14px;
 	font-size: 0.875rem;
+	margin-bottom: 1.0em;
 }
 
 .site-info a {
@@ -3677,12 +3678,13 @@ article.panel-placeholder {
 	.social-navigation {
 		clear: left;
 		float: left;
+		margin-bottom: 0;
 		width: 36%;
 	}
 
 	.site-info {
 		float: left;
-		padding: 0.5em 0 0;
+		padding: 0.7em 0 0;
 		width: 58%;
 	}
 
