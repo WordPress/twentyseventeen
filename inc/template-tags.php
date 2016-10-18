@@ -59,26 +59,36 @@ function twentyseventeen_entry_footer() {
 	/* translators: used between list items, there is a space after the comma */
 	$separate_meta = __( ', ', 'twentyseventeen' );
 
-	if ( 'post' === get_post_type() ) {
-		echo '<span class="cat-tags-links">';
+	// Get Categories for posts.
+	$categories_list = get_the_category_list( $separate_meta );
 
-		// Display Categories for posts.
-		$categories_list = get_the_category_list( $separate_meta );
-		// Make sure there's more than one category before displaying.
-		if ( $categories_list && twentyseventeen_categorized_blog() ) {
-			echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
-		}
+	// Get Tags for posts.
+	$tags_list = get_the_tag_list( '', $separate_meta );
 
-		// Display Tags for posts.
-		$tags_list = get_the_tag_list( '', $separate_meta );
-		if ( $tags_list ) {
-			echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
-		}
+	// We don't want to output .entry-footer if it will be empty, so make sure its not.
+	if ( ( ( twentyseventeen_categorized_blog() && $categories_list ) || $tags_list ) || get_edit_post_link() ) {
 
-		echo '</span>';
+		echo '<footer class="entry-footer">';
+
+			if ( 'post' === get_post_type() ) {
+				echo '<span class="cat-tags-links">';
+
+					// Make sure there's more than one category before displaying.
+					if ( $categories_list && twentyseventeen_categorized_blog() ) {
+						echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>'; // WPCS: XSS OK.
+					}
+
+					if ( $tags_list ) {
+						echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>'; // WPCS: XSS OK.
+					}
+
+				echo '</span>';
+			}
+
+			twentyseventeen_edit_link();
+
+		echo '</footer> <!-- .entry-footer -->';
 	}
-
-	twentyseventeen_edit_link();
 }
 endif;
 
