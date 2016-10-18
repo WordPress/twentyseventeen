@@ -31,7 +31,7 @@
 			}
 		?>
 	</header><!-- .entry-header -->
-	
+
 	<?php
 		$content = apply_filters( 'the_content', get_the_content() );
 		$audio = get_media_embedded_in_content( $content, array( 'audio' ) );
