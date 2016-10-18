@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Seventeen Theme Customizer
+ * Twenty Seventeen: Theme Customizer
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -53,14 +53,14 @@ function twentyseventeen_customize_register( $wp_customize ) {
 		),
 		'section'  => 'colors',
 		'priority' => 6,
-		'description' => 'Temporary hue slider will be replaced with a visual hue picker that is only shown when a custom scheme is selected', // temporary, intentionally untranslated
-		// @todo change this to a visual hue picker control, ideally extending the color control and leveraging iris by adding a `hue` mode in core
+		'description' => 'Temporary hue slider will be replaced with a visual hue picker that is only shown when a custom scheme is selected', // temporary, intentionally untranslated.
+		// @todo change this to a visual hue picker control, ideally extending the color control and leveraging iris by adding a `hue` mode in core.
 		// See https://core.trac.wordpress.org/ticket/38263
-		// @todo only show this control when the colorscheme is custom
+		// @todo only show this control when the colorscheme is custom.
 	) );
 
 	/**
-	 * Add the Theme Options section
+	 * Add the Theme Options section.
 	 */
 	$wp_customize->add_panel( 'options_panel', array(
 		'title'       => __( 'Theme Options', 'twentyseventeen' ),

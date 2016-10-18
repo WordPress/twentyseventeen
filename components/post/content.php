@@ -49,7 +49,7 @@
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
-				/* translators: %s: Name of current post. */
+				/* translators: %s: Name of current post */
 				__( 'Continue reading %s', 'twentyseventeen' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );

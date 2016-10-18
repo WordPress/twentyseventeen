@@ -58,7 +58,7 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'title-tagline-hidden';
 	}
 
-	// Get the colorschme or the default if there isn't one.
+	// Get the colorscheme or the default if there isn't one.
 	$colors = twentyseventeen_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
 	$classes[] = 'colors-' . $colors;
 
