@@ -48,8 +48,8 @@ global $twentyseventeencounter;
 				<?php
 					/* translators: %s: Name of current post */
 					the_content( sprintf(
-						__( 'Continue reading %s', 'twentyseventeen' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+						get_the_title()
 					) );
 				?>
 			</div><!-- .entry-content -->

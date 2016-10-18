@@ -68,10 +68,10 @@
 
 		if ( is_single() || empty( $audio ) ) :
 
+			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				/* translators: %s: Name of current post */
-				__( 'Continue reading %s', 'twentyseventeen' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+				get_the_title()
 			) );
 
 			wp_link_pages( array(
