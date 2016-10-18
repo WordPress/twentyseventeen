@@ -1812,6 +1812,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding-top: 0;
 }
 
+.blog .entry-meta a.post-edit-link,
+.archive .entry-meta a.post-edit-link {
+	color: #222;
+	display: inline-block;
+	margin-left: 1.0em;
+}
+
 .taxonomy-description {
 	color: #666;
 	font-size: 13px;
