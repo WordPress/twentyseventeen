@@ -1613,7 +1613,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 .twentyseventeen-panel .entry-header .edit-link {
-	font-size: 85%;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 /* Front Page - Recent Posts */
@@ -2004,6 +2005,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .page-header {
 	padding-bottom: 2em;
+}
+
+.page .entry-header .edit-link {
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .page-links {
