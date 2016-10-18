@@ -30,11 +30,13 @@
 
 		<?php get_template_part( 'components/header/header', 'image' ); ?>
 
-		<div class="navigation-top">
-			<div class="wrap">
-				<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-			</div><!-- .wrap -->
-		</div><!-- .navigation-top -->
+		<?php if( has_nav_menu( 'top' ) ) : ?>
+			<div class="navigation-top">
+				<div class="wrap">
+					<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+				</div><!-- .wrap -->
+			</div><!-- .navigation-top -->
+		<?php endif; ?>
 
 	</header><!-- #masthead -->
 
