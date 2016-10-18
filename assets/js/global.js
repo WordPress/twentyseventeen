@@ -133,26 +133,30 @@
 	// Fires on document ready
 	$( document ).ready( function() {
 
-		/**
-		 * 'Scroll Down' arrow in menu area
-		 */
-		if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-			menuTop = -32;
-		}
-		if ( $( 'body' ).hasClass( 'blog' ) ) {
-			menuTop -= 30; // The div for latest posts has no space above content, add some to account for this
-		}
-		$menuScrollDown.click( function( e ) {
-			e.preventDefault();
-			$( window ).scrollTo( '#primary', {
-				duration: 600,
-				offset: { 'top': menuTop - navigationOuterHeight }
-			} );
-		} );
-
 		// Let's fire some JavaScript!
-		setNavProps();
-		adjustScrollClass();
+		if ( 'true' === twentyseventeenScreenReaderText.has_navigation ) {
+
+			/**
+			 * 'Scroll Down' arrow in menu area
+			 */
+			if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+				menuTop = -32;
+			}
+			if ( $( 'body' ).hasClass( 'blog' ) ) {
+				menuTop -= 30; // The div for latest posts has no space above content, add some to account for this
+			}
+			$menuScrollDown.click( function( e ) {
+				e.preventDefault();
+				$( window ).scrollTo( '#primary', {
+					duration: 600,
+					offset: { 'top': menuTop - navigationOuterHeight }
+				} );
+			} );
+
+			setNavProps();
+			adjustScrollClass();
+		}
+
 		adjustHeaderHeight();
 		setQuotesIcon();
 		supportsInlineSVG();
@@ -161,18 +165,23 @@
 		}
 	} );
 
-	// On scroll, we want to stick/unstick the navigation
-	$( window ).on( 'scroll', function() {
-		adjustScrollClass();
-		adjustHeaderHeight();
-	} );
+	if ( 'true' === twentyseventeenScreenReaderText.has_navigation ) {
 
-	// Also want to make sure the navigation is where it should be on resize
+		// On scroll, we want to stick/unstick the navigation
+		$( window ).on( 'scroll', function() {
+			adjustScrollClass();
+			adjustHeaderHeight();
+		} );
+
+		// Also want to make sure the navigation is where it should be on resize
+		$( window ).resize( function() {
+			setNavProps();
+			setTimeout( adjustScrollClass, 500 );
+			setTimeout( adjustHeaderHeight, 1000 );
+		} );
+	}
+
 	$( window ).resize( function() {
-		setNavProps();
-		setTimeout( adjustScrollClass, 500 );
-		setTimeout( adjustHeaderHeight, 1000 );
-
 		clearTimeout( resizeTimer );
 		resizeTimer = setTimeout( function() {
 			belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
