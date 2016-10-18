@@ -216,8 +216,8 @@ body.colors-custom,
 .colors-custom .widget ul li a:hover,
 .colors-custom .entry-footer .edit-link a.post-edit-link:hover,
 .colors-custom .entry-footer .edit-link a.post-edit-link:focus,
-.colors-custom .social-navigation a:hover:before,
-.colors-custom .social-navigation a:focus:before {
+.colors-custom .social-navigation a:hover,
+.colors-custom .social-navigation a:focus {
 	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
 }
 
@@ -390,7 +390,7 @@ body.colors-custom,
 .colors-custom input[type="button"],
 .colors-custom input[type="submit"],
 .colors-custom .entry-footer .edit-link a.post-edit-link,
-.colors-custom .social-navigation a:before {
+.colors-custom .social-navigation a {
 	color: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 100% ); /* base: #fff; */
 }
 
