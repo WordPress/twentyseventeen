@@ -19,7 +19,7 @@
  * @since Twenty Seventeen 1.0
  */
 function twentyseventeen_switch_theme() {
-	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+	switch_theme( WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
 	add_action( 'admin_notices', 'twentyseventeen_upgrade_notice' );
 }
