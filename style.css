@@ -1062,12 +1062,12 @@ tr {
 
 th {
 	border-bottom: 2px solid #bbb;
-	padding-bottom: .5em;
+	padding-bottom: 0.5em;
 	text-align: left;
 }
 
 td {
-	padding: .4em 0;
+	padding: 0.4em 0;
 }
 
 /*--------------------------------------------------------------
