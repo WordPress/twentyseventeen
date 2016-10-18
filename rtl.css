@@ -336,17 +336,17 @@ input[type="checkbox"] {
 
 	/* Front Page */
 
-	.panel-content .entry-header {
+	.page-two-column .panel-content .entry-header {
 		float: right;
 	}
 
-	.panel-content .entry-content {
+	.page-two-column .panel-content .entry-content {
 		float: left;
 	}
 
 	/* Front Page - Recent Posts */
 
-	.panel-content .recent-posts {
+	.page-two-column .panel-content .recent-posts {
 		clear: left;
 		float: left;
 	}
@@ -401,7 +401,7 @@ input[type="checkbox"] {
 	/* blog index and archive */
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.twentyseventeen-front-page .entry-content blockquote.alignleft,
+	.twentyseventeen-front-page.page-two-column .entry-content blockquote.alignleft,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
 	.page-two-column .entry-content blockquote.alignleft {
 		margin-left: 0;
@@ -409,7 +409,7 @@ input[type="checkbox"] {
 	}
 
 	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	.twentyseventeen-front-page #primary .entry-content blockquote.alignright,
+	.twentyseventeen-front-page.page-two-column #primary .entry-content blockquote.alignright,
 	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
 	.page-two-column #primary .entry-content blockquote.alignright {
 		margin-right: -72.5%;

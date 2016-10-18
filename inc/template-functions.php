@@ -45,7 +45,7 @@ function twentyseventeen_body_classes( $classes ) {
 	}
 
 	// Add class for one or two column page layouts.
-	if ( is_page() && ! twentyseventeen_is_frontpage() && ! is_home() ) {
+	if ( is_page() ) {
 		if ( 'one-column' === get_theme_mod( 'page_options' ) ) {
 			$classes[] = 'page-one-column';
 		} else {
@@ -95,7 +95,7 @@ function twentyseventeen_is_frontpage() {
  * Custom Active Callback to check for page.
  */
 function twentyseventeen_is_page() {
-	return ( is_page() && ! twentyseventeen_is_frontpage() );
+	return ( is_page() );
 }
 
 /**
