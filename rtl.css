@@ -178,8 +178,7 @@ input[type="checkbox"] {
 
 /* Post Formats */
 
-.format-quote blockquote:before {
-	content: "\f106";
+.format-quote blockquote .icon {
 	left: auto;
 	right: -1.25em;
 	-webkit-transform: none;
@@ -419,7 +418,7 @@ input[type="checkbox"] {
 
 	/* Post formats */
 
-	.format-quote blockquote:before {
+	.format-quote blockquote .icon {
 		left: auto;
 		right: -1.5em;
 	}
