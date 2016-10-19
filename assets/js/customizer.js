@@ -89,4 +89,15 @@
 			     .data( 'hue', to );
 		} );
 	} );
+
+	// Page layouts.
+	wp.customize( 'page_options', function( value ) {
+		value.bind( function( to ) {
+			if ( 'one-column' === to ) {
+				$( 'body' ).addClass( 'page-one-column' ).removeClass( 'page-two-column' );
+			} else {
+				$( 'body' ).removeClass( 'page-one-column' ).addClass( 'page-two-column' );
+			}
+		} );
+	} );
 } )( jQuery );
