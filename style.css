@@ -1874,6 +1874,18 @@ body:not(.twentyseventeen-front-page) .entry-header {
 	padding-top: 0;
 }
 
+.blog .entry-meta a.post-edit-link,
+.archive .entry-meta a.post-edit-link,
+.search .entry-meta a.post-edit-link {
+	color: #222;
+	display: inline-block;
+	margin-left: 1.0em;
+}
+
+.search .page .entry-meta a.post-edit-link {
+	margin-left: 0;
+}
+
 .taxonomy-description {
 	color: #666;
 	font-size: 13px;
@@ -2076,6 +2088,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .page .entry-header .edit-link {
 	font-size: 14px;
 	font-size: 0.875rem;
+}
+
+.search .page .entry-header .edit-link {
+	font-size: 11px;
+	font-size: 0.6875rem;
 }
 
 .page-links {

@@ -92,6 +92,17 @@ input[type="checkbox"] {
 
 /* Blog, Archive, Search */
 
+.blog .entry-meta a.post-edit-link,
+.archive .entry-meta a.post-edit-link,
+.search .entry-meta a.post-edit-link {
+	margin-left: 0;
+	margin-right: 1.0em;
+}
+
+.search .page .entry-meta a.post-edit-link {
+	margin-right: 0;
+}
+
 .sticky .icon-pinned {
 	left: auto;
 	right: -1em;
