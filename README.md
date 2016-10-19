@@ -43,16 +43,16 @@ GNU General Public License for more details.
 Twenty Seventeen bundles the following third-party resources:
 
 HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
+**Licenses**: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
+
+jQuery scrollTo, Copyright 2007-2015 Ariel Flesler
+**License**: MIT
+Source: https://github.com/flesler/jquery.scrollTo
 
 normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 **License:** MIT
 Source: https://necolas.github.io/normalize.css/
-
-Genericons icon font, Copyright 2013-2016 Automattic.com
-**License:** GNU GPL, Version 2 (or later)
-Source: https://genericons.com/
 
 Font Awesome icons, Copyright Dave Gandy
 **License:** SIL Open Font License, version 1.1.
