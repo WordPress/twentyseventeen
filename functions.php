@@ -161,7 +161,10 @@ function twentyseventeen_fonts_url() {
  */
 function twentyseventeen_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'twentyseventeen_fonts_url', 'queue' ) && 'preconnect' === $relation_type ) {
-		$urls[] = 'https://fonts.gstatic.com';
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
 	}
 
 	return $urls;
