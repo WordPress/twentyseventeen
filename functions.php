@@ -150,7 +150,8 @@ function twentyseventeen_fonts_url() {
 	return esc_url_raw( $fonts_url );
 }
 
-/* Add preconnect for Google Fonts.
+/**
+ * Add preconnect for Google Fonts.
  *
  * @since Twenty Seventeen 1.0
  *
@@ -159,7 +160,6 @@ function twentyseventeen_fonts_url() {
  * @return array  $urls           URLs to print for resource hints.
  */
 function twentyseventeen_resource_hints( $urls, $relation_type ) {
-	// Add preconnect for Google Fonts if queue twentyfourteen-lato.
 	if ( wp_style_is( 'twentyseventeen_fonts_url', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = 'https://fonts.gstatic.com';
 	}
