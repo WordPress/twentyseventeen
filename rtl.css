@@ -90,6 +90,14 @@ input[type="checkbox"] {
 	right: auto;
 }
 
+/* Front Page */
+
+.twentyseventeen-panel .recent-posts .entry-header .edit-link {
+	margin-left: 0;
+	margin-right: 1.0em;
+}
+
+
 /* Blog, Archive, Search */
 
 .blog .entry-meta a.post-edit-link,

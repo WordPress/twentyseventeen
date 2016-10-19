@@ -1702,6 +1702,14 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	text-transform: none;
 }
 
+.twentyseventeen-panel .recent-posts .entry-header .edit-link {
+	color: #222;
+	display: inline-block;
+	font-size: 11px;
+	font-size: 0.6875rem;
+	margin-left: 1.0em;
+}
+
 /*--------------------------------------------------------------
 ## Regular Content
 --------------------------------------------------------------*/
@@ -3559,7 +3567,9 @@ article.panel-placeholder {
 	}
 
 	.panel-content .recent-posts .entry-header,
-	.panel-content .recent-posts .entry-content {
+	.page-two-column #primary .panel-content .recent-posts .entry-header,
+	.panel-content .recent-posts .entry-content,
+	.page-two-column #primary .panel-content .recent-posts .entry-content {
 		float: none;
 		width: 100%;
 	}
