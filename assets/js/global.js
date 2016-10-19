@@ -14,6 +14,7 @@
 			$sidebar = $body.find( '#secondary' ),
 			$entryContent = $body.find( '.entry-content' ),
 			$formatQuote = $body.find( '.format-quote blockquote' ),
+			isFrontPage = $body.hasClass( 'twentyseventeen-front-page' ) || $body.hasClass( 'home blog' ),
 			navigationFixedClass = 'site-navigation-fixed',
 			navigationHeight,
 			navigationOuterHeight,
@@ -49,7 +50,7 @@
 			if ( navIsNotTooTall ) {
 
 				// When there's a custom header image, the header offset includes the height of the navigation
-				if ( $customHeaderImage.length ) {
+				if ( isFrontPage && $customHeaderImage.length ) {
 					headerOffset = $customHeader.innerHeight() - navigationOuterHeight;
 				} else {
 					headerOffset = $customHeader.innerHeight();
@@ -75,8 +76,16 @@
 	 */
 	function adjustHeaderHeight() {
 		if ( 'none' === $menuToggle.css( 'display' ) ) {
-			$branding.css( 'margin-bottom', navigationOuterHeight );
+
+			// The margin should be applied to different elements on front-page or home vs interior pages.
+			if ( isFrontPage ) {
+				$branding.css( 'margin-bottom', navigationOuterHeight );
+			} else {
+				$customHeader.css( 'margin-bottom', navigationOuterHeight );
+			}
+
 		} else {
+			$customHeader.css( 'margin-bottom', '0' );
 			$branding.css( 'margin-bottom', '0' );
 		}
 	}

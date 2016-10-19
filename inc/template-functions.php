@@ -39,6 +39,11 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'no-header-image';
 	}
 
+	// Add a class if there is a featured image or custom header.
+	if ( has_header_image() || ( has_post_thumbnail() && twentyseventeen_is_frontpage() ) ) {
+		$classes[] = 'has-header-image';
+	}
+
 	// Add class if sidebar is used.
 	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() ) {
 		$classes[] = 'has-sidebar';
