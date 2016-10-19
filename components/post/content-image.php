@@ -25,6 +25,7 @@
 						twentyseventeen_posted_on();
 					else :
 						echo twentyseventeen_time_link();
+						twentyseventeen_edit_link();
 					endif;
 				echo '</div><!-- .entry-meta -->';
 			endif;
@@ -68,9 +69,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( is_single() ) : ?>
-		<footer class="entry-footer">
-			<?php twentyseventeen_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
+		<?php twentyseventeen_entry_footer(); ?>
 	<?php endif; ?>
 
 </article><!-- #post-## -->

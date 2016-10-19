@@ -92,6 +92,17 @@ input[type="checkbox"] {
 
 /* Blog, Archive, Search */
 
+.blog .entry-meta a.post-edit-link,
+.archive .entry-meta a.post-edit-link,
+.search .entry-meta a.post-edit-link {
+	margin-left: 0;
+	margin-right: 1.0em;
+}
+
+.search .page .entry-meta a.post-edit-link {
+	margin-right: 0;
+}
+
 .sticky .icon-pinned {
 	left: auto;
 	right: -1em;
@@ -140,9 +151,7 @@ input[type="checkbox"] {
 	left: auto;
 	right: -2em;
 	-webkit-transform: scale(-1, 1);
-	-moz-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
-	-o-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
 
@@ -178,14 +187,11 @@ input[type="checkbox"] {
 
 /* Post Formats */
 
-.format-quote blockquote:before {
-	content: "\f106";
+.format-quote blockquote .icon {
 	left: auto;
 	right: -1.25em;
 	-webkit-transform: none;
-	-moz-transform: none;
 	-ms-transform: none;
-	-o-transform: none;
 	transform: none;
 }
 
@@ -419,7 +425,7 @@ input[type="checkbox"] {
 
 	/* Post formats */
 
-	.format-quote blockquote:before {
+	.format-quote blockquote .icon {
 		left: auto;
 		right: -1.5em;
 	}

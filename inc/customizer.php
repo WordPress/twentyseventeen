@@ -77,6 +77,7 @@ function twentyseventeen_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'page_options', array(
 		'default'           => 'two-column',
 		'sanitize_callback' => 'twentyseventeen_sanitize_layout',
+		'transport'         => 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'page_options', array(
