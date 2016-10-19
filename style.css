@@ -610,7 +610,12 @@ html[lang="ps"] body,
 html[lang="ps"] button,
 html[lang="ps"] input,
 html[lang="ps"] select,
-html[lang="ps"] textarea {
+html[lang="ps"] textarea,
+html[lang="ur"] body,
+html[lang="ur"] button,
+html[lang="ur"] input,
+html[lang="ur"] select,
+html[lang="ur"] textarea {
 	font-family: Tahoma, Arial, sans-serif;
 }
 
@@ -649,7 +654,13 @@ html[lang="ps"] h2,
 html[lang="ps"] h3,
 html[lang="ps"] h4,
 html[lang="ps"] h5,
-html[lang="ps"] h6 {
+html[lang="ps"] h6,
+html[lang="ur"] h1,
+html[lang="ur"] h2,
+html[lang="ur"] h3,
+html[lang="ur"] h4,
+html[lang="ur"] h5,
+html[lang="ur"] h6 {
 	font-weight: 700;
 }
 
