@@ -1,17 +1,5 @@
-##### What issue # is this related to?
+Development of Twenty Seventeen has now moved from GitHub to Trac.
 
-##### What is your WordPress.org username?
-
-##### Screenshots (if appropriate)
-
-##### Questions:
-Please make sure all the below checkboxes have been checked before submitting your PR.
-
-- [ ] Are all the above sections filled out appropriately?
-- [ ] Have you read [CONTRIBUTING.md](https://github.com/WordPress/twentyseventeen/blob/master/CONTRIBUTING.md)?
-- [ ] Did you maintain a new line at the end of each file modified/added?
-- [ ] If this adds new js dependencies, did you add them to [.jscsrc](https://github.com/WordPress/twentyseventeen/blob/master/.jscsrc) & [.jshintignore](https://github.com/WordPress/twentyseventeen/blob/master/.jshintignore)?
-
-Please understand that because of the size of this project, your PR may go stale and before someone can review it. If this is the case please rebase/refresh your PR and resolve any conflicts.
+Please cancel this pull request and [search Trac for an existing ticket](https://core.trac.wordpress.org/query?status=accepted&status=assigned&status=new&status=reopened&status=reviewing&component=Bundled+Theme&milestone=4.7&col=id&col=summary&col=status&col=owner&col=type&col=priority&col=milestone&order=priority) or [create a new ticket](https://core.trac.wordpress.org/newticket?component=Bundled%20Theme) and patch on Trac
 
 Thank you for taking the time to contribute to Twenty Seventeen!
