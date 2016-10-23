@@ -1,0 +1,5 @@
+Development of Twenty Seventeen has now moved from GitHub to Trac.
+
+Please cancel creating this issue and [search Trac for an existing ticket](https://core.trac.wordpress.org/query?status=accepted&status=assigned&status=new&status=reopened&status=reviewing&component=Bundled+Theme&milestone=4.7&col=id&col=summary&col=status&col=owner&col=type&col=priority&col=milestone&order=priority) or [create a new ticket](https://core.trac.wordpress.org/newticket?component=Bundled%20Theme) and patch on Trac
+
+Thank you for taking the time to contribute to Twenty Seventeen!
